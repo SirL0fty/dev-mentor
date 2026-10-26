@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Walkthrough"
+  short_description: "Explore completed changes one step at a time"
+  default_prompt: "Use $walkthrough to guide me through these completed changes."

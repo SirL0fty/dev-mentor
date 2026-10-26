@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Learn"
+  short_description: "Learn an engineering concept step by step"
+  default_prompt: "Use $learn to teach me this concept with a practical example."

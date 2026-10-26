@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Architect"
+  short_description: "Compare designs and understand trade-offs"
+  default_prompt: "Use $architect to compare approaches for this feature."

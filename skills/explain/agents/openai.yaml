@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Explain"
+  short_description: "Understand how code behaves at runtime"
+  default_prompt: "Use $explain to trace this feature through one realistic example."

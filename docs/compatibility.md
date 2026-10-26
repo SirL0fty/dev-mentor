@@ -1,6 +1,6 @@
 # Host compatibility
 
-Checked against the linked documentation on 2026-10-26. The shared delivery format is Agent Skills, installed by the standard skills CLI. [Native plugin installation](plugins.md) is also packaged for Cursor, Claude Code, and Codex. One root `skills/` directory serves every route; execution capabilities come from the current assistant.
+Checked against the linked documentation on 2026-10-26. The shared delivery format is Agent Skills, installed by the standard skills CLI. [Native plugin installation](plugins.md) is also packaged for Cursor, Claude Code, and Codex. ChatGPT desktop can use the same repository marketplace in Work or Codex; add it on each machine using the [installation guide](../README.md#install-chatgpt). One root `skills/` directory serves every route; execution capabilities come from the current assistant.
 
 | Assistant or editor | Installation target / entry | Status |
 | --- | --- | --- |
@@ -15,7 +15,7 @@ Checked against the linked documentation on 2026-10-26. The shared delivery form
 | Other skill-capable hosts | Select the host in `npx skills add` | See the current CLI support list; no blanket runtime guarantee |
 | File-reading assistants | Read the extracted `skills/mentor/SKILL.md` and its references | Manual activation; requires accessible files and instruction following |
 
-The [skills CLI agent list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) owns target names and installation paths. Use the installed CLI's help when versions differ. Do not install both native plugin and standalone copies in the same host unless you deliberately want duplicate entries. Namespace and skill-picker behaviour differ by host.
+The [skills CLI agent list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) owns target names and installation paths. Use the installed CLI's help when versions differ. Do not install both native plugin and standalone copies in the same host unless you deliberately want duplicate entries. Namespace and skill-picker behaviour differ by host. ChatGPT/Codex supports selecting the whole plugin with `@`; Claude Code uses `/dev-mentor:<skill>`. Display metadata labels individual skills `Dev Mentor: <workflow>` in hosts that read `agents/openai.yaml`; other hosts may still show the short skill names. Live rendering of the new labels and icons remains untested.
 
 Native metadata checks used Claude Code 2.1.310, Codex CLI 0.164.0-alpha.11.1, the published Agent Plugins 1.0.0 JSON Schema, and Cursor's official template validator. Codex discovery used a command-scoped local marketplace configuration without changing personal settings. Cursor's validator reports optional missing hooks/MCP files; this skills-only plugin intentionally has neither. These checks do not establish successful GUI installation or vendor-directory approval.
 
