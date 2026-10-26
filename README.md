@@ -8,7 +8,7 @@ The goal is independence. Start with a demonstration, try the next step with hin
 
 Ten skills for Cursor, Claude Code, Codex, OpenCode, GitHub Copilot, and other skill-capable assistants.
 
-[Install](#install) · [Get started](#get-started) · [Skills](#skills) · [Compatibility](docs/compatibility.md)
+[Install](#install) · [Native plugins](docs/plugins.md) · [Get started](#get-started) · [Skills](#skills) · [Compatibility](docs/compatibility.md)
 
 ## Install
 
@@ -28,6 +28,32 @@ npx skills add SirL0fty/dev-mentor --skill '*' --agent cursor claude-code codex
 ```
 
 For T3 Code or OpenChamber, choose the provider you use inside the app. For VS Code, choose your assistant extension. See [compatibility](docs/compatibility.md) for details.
+
+</details>
+
+<details>
+<summary>Install as a native plugin in Cursor, Claude Code, or Codex</summary>
+
+**Cursor:** Open **Customize → From GitHub Repository**, enter `https://github.com/SirL0fty/dev-mentor`, and install **Dev Mentor**.
+
+**Claude Code:**
+
+```sh
+claude plugin marketplace add SirL0fty/dev-mentor
+claude plugin install dev-mentor@dev-mentor
+```
+
+Start a new session and use `/dev-mentor:mentor help`.
+
+**Codex:**
+
+```sh
+codex plugin marketplace add SirL0fty/dev-mentor
+```
+
+Open the plugin browser, choose the **Dev Mentor** marketplace, and install **Dev Mentor**. Start a new chat and ask **“Use mentor. Help me find where to start.”**
+
+Choose the native plugin or standalone skills for each assistant to avoid duplicate entries. [Full plugin installation and updates](docs/plugins.md).
 
 </details>
 
@@ -139,9 +165,13 @@ Your assistant needs access to three distinct models. If a participant is unavai
 
 ## Update
 
+For skills CLI installations:
+
 ```sh
 npx skills update
 ```
+
+Native plugin users can follow the [plugin update steps](docs/plugins.md#updates).
 
 ## License
 

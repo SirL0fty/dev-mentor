@@ -1,0 +1,11 @@
+{
+  "name": "dev-mentor",
+  "owner": { "name": "SirL0fty" },
+  "plugins": [
+    {
+      "name": "dev-mentor",
+      "source": "./",
+      "description": "Learn to build features in your codebase, one focused step at a time."
+    }
+  ]
+}
