@@ -8,6 +8,8 @@ Use this when the developer asks `help` within Dev Mentor, “mentor help”, �
 - **No task is selected, or project ideas are requested:** inspect enough of the actual codebase to suggest a useful starting point. Do not ask the developer to pick from all ten skills or guess which file matters.
 - **Commands or usage are requested explicitly:** show only the relevant controls and a short example. A command explanation does not require a repository scan.
 
+When an existing feature plan is ready to capture, a relevant suggestion is “Turn our current plan into a portable spec.” If the developer asks about formats, explain that `spec` can adapt to Matt Pocock or pstack conventions, or invoke the official `openspec-propose` workflow when OpenSpec is selected and available. A help question does not itself create a document or start that workflow.
+
 ## Ground suggestions in evidence
 
 Reuse fresh evidence first. Follow the [investigation reference](../skills/explain/references/investigation.md), bounded to orientation: read project instructions, the README or package manifest, a shallow file listing, and Git status if available. Use the current ticket or selected files when present. Inspect one or two promising entry points and their nearby callers/tests; stop once there is enough evidence for useful choices. Avoid exhaustive scans, generated/vendor trees, dependency installation, or test execution merely to build a help card.

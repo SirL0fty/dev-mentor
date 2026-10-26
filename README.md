@@ -10,7 +10,7 @@ The goal is independence. Start with a demonstration, try the next step with hin
 
 Ten skills, one place to start: **mentor**. By [SirL0fty](https://github.com/SirL0fty).
 
-[Help](#help) · [Install](#install) · [Get started](#get-started) · [Skill map](#skill-map) · [Watch a PR](#watch-a-pr) · [Skills](#skills) · [Update](#update)
+[Help](#help) · [Install](#install) · [Get started](#get-started) · [Skill map](#skill-map) · [Create a spec](#create-a-spec) · [Watch a PR](#watch-a-pr) · [Skills](#skills) · [Update](#update)
 
 ## Help
 
@@ -80,7 +80,7 @@ codex plugin marketplace add SirL0fty/dev-mentor --ref main
 
 Then open the plugin browser in the desktop app, or run `/plugins` inside Codex CLI, select the Dev Mentor marketplace, and install the plugin. Start a fresh session after installation.
 
-**Check:** the plugin detail page should show **SirL0fty**, version **0.6.2** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
+**Check:** the plugin detail page should show **SirL0fty**, version **0.7.0** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
 
 </details>
 
@@ -233,7 +233,7 @@ flowchart TB
     Mentor(["mentor<br/>Find your starting point"])
     Understand["UNDERSTAND<br/><br/>explain · How existing code runs<br/>learn · A new concept<br/>review · A colleague's PR<br/>walkthrough · Completed changes"]
     Coach["coach<br/>Plan one manageable step"]
-    Prepare["PREPARE FOR OTHERS<br/><br/>share · A review document<br/>spec · OpenSpec requirements"]
+    Prepare["CAPTURE THE PLAN<br/><br/>share · A review document<br/>spec · A portable spec or OpenSpec"]
     Design["OPTIONAL DESIGN HELP<br/><br/>architect · Compare approaches<br/>devils-advocate · Three-model challenge"]
     Edit["You write the code"]
     Check["Inspect your actual diff<br/>Run focused checks<br/>Explain the result"]
@@ -256,6 +256,31 @@ flowchart TB
 ```
 
 The panels group related skills. The loop is the normal coaching path; the dotted branch is optional design help. A review document or specification does not approve implementation. **PR watching** is another mode of `mentor`: it brings new comments or CI failures into the same coaching loop when the host can monitor them.
+
+## Create a spec
+
+Once you have a feature plan, turn it into a specification another developer or assistant can work from:
+
+```text
+Use spec to turn our agreed plan into a feature specification.
+```
+
+Dev Mentor reuses the plan and code evidence you already gathered. The document includes the goal, current and proposed behaviour, requirements with success/failure examples, design decisions, implementation steps, verification, and unresolved questions. Your lesson stays at the same checkpoint.
+
+| Choose | What you get | Example prompt |
+| --- | --- | --- |
+| **Portable Markdown** (default) | A self-contained feature spec, normally saved to `docs/specs/<feature>.md`. No additional tooling required. | “Turn our plan into a spec.” |
+| **Matt Pocock inspired** | A spec organised around the user problem, stories, implementation and testing decisions, and scope. | “Write this spec in Matt Pocock's style.” |
+| **pstack inspired** | A design-focused spec covering caller usage, data shapes, contracts, alternatives, trade-offs, and verifiable steps. | “Create a pstack-style design spec from this plan.” |
+| **OpenSpec** | A handoff to the official **`openspec-propose`** skill, using your project's configured schema and templates. | “Use OpenSpec to convert this agreed plan into a change.” |
+
+Project conventions and an explicit destination take precedence over the Markdown default. The Matt Pocock and pstack options adapt their document conventions; they do not publish an issue or start implementation. The [spec workflow](skills/spec/SKILL.md) links the upstream sources and format differences.
+
+**Choosing OpenSpec runs its official propose workflow.** Dev Mentor passes the agreed plan, evidence, decisions, and open questions to the installed skill, then checks the generated artifacts and runs available OpenSpec validation. OpenSpec owns the artifact format. You need its CLI, a configured project or specification store, and its official propose skill/command available to your assistant. If something is missing, Dev Mentor explains the setup options or offers a Markdown draft; it does not silently install or initialise OpenSpec. [Official propose skill](https://github.com/Fission-AI/OpenSpec/blob/main/skills/openspec-propose/SKILL.md).
+
+You can also start with Markdown and later say **“Convert this spec using OpenSpec.”** The saved document becomes the input to that handoff, and lessons then link to the resulting OpenSpec requirements. Other workflows can use the Markdown as context; tool-specific import and validation depend on their supported format.
+
+Spec creation leaves production code and implementation task completion unchanged. The result reports what was saved, which checks actually ran, and what still needs a decision.
 
 ## One step at a time
 
@@ -310,7 +335,7 @@ Use **mentor** as your starting point, or name a skill directly.
 | [devils-advocate](skills/devils-advocate/SKILL.md) | You want three different models to challenge a proposal. |
 | [walkthrough](skills/walkthrough/SKILL.md) | You want a guided tour of completed changes. |
 | [share](skills/share/SKILL.md) | You want a plan or lesson prepared for a colleague's review. |
-| [spec](skills/spec/SKILL.md) | You want an agreed feature plan converted into an OpenSpec change. |
+| [spec](skills/spec/SKILL.md) | You want a portable feature spec, a requested style, or an OpenSpec change through its official propose skill. |
 
 </details>
 

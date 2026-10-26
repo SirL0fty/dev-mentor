@@ -10,7 +10,7 @@ Track:
 - Separate preparation, explanation, implementation, and verification evidence. Prepared or explained does not mean implemented; implemented does not mean tested.
 - A pending manual action: its card, intended behaviour, baseline/scope, completion criteria, and appropriate check. “Done” or “next” while it is pending triggers the active workflow's inspection/verification loop, not automatic advancement.
 - Learning evidence where useful: decisions demonstrated, attempted with hints, or made independently, plus the current level of support. Keep this separate from code/test status; it is not a mastery score.
-- Assumptions, unresolved questions, decisions, and disagreements; links to review artifacts and optional OpenSpec requirements.
+- Assumptions, unresolved questions, decisions, and disagreements; links to review artifacts and canonical specification requirements when available (Markdown or OpenSpec).
 - If PR watch mode is active, keep its target, scheduler/loop ID, last successful check, head revision, event/notification state, and stop conditions separate from lesson progress. A poll or alert does not advance a card, replace a pending manual edit, or complete an exercise.
 
 An illustrative portable snapshot:
