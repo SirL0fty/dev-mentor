@@ -1,6 +1,6 @@
 {
   "name": "dev-mentor",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Ten portable engineering mentoring workflows, including a three-model decision debate.",
   "author": { "name": "Dev Mentor contributors" },
   "license": "MIT",
