@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Coach"
+  short_description: "Build a feature while you write the code"
+  default_prompt: "Use $coach to guide me through this feature one small step at a time."

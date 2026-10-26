@@ -1,72 +1,74 @@
-# Native plugin installation
+# Plugin installation and updates
 
-Dev Mentor packages the same ten skills for Cursor, Claude Code, and Codex. Choose one installation method per assistant: a native plugin or the [skills CLI](../README.md#install). Installing both creates duplicate skill entries.
+The [README installation section](../README.md#install) contains the full setup steps, first prompts, and verification for each assistant:
+
+| Assistant | Detailed guide |
+| --- | --- |
+| ChatGPT desktop / Codex | [Add the GitHub marketplace](../README.md#install-chatgpt) |
+| Cursor | [Import in Customize or use the skills CLI](../README.md#install-cursor) |
+| Claude Code | [Install and use the namespaced plugin](../README.md#install-claude) |
+| OpenCode | [Install the ten Agent Skills](../README.md#install-opencode) |
+| Other assistants | [Select your host in the skills CLI](../README.md#install-other) |
+
+Choose one installation route per assistant to avoid duplicate skill entries. Dev Mentor is distributed from **SirL0fty/dev-mentor** on GitHub; it has not been submitted to the vendors' public directories.
+
+## ChatGPT desktop and Codex
+
+On each machine, follow the [desktop guide](../README.md#install-chatgpt): source `SirL0fty/dev-mentor`, ref `main`, and no sparse paths. Install Dev Mentor from that marketplace. To invoke it, type `@`, select **Dev Mentor**, and say **help**.
 
 ## Cursor
 
-1. Open **Customize** and choose **From GitHub Repository**.
-2. Enter `https://github.com/SirL0fty/dev-mentor`.
-3. Install **Dev Mentor** and start a new Agent chat.
-4. Select **mentor** in the skill picker and say **help**.
-
-This uses the repository's `.cursor-plugin/marketplace.json`. If your version or team policy does not expose repository imports, use the skills CLI from your project:
-
-```sh
-npx skills add SirL0fty/dev-mentor --agent cursor --skill '*'
-```
-
-Teams and Enterprise can also import the repository through **Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo**, then make it available through Customize. See [Cursor repository imports](https://cursor.com/docs/skills#installing-skills-from-a-repository) and [plugin installation](https://cursor.com/docs/plugins).
+Use the [Cursor guide](../README.md#install-cursor). Start a new Agent chat, then ask for Dev Mentor's `mentor` skill or filter the skill picker with `/mentor`.
 
 ## Claude Code
 
-Run in your terminal:
+Use the [Claude Code guide](../README.md#install-claude). Start with `/dev-mentor:mentor help`; `/dev-mentor:` filters the plugin's skills.
 
-```sh
-claude plugin marketplace add SirL0fty/dev-mentor
-claude plugin install dev-mentor@dev-mentor
-```
+## OpenCode
 
-Start a new Claude Code session and enter:
-
-```text
-/dev-mentor:mentor help
-```
-
-You can also add the marketplace from inside a session with `/plugin marketplace add SirL0fty/dev-mentor`, then select Dev Mentor in `/plugin` to install it. See [Claude Code marketplaces](https://code.claude.com/docs/en/plugins/create-marketplace).
-
-## Codex
-
-Open **Plugins** in the desktop app and choose **Add plugin marketplace**. Enter:
-
-| Field | Value |
-| --- | --- |
-| Source | `SirL0fty/dev-mentor` |
-| Git ref | `main` |
-| Sparse paths | Leave blank |
-
-Leave **Sparse paths** empty to fetch the complete plugin package.
-
-Click **Add marketplace**, choose the **Dev Mentor** marketplace, and install **Dev Mentor** by **SirL0fty**. Restart the desktop app if the new source is not visible. Start a new chat with the plugin enabled and ask **“Use mentor. Help me find where to start.”**
-
-Alternatively, add the same marketplace from a terminal, then install it from the plugin browser:
-
-```sh
-codex plugin marketplace add SirL0fty/dev-mentor --ref main
-```
-
-On CLI versions with `codex plugin add`, you can install from the terminal:
-
-```sh
-codex plugin add dev-mentor@dev-mentor
-```
-
-See [OpenAI's plugin guide](https://developers.openai.com/plugins/build/plugins) and [CLI plugin commands](https://learn.chatgpt.com/docs/developer-commands).
+Use the [OpenCode guide](../README.md#install-opencode). Ask OpenCode to load the `mentor` skill from Dev Mentor. This route installs Agent Skills rather than an OpenCode JavaScript extension.
 
 ## Updates
 
-- **Cursor:** refresh the repository marketplace, update Dev Mentor when offered, and start a new chat. Team marketplaces can enable Auto Refresh.
-- **Claude Code:** run `claude plugin marketplace update dev-mentor`, then `claude plugin update dev-mentor@dev-mentor`, and start a new session.
-- **Codex:** run `codex plugin marketplace upgrade dev-mentor`, then use the plugin browser to pick up the update. Restart the desktop app if it still shows the previous version, and start a new chat.
-- **Skills CLI installs:** run `npx skills update` in the project where you installed the skills.
+**ChatGPT desktop / Codex**
 
-Dev Mentor is distributed from its own GitHub marketplace. It has not been submitted to the vendors' public directories. See [compatibility](compatibility.md) for what has actually been checked. Grok Bot and other remote environments need their own setup; local installation does not enable the plugin there automatically.
+Refresh the GitHub marketplace snapshot from a terminal:
+
+```sh
+codex plugin marketplace upgrade dev-mentor
+```
+
+Open Plugins and pick up the Dev Mentor update. Restart the desktop app if it still shows the previous version, then start a new chat. If the CLI is not available, use the marketplace refresh/update controls exposed by your desktop version.
+
+**Cursor**
+
+Refresh the imported repository marketplace in Customize and update Dev Mentor when offered. Team marketplace administrators can use **Refresh** or enable **Auto Refresh**. Start a new Agent chat to use the updated files. See [Cursor's update guide](https://cursor.com/docs/plugins#keep-plugins-up-to-date).
+
+**Claude Code**
+
+```sh
+claude plugin marketplace update dev-mentor
+claude plugin update dev-mentor@dev-mentor
+```
+
+Start a new session or run `/reload-plugins`. See [Claude Code's update guide](https://code.claude.com/docs/en/discover-plugins#keep-plugins-updated).
+
+**OpenCode and other skills CLI installs**
+
+Run from the project where you installed the skills:
+
+```sh
+npx skills update
+```
+
+Start a new assistant session. Keep using the same installation scope and route.
+
+## If Dev Mentor does not appear
+
+- **Another machine:** add the repository marketplace or install the skills there; public-directory search alone will not find this repository-distributed plugin.
+- **Marketplace added, but no skills:** install the plugin from that marketplace, enable it, and start a new chat.
+- **Crowded skill picker:** select the whole Dev Mentor plugin with `@` in ChatGPT/Codex, use `/dev-mentor:mentor` in Claude Code, or request the `mentor` skill by name in other hosts.
+- **Duplicate skills:** check whether you installed both the native plugin and standalone skill copies. Choose the route you want to keep before removing the duplicate.
+- **Remote environment:** local installation does not automatically enable Dev Mentor in Grok Bot, a cloud agent, or a different machine.
+
+See [compatibility](compatibility.md) for checks actually run and host-specific limits. The [OpenAI marketplace guide](https://developers.openai.com/plugins/build/plugins) describes repository sources and desktop installation.

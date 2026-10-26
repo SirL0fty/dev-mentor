@@ -1,9 +1,10 @@
 {
   "name": "dev-mentor",
   "displayName": "Dev Mentor",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Learn to build features in your codebase, one focused step at a time.",
   "author": { "name": "SirL0fty" },
   "license": "MIT",
+  "logo": "assets/dev-mentor.png",
   "skills": "./skills/"
 }

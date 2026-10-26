@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Review"
+  short_description: "Understand a colleague's PR before reviewing"
+  default_prompt: "Use $review to help me understand my colleague's PR."
