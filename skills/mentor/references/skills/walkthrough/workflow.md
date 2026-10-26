@@ -1,6 +1,6 @@
 ---
 name: walkthrough
-description: Provide an interactive guided tour of completed code changes and help the developer explain the implementation to colleagues. Use for requests to walk through what changed or tour a PR; assessing correctness belongs to review.
+description: Provide an interactive guided tour of completed code changes and help the developer explain the implementation to colleagues. Use for requests to walk through what changed or tour a PR; use review to prepare to review a colleague's PR.
 ---
 
 # Walkthrough
@@ -15,4 +15,4 @@ Read explain's [investigation](../explain/references/investigation.md) and [teac
 4. Preserve the map, example, evidence version, and position across `next`, `back`, `map`, questions, and detail changes using the shared navigation rules. Questions are detours, not an instruction to advance.
 5. Explain test coverage, actual run results, and remaining verification gaps. Finish with the shared end-to-end explanation, suitable for a conversation with colleagues.
 
-A walkthrough is read-only unless a bounded change is separately authorised. Mention discoveries accurately and offer a review if warranted, but do not silently expand the tour into a code review, fix code, or post PR feedback. For a saved colleague-review artifact use `share` through the [export mechanism](../../shared/export.md); keep the tour's position.
+A walkthrough is read-only unless a bounded change is separately authorised. Mention discoveries accurately and offer a separate assessment if warranted, but do not silently expand the tour into a code review, fix code, or post PR feedback. Use `review` when the developer wants to prepare to review a colleague's PR. For a saved colleague-review artifact use `share` through the [export mechanism](../../shared/export.md); keep the tour's position.

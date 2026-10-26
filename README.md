@@ -8,7 +8,7 @@ The goal is independence. Start with a demonstration, try the next step with hin
 
 Ten skills for Cursor, Claude Code, Codex, OpenCode, GitHub Copilot, and other skill-capable assistants.
 
-[Help](#help) · [Install](#install) · [Native plugins](docs/plugins.md) · [Get started](#get-started) · [Skills](#skills) · [Compatibility](docs/compatibility.md)
+[Help](#help) · [Install](#install) · [Native plugins](docs/plugins.md) · [Get started](#get-started) · [Watch a PR](#watch-a-pr) · [Skills](#skills) · [Compatibility](docs/compatibility.md)
 
 ## Help
 
@@ -112,6 +112,19 @@ After you edit, say **done**. The mentor inspects your actual change, runs relev
 
 Ask for the full explanation whenever you want it. To continue another day, ask the mentor to save your progress and resume from that checkpoint.
 
+## Watch a PR
+
+```text
+Use mentor. Watch this PR's comments and CI: [PR link].
+Tell me when something needs attention and coach me through fixing it.
+```
+
+The watch checks new comments and CI for the latest commit, stays quiet when nothing needs attention, and explains one issue at a time. You make the changes; the mentor checks your edits and follows the resulting CI run once the fix is pushed.
+
+Watching uses your assistant's available scheduler or a bounded live session. It confirms which is running and when it stops; background monitoring is not available in every host. Watching alone does not post replies, push code, rerun CI, or merge. Say **stop watching** to end it.
+
+This is a mode of **mentor**. Use **review** when you want to understand a colleague's PR so you can review their changes.
+
 ## Skills
 
 Use **mentor** as your starting point, or name a skill directly.
@@ -121,11 +134,11 @@ Use **mentor** as your starting point, or name a skill directly.
 
 | Skill | Reach for it when… |
 | --- | --- |
-| [mentor](skills/mentor/SKILL.md) | You want help getting started or resuming a lesson. |
+| [mentor](skills/mentor/SKILL.md) | You want help getting started, resuming a lesson, or watching a PR's comments and CI. |
 | [explain](skills/explain/SKILL.md) | You want to understand how existing code runs. |
 | [coach](skills/coach/SKILL.md) | You're building a feature and want guidance while you implement it. |
 | [learn](skills/learn/SKILL.md) | You're studying a concept, technology, or certification topic. |
-| [review](skills/review/SKILL.md) | You want feedback on correctness, risks, or maintainability. |
+| [review](skills/review/SKILL.md) | You want to understand a colleague's PR so you can review their changes. |
 | [architect](skills/architect/SKILL.md) | You need to compare approaches and understand the trade-offs. |
 | [devils-advocate](skills/devils-advocate/SKILL.md) | You want three different models to challenge a proposal. |
 | [walkthrough](skills/walkthrough/SKILL.md) | You want a guided tour of completed changes. |
@@ -135,6 +148,14 @@ Use **mentor** as your starting point, or name a skill directly.
 </details>
 
 ### Try these prompts
+
+**Prepare to review a colleague's PR**
+
+```text
+Use review to help me understand my colleague's PR: [PR link].
+Explain what changes at runtime, what I should check, and which questions
+are worth asking the author. One small step at a time.
+```
 
 **Understand the runtime**
 

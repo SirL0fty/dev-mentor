@@ -7,6 +7,7 @@ The host runs these instructions using its existing model, tools, authentication
 | Load another workflow | Native skill invocation, or read the linked Markdown entry and relevant references. Resolve links relative to the file containing them. |
 | Inspect evidence | Available file, search, diff, test-result, and repository tools. Label gaps when files or execution are unavailable. |
 | Track a lesson | Keep its checkpoint in the conversation. Use the session contract for requested save/resume. |
+| Watch PR comments and CI | Use mentor's watch mode with the host's actual scheduler and repository tools, or a bounded live-session loop. Confirm the target and running mechanism before claiming a watch; report unavailable persistence. |
 | Ask a question | The host's question tool or ordinary chat; never invent a tool name. |
 | Delegate | Discover the actual spawn, message/resume, wait, model-selection, and cancellation interfaces. Use supported arguments only. |
 | Export | Use the shared export mechanism and the integrations the current user has connected. |

@@ -29,6 +29,8 @@ These instructions guide behaviour. Read-only enforcement, process cancellation,
 
 Notion exports need the user's own integration. OpenSpec needs the project's own configuration and tooling. Neither is required for basic mentoring. Installation on one machine does not publish files to a cloud or remote workspace. OS-independent file formats do not establish tested Windows/Linux behaviour; packaging checks ran on macOS.
 
+PR watch mode belongs to `mentor`; `review` teaches the developer how to review a colleague's PR. A background watch needs a host scheduler that can access the selected repository and retain event state. Without one, the workflow can run a bounded session watch or provide a single status check, stating the limit. The package does not install a daemon or schedule a watch merely by being installed. Comments and CI must both be readable; a CI-only watcher does not cover review comments. Live scheduled monitoring and notification delivery have not been tested here.
+
 ## Official host references
 
 - [Cursor plugins](https://cursor.com/docs/plugins), [Claude plugin manifests](https://code.claude.com/docs/en/plugins/manifest-reference), and [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins) describe the native formats and marketplaces. The root manifest uses the [Agent Plugins standard](https://agent-plugins.org/); Claude and Cursor manifests retain their host-specific layouts. Native plugin support is not identical across all coding tools.
