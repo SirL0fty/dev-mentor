@@ -1,0 +1,18 @@
+---
+name: walkthrough
+description: Provide an interactive guided tour of completed code changes and help the developer explain the implementation to colleagues. Use for requests to walk through what changed or tour a PR; assessing correctness belongs to review.
+---
+
+# Walkthrough
+
+Examples: “Walk me through what changed.” “Help me explain this implementation to my senior.” “Give me a guided tour of this PR.”
+
+Read explain's [investigation](references/skills/explain/references/investigation.md) and [teaching](references/skills/explain/references/teaching.md), plus the [session contract](references/shared/session.md). They own evidence gathering, teaching, and navigation; do not create a separate teaching framework for this workflow.
+
+1. Establish the intended changeset, resolved comparison base and target, relevant hunk/path scope, and exclusions. Keep unrelated local or branch changes outside the tour. Inspect the actual diff, original/new code, surrounding execution path, and relevant tests at that evidence version.
+2. Orient the developer with the original behaviour, new behaviour, and reason for the change. Label inferred rationale when intent is undocumented. Show the execution-flow map before detailed teaching when it helps, with the current checkpoint and scope exclusions visible.
+3. Order the tour by behaviour and execution flow. Explain differences from implementation order. Use manageable checkpoints with adjustable detail, tracing a realistic input and relevant failures/edge cases. At each point distinguish design intent from what the code actually enforces.
+4. Preserve the map, example, evidence version, and position across `next`, `back`, `map`, questions, and detail changes using the shared navigation rules. Questions are detours, not an instruction to advance.
+5. Explain test coverage, actual run results, and remaining verification gaps. Finish with the shared end-to-end explanation, suitable for a conversation with colleagues.
+
+A walkthrough is read-only unless a bounded change is separately authorised. Mention discoveries accurately and offer a review if warranted, but do not silently expand the tour into a code review, fix code, or post PR feedback. For a saved colleague-review artifact use `share` through the [export mechanism](references/shared/export.md); keep the tour's position.
