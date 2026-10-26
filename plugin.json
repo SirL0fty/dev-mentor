@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dev-mentor",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "description": "Learn to build features in your codebase, one focused step at a time.",
   "author": { "name": "SirL0fty" },
   "homepage": "https://github.com/SirL0fty/dev-mentor#dev-mentor",
@@ -13,7 +13,7 @@
       "interface": {
         "displayName": "Dev Mentor",
         "shortDescription": "Build features you understand",
-        "longDescription": "Ten engineering mentoring workflows for finding where to start, tracing runtime behaviour, planning features, checking manual edits, understanding colleagues' PRs, and explaining completed work. Mentor can watch PR comments and CI when the host provides monitoring tools. Lessons use one focused card at a time. Teaching uses the current assistant and project tools; the three-model debate requires access to three distinct models.",
+        "longDescription": "Ten engineering mentoring workflows for finding where to start, tracing runtime behaviour, planning features, checking manual edits, understanding colleagues' PRs, explaining completed work, and turning agreed plans into portable specifications or OpenSpec changes. Mentor can watch PR comments and CI when the host provides monitoring tools. Lessons use one focused card at a time. Teaching uses the current assistant and project tools; the three-model debate requires access to three distinct models.",
         "developerName": "SirL0fty",
         "category": "Productivity",
         "websiteURL": "https://github.com/SirL0fty/dev-mentor",

@@ -1,58 +1,45 @@
-# OpenSpec integration
+# OpenSpec handoff
 
-This is a version-adaptive conversion workflow. The installed tool and project schema determine filenames, artifact roles, and order. The standard proposal/specs/design/tasks layout is an example, not a required structure.
+When OpenSpec is selected, **invoke the official `openspec-propose` skill** with the existing plan. This reference owns Dev Mentor's handoff and verification, not OpenSpec's artifact-generation procedure. Do not vendor a copy of that skill or substitute a handwritten proposal workflow.
 
-## Discover before generating
+## Discover the installed workflow
 
-Read project instructions, source-plan evidence, current working-tree changes, OpenSpec configuration, existing specifications, active changes, and any local workflow instructions. Resolve the actual OpenSpec root; a project may reference a separate specification store. Do not assume the nearest `openspec/` holds the specifications or change its configuration to suit this workflow. If a resolved destination is outside the selected project scope, establish that it is the intended destination before writing.
+Read project instructions and snapshot the current file state and lesson position. Locate the already installed OpenSpec executable or project-pinned dependency, its version/help, and the official skill or generated propose command available to this host. Do not use a package runner that implicitly downloads a missing CLI.
 
-Locate the already installed executable or project-pinned dependency. Inspect its version and help; do not use a package runner that implicitly downloads missing packages. For versions supporting them, useful probes include:
+Inspect the project's configuration, existing specifications, active changes, selected schema, and any intended specification store using read-only commands supported by that installed version. Establish the actual planning destination and retain its scope throughout the handoff. Do not assume a fixed artifact layout or create an `openspec/` root during discovery. Preserve existing changes and user edits; if there is a matching active change, give that identity to the official workflow and resolve continue-versus-new ambiguity before creating a duplicate.
 
-```sh
-openspec --version
-openspec --help
-openspec list --help
-openspec schemas --help
-openspec status --help
-openspec instructions --help
-openspec templates --help
-openspec validate --help
-```
+## Invoke, carrying the current plan
 
-Use supported read-only commands to list specs/changes and inspect the resolved schema, configuration context/rules, templates, and artifact status. Existing changes may carry their own schema override; preserve it. Reuse an unambiguously matching active change when requested and preserve existing edits. Ask about competing matches rather than creating a duplicate.
+Use the host's skill invocation facility for `openspec-propose`. If the host loads skills by reading their files, read and execute the **installed official skill's instructions** as the selected workflow. An installed official propose command is also a valid delivery of that workflow; discover its actual registered invocation rather than assuming slash syntax is portable. `openspec-propose` is an assistant skill, not a shell command named `openspec propose`.
 
-## Convert using the configured workflow
+Pass one handoff containing:
 
-Record the agreed plan's evidence version, selected change identity, schema, templates, and initial file state. Use the official creation command if supported and a new change is required; inspect its help before invoking it. Read artifact instructions/templates and dependencies before writing each artifact, then refresh status as necessary. A typical version may support `new change`, `status --change`, and `instructions <artifact> --change`; discover exact flags locally. Do not run apply, archive, schema fork, update, or init as part of conversion.
+- The agreed goal, scope/exclusions, acceptance criteria, and existing/proposed behaviour, with realistic success and failure examples.
+- Source-plan location/revision, inspected code and tests, observed results, stale evidence, assumptions, and unresolved decisions. Reuse discovery while allowing the official skill to refresh what it needs.
+- Technical decisions, alternatives and rationale, ordered product implementation/verification steps, and any selected change identity, planning root/store, or schema.
+- The planning-only boundary: exclude exercises and learner progress from requirements; leave new implementation tasks unchecked; preserve unrelated files and baseline specifications.
 
-Map semantics to the schema's actual artifact roles:
+The official skill and installed project schema determine the artifact names, templates, dependencies, and generation steps. Let it map intent to the proposal role, behaviour to requirements/scenarios, technical choices to design, and implementation steps to tasks in that schema. Preserve unresolved decisions; if a material choice blocks generation, surface it instead of selecting behaviour merely to complete the artifacts.
 
-| Plan content | OpenSpec content |
-| --- | --- |
-| Goal, motivation, scope, impact | Proposal or equivalent intent artifact |
-| Acceptance criteria and observable behaviour | Requirements and concrete success/failure scenarios |
-| Technical choices, alternatives, rationale, constraints | Design or equivalent decision artifact |
-| Ordered product implementation and verification steps | Task artifact with unchecked new tasks |
-| Unknowns and unresolved disagreements | Open decisions in the supported location, with affected requirements/tasks identified |
+Do not run apply, implement, archive, sync, or setup workflows as a side effect. If the official skill prompts for a material decision, retain the handoff and lesson position while waiting; do not begin a second planning session.
 
-Requirements describe product behaviour. A lesson checkpoint such as “explain the parser” is not an implementation task; “add validation and verify invalid input” may be. Keep exercise completion and learner progress in lesson state. Link existing requirements for unchanged behaviour. Follow the installed format for added/modified/removed requirements, including required full replacement text where applicable; do not mutate baseline specs to simulate a completed/archived change.
+## Verify after the handoff
 
-For unresolved behaviour, preserve the question and its impact. Produce settled artifacts where possible and mark dependent work blocked/draft. If the schema cannot validate a partial artifact, report that honestly rather than inventing a decision. Existing completed task states are evidence to inspect, not states to reset or infer from generated documents. Never tick new implementation tasks simply because their descriptions exist.
+Read back the artifacts and run the installed change-validation command with supported strict/non-interactive options, checking its help first. Record the actual skill/command invoked, CLI version, change/schema, exact validation command, exit status, and diagnostic summary. A skill's final status or artifact-existence check is not a substitute for validation. If validation is unavailable or fails, report that; preserve the useful artifacts without claiming success.
 
-## Validate and report
-
-Discover and run the installed change-validation command with supported strict/non-interactive options where appropriate. Capture executable version, command, exit status, and diagnostic summary. Inspect artifact status separately: artifact presence is not implementation completion. Read back the generated files and compare the final file state with the initial one. Account for pre-existing changes and verify that production code, baseline specs, unrelated changes, and task completion states were not changed by this conversion.
-
-Report generated/updated paths, schema, source-plan/evidence version, validation actually run, results and gaps, and open decisions. A passing structural check does not prove product correctness or approval. Add requirement/scenario links to lesson/review context without advancing its position; when those documents are saved, label any summaries as snapshots of canonical OpenSpec requirements.
+Compare the final file state with the initial snapshot, accounting for pre-existing edits. Check that production code, baseline specs, unrelated changes, and existing task completion states were not changed. Newly described implementation work stays unchecked. Link the resulting requirements/scenarios from lesson and review context, preserving the current card and pending manual action. A previously exported Markdown spec becomes a labelled source snapshot pointing at the canonical OpenSpec change, not a competing requirements document.
 
 ## Missing or incompatible setup
 
-If no executable, project setup, usable schema, or supported command is available, state exactly what is missing. Explain the options: use an existing project installation/configuration, separately request setup with official tooling, or continue with a labelled Markdown draft. Offer a copy-ready draft; save it outside OpenSpec's active changes only if requested. Do not install, initialise, upgrade, create global configuration, or claim OpenSpec validation happened. Inspect available project templates even if the CLI is unavailable, and report template-only checks distinctly.
+If the official propose skill/command, CLI, project configuration, or usable schema is missing, name the missing piece and stop the OpenSpec handoff. Do not silently emulate `propose`, substitute an older workflow, initialise a project, install/upgrade tooling, or claim the official skill ran.
+
+Offer the relevant next choices: enable the official propose workflow using the installed version's setup guidance; select an existing configured project/store; or create a portable Markdown draft outside active OpenSpec changes. Wait for the user's choice when it changes their requested OpenSpec output. Setup requires a separate request. If the host cannot invoke or load the installed workflow, provide the exact available invocation and a copy-ready handoff; report it as prepared, not executed.
 
 ## Official references
 
-Consult documentation matching the installed version when local help or instructions are insufficient. These sources were checked on 2026-10-26; current upstream documentation may describe features newer than the installed CLI.
+Checked 2026-10-26. Prefer the installed skill and version-specific help over newer upstream instructions.
 
-- [OpenSpec CLI reference](https://openspec.dev/docs/cli)
-- [OpenSpec customization overview](https://openspec.dev/docs/customize)
-- [Official source and version history](https://github.com/Fission-AI/OpenSpec)
+- [Official openspec-propose skill](https://github.com/Fission-AI/OpenSpec/blob/main/skills/openspec-propose/SKILL.md)
+- [Supported tools and invocation forms](https://github.com/Fission-AI/OpenSpec/blob/main/docs/supported-tools.md)
+- [CLI reference](https://openspec.dev/docs/cli)
+- [Schema customization](https://openspec.dev/docs/customize)

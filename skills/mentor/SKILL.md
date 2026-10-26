@@ -24,7 +24,7 @@ Choose the narrowest workflow from this catalogue and read that installed skill 
 | [devils-advocate](references/skills/devils-advocate/workflow.md) | Independent challenges to an existing proposal. |
 | [walkthrough](references/skills/walkthrough/workflow.md) | Guided tour of completed changes. |
 | [share](references/skills/share/workflow.md) | Preparing/saving a plan or lesson for colleague review. |
-| [spec](references/skills/spec/workflow.md) | Requested conversion of an agreed feature plan to OpenSpec. |
+| [spec](references/skills/spec/workflow.md) | Convert a plan to a portable feature spec or requested format; choosing OpenSpec invokes its official propose skill. |
 
 A question about a lesson stays in that lesson. A tour is not automatically a review. Understanding a colleague's PR routes to `review`; validating the developer's own manual work stays in `coach`. A watch alert does not silently switch or advance an active lesson. `share` and `spec` preserve the active lesson position. Read the [export mechanism](references/shared/export.md) only when exporting a lesson. If the host does not expose a selected skill, read its linked instructions above. If neither is available, report that and provide bounded help without claiming its workflow ran.
 

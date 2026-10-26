@@ -1,4 +1,4 @@
 interface:
   display_name: "Dev Mentor: Spec"
-  short_description: "Turn an agreed feature plan into OpenSpec"
-  default_prompt: "Use $spec to turn this agreed feature plan into an OpenSpec change."
+  short_description: "Turn a feature plan into a spec in your chosen format"
+  default_prompt: "Use $spec to turn our agreed feature plan into a portable specification."

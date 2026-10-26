@@ -4,7 +4,7 @@ Produce a self-contained document a colleague can assess without the chat. Adapt
 
 - **Review request:** feature/lesson title, goal, scope/exclusions, acceptance criteria, and concrete questions about decisions that need assessment. Prefer specific choices or risks over “Any thoughts?”.
 - **Evidence and status:** source plan/revision, repository, resolved base/head or dirty diff digest, inspected source/test links, preparation date and freshness limits. Mark each checkpoint proposed, implemented, or verified using evidence; keep explanation progress separate. State when existing behaviour is unknown.
-- **Behaviour:** existing capability, proposed change, concrete input/output and failure examples, compatibility constraints, and relevant OpenSpec requirement/scenario links if adopted.
+- **Behaviour:** existing capability, proposed change, concrete input/output and failure examples, compatibility constraints, and canonical specification requirement/scenario links when available (Markdown or OpenSpec).
 - **Design:** alternatives considered, rationale, trade-offs, assumptions, unresolved decisions, and disagreements. Label recommendations as proposals. Do not manufacture alternatives or settled decisions that were never investigated; identify those gaps.
 - **Implementation checkpoints:** purpose, affected files/components, proposed steps, dependencies/order, and observable completion criteria. Include the execution map when useful and explain any difference between runtime and implementation order.
 - **Verification:** checks already run with results/revision, assertions merely inspected, planned checks and expected observations, and remaining gaps. A document creation check is not product verification.
