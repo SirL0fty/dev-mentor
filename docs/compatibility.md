@@ -1,12 +1,12 @@
 # Host compatibility
 
-Checked against the linked documentation on 2026-10-26. The shared delivery format is Agent Skills, installed by the standard skills CLI. Plugin manifests offer an additional native route for Cursor and Claude Code. These are packaging options; execution capabilities come from the current assistant.
+Checked against the linked documentation on 2026-10-26. The shared delivery format is Agent Skills, installed by the standard skills CLI. [Native plugin installation](plugins.md) is also packaged for Cursor, Claude Code, and Codex. One root `skills/` directory serves every route; execution capabilities come from the current assistant.
 
 | Assistant or editor | Installation target / entry | Status |
 | --- | --- | --- |
-| Cursor | CLI `--agent cursor`, then select/request `mentor`; native `.cursor-plugin/plugin.json` also supplied | CLI installation checked in a temporary project; Cursor UI/plugin loading untested |
-| Claude Code | CLI `--agent claude-code`, then `/mentor`; native plugin uses `/dev-mentor:mentor` | CLI installation checked; Claude plugin loading and conversation untested |
-| Codex | CLI `--agent codex`, then select `mentor` or `$mentor` where supported | CLI installation checked; live lesson untested |
+| Cursor | CLI `--agent cursor`, or native repository import using `.cursor-plugin/marketplace.json`; select/request `mentor` | CLI skills installation and official template validation passed; Cursor UI/plugin loading untested |
+| Claude Code | CLI `--agent claude-code`, or native marketplace using `.claude-plugin/marketplace.json`; plugin entry is `/dev-mentor:mentor` | CLI skills installation and strict manifest/catalogue validation passed; native installation and conversation untested |
+| Codex | CLI `--agent codex`, or native marketplace using `.agents/plugins/marketplace.json` and root `plugin.json` | CLI skills installation, portable schema validation, and native catalogue discovery passed; native installation and live lesson untested |
 | OpenCode | CLI `--agent opencode`, then request the `mentor` skill | Standard skills path; native skill discovery checked with OpenCode 1.19.4 |
 | OpenChamber | Choose the active provider's CLI target; `opencode` for an OpenCode-backed session | Provider-dependent; UI untested |
 | T3 Code | Choose its active provider, such as `codex`, `claude-code`, or `opencode`, then its skill picker | Provider-dependent; source/docs inspected, UI untested |
@@ -16,6 +16,8 @@ Checked against the linked documentation on 2026-10-26. The shared delivery form
 | File-reading assistants | Read the extracted `skills/mentor/SKILL.md` and its references | Manual activation; requires accessible files and instruction following |
 
 The [skills CLI agent list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) owns target names and installation paths. Use the installed CLI's help when versions differ. Do not install both native plugin and standalone copies in the same host unless you deliberately want duplicate entries. Namespace and skill-picker behaviour differ by host.
+
+Native metadata checks used Claude Code 2.1.310, Codex CLI 0.164.0-alpha.11.1, the published Agent Plugins 1.0.0 JSON Schema, and Cursor's official template validator. Codex discovery used a command-scoped local marketplace configuration without changing personal settings. Cursor's validator reports optional missing hooks/MCP files; this skills-only plugin intentionally has neither. These checks do not establish successful GUI installation or vendor-directory approval.
 
 ## Runtime capabilities
 
@@ -29,7 +31,7 @@ Notion exports need the user's own integration. OpenSpec needs the project's own
 
 ## Official host references
 
-- [Cursor plugin formats](https://cursor.com/docs/reference/plugins) and [Claude plugin manifests](https://code.claude.com/docs/en/plugins-reference) describe the two optional manifests. Native plugin support is not identical across all coding tools.
+- [Cursor plugins](https://cursor.com/docs/plugins), [Claude plugin manifests](https://code.claude.com/docs/en/plugins/manifest-reference), and [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins) describe the native formats and marketplaces. The root manifest uses the [Agent Plugins standard](https://agent-plugins.org/); Claude and Cursor manifests retain their host-specific layouts. Native plugin support is not identical across all coding tools.
 - [Codex skills](https://learn.chatgpt.com/docs/build-skills) and [OpenCode skills](https://opencode.ai/docs/skills/) describe their loaders.
 - [OpenChamber providers](https://docs.openchamber.dev/providers/) and [T3 Code composer](https://github.com/pingdotgg/t3code/blob/main/docs/user/composer.md) describe provider selection and skill entry points.
 - [VS Code skills](https://code.visualstudio.com/docs/agent-customization/agent-skills) apply to compatible chat assistants, not every VS Code extension.

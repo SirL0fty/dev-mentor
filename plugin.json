@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dev-mentor",
+  "version": "0.5.0",
+  "description": "Learn to build features in your codebase, one focused step at a time.",
+  "author": { "name": "Dev Mentor contributors" },
+  "homepage": "https://github.com/SirL0fty/dev-mentor#dev-mentor",
+  "repository": "https://github.com/SirL0fty/dev-mentor",
+  "license": "MIT",
+  "keywords": ["mentoring", "learning", "code-walkthrough", "engineering"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Dev Mentor",
+        "shortDescription": "Build features you understand",
+        "longDescription": "Ten engineering mentoring workflows for finding where to start, tracing runtime behaviour, planning features, checking manual edits, and explaining completed work. Lessons use one focused card at a time. Teaching uses the current assistant and project tools; the three-model debate requires access to three distinct models.",
+        "developerName": "Dev Mentor contributors",
+        "category": "Productivity",
+        "websiteURL": "https://github.com/SirL0fty/dev-mentor",
+        "defaultPrompt": [
+          "Use mentor: help me find where to start in this codebase.",
+          "Help me build this feature one small step at a time. I'll write the code.",
+          "Walk me through this completed change and help me explain it to a colleague."
+        ]
+      }
+    }
+  }
+}

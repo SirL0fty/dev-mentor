@@ -1,0 +1,12 @@
+{
+  "name": "dev-mentor",
+  "description": "Dev Mentor's ten focused engineering mentoring workflows.",
+  "owner": { "name": "SirL0fty" },
+  "plugins": [
+    {
+      "name": "dev-mentor",
+      "source": "./",
+      "description": "Learn to build features in your codebase, one focused step at a time."
+    }
+  ]
+}
