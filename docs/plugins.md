@@ -36,13 +36,23 @@ You can also add the marketplace from inside a session with `/plugin marketplace
 
 ## Codex
 
-Add the repository marketplace:
+Open **Plugins** in the desktop app and choose **Add plugin marketplace**. Enter:
+
+| Field | Value |
+| --- | --- |
+| Source | `SirL0fty/dev-mentor` |
+| Git ref | `main` |
+| Sparse paths | Leave blank |
+
+Leave **Sparse paths** empty to fetch the complete plugin package.
+
+Click **Add marketplace**, choose the **Dev Mentor** marketplace, and install **Dev Mentor** by **SirL0fty**. Restart the desktop app if the new source is not visible. Start a new chat with the plugin enabled and ask **“Use mentor. Help me find where to start.”**
+
+Alternatively, add the same marketplace from a terminal, then install it from the plugin browser:
 
 ```sh
-codex plugin marketplace add SirL0fty/dev-mentor
+codex plugin marketplace add SirL0fty/dev-mentor --ref main
 ```
-
-Open the plugin browser, choose the **Dev Mentor** marketplace, and install **Dev Mentor**. Restart the desktop app if the new source is not visible, then start a new chat with the plugin enabled and ask **“Use mentor. Help me find where to start.”**
 
 On CLI versions with `codex plugin add`, you can install from the terminal:
 
@@ -50,13 +60,13 @@ On CLI versions with `codex plugin add`, you can install from the terminal:
 codex plugin add dev-mentor@dev-mentor
 ```
 
-The portable root `plugin.json` supplies the skills and OpenAI display metadata. `.agents/plugins/marketplace.json` supplies the repository catalogue. See [OpenAI's plugin packaging guide](https://developers.openai.com/plugins/build/plugins) and [CLI plugin commands](https://learn.chatgpt.com/docs/developer-commands).
+See [OpenAI's plugin guide](https://developers.openai.com/plugins/build/plugins) and [CLI plugin commands](https://learn.chatgpt.com/docs/developer-commands).
 
 ## Updates
 
 - **Cursor:** refresh the repository marketplace, update Dev Mentor when offered, and start a new chat. Team marketplaces can enable Auto Refresh.
 - **Claude Code:** run `claude plugin marketplace update dev-mentor`, then `claude plugin update dev-mentor@dev-mentor`, and start a new session.
-- **Codex:** run `codex plugin marketplace upgrade dev-mentor`, then use the plugin browser to pick up the update and start a new chat.
+- **Codex:** run `codex plugin marketplace upgrade dev-mentor`, then use the plugin browser to pick up the update. Restart the desktop app if it still shows the previous version, and start a new chat.
 - **Skills CLI installs:** run `npx skills update` in the project where you installed the skills.
 
 Dev Mentor is distributed from its own GitHub marketplace. It has not been submitted to the vendors' public directories. See [compatibility](compatibility.md) for what has actually been checked. Grok Bot and other remote environments need their own setup; local installation does not enable the plugin there automatically.

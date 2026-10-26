@@ -45,8 +45,28 @@ For T3 Code or OpenChamber, choose the provider you use inside the app. For VS C
 
 </details>
 
+### Codex desktop
+
+Open **Plugins** and choose **Add plugin marketplace**. Fill in:
+
+| Field | Value |
+| --- | --- |
+| Source | `SirL0fty/dev-mentor` |
+| Git ref | `main` |
+| Sparse paths | Leave blank |
+
+Click **Add marketplace**, select the **Dev Mentor** marketplace, then install **Dev Mentor** by **SirL0fty**. If the new marketplace is not visible, restart the app and reopen Plugins.
+
+Start a new chat with the plugin enabled and ask:
+
+```text
+Use mentor. Help me find where to start in this codebase.
+```
+
+Choose the native plugin or standalone skills for each assistant to avoid duplicate entries. [Full plugin installation and updates](docs/plugins.md) · [OpenAI plugin guide](https://developers.openai.com/plugins/build/plugins).
+
 <details>
-<summary>Install as a native plugin in Cursor, Claude Code, or Codex</summary>
+<summary>Native plugins for Cursor and Claude Code</summary>
 
 **Cursor:** Open **Customize → From GitHub Repository**, enter `https://github.com/SirL0fty/dev-mentor`, and install **Dev Mentor**.
 
@@ -58,16 +78,6 @@ claude plugin install dev-mentor@dev-mentor
 ```
 
 Start a new session and use `/dev-mentor:mentor help`.
-
-**Codex:**
-
-```sh
-codex plugin marketplace add SirL0fty/dev-mentor
-```
-
-Open the plugin browser, choose the **Dev Mentor** marketplace, and install **Dev Mentor**. Start a new chat and ask **“Use mentor. Help me find where to start.”**
-
-Choose the native plugin or standalone skills for each assistant to avoid duplicate entries. [Full plugin installation and updates](docs/plugins.md).
 
 </details>
 
