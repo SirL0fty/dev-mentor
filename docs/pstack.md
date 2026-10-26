@@ -17,3 +17,9 @@ Adapt to available capabilities rather than copying Cursor tool names into every
 Devil's advocate first collects three independent assessments, then exchanges objections and evidence, revises a candidate decision, and requests three explicit approvals of its exact version and rationale. Disagreement is retained until resolved. A timeout or execution limit leaves the debate incomplete, with a resumable record. A ratified decision remains a recommendation until the developer authorises implementation.
 
 This package uses its own instruction text and does not vendor pstack's skills. The comparison describes inspected upstream behaviour, not an endorsement or a claim that every host supports identical capabilities.
+
+## PR monitoring
+
+Pstack's [Babysit playbook](https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/babysit.md) uses a GitHub-specific `watch-pr` tool, checks review threads and CI, and distinguishes a single status check from a continuing loop. Its broader workflow can drive fixes toward merge readiness; merging is a separate workflow.
+
+Dev Mentor keeps a separate watch mode under `mentor`, using available host scheduling and repository tools. It alerts on actionable changes and coaches the developer through their own fixes. `review` instead prepares the developer to understand and review a colleague's PR. No pstack watcher code is bundled, and native background execution is not assumed across hosts.

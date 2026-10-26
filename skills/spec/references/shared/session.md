@@ -11,6 +11,7 @@ Track:
 - A pending manual action: its card, intended behaviour, baseline/scope, completion criteria, and appropriate check. “Done” or “next” while it is pending triggers the active workflow's inspection/verification loop, not automatic advancement.
 - Learning evidence where useful: decisions demonstrated, attempted with hints, or made independently, plus the current level of support. Keep this separate from code/test status; it is not a mastery score.
 - Assumptions, unresolved questions, decisions, and disagreements; links to review artifacts and optional OpenSpec requirements.
+- If PR watch mode is active, keep its target, scheduler/loop ID, last successful check, head revision, event/notification state, and stop conditions separate from lesson progress. A poll or alert does not advance a card, replace a pending manual edit, or complete an exercise.
 
 An illustrative portable snapshot:
 
@@ -38,6 +39,8 @@ next_action: Trace a retryable failure
 ```
 
 Use real observations instead of these illustrative values. Keep global preferences free of project material. Save project context only within the selected project or an explicitly selected destination. Do not promise persistence across chats or hosts unless verified. On resume, compare evidence versions before relying on saved code claims; reconcile changed scope without silently resetting progress.
+
+A requested PR watch may retain the minimal operational state needed to compare polls and resume the confirmed watch. It does not enable general lesson autosaving. Status questions and `help` preserve both the lesson and watch; an explicit stop ends the watch and cancels its scheduler/loop as supported.
 
 ## Navigation and temporary workflows
 
