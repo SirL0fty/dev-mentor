@@ -8,7 +8,21 @@ The goal is independence. Start with a demonstration, try the next step with hin
 
 Ten skills for Cursor, Claude Code, Codex, OpenCode, GitHub Copilot, and other skill-capable assistants.
 
-[Install](#install) · [Native plugins](docs/plugins.md) · [Get started](#get-started) · [Skills](#skills) · [Compatibility](docs/compatibility.md)
+[Help](#help) · [Install](#install) · [Native plugins](docs/plugins.md) · [Get started](#get-started) · [Skills](#skills) · [Compatibility](docs/compatibility.md)
+
+## Help
+
+**Not sure where to start or what to ask?** After [installing](#install), open your project and ask:
+
+```text
+Use mentor. Help me find something to work on in this codebase.
+```
+
+Or select **mentor** in your assistant's skill picker and type **help**.
+
+The mentor inspects your code and offers **up to three concrete prompts** tied to real files, functions, or tests, with a recommended starting point. Pick a number or paste a prompt to begin.
+
+Already in a lesson? Say **help** for a focused hint without losing your place. Ask **“What else could I work on?”** for other ideas, or **“Help commands”** to see the controls.
 
 ## Install
 
@@ -58,15 +72,6 @@ Choose the native plugin or standalone skills for each assistant to avoid duplic
 </details>
 
 ## Get started
-
-Not sure what to work on? Select **mentor** in your assistant's skill picker and say **help**, or ask:
-
-```text
-Use mentor to look at this codebase and suggest where I should start.
-Give me a few concrete examples of what I can ask about the actual code.
-```
-
-You'll get one small card with up to three suggested prompts tied to real files, functions, or tests, with a recommended starting point. Pick a number or paste a prompt to begin. During a lesson, **help** gives you a hint for the current step and keeps your place.
 
 Already have a feature in mind? Ask:
 
