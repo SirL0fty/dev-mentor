@@ -1,51 +1,138 @@
-# Start with Dev Mentor
+# Dev Mentor
 
-Dev Mentor is a pack of ten skills for the coding assistant you already use. Your current model teaches and coordinates any supported subagents. There is no separate Dev Mentor application or agent to start.
+**Build features you understand. Learn where to start next time.**
 
-## Install the pack
+Dev Mentor helps you work through a feature in your own codebase: find the entry point, follow the runtime, choose a small change, and check the result. You write the code while your assistant guides you through the decisions.
 
-From a terminal in your working project, run:
+The goal is independence. Start with a demonstration, try the next step with hints, then tackle a similar problem yourself.
+
+Ten skills for Cursor, Claude Code, Codex, OpenCode, GitHub Copilot, and other skill-capable assistants.
+
+[Install](#install) · [Get started](#get-started) · [Skills](#skills) · [Compatibility](docs/compatibility.md)
+
+## Install
+
+Run from your project:
 
 ```sh
 npx skills add SirL0fty/dev-mentor
 ```
 
-Choose the skills and assistants in the CLI; installation is project-scoped by default. It downloads the skills from the [public repository](https://github.com/SirL0fty/dev-mentor). Node.js 22.20+ with npm is required. Python is not required. The CLI may download its npm package on first use. [Official installation reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
+Choose your assistant and the skills to install. Requires Node.js 22.20+ and a configured coding assistant.
 
-For example, to select all ten skills and the three named hosts explicitly:
-
-```sh
-npx skills add SirL0fty/dev-mentor --skill '*' --agent cursor claude-code codex --copy
-```
-
-Review the proposed destinations and existing-name conflicts before confirming. These ten names are intentionally simple; an existing `review` or `mentor` skill may already occupy a destination. Do not overwrite an unrelated skill. Choose a project without that conflict or use the native plugin route with its namespaced invocation where supported.
-
-Refresh/restart the assistant session if needed. Select `mentor` from its skill picker, or say:
-
-> Use mentor to help me understand and implement this ticket. Explain the existing behaviour and guide me through the first checkpoint.
-
-Expect one small card at a time. The mentor shows how to find a starting point and trace the runtime, then gradually lets you make those decisions with hints. After you edit manually, say “done” or “next”; it checks the actual change and gives focused feedback before moving on. Ask “why”, “example”, or “smaller” without losing your place. You can request the full explanation whenever you want.
-
-For a tour, say “Use walkthrough to walk me through this PR.” For a debate, say “Use devils-advocate to stress-test this plan with three different models.” Ordinary teaching uses your current model. Debate requires three selectable models and only completes after all three agree on the same decision and reasons. Missing access or unresolved disagreement remains explicit.
-
-## Other ways to use the same files
-
-GitHub hosting is sufficient for the install command above. A [Skills Pack](https://www.skills.sh/docs/packs) is an optional alternate distribution; no Skills Pack ID has been created for this release. If you receive a ZIP instead, extract it and use `npx skills add /path/to/dev-mentor-pack`.
-
-For Claude Code, a repository clone or extracted pack is also a plugin. Load that folder for a local session with:
+<details>
+<summary>Choose your assistants explicitly</summary>
 
 ```sh
-claude --plugin-dir /path/to/dev-mentor-pack
+npx skills add SirL0fty/dev-mentor --skill '*' --agent cursor claude-code codex
 ```
 
-Then invoke `/dev-mentor:mentor`. Cursor's plugin metadata points to the same skills; use its supported plugin import/distribution flow when available, or the `npx` route above. Installing skills does not also register a native plugin. See [host compatibility](docs/compatibility.md).
+For T3 Code or OpenChamber, choose the provider you use inside the app. For VS Code, choose your assistant extension. See [compatibility](docs/compatibility.md) for details.
 
-With a file-reading assistant that has no skills loader, ask it to read `skills/mentor/SKILL.md` in a repository clone or extracted folder and follow the relevant links. It needs access to the folder and project evidence. This fallback does not add tools or model access.
+</details>
 
-Install in the workspace used by the assistant, including remote/container workspaces. T3 Code uses its selected provider's skills; OpenChamber uses its active provider. For VS Code, select the coding assistant extension you use, such as GitHub Copilot or Codex. See the compatibility guide for provider-specific details.
+## Get started
 
-## Update, remove, and resume
+Select **mentor** in your assistant's skill picker, or ask:
 
-Use `npx skills update` to fetch updates from the repository. For a ZIP/local-folder release, extract the newer release and rerun `npx skills add` with its new path. Use `npx skills list` to inspect installation and `npx skills remove` to choose only the Dev Mentor skills you want removed. [CLI documentation](https://www.skills.sh/docs/cli).
+```text
+Use mentor to help me add pagination to this search endpoint.
+I don't know where to start, and I want to make the changes myself.
+```
 
-Request saving when you want portable lesson state. The default project locations `.dev-mentor/preferences.md` and `.dev-mentor/state/` are separate from installed skills. A new chat can read a saved checkpoint and recheck the code revision; automatic memory across hosts is not assumed. Your assistant's usual permissions, usage costs, and connected services still apply. No notifications, invitations, or messages are sent by installing or exporting the skills.
+`mentor` chooses the workflow and keeps your place as you work. Start with your ticket, a question, or a change you want to understand.
+
+A feature lesson follows this path:
+
+```text
+Find the entry point → Trace the runtime → Make a small change → Verify it
+```
+
+You learn why each step comes next, how to find the relevant code, and what evidence shows the change works.
+
+## One step at a time
+
+Lessons arrive as small cards: one idea or action, a short reason, and a next step. For example:
+
+> **Find the entry point**
+>
+> Start with the endpoint path in your ticket. Its route registration tells you which handler receives the request.
+>
+> **Your next step:** Find that registration and share the handler it points to.
+
+After you edit, say **done**. The mentor inspects your actual change, runs relevant checks when available, and gives focused feedback. A missing piece stays in focus before you move on.
+
+| Say | What happens |
+| --- | --- |
+| `next` / `back` | Move one card. A pending edit is checked before advancing. |
+| `why` / `example` | Explore the current point without losing your place. |
+| `smaller` / `more detail` | Adjust the size or depth of the current explanation. |
+| `map` | See the flow and where you are in it. |
+
+Ask for the full explanation whenever you want it. To continue another day, ask the mentor to save your progress and resume from that checkpoint.
+
+## Skills
+
+Use **mentor** as your starting point, or name a skill directly.
+
+<details>
+<summary>Explore all ten skills</summary>
+
+| Skill | Reach for it when… |
+| --- | --- |
+| [mentor](skills/mentor/SKILL.md) | You want help getting started or resuming a lesson. |
+| [explain](skills/explain/SKILL.md) | You want to understand how existing code runs. |
+| [coach](skills/coach/SKILL.md) | You're building a feature and want guidance while you implement it. |
+| [learn](skills/learn/SKILL.md) | You're studying a concept, technology, or certification topic. |
+| [review](skills/review/SKILL.md) | You want feedback on correctness, risks, or maintainability. |
+| [architect](skills/architect/SKILL.md) | You need to compare approaches and understand the trade-offs. |
+| [devils-advocate](skills/devils-advocate/SKILL.md) | You want three different models to challenge a proposal. |
+| [walkthrough](skills/walkthrough/SKILL.md) | You want a guided tour of completed changes. |
+| [share](skills/share/SKILL.md) | You want a plan or lesson prepared for a colleague's review. |
+| [spec](skills/spec/SKILL.md) | You want an agreed feature plan converted into an OpenSpec change. |
+
+</details>
+
+### Try these prompts
+
+**Understand the runtime**
+
+```text
+Use explain to trace a request from this API handler to the database
+and back. Follow one example input, one step at a time.
+```
+
+**Explain your work to a colleague**
+
+```text
+Use walkthrough to guide me through this PR.
+Help me explain what changed, why, and how it's tested.
+```
+
+**Get a plan ready for review**
+
+```text
+Use share to prepare our current plan for my senior.
+Include the open decisions and specific questions for them.
+```
+
+### Challenge a decision with three models
+
+```text
+Use devils-advocate to challenge this design with three different models.
+Work toward an agreed decision and explain the reasons behind it.
+```
+
+The models assess the same evidence independently, challenge each other's conclusions, and ratify the same decision and rationale. The result includes rejected alternatives, accepted trade-offs, and remaining checks.
+
+Your assistant needs access to three distinct models. If a participant is unavailable or the debate remains unresolved, that stays explicit. Agreement is a recommendation; you decide whether to implement it.
+
+## Update
+
+```sh
+npx skills update
+```
+
+## License
+
+[MIT](https://github.com/SirL0fty/dev-mentor/blob/main/LICENSE).
