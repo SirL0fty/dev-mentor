@@ -1,11 +1,13 @@
 ---
 name: mentor
-description: Route an engineering mentoring request, personalise teaching, or resume a lesson while preserving progress. Use when the developer wants guidance and has not selected a more specific workflow.
+description: Route an engineering mentoring request, suggest where to start in the current codebase, or resume a lesson while preserving progress. Use for mentor help, requests for ideas about what to work on, or guidance without a selected workflow.
 ---
 
 # Mentor
 
 Use [mentoring mode](references/shared/mentoring.md) in this conversation and read the [session contract](references/shared/session.md). Identify the developer's goal and existing context; provide value before asking optional preference questions. Use sensible defaults for depth, checkpoint size, diagrams, questioning, and optional understanding checks. Remember a preferred nickname or export destination only in the appropriate scope.
+
+For `help`, “what can I ask here?”, or “what should I work on?”, use [codebase-aware help](references/shared/help.md). Offer concrete prompts grounded in this project, or a focused hint for the current lesson. Keep help within this workflow; it is not an eleventh skill or a host-wide command.
 
 Choose the narrowest workflow from this catalogue and read that installed skill when available:
 

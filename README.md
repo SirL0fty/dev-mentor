@@ -33,7 +33,16 @@ For T3 Code or OpenChamber, choose the provider you use inside the app. For VS C
 
 ## Get started
 
-Select **mentor** in your assistant's skill picker, or ask:
+Not sure what to work on? Select **mentor** in your assistant's skill picker and say **help**, or ask:
+
+```text
+Use mentor to look at this codebase and suggest where I should start.
+Give me a few concrete examples of what I can ask about the actual code.
+```
+
+You'll get one small card with up to three suggested prompts tied to real files, functions, or tests, with a recommended starting point. Pick a number or paste a prompt to begin. During a lesson, **help** gives you a hint for the current step and keeps your place.
+
+Already have a feature in mind? Ask:
 
 ```text
 Use mentor to help me add pagination to this search endpoint.
@@ -64,6 +73,7 @@ After you edit, say **done**. The mentor inspects your actual change, runs relev
 
 | Say | What happens |
 | --- | --- |
+| `help` | Get a hint for the current step, or codebase-specific starting ideas when no task is selected. |
 | `next` / `back` | Move one card. A pending edit is checked before advancing. |
 | `why` / `example` | Explore the current point without losing your place. |
 | `smaller` / `more detail` | Adjust the size or depth of the current explanation. |
