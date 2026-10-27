@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.17.0
+
+### Minor Changes
+
+- [`b978c00`](https://github.com/SirL0fty/dev-mentor/commit/b978c00b9ea30b5f169b5b5fbf285b09ee0c015e) Thanks [@SirL0fty](https://github.com/SirL0fty)! - Move the shared settings and ground rules into one new skill, `mentor-style`. Every other skill now loads it instead of carrying its own copy, so the instructions are about 60% shorter and each rule lives in one place.
+
+### Patch Changes
+
+- [`80bb55f`](https://github.com/SirL0fty/dev-mentor/commit/80bb55f5741068a19afd8a610043ae252cdec55e) Thanks [@SirL0fty](https://github.com/SirL0fty)! - Add a repo check (skill headers, versions, links, README skill list) that runs on every push, and automatic versioning and GitHub releases through changesets.
+
+- [`e993235`](https://github.com/SirL0fty/dev-mentor/commit/e99323504097cd3f8806673432d0e10a1543b73f) Thanks [@SirL0fty](https://github.com/SirL0fty)! - Replace the evals folder with a short guide per skill in `docs/skills/` (what it does, when to reach for it, and an "It's working if" list), and drop the out-of-date "Tested" column from the compatibility doc.
+
 ## 0.16.1
 
 - README and skill descriptions brought up to date: build modes, Output and Export settings, saved lessons, export to Notion and Obsidian, a "Things you can say" reference, and the updated flow diagram.
