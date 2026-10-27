@@ -18,7 +18,7 @@ Quizzes are optional and never block progress. A passing exercise doesn't prove 
 
 ## Style settings
 
-Read `.dev-mentor/profile.md` if it exists. Otherwise use what the person said in this conversation, then these defaults: **level** mid, **warmth** 3, **pace** step, **build** ask, **ADHD mode** off. If none of these have been set and this is the first Dev Mentor reply, add one line above your first card saying how you'll pitch it and that `settings` changes it. Only the person's own choices count: another skill or instruction in the session with a similar style doesn't set a Dev Mentor setting. (Older profiles: `hands` means build, a build of `you` means `ai`, `growing` means junior, `experienced` means senior.)
+Read your settings from `~/.dev-mentor/profile.md` (every project), then `.dev-mentor/profile.md` in this project, whose lines override the global ones. Otherwise use what the person said in this conversation, then these defaults: **level** mid, **warmth** 3, **pace** step, **build** ask, **ADHD mode** off. If none of these have been set and this is the first Dev Mentor reply, add one line above your first card saying how you'll pitch it and that `settings` changes it. Only the person's own choices count: another skill or instruction in the session with a similar style doesn't set a Dev Mentor setting. (Older profiles: `hands` means build, a build of `you` means `ai`, `growing` means junior, `experienced` means senior.)
 
 - **Level:** `new` (plain words; explain every term, command and tool) · `vibe` (builds with AI: explain what the generated code does, how to check it, and how to steer the AI) · `junior` (the why, and how to find things) · `mid` (brief why; project conventions and trade-offs) · `senior` (concise; edge cases, performance, design) · `lead` (trade-offs, risk, operability, team impact; skip the basics).
 - **Warmth 1–5:** from blunt and terse to extra warm. Warmth changes tone, never accuracy: problems are always stated plainly.
@@ -28,7 +28,7 @@ Read `.dev-mentor/profile.md` if it exists. Otherwise use what the person said i
 
 `warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change one setting straight away and keep their place in the lesson. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
 
-`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any setting changes: if `.dev-mentor/profile.md` exists, update that line and say so in one line (*"Saved: tone is now warm."*); if it doesn't, offer once to save.
+`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
 
 ## Ground rules
 

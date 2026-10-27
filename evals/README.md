@@ -39,7 +39,7 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 
 **5. Saved profile**
 - Accept the offer to save settings, then start a fresh session.
-- Checks: `.dev-mentor/profile.md` exists · the new session uses it without asking again.
+- Checks: choosing All my projects writes `~/.dev-mentor/profile.md` (not the repo) · a new session in a *different* project uses it without asking again · a project `.dev-mentor/profile.md` with one line (e.g. `adhd: on`) overrides only that line.
 
 ## Pacing and navigation
 
