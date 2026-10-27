@@ -131,4 +131,6 @@ As you go, say **done**, **next**, **back**, **why**, **example**, **help** or *
 
 Found a skill doing the wrong thing? [Open an issue](https://github.com/SirL0fty/dev-mentor/issues/new?template=skill-misbehaved.md) with the transcript. Want to change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [behaviour checks](evals/README.md).
 
+Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack).
+
 [MIT licence](LICENSE) · By [SirL0fty](https://github.com/SirL0fty)
