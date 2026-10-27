@@ -39,7 +39,7 @@ Mentor:  **Works ✓**
 
 ## Make it yours
 
-On first use, `mentor` asks three quick questions (or you just say `defaults`). You can change any setting mid-lesson by saying so.
+On first use, `mentor` asks four quick questions (or you just say `defaults`). You can change any setting mid-lesson by saying so.
 
 | Setting | Options | Say |
 | --- | --- | --- |
@@ -47,7 +47,10 @@ On first use, `mentor` asks three quick questions (or you just say `defaults`). 
 | **Warmth** | 1 blunt · 2 direct · 3 balanced · 4 warm · 5 extra warm | `warmer`, `more direct` |
 | **Pace** | one step at a time · a few steps · everything at once | `slower`, `faster` |
 | **Hands** | I write the code · we share it · you write it and explain | `you write this one` |
+| **ADHD mode** | off · on | `ADHD mode on`, `ADHD mode off` |
 | **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
+
+**ADHD mode** is off by default. Turn it on and every reply starts with the one thing to do, shows where you are (`Step 3 of 5`), gives a time estimate (`~2 min`), ticks off finished steps, and parks side topics until you're ready. It changes how replies are shaped, not what they say.
 
 Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them to `.dev-mentor/profile.md` so it remembers next time.
 

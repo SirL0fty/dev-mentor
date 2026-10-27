@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.10.0
+
+- **ADHD mode** (off by default): a new onboarding question and setting. When it's on, replies start with the one action to take, show the current step (`Step 3 of 5`), give time estimates, tick off finished steps, and park side topics. Turn it on or off anytime with `ADHD mode on` / `ADHD mode off`.
+
 ## 0.9.0
 
 - **Onboarding:** `mentor` now welcomes new users with three quick picks (level, tone, who writes the code), or skips them when you arrive with a task.
