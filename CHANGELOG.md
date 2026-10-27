@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.17.1
+
+### Patch Changes
+
+- [`d141715`](https://github.com/SirL0fty/dev-mentor/commit/d141715a9b0054c72d05421d873e816f3a12e007) Thanks [@SirL0fty](https://github.com/SirL0fty)! - Use a generic project name in the export note example.
+
 ## 0.17.0
 
 ### Minor Changes
