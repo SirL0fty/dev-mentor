@@ -28,7 +28,7 @@ Read your settings from `~/.dev-mentor/profile.md` (every project), then `.dev-m
 
 `warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change one setting straight away and keep their place in the lesson. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
 
-`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
+`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any settings change, confirm it in one line, then show the current card again in the new settings and wait; don't advance. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
 
 ## Ground rules
 

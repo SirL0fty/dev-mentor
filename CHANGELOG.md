@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.1
+
+- `settings` now offers **Everything** as well as one area at a time.
+- After a settings change, the AI confirms it, then shows the step you were on again in your new settings, so you carry on from there.
+
 ## 0.14.0
 
 - **Global settings:** settings now save to `~/.dev-mentor/profile.md` by default, so they follow you to every project. Pick "Just this project" to save `.dev-mentor/profile.md` instead; its lines override the global file. `save globally` and `save for this project` move them.

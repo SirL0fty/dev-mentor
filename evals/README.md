@@ -35,7 +35,7 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 
 **4c. Change settings later**
 - With a saved profile, say `settings`, pick Tone and pace, and choose Warm. Then say `change build`. Then say `reset settings` and choose Back to defaults.
-- Checks: `settings` shows the current values, then one "What do you want to change?" question · only the chosen question is asked · the profile file line updates and a one-line "Saved: …" confirms it · `change build` asks only the Build question · reset restores the defaults without touching `.dev-mentor/lesson.md` or the debate models · `you do this one` doesn't change the profile.
+- Checks: `settings` shows the current values, then one "What do you want to change?" question that includes Everything · after saving, the step you were on is shown again in the new settings, without advancing · only the chosen question is asked · the profile file line updates and a one-line "Saved: …" confirms it · `change build` asks only the Build question · reset restores the defaults without touching `.dev-mentor/lesson.md` or the debate models · `you do this one` doesn't change the profile.
 
 **5. Saved profile**
 - Accept the offer to save settings, then start a fresh session.
