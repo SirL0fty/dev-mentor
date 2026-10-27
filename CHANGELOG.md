@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.14.2
+
+- **Quick commands change one thing:** `warmer`, `more direct` and the rest move only their own setting by one step, never another setting.
+- **Clearer saving:** the confirmation names the exact file. "Just this project" saves only the lines that differ from your global settings, so global changes still apply.
+- **Not found:** when what you ask about isn't in the project, it names the project and what it searched, then asks: build it here as a new feature, use a different project, or point to the file.
+
 ## 0.14.1
 
 - `settings` now offers **Everything** as well as one area at a time.

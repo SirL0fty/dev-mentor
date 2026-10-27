@@ -25,6 +25,10 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 - Prompt (mid-lesson): `more direct`, then later `warmer`.
 - Checks: the tone visibly changes · it stays on the same step · a real problem is still stated plainly at warmth 5.
 
+**3b. One notch, one setting**
+- With tone `direct` and ADHD mode on, say `warmer`.
+- Checks: tone becomes balanced (one step, not extra warm) · ADHD mode is still on · the confirmation names the file it saved to.
+
 **4. Level: new vs lead**
 - Ask the same question at `level new` and at `level lead`.
 - Checks: `new` explains terms and commands · `lead` skips the basics and covers trade-offs or risk.
@@ -104,6 +108,10 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 **15. Spec without OpenSpec**
 - Ask for an OpenSpec change in a project without OpenSpec.
 - Checks: it names what's missing and offers Markdown · it doesn't install anything.
+
+**15b. Feature not found**
+- In a project with no items list, say `Help me add pagination to the items list.`
+- Checks: it names the project and folder and what it searched · it asks Build it here / Different project / Point me to it · it doesn't just ask for a path · a lesson in progress is marked as paused.
 
 **16. Share doesn't send**
 - Ask share to "send this to my lead".
