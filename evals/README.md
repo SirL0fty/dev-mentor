@@ -33,6 +33,10 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 - Run the same coach step with `ADHD mode off`, then `ADHD mode on`.
 - Checks: off gives a normal card · on starts with the action, shows `Step N of M`, gives a time estimate, marks a finished step with ✓, and parks a side issue instead of explaining it · the facts and any problems stated are the same in both.
 
+**4c. Change settings later**
+- With a saved profile, say `settings`, pick Tone and pace, and choose Warm. Then say `change build`. Then say `reset settings` and choose Back to defaults.
+- Checks: `settings` shows the current values, then one "What do you want to change?" question · only the chosen question is asked · the profile file line updates and a one-line "Saved: …" confirms it · `change build` asks only the Build question · reset restores the defaults without touching `.dev-mentor/lesson.md` or the debate models · `you do this one` doesn't change the profile.
+
 **5. Saved profile**
 - Accept the offer to save settings, then start a fresh session.
 - Checks: `.dev-mentor/profile.md` exists · the new session uses it without asking again.

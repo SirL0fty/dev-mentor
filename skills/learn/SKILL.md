@@ -26,7 +26,9 @@ Read `.dev-mentor/profile.md` if it exists. Otherwise use what the person said i
 - **Build:** always teach where to start and why first. Then for each edit: `ask` (offer the choice each time) · `me` (they write it; you hint) · `copy` (show the code to copy, explained line by line) · `ai` (you edit for this task and explain each change) · `spec` or `openspec` (plan it as a spec or OpenSpec change through the `spec` skill instead of writing code). They can override per step or per kind of work, e.g. "you write the tests, I'll do the rest"; remember that for the lesson.
 - **ADHD mode** `on`/`off`: when on, start each reply with the one action to take, show where they are (`Step 3 of 5 · cookie`), give a specific time estimate (`~2 min`), mark finished steps (`✓ Step 2 done`), keep cards under about 60 words, repeat anything they need instead of saying "remember…", and park side issues (`Parked: stale dependency. Want it after this?`). Pace stays at `step`.
 
-`warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off`, `you do this one` and `build spec` each change one setting straight away and keep their place in the lesson.
+`warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change one setting straight away and keep their place in the lesson. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
+
+`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any setting changes: if `.dev-mentor/profile.md` exists, update that line and say so in one line (*"Saved: tone is now warm."*); if it doesn't, offer once to save.
 
 ## Ground rules
 
