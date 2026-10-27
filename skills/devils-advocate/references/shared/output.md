@@ -1,15 +1,15 @@
 # Focused conversation output
 
-For interactive mentoring, show **one small card per reply**. A card is one thought, decision, or action, not a whole file or checkpoint. Use plain Markdown so it works in any assistant. Native cards or buttons are optional only when the host actually provides them; never require HTML, a dashboard, or a separate application.
+For interactive mentoring, begin a new feature with the orientation below; after that, show **one small card per reply**. A card is one thought, decision, or action, not a whole file or checkpoint. Use plain Markdown so it works in any assistant. Native cards or buttons are optional only when the host actually provides them; never require HTML, a dashboard, or a separate application.
 
 ## Default card
 
 - A short bold title naming the current task or concept. Include only enough location to orient the developer, such as `Schema · teams`; do not repeat the full roadmap.
 - One brief explanation of what matters and why.
-- One action or example, with the minimum code needed. Usually use at most one short code block and one relevant source link.
+- One action or example, with the minimum code needed. Use one or two short snippets when comparing before and after, and only the source links relevant to the current point.
 - One next action, then stop. Do not append a recap, future work, optional cleanup, a quiz, and a command menu.
 
-Aim for roughly 40–100 words of prose. The useful limit is one thing to process; do not compress a lecture into dense bullets or a giant code block. If a correct change needs inseparable edits, keep them together and explain the dependency briefly. Split unrelated edits, examples, edge cases, and checks into later cards. The developer can ask for longer responses or the whole explanation.
+Aim for roughly 40–100 words of prose in ordinary cards, allowing enough room for a concrete before/after example and why it matters. The useful limit is one thing to process; do not compress a lecture into dense bullets or a giant code block. A new feature or ticket starts with the fuller [feature orientation](../skills/explain/references/teaching.md#orient-a-new-feature), typically around 120–220 prose words plus a compact map and a starting link. It brings the essential context together once instead of forcing it into several disconnected cards. These are flexible guides, not quotas; use more when needed for correctness or less when the request is simple. If a correct change needs inseparable edits, keep them together and explain the dependency briefly. Split unrelated edits, examples, edge cases, and checks into later cards. The developer can ask for longer responses or the whole explanation.
 
 After presenting a card in an interactive lesson, wait for the developer's response before presenting another. Do not send the remaining cards as successive messages or commentary in the same turn. This pacing does not interrupt a separately requested autonomous implementation or artifact-generation task.
 
@@ -17,7 +17,7 @@ After presenting a card in an interactive lesson, wait for the developer's respo
 
 If the last exercise has a blocking omission, stay with it. Show the smallest correction; defer the next lesson and cosmetic suggestions. Do not label the exercise implemented or verified until evidence supports that status. A “done” or “next” reply after a pending manual action triggers the active workflow's inspection/verification loop, not automatic success. Return its outcome and the most useful advice as one card. Answer a question about the correction without advancing.
 
-Investigate as deeply as needed, but surface only evidence relevant to the current card. Keep the rest in the lesson plan. A flow map can be its own orientation card before detailed teaching; keep it short and expand it on request. Never treat unseen material as covered. The [teaching reference](../skills/explain/references/teaching.md) owns what the lesson must cover across its cards.
+Investigate as deeply as needed, but surface only evidence relevant to the current card. Keep the rest in the lesson plan. For a new feature, include a compact flow map in its opening orientation when the flow is known; other lessons can use a separate map card when useful. Never treat unseen material as covered. The [teaching reference](../skills/explain/references/teaching.md) owns what the lesson must cover across its cards.
 
 “Why?”, “example”, “more detail”, and ordinary questions expand the current point without advancing. “Smaller” immediately reduces the current card to its next useful thought/action; do not restart onboarding. More detail means more depth on that point, not the rest of the file. `map` shows the compact route and current location. `next` and `back` follow the [session navigation](session.md). Avoid printing these controls on every reply; show only the relevant cue, and explain others when asked.
 

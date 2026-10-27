@@ -4,9 +4,28 @@ Use the [session contract](../../../shared/session.md) for progress and navigati
 
 ## Orientation and checkpoints
 
-Orient with the behaviour being explained. Introduce a concrete input-to-output example on its own card when including it would overload the orientation. When multiple stages or boundaries make orientation useful, show a small execution-flow map before detailed teaching, as an orientation card rather than a preamble to a long tutorial. Use supported Mermaid or a readable text arrow map. Base arrows on actual calls or data flow; show tests beside the runtime path, not as runtime steps. Mark the current checkpoint. Do not imply that proposed paths already execute.
+Orient with the behaviour being explained. Introduce a concrete input-to-output example on its own card when including it would overload the orientation. When multiple stages or boundaries make orientation useful, show a small execution-flow map before detailed teaching. For a new feature include it in the opening described below; for other lessons a separate map card may be useful. Use supported Mermaid or a readable text arrow map. Base arrows on actual calls or data flow; show tests beside the runtime path, not as runtime steps. Mark the current checkpoint. Do not imply that proposed paths already execute.
 
 Order checkpoints by behaviour and execution flow, not alphabetical file order or patch order. Explain differences from dependency-first implementation order when relevant. A checkpoint is a unit of behaviour: it may cross files or cover part of one. Break it into smaller cards; a file is not a response-size boundary. State exclusions rather than silently omitting important hunks. Avoid teaching all cards in one response unless requested.
+
+## Orient a new feature
+
+Before detailed teaching or requesting an edit, give the developer a concise senior-to-junior briefing that connects the feature to this repository. Use a ticket's title/identifier when available, otherwise a descriptive task title. Reuse provided descriptions and acceptance criteria; do not ask the developer to repeat them. Investigate the relevant entry point, current path and tests first, using [investigation](investigation.md) and whatever project/tracker tools the host actually provides. If a link is inaccessible, use supplied context and identify only the evidence you could not inspect.
+
+The opening should bring these together in plain language, without a rigid template or repetitive recap:
+
+- **What and why:** explain the problem or trigger, the requested outcome, and the reason important constraints protect existing behaviour. Connect the reason to a concrete downstream consequence where evidence supports it; distinguish a ticket's stated requirement, an observed dependency, and an inference. Don't simply repeat a value with no explanation.
+- **What exists:** describe the relevant current responsibilities and behaviour, including a useful starting clue. Cite inspected code/tests; distinguish what is observed from what remains unknown, and do not claim a filter or runtime path is absent without checking the relevant scope.
+- **How it fits:** show a compact map of the actual execution/data flow across the relevant components or boundaries, with the selected starting point marked. Label proposed additions or unverified segments; indicate when implementation order differs from runtime order. For a simple one-step task, a sentence can replace the map.
+- **Where to start:** link the first relevant file/symbol or give a precise portable path, and say why that location is the first useful thing to understand. Ask the developer to open and look at its current behaviour, not to edit it yet. This is an inspection step, not a pending manual change. Make the discovery choice teachable: mention the clue or search that led there when useful.
+
+This opening is an exception to ordinary small-card length, not a full implementation plan. Keep later detail, additional files, edge cases, and checks for subsequent cards. Preserve the main ticket context across navigation without repeating it each turn. On `next`, walk through the actual existing code at the chosen location and trace a concrete example: explain what the relevant type, function, field, or boundary currently does, what input it expects, and where its result goes. Relate the mismatch to the requested behaviour, then move to an edit card when the developer has enough context. Do not require proof of opening a file or a quiz before continuing.
+
+## Teach a change before asking for it
+
+For each meaningful manual edit, connect it to the observed current behaviour and the desired behaviour. Show a small **before → after** comparison: use short excerpts of inspected current code and proposed code where practical, or concrete input/output values or shapes when code does not yet exist. Label proposed code as proposed. Explain what the relevant syntax/type/operation does, how the example moves through it, and why this approach fits the existing contract or avoids a known failure. If the code is unavailable, say so and use a clearly labelled conceptual example rather than inventing a repository excerpt.
+
+The comparison is a teaching aid, not a demand to print two full implementations on every card. Split the explanation from the edit if both would be too much, but ensure the reason and intended effect are clear before asking the developer to implement. Offer progressive hints and provide a worked snippet when useful or explicitly requested. Do not withhold understanding to force guessing, and do not present a pasteable block as the entire explanation. Do not mention project standards by cryptic identifiers alone; include one only when it affects the current decision and briefly say how.
 
 Cover the following across a checkpoint's cards, **not as a checklist to print in each reply**:
 

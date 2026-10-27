@@ -23,3 +23,7 @@ This package uses its own instruction text and does not vendor pstack's skills. 
 Pstack's [Babysit playbook](https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/babysit.md) uses a GitHub-specific `watch-pr` tool, checks review threads and CI, and distinguishes a single status check from a continuing loop. Its broader workflow can drive fixes toward merge readiness; merging is a separate workflow.
 
 Dev Mentor keeps a separate watch mode under `mentor`, using available host scheduling and repository tools. It alerts on actionable changes and coaches the developer through their own fixes. `review` instead prepares the developer to understand and review a colleague's PR. No pstack watcher code is bundled, and native background execution is not assumed across hosts.
+
+## Teaching a feature
+
+On 2026-10-27 we revisited pstack's [how](https://github.com/cursor/plugins/blob/main/pstack/skills/how/references/explainer-prompt.md) and [teach](https://github.com/cursor/plugins/blob/main/pstack/skills/teach/SKILL.md) guidance. Their useful ideas include grounding an architectural explanation in the actual flow, showing where the relevant code lives, combining how and why, and keeping evidence limits visible. Dev Mentor adapts those ideas to a learner who writes the code: a short initial ticket/codebase orientation, then an explanation of the existing code and a small before/after comparison before an edit. It does not depend on pstack, a particular model, subagents, or a Cursor-only capability.
