@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.16.1
+
+- README and skill descriptions brought up to date: build modes, Output and Export settings, saved lessons, export to Notion and Obsidian, a "Things you can say" reference, and the updated flow diagram.
+
 ## 0.16.0
 
 - **Export lessons:** `export lesson`, `export lesson <name>` and `export all lessons` turn lessons into learning notes in **Notion** (through your existing Notion connection), **Obsidian** or a Markdown folder. Notes cover where to start, the flow, what you learned and how to start next time. Re-exporting updates the same note or page. Set a default with `export:` in your profile.

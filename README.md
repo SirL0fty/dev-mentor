@@ -44,11 +44,13 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 | Setting | Options | Say |
 | --- | --- | --- |
 | **Experience** | brand new · vibe coder · junior · mid-level · senior · lead or principal | `simpler`, `more technical`, `set level lead` |
-| **Warmth** | 1 blunt · 2 direct · 3 balanced · 4 warm · 5 extra warm | `warmer`, `more direct` |
+| **Tone** | 1 blunt · 2 direct · 3 balanced · 4 warm · 5 extra warm | `warmer`, `more direct` |
 | **Pace** | one step, then wait · a few steps · the whole thing | `slower`, `faster` |
-| **Build** | choose each time · I write, AI guides · AI shows, I copy · AI writes, explains · Markdown spec · OpenSpec change | `you do this one`, `you write the tests`, `build spec` |
+| **Build** | choose each time · I write, AI guides · AI shows, I copy · AI writes, explains | `you do this one`, `you write the tests` |
+| **Output** | write code · Markdown spec · OpenSpec change | `build spec`, `change output` |
 | **ADHD mode** | off · on | `ADHD mode on`, `ADHD mode off` |
 | **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
+| **Export** | where lesson notes go: Notion · Obsidian · Markdown folder | `export lesson` asks the first time |
 
 **Build** always starts by showing you where to start and why, so you learn the route even when the AI writes the code. With the default, *ask me each step*, you choose per edit: write it yourself, copy an explained snippet, let the AI do it (handy for tests or boilerplate), or turn it into a spec or OpenSpec change.
 
@@ -67,7 +69,9 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 
 If you saved a profile, changes are saved automatically to the same place and the AI tells you in one line. Then it shows the step you were on again, in your new settings, so you carry on from where you left off.
 
-Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them for all your projects (`~/.dev-mentor/profile.md` in your home folder) or just one project (`.dev-mentor/profile.md`, which overrides the global file).
+Tone changes how things are said, never the truth: problems are always stated plainly.
+
+**Where settings live:** for all your projects in `~/.dev-mentor/profile.md` (the default), or for one project in `.dev-mentor/profile.md`, which overrides only the lines it contains.
 
 ## The flow
 
@@ -78,27 +82,28 @@ flowchart LR
     Pick -->|understand| U["explain · learn<br/>review · walkthrough"]
     Pick -->|build| C["coach"]
     Pick -->|decide| D["architect<br/>devils-advocate"]
-    C --> Edit["You write one step"] --> Check["done → mentor checks<br/>your diff + runs a test"]
+    C --> Edit["One step: you write it,<br/>copy it, or the AI does"] --> Check["done → mentor checks<br/>the diff + runs a test"]
     Check -->|next step| C
     C -. capture .-> S["share · spec"]
+    C -. keep .-> L["save · resume<br/>export lesson"]
 ```
 
 ## Skills
 
 | Skill | Helps you |
 | --- | --- |
-| [mentor](skills/mentor/SKILL.md) | Get started, change settings, find where to start, resume a lesson, or watch a PR's comments and CI. |
-| [coach](skills/coach/SKILL.md) | Build a feature step by step while you write the code. |
+| [mentor](skills/mentor/SKILL.md) | Start here: setup and settings, where to start in your code, save and resume several lessons, export them to Notion or Obsidian, and watch a PR's comments and CI. |
+| [coach](skills/coach/SKILL.md) | Build a feature step by step. Each edit, you write it, copy an explained snippet, or let the AI do it, and your work gets checked. |
 | [explain](skills/explain/SKILL.md) | Understand how existing code runs. |
 | [learn](skills/learn/SKILL.md) | Learn a concept or technology. |
 | [review](skills/review/SKILL.md) | Understand a colleague's PR so you can review it. |
 | [walkthrough](skills/walkthrough/SKILL.md) | Tour changes that are already finished. |
 | [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. |
-| [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal, or run a three-model debate. |
-| [share](skills/share/SKILL.md) | Write up a plan for a colleague to review. |
+| [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal, or run a three-model debate with your chosen models. |
+| [share](skills/share/SKILL.md) | Write up a plan or lesson for a colleague to review (file, Obsidian or Notion). |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec). |
 
-Each skill is a single, self-contained `SKILL.md`, so you can install all of them or only the ones you want.
+Install all ten: the other skills hand settings, saved lessons and exports over to `mentor`.
 
 ## Install
 
@@ -139,7 +144,24 @@ Use mentor to help me get started.
 
 Or give it a ticket: **"Help me build this one step at a time. I'll write the code."**
 
-As you go, say **done**, **next**, **back**, **why**, **example**, **help** or **save**. Next time, say **resume** to pick up where you left off. Each saved lesson keeps its own file in `.dev-mentor/lessons/`, so you can have several on the go; `resume` asks which one, and `lessons` lists them. Say **export lesson** to turn one into a learning note in **Notion**, **Obsidian** or a Markdown folder: where to start, how the code flows, what you learned at each step, and how to start next time.
+### Things you can say
+
+| During a lesson | |
+| --- | --- |
+| `done` | Check my edit (it reads your diff and runs a quick test). |
+| `next` / `back` | Move between steps. |
+| `why` · `example` · `more detail` · `help` | Ask about this step without moving on. |
+| `you do this one` | The AI makes this edit. |
+
+| Lessons | |
+| --- | --- |
+| `save` | Save this lesson. Each one gets its own file in `.dev-mentor/lessons/`, so you can have several. |
+| `resume` | Pick one back up; asks which if you have several. `resume pagination` goes straight there. |
+| `lessons` | List your saved lessons with where you got to. |
+| `export lesson` | Turn a lesson into a learning note in **Notion**, **Obsidian** or a Markdown folder. `export all lessons` does them all. |
+| `delete lesson <name>` | Remove one (asks first). |
+
+If what you ask about isn't in the project, it tells you which project it looked in and asks whether to build it as a new feature, switch project, or point it to the right file.
 
 ## Update
 

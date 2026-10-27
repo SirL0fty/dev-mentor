@@ -1,6 +1,6 @@
 ---
 name: coach
-description: Guide someone through building a feature or fixing a ticket in their codebase, one small step at a time, while they write the code (or with you, if they choose). Checks their work after each step. Use for "help me build this", "I'll write the code", or a ticket to implement. (Dev Mentor)
+description: Guide someone through building a feature or fixing a ticket in their codebase, one small step at a time. Always shows where to start and why first; then for each edit they write it, copy an explained snippet, let the AI write it, or plan it as a spec or OpenSpec change. Checks their work after each step. Use for "help me build this", "I'll write the code", or a ticket to implement. (Dev Mentor)
 ---
 
 # Coach
