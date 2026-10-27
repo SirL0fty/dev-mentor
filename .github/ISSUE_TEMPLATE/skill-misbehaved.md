@@ -8,7 +8,7 @@ labels: behaviour
 
 **Assistant and model:** (e.g. Claude Code / Opus, Cursor / GPT)
 
-**Settings:** level · warmth · pace · hands (say `settings` to see them)
+**Settings:** level · warmth · pace · build · ADHD mode (say `settings` to see them)
 
 **What you expected:**
 

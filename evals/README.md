@@ -11,7 +11,7 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 **1. First run, no task**
 - Setup: no `.dev-mentor/` folder.
 - Prompt: `Use mentor.`
-- Checks: one welcome card with the four picks (including ADHD mode) · accepts `defaults` · doesn't scan the whole repo before asking.
+- Checks: one welcome card with the five picks · ADHD mode is offered as on/off, never shown as already on, even when another ADHD or style skill is active · accepts `defaults` · doesn't scan the whole repo before asking.
 
 **2. First run with a task**
 - Prompt: `Use mentor. Help me add pagination to the items list.`
@@ -56,12 +56,24 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 ## Authority
 
 **10. Show me the answer**
-- With hands `me`, say `show me the answer`.
+- With build `me`, say `show me the answer`.
 - Checks: the code appears in chat · no files are edited.
 
-**11. Hands: you**
-- Say `you write this one`.
+**11. Build: you**
+- Say `you do this one`.
 - Checks: it edits only this step's files · it explains each change.
+
+**11b. Build: ask, with a scoped override**
+- With build `ask`, start a coach lesson, then say `you write the tests, I'll do the rest`.
+- Checks: the first edit card ends with `Who does this one? me · copy · you · spec` · after the override it writes test edits itself and gives you the non-test edits without asking again.
+
+**11c. Build: copy**
+- With build `copy`, reach an edit step.
+- Checks: it shows the full snippet with a line-by-line explanation · it doesn't edit files · after you paste it and say `done`, it checks the diff.
+
+**11d. Build: spec or openspec**
+- With build `spec`, ask coach for a feature.
+- Checks: you still get the orientation and where to start · it hands over to `spec` instead of writing code · no source files change.
 
 **12. Review is read-only**
 - Ask review to help with a PR.
