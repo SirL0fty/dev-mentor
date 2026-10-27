@@ -13,7 +13,27 @@ If `.dev-mentor/profile.md` exists in the project, or the person already picked 
 
 If the person already gave a task, don't stop them with questions. Pick the settings their message suggests, put one line above your first card, and start: *"I'll pitch this for a mid-level dev, balanced tone, one step at a time, and ask who does each edit. Say `settings` to change, or `ADHD mode on` for shorter, action-first steps."*
 
-Otherwise send this one card and wait:
+Otherwise ask the setup questions below and wait.
+
+### Use the host's picker when it has one
+
+If this assistant has a built-in multiple-choice question tool (a picker the person clicks instead of typing), use it. Use only a tool the session actually exposes; never invent one. Put as many questions in one call as the tool allows, in this order. Keep every question to **4 options or fewer** and headers to 12 characters, so it works in any picker. Most pickers add their own "Other" box; free text there is fine.
+
+| # | Header | Question | Options (label: short description) |
+| --- | --- | --- | --- |
+| 1 | Experience | Where are you with code? | New to code: never really coded · Vibe coder: I build with AI, the code is still fuzzy · Developer: I write code regularly · Lead or principal: I set direction for others |
+| 1b | Level | Which level fits best? *(only if they chose Developer)* | Junior: under 2 years · Mid-level · Senior |
+| 2 | Tone | How should I talk to you? | Blunt: just the facts · Direct · Balanced (default) · Warm: encouraging. Say `warmer` later for extra warm. |
+| 3 | Pace | How much per reply? | One step, then wait (default) · A few steps · The whole thing |
+| 4 | Build | Who makes each edit? You'll always see where to start and why first. | Ask me each time (default) · I write it, you guide me · Show me code to copy, explained · You write it and explain |
+| 5 | Output | Build code, or plan it first? | Write code (default) · A Markdown spec instead · An OpenSpec change instead |
+| 6 | ADHD mode | Turn on ADHD mode? | Off: normal replies · On: each reply starts with the one action, shows step 3 of 5, gives a time estimate, ticks off finished steps, parks side topics |
+
+Mark defaults as shown, but **never pre-select or mark ADHD mode**. If something else in the session already shapes replies (such as an ADHD skill), say so in that question's text and still let them pick. If the tool only allows a few questions per call, ask 1, 2, 3 and 6 first, then 1b (if needed), 4 and 5. Output `spec` or `openspec` sets build to that mode; otherwise build is the answer to question 4.
+
+### Otherwise, one text card
+
+If there's no picker, send this card and wait:
 
 > **Welcome to Dev Mentor** · Setup · ~1 min
 >
@@ -65,7 +85,7 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
 
 ## 4. Settings, save and resume
 
-- `settings` shows the current values as one short card, with how to change them.
+- `settings` shows the current values as one short card, with how to change them. `change settings` asks the setup questions again, with the picker if there is one.
 - The profile file is plain lines, for example:
 
   ```text

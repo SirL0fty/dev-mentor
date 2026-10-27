@@ -39,7 +39,7 @@ Mentor:  **Works ✓**
 
 ## Make it yours
 
-On first use, `mentor` asks five quick questions (about a minute), or you just say `defaults`. You can change any setting mid-lesson, or just for one task.
+On first use, `mentor` asks a few quick setup questions (about a minute). If your assistant has a clickable picker (e.g. Claude Code or Cursor), it uses that; otherwise you get one text card you answer like `d 3 a a off`. Or just say `defaults`. You can change any setting mid-lesson, or just for one task.
 
 | Setting | Options | Say |
 | --- | --- | --- |
