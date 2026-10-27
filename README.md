@@ -80,7 +80,7 @@ codex plugin marketplace add SirL0fty/dev-mentor --ref main
 
 Then open the plugin browser in the desktop app, or run `/plugins` inside Codex CLI, select the Dev Mentor marketplace, and install the plugin. Start a fresh session after installation.
 
-**Check:** the plugin detail page should show **SirL0fty**, version **0.8.0** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
+**Check:** the plugin detail page should show **SirL0fty**, version **0.8.1** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
 
 </details>
 
@@ -284,11 +284,11 @@ Spec creation leaves production code and implementation task completion unchange
 
 ## One step at a time
 
-Give the mentor a feature description or ticket link. It first connects the goal to your codebase: what is changing and why, what exists today, a small runtime map, and where to start looking. For example, in a fictional project:
+Give the mentor a feature description or ticket link. It starts with the reason for the work and connects the goal to your codebase: what is changing, what exists today, a small runtime map, and where to start looking. It explains technical terms in context when useful and adjusts the depth to you. For example, in a fictional project:
 
 > **Add a result limit**
 >
-> The ticket asks the item endpoint to accept an optional limit. Requests without one should still return results as before. That matters because existing callers must not be forced to change.
+> The ticket says the item list is getting slower as it grows. It asks us to let callers request fewer results at a time. Existing callers should still get the same results when they do not set a limit, so they do not have to change their requests.
 >
 > The route currently passes requests to a handler, which calls the repository. The handler has no limit input yet; the repository runs the existing query.
 >
