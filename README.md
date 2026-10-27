@@ -4,247 +4,86 @@
 
 **Build features you understand. Learn where to start next time.**
 
-Dev Mentor helps you work through a feature in your own codebase: find the entry point, follow the runtime, choose a small change, and check the result. You write the code while your assistant guides you through the decisions.
+Dev Mentor helps you find your way around a codebase, plan a feature, make changes one step at a time, and check your work. Start with **mentor**; it guides you to the right skill.
 
-The goal is independence. Start with a demonstration, try the next step with hints, then tackle a similar problem yourself.
+## Skills
 
-Ten skills, one place to start: **mentor**. By [SirL0fty](https://github.com/SirL0fty).
-
-[Help](#help) · [Install](#install) · [Get started](#get-started) · [Skill map](#skill-map) · [Create a spec](#create-a-spec) · [Watch a PR](#watch-a-pr) · [Skills](#skills) · [Update](#update)
-
-## Help
-
-After installing, open the project you want to work on. In **ChatGPT or Codex desktop**, type **`@`**, search for **Dev Mentor**, select the plugin, and send **`help`**. Select the actual plugin suggestion so it is attached to your message. You do not need to find all ten skills in the `/` list.
-
-In **Claude Code**, use `/dev-mentor:mentor help`. In **Cursor or OpenCode**, ask:
-
-```text
-Use the mentor skill from Dev Mentor.
-Help me find something to work on in this codebase.
-```
-
-The mentor inspects your code and offers **up to three concrete prompts** tied to real files, functions, or tests, with a recommended starting point. Pick one to begin. Hosts that read skill display metadata show names such as **Dev Mentor: Coach**; the underlying skill names stay the same.
-
-Already in a lesson? Say **help** for a hint without losing your place. Ask **“What else could I work on?”** for other ideas, or **“Help commands”** for the controls.
+| Skill | What it helps you do |
+| --- | --- |
+| [mentor](skills/mentor/SKILL.md) | Find where to start, resume a lesson, or watch a PR's comments and CI. |
+| [explain](skills/explain/SKILL.md) | Understand how existing code runs. |
+| [coach](skills/coach/SKILL.md) | Build a feature with guidance while you write the code. |
+| [learn](skills/learn/SKILL.md) | Learn a concept or technology. |
+| [review](skills/review/SKILL.md) | Understand a colleague's PR so you can review it. |
+| [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. |
+| [devils-advocate](skills/devils-advocate/SKILL.md) | Challenge a proposal with three distinct models. |
+| [walkthrough](skills/walkthrough/SKILL.md) | Take a guided tour of completed changes. |
+| [share](skills/share/SKILL.md) | Prepare a plan or lesson for a colleague to review. |
+| [spec](skills/spec/SKILL.md) | Turn a plan into a feature spec or an OpenSpec change. |
 
 ## Install
 
-Choose your assistant below. Each guide covers installation, starting a session, and checking that Dev Mentor is available. Install either the native plugin or the standalone skills in a given assistant to avoid duplicate entries.
+**For Cursor, OpenCode, Codex, and other skill-capable assistants**, open a terminal in your project and run:
 
-| Where you work | Installation route |
-| --- | --- |
-| [ChatGPT desktop / Codex](#install-chatgpt) | Add the GitHub marketplace and install Dev Mentor. |
-| [Cursor](#install-cursor) | Import the GitHub marketplace in Customize, or use the skills CLI. |
-| [Claude Code](#install-claude) | Add the marketplace, then install the namespaced plugin. |
-| [OpenCode](#install-opencode) | Install the same ten workflows as Agent Skills. |
-| [Other assistants](#install-other) | Select the assistant used by your editor in the skills CLI. |
+```sh
+npx skills add SirL0fty/dev-mentor
+```
 
-**Before you begin:** have your coding assistant installed and signed in. Commands beginning with `npx` also require Node.js 22.20 or newer; check with `node --version`. Open a local project when you want the mentor to inspect its code.
+Choose your assistant and the skills you want. Choose **global** to use them across projects on that machine. `npx` requires Node.js 22.20 or newer. For T3 Code or OpenChamber, select the assistant provider used by the app.
+
+Prefer a native plugin? Choose your assistant:
 
 <a id="install-chatgpt"></a>
-<details>
-<summary><strong>ChatGPT desktop and Codex — add the GitHub marketplace</strong></summary>
-
-**In the desktop app**
-
-1. Open **Plugins**, then choose **Add plugin marketplace**.
-2. Fill in the dialog using the values below.
-3. Click **Add marketplace**.
-4. Select the **Dev Mentor** marketplace in the plugin browser.
-5. Open **Dev Mentor** by **SirL0fty** and install it.
-6. Start a new chat with the plugin enabled. Use **Work or Codex with your project open** for codebase coaching.
-
-| Field | Enter |
-| --- | --- |
-| Source | `SirL0fty/dev-mentor` |
-| Git ref | `main` |
-| Sparse paths | Leave blank |
-
-Leave Sparse paths empty so the whole package is available. If the marketplace does not appear, restart the app and reopen Plugins.
-
-**Start using it**
-
-Type `@`, search **Dev Mentor**, select the plugin, and send `help`. You can also choose one of the starter prompts on the plugin's detail page. The mentor chooses the workflow for your request. See [OpenAI's plugin usage guide](https://learn.chatgpt.com/docs/plugins).
-
-**On another machine**
-
-Repeat the marketplace setup there. Dev Mentor is hosted in this GitHub repository and has not been submitted to the public plugin directory, so searching the public catalog alone will not find it.
-
-**Terminal alternative**
-
-If you use Codex CLI, register the source with:
-
-```sh
-codex plugin marketplace add SirL0fty/dev-mentor --ref main
-```
-
-Then open the plugin browser in the desktop app, or run `/plugins` inside Codex CLI, select the Dev Mentor marketplace, and install the plugin. Start a fresh session after installation.
-
-**Check:** the plugin detail page should show **SirL0fty**, version **0.8.2** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
-
-</details>
+**ChatGPT desktop / Codex:** Open **Plugins → Add plugin marketplace**. Enter `SirL0fty/dev-mentor` as the source, `main` as the Git ref, and leave sparse paths blank. Add the marketplace, then install **Dev Mentor** by SirL0fty. Start a new chat.
 
 <a id="install-cursor"></a>
-<details>
-<summary><strong>Cursor — import the repository in Customize</strong></summary>
-
-**Native plugin**
-
-1. Open your project in Cursor, then open **Customize**.
-2. Choose **From GitHub Repository**.
-3. Paste `https://github.com/SirL0fty/dev-mentor` and complete the import.
-4. Find **Dev Mentor** in the imported marketplace and install it.
-5. Start a new Agent chat in your project.
-6. Ask **“Use the mentor skill from Dev Mentor. Help me find where to start.”**
-
-**Check:** Dev Mentor's skills should appear in Customize. In Agent chat, type `/mentor` to filter the skill list, then select the Dev Mentor skill. Start with that one entry; it routes to the other workflows. See [Cursor's repository installation guide](https://cursor.com/docs/skills#installing-skills-from-a-repository).
-
-**If repository import is unavailable**
-
-From your project's terminal, install the standalone skills:
-
-```sh
-npx skills add SirL0fty/dev-mentor --agent cursor --skill '*'
-```
-
-Follow the installer prompts, reopen the project or start a new Agent chat, and use the same mentor prompt.
-
-**Teams:** an administrator can use **Dashboard → Plugins & MCPs → Add Marketplace → Import from Repo**, paste the repository URL, and make Dev Mentor available to the team. See [Cursor's team marketplace guide](https://cursor.com/docs/plugins#add-a-team-marketplace).
-
-</details>
+**Cursor:** Open **Customize → From GitHub Repository**, enter `https://github.com/SirL0fty/dev-mentor`, then install Dev Mentor from the imported marketplace.
 
 <a id="install-claude"></a>
-<details>
-<summary><strong>Claude Code — install the namespaced plugin</strong></summary>
-
-**From your terminal**
-
-1. Open a terminal in your project.
-2. Register Dev Mentor's marketplace, then install the plugin:
+**Claude Code:**
 
 ```sh
 claude plugin marketplace add SirL0fty/dev-mentor
 claude plugin install dev-mentor@dev-mentor
 ```
 
-3. Start a new Claude Code session.
-4. Enter:
+<a id="install-opencode"></a><a id="install-other"></a>
+**OpenCode and other assistants:** Use the `npx` command above and select your assistant. Start a new session after installation.
 
-```text
-/dev-mentor:mentor help
-```
-
-The default installation scope is your user account on that machine. To enable it for only this repository without changing shared project settings, use `--scope local` on the install command.
-
-**From an existing Claude Code session**
-
-```text
-/plugin marketplace add SirL0fty/dev-mentor
-/plugin install dev-mentor@dev-mentor
-```
-
-Choose the scope offered by the installer. Start a new session or use `/reload-plugins`, then invoke `/dev-mentor:mentor help`.
-
-**Check:** open the Installed tab in `/plugin`, or run `claude plugin list` in your terminal. Typing `/dev-mentor:` filters the skills to this plugin's namespace; for example, `/dev-mentor:walkthrough` starts a guided tour.
-
-These instructions are for Claude Code, including its supported local desktop and IDE surfaces. See [Claude Code's installation guide](https://code.claude.com/docs/en/discover-plugins) for current scope and refresh behaviour.
-
-</details>
-
-<a id="install-opencode"></a>
-<details>
-<summary><strong>OpenCode — install the ten Agent Skills</strong></summary>
-
-OpenCode loads Dev Mentor through its Agent Skills support. You do not need to add Dev Mentor to OpenCode's JavaScript plugin configuration.
-
-1. Open a terminal in the project you want to work on.
-2. Install the skills:
-
-```sh
-npx skills add SirL0fty/dev-mentor --agent opencode --skill '*'
-```
-
-3. Follow the prompts to install into the current project. Choose **Copy** if you prefer ordinary files instead of symlinks.
-4. Start a new OpenCode session in that project.
-5. Ask:
-
-```text
-Use the mentor skill from Dev Mentor.
-Help me find where to start in this codebase.
-```
-
-**For every project on this machine**, use a global installation instead of the project command:
-
-```sh
-npx skills add SirL0fty/dev-mentor --agent opencode --skill '*' --global
-```
-
-**Check:** ask OpenCode to load the `mentor` skill. It should have access to all ten workflows. If it cannot find the skill, check the destination printed by the installer and your skill permissions. OpenCode discovers project and global skill directories, including `.agents/skills`; see its [discovery and troubleshooting guide](https://opencode.ai/docs/skills/).
-
-</details>
-
-<a id="install-other"></a>
-<details>
-<summary><strong>Other assistants — use the skills CLI</strong></summary>
-
-From your project, run:
-
-```sh
-npx skills add SirL0fty/dev-mentor
-```
-
-Choose your assistant, the skills to install, and project or global scope. You can select multiple assistant targets explicitly:
-
-```sh
-npx skills add SirL0fty/dev-mentor --skill '*' --agent cursor claude-code codex opencode
-```
-
-For T3 Code or OpenChamber, select the provider used inside the app. For VS Code, select your assistant extension, such as Codex or GitHub Copilot. Start a new assistant session and ask it to use Dev Mentor's `mentor` skill.
-
-The standard installer places instructions in the selected host's skill directories. It does not add a custom agent, model subscription, or background service. See [host compatibility](docs/compatibility.md) for checked paths and remaining limits.
-
-</details>
+[Detailed installation, updates and troubleshooting](docs/plugins.md) · [Host compatibility](docs/compatibility.md)
 
 ## Get started
 
-Already have a feature in mind? Ask:
+Open your project and ask:
 
 ```text
-Use mentor to help me add pagination to this search endpoint.
-I don't know where to start, and I want to make the changes myself.
+Use mentor to help me find where to start in this codebase.
 ```
 
-`mentor` chooses the workflow and keeps your place as you work. Start with your ticket, a question, or a change you want to understand.
+Or give it a ticket or feature: **“Help me build this one step at a time. I'll write the code.”** In ChatGPT/Codex desktop, select **Dev Mentor** with `@` first. In Claude Code, use `/dev-mentor:mentor help`.
 
-A feature lesson follows this path:
+The mentor explains the goal and current code, shows where to start, and guides you through small steps. After an edit, say **done** so it can inspect your change and run relevant checks. Say **help**, **next**, **back**, **why**, **example**, or **more detail** as you go.
 
-```text
-Find the entry point → Trace the runtime → Make a small change → Verify it
-```
-
-You learn why each step comes next, how to find the relevant code, and what evidence shows the change works.
+<a id="help"></a><a id="create-a-spec"></a><a id="watch-a-pr"></a>
+You can also ask it to **walk through a PR**, **prepare a plan for review**, **turn a plan into a spec**, or **watch a PR's comments and CI**. Watching needs a host that supports monitoring. OpenSpec conversion needs the project's OpenSpec setup and the official `openspec-propose` skill. The three-model debate needs access to three distinct models.
 
 ## Skill map
-
-Start with **mentor**. It routes your request; you can also name any skill directly. The side paths are optional—you do not need to complete every workflow to build a feature.
 
 ```mermaid
 flowchart TB
     Mentor(["mentor<br/>Find your starting point"])
-    Understand["UNDERSTAND<br/><br/>explain · How existing code runs<br/>learn · A new concept<br/>review · A colleague's PR<br/>walkthrough · Completed changes"]
+    Understand["UNDERSTAND<br/><br/>explain · Existing code<br/>learn · Concepts<br/>review · A colleague's PR<br/>walkthrough · Completed changes"]
     Coach["coach<br/>Plan one manageable step"]
-    Prepare["CAPTURE THE PLAN<br/><br/>share · A review document<br/>spec · A portable spec or OpenSpec"]
-    Design["OPTIONAL DESIGN HELP<br/><br/>architect · Compare approaches<br/>devils-advocate · Three-model challenge"]
+    Prepare["CAPTURE THE PLAN<br/><br/>share · Review document<br/>spec · Feature spec"]
+    Design["DESIGN HELP<br/><br/>architect · Compare approaches<br/>devils-advocate · Challenge a decision"]
     Edit["You write the code"]
-    Check["Inspect your actual diff<br/>Run focused checks<br/>Explain the result"]
-
+    Check["Inspect your change<br/>Run focused checks"]
     Mentor --> Understand
     Mentor --> Coach
     Mentor --> Prepare
-    Coach -. "when a decision needs work" .-> Design
+    Coach -. "if needed" .-> Design
     Coach --> Edit --> Check
     Check -->|"feedback or next step"| Coach
-
     classDef entry fill:#08224c,color:#ffffff,stroke:#0cbfaf,stroke-width:3px
     classDef understand fill:#e9f8f4,color:#123e35,stroke:#32a68e
     classDef build fill:#edf1fc,color:#182c59,stroke:#6d8cce
@@ -255,150 +94,8 @@ flowchart TB
     class Prepare share
 ```
 
-The panels group related skills. The loop is the normal coaching path; the dotted branch is optional design help. A review document or specification does not approve implementation. **PR watching** is another mode of `mentor`: it brings new comments or CI failures into the same coaching loop when the host can monitor them.
-
-## Create a spec
-
-Once you have a feature plan, turn it into a specification another developer or assistant can work from:
-
-```text
-Use spec to turn our agreed plan into a feature specification.
-```
-
-Dev Mentor reuses the plan and code evidence you already gathered. The document includes the goal, current and proposed behaviour, requirements with success/failure examples, design decisions, implementation steps, verification, and unresolved questions. Your lesson stays at the same checkpoint.
-
-| Choose | What you get | Example prompt |
-| --- | --- | --- |
-| **Portable Markdown** (default) | A self-contained feature spec, normally saved to `docs/specs/<feature>.md`. No additional tooling required. | “Turn our plan into a spec.” |
-| **Matt Pocock inspired** | A spec organised around the user problem, stories, implementation and testing decisions, and scope. | “Write this spec in Matt Pocock's style.” |
-| **pstack inspired** | A design-focused spec covering caller usage, data shapes, contracts, alternatives, trade-offs, and verifiable steps. | “Create a pstack-style design spec from this plan.” |
-| **OpenSpec** | A handoff to the official **`openspec-propose`** skill, using your project's configured schema and templates. | “Use OpenSpec to convert this agreed plan into a change.” |
-
-Project conventions and an explicit destination take precedence over the Markdown default. The Matt Pocock and pstack options adapt their document conventions; they do not publish an issue or start implementation. The [spec workflow](skills/spec/SKILL.md) links the upstream sources and format differences.
-
-**Choosing OpenSpec runs its official propose workflow.** Dev Mentor passes the agreed plan, evidence, decisions, and open questions to the installed skill, then checks the generated artifacts and runs available OpenSpec validation. OpenSpec owns the artifact format. You need its CLI, a configured project or specification store, and its official propose skill/command available to your assistant. If something is missing, Dev Mentor explains the setup options or offers a Markdown draft; it does not silently install or initialise OpenSpec. [Official propose skill](https://github.com/Fission-AI/OpenSpec/blob/main/skills/openspec-propose/SKILL.md).
-
-You can also start with Markdown and later say **“Convert this spec using OpenSpec.”** The saved document becomes the input to that handoff, and lessons then link to the resulting OpenSpec requirements. Other workflows can use the Markdown as context; tool-specific import and validation depend on their supported format.
-
-Spec creation leaves production code and implementation task completion unchanged. The result reports what was saved, which checks actually ran, and what still needs a decision.
-
-## One step at a time
-
-Give the mentor a feature description or ticket link. It starts with the reason for the work and connects the goal to your codebase: what is changing, what exists today, a small runtime map, and where to start looking. It explains technical terms in context when useful and adjusts the depth to you. For example, in a fictional project:
-
-> **Add a result limit**
->
-> The ticket says the item list is getting slower as it grows. It asks us to let callers request fewer results at a time. Existing callers should still get the same results when they do not set a limit, so they do not have to change their requests.
->
-> The route currently passes requests to a handler, which calls the repository. The handler has no limit input yet; the repository runs the existing query.
->
-> `Request → Route → Handler [start here] → Repository → Response`
->
-> **Start:** Open `src/items/handler.ts` and look at how it receives and passes the query. We'll trace an existing request before changing it.
-
-On **next**, the mentor walks through that current code and a concrete example before proposing an edit. Later cards show a small before/after comparison and explain what the change does and why it belongs there. The sample is illustrative; your lesson uses evidence from your own project.
-
-After the opening, lessons use focused cards: one idea or action at a time. You can ask for more detail or a smaller step whenever you need it.
-
-After you edit, say **done**. The mentor inspects your actual change, runs relevant checks when available, and gives focused feedback. A missing piece stays in focus before you move on.
-
-| Say | What happens |
-| --- | --- |
-| `help` | Get a hint for the current step, or codebase-specific starting ideas when no task is selected. |
-| `next` / `back` | Move one card. A pending edit is checked before advancing. |
-| `why` / `example` | Explore the current point without losing your place. |
-| `smaller` / `more detail` | Adjust the size or depth of the current explanation. |
-| `map` | See the flow and where you are in it. |
-
-Ask for the full explanation whenever you want it. To continue another day, ask the mentor to save your progress and resume from that checkpoint.
-
-## Watch a PR
-
-```text
-Use mentor. Watch this PR's comments and CI: [PR link].
-Tell me when something needs attention and coach me through fixing it.
-```
-
-The watch checks new comments and CI for the latest commit, stays quiet when nothing needs attention, and explains one issue at a time. You make the changes; the mentor checks your edits and follows the resulting CI run once the fix is pushed.
-
-Watching uses your assistant's available scheduler or a bounded live session. It confirms which is running and when it stops; background monitoring is not available in every host. Watching alone does not post replies, push code, rerun CI, or merge. Say **stop watching** to end it.
-
-This is a mode of **mentor**. Use **review** when you want to understand a colleague's PR so you can review their changes.
-
-## Skills
-
-Use **mentor** as your starting point, or name a skill directly.
-
-<details>
-<summary>Explore all ten skills</summary>
-
-| Skill | Reach for it when… |
-| --- | --- |
-| [mentor](skills/mentor/SKILL.md) | You want help getting started, resuming a lesson, or watching a PR's comments and CI. |
-| [explain](skills/explain/SKILL.md) | You want to understand how existing code runs. |
-| [coach](skills/coach/SKILL.md) | You're building a feature and want guidance while you implement it. |
-| [learn](skills/learn/SKILL.md) | You're studying a concept, technology, or certification topic. |
-| [review](skills/review/SKILL.md) | You want to understand a colleague's PR so you can review their changes. |
-| [architect](skills/architect/SKILL.md) | You need to compare approaches and understand the trade-offs. |
-| [devils-advocate](skills/devils-advocate/SKILL.md) | You want three different models to challenge a proposal. |
-| [walkthrough](skills/walkthrough/SKILL.md) | You want a guided tour of completed changes. |
-| [share](skills/share/SKILL.md) | You want a plan or lesson prepared for a colleague's review. |
-| [spec](skills/spec/SKILL.md) | You want a portable feature spec, a requested style, or an OpenSpec change through its official propose skill. |
-
-</details>
-
-### Try these prompts
-
-**Prepare to review a colleague's PR**
-
-```text
-Use review to help me understand my colleague's PR: [PR link].
-Explain what changes at runtime, what I should check, and which questions
-are worth asking the author. One small step at a time.
-```
-
-**Understand the runtime**
-
-```text
-Use explain to trace a request from this API handler to the database
-and back. Follow one example input, one step at a time.
-```
-
-**Explain your work to a colleague**
-
-```text
-Use walkthrough to guide me through this PR.
-Help me explain what changed, why, and how it's tested.
-```
-
-**Get a plan ready for review**
-
-```text
-Use share to prepare our current plan for my senior.
-Include the open decisions and specific questions for them.
-```
-
-### Challenge a decision with three models
-
-```text
-Use devils-advocate to challenge this design with three different models.
-Work toward an agreed decision and explain the reasons behind it.
-```
-
-The models assess the same evidence independently, challenge each other's conclusions, and ratify the same decision and rationale. The result includes rejected alternatives, accepted trade-offs, and remaining checks.
-
-Your assistant needs access to three distinct models. If a participant is unavailable or the debate remains unresolved, that stays explicit. Agreement is a recommendation; you decide whether to implement it.
-
 ## Update
 
-For skills CLI installations:
+For skills installed with `npx`, run `npx skills update` in your project. If you installed globally, use `npx skills update -g`. See the [update guide](docs/plugins.md#updates) for native plugins.
 
-```sh
-npx skills update
-```
-
-Native plugin users can follow the [plugin update steps](docs/plugins.md#updates).
-
-## License
-
-[MIT](https://github.com/SirL0fty/dev-mentor/blob/main/LICENSE).
+[MIT licence](https://github.com/SirL0fty/dev-mentor/blob/main/LICENSE) · By [SirL0fty](https://github.com/SirL0fty)
