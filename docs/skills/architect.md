@@ -1,0 +1,18 @@
+# architect
+
+[Skill file](../../skills/architect/SKILL.md)
+
+## What it does
+
+`architect` compares two or three real design options on the same criteria (ownership, contracts, failure modes, operating cost, migration, testing) and recommends one before anyone writes code.
+
+## When to reach for it
+
+Ask "how should we design this?" or "A or B?". To stress-test the choice, use `devils-advocate`; to write it up, use `share`.
+
+## It's working if
+
+- "Keep what we have" is an option when it's viable.
+- Evidence, assumptions and proposals are kept clearly apart.
+- The recommendation lists the trade-offs it accepts and the first steps, each with a way to check it.
+- Disagreements are recorded, not smoothed over.

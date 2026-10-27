@@ -2,22 +2,22 @@
 
 Dev Mentor is plain Agent Skills, so it runs in any assistant that loads skills ([full list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)). Your assistant supplies the model, tools and permissions; installing Dev Mentor adds none of those.
 
-| Assistant | Install | Tested |
-| --- | --- | --- |
-| Claude Code | Plugin, or `npx skills add … --agent claude-code` | Manifest validated (v0.8.3) |
-| Cursor | Customize → From GitHub Repository, or `--agent cursor` | Manifest validated (v0.8.3) |
-| Codex / ChatGPT desktop | Plugin marketplace, or `--agent codex` | Plugin listing appears in Codex (v0.8.3) |
-| OpenCode | `--agent opencode` | Skills load (v0.8.3) |
-| VS Code, T3 Code, OpenChamber, Devin, others | `npx skills add` and pick the assistant | Not tested |
+| Assistant | Install |
+| --- | --- |
+| Claude Code | Plugin, or `npx skills add … --agent claude-code` |
+| Cursor | Customize → From GitHub Repository, or `--agent cursor` |
+| Codex / ChatGPT desktop | Plugin marketplace, or `--agent codex` |
+| OpenCode, VS Code, T3 Code, OpenChamber, Devin and others | `npx skills add` and pick the assistant |
 
-**v0.9.0 has not been re-tested on any host yet.** The [behaviour checks](../evals/README.md) are how to test it. Packaging checks ran on macOS only.
+Install all the skills: every skill loads `mentor-style` for your settings, and `mentor` hands off to the others. Don't install both the plugin and the `npx` copy in the same assistant, or you'll see every skill twice. See [installation](plugins.md) for step-by-step setup.
 
-Install all the skills: every skill loads `mentor-style` for your settings, and `mentor` hands off to the others. If one is missing, the skill says so and falls back to defaults. Don't install both the plugin and the `npx` copy in the same assistant, or you'll see every skill twice. See [installation](plugins.md) for step-by-step setup.
+To see whether it's working in your assistant, try the **It's working if** lists in the [skill guides](skills/README.md).
 
 ## Needs extra setup
 
 | Feature | Needs |
 | --- | --- |
+| Clickable setup questions | A multiple-choice picker in your assistant. Without one, you get a single text card. |
 | Three-model debate | Three distinct models your assistant can select, each in its own session. Without them you get the quick single-model challenge. |
 | PR watch | A scheduler in your assistant, plus read access to the PR's comments and CI. Without one, mentor watches only while the session is open, or does a single check. |
 | OpenSpec specs | The OpenSpec CLI, a configured project, and the official `openspec-propose` skill. Without them, you get a Markdown spec instead. |
