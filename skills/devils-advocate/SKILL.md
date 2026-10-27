@@ -10,7 +10,7 @@ Reuse the current proposal. First build one shared **evidence pack**: the decisi
 ## Choose a mode
 
 - **Quick challenge** (the default when they ask to "poke holes"): you argue the strongest case against the proposal. Give 3–5 concrete objections, each with evidence, impact, and what would settle it; the best alternative; and what you'd want checked first. Label it **"Single-model challenge, not an independent review."**
-- **Three-model debate** (when they ask for a debate, multiple models, or independent reviewers): read [debate.md](references/debate.md). It only counts as complete when three *distinct* models each explicitly agree to the same written decision and its reasons. If you can't run three distinct models, say so, offer the quick challenge or a brief they can run elsewhere, and never role-play the missing reviewers.
+- **Three-model debate** (when they ask for a debate, multiple models, or independent reviewers): read [debate.md](references/debate.md). It uses the three models in the `debate models` setting, or helps them pick and save three on first use (`set up debate models` changes them later). It only counts as complete when three *distinct* models each explicitly agree to the same written decision and its reasons. If you can't run three distinct models, say so, offer the quick challenge or a brief they can run elsewhere, and never role-play the missing reviewers.
 
 ## Output
 

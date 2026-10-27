@@ -1,8 +1,28 @@
 # Three-model debate
 
+## Choose the three models
+
+Read the `debate models` line from `.dev-mentor/profile.md` in the project, or from `~/.dev-mentor/profile.md` for every project on this machine. The project file wins.
+
+```text
+debate models: claude-opus-5-5-xhigh, sol-6.1, <a third model from your list>
+debate effort: high
+```
+
+- **Models:** the three seats, in order A, B, C. `current` means this chat's own model in a fresh session; it counts as one of the three, so the other two must be different models.
+- **Effort:** `max`, `xhigh`, `high` or `medium`. It sets the reasoning level for every seat whose model supports one. The default is `high`.
+
+**If no line is set, or the person says `set up debate models`:**
+
+1. List the models you can actually pass to the host's subagent or model-selection tool in this session. If the host exposes a list of the person's models, use that too. If you can't detect any, ask them to paste the names they have access to. Never suggest a model you haven't confirmed.
+2. Propose three from **different families** (e.g. Claude, GPT, Gemini, Sol), using the highest reasoning level that fits the effort. If only one or two families are available, say so and say what that means: models from one family share more blind spots.
+3. Show the three and ask them to accept them or swap any. Offer once to save them to the profile; write the line only if they say yes.
+
+**If a configured model is rejected or missing**, stop and ask: offer the closest available model from the same family, or a different one. Don't swap it silently (pstack falls back automatically; this debate doesn't, because a quiet swap can leave two seats on the same model).
+
 ## Seat three distinct models
 
-- Use the host's real model-selection interface. Prefer different model families or providers. Say which three you'll use before starting.
+- Use the host's real model-selection interface. Say which three you'll use before starting.
 - Each of seats A, B and C needs its own fresh context. Three personas, three sessions of one model, or different temperature settings don't count. You coordinate; you are not a vote.
 - Record each seat's requested model, the model actually confirmed (from runtime metadata, not the model's own claim), and its session ID. If a model can't be confirmed, or two seats resolve to the same model, the debate is **incomplete**.
 - If the host can't do this, an already configured multi-model tool may fill the seats, if the person has authorised it. Otherwise prepare three identical briefs they can paste into other sessions. Never fall back silently to another model.

@@ -73,6 +73,10 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 - Ask for a three-model debate where only one model is available.
 - Checks: it reports the debate as incomplete or offers a quick challenge · it never role-plays the other reviewers.
 
+**14b. Debate models setting**
+- Set `debate models:` with one model that isn't available, then ask for a debate. Separately, say `set up debate models` with no setting.
+- Checks: it stops and asks about the missing model rather than swapping it · setup lists only models it can actually reach · it proposes three from different families where possible · it writes the profile line only after you say yes.
+
 **15. Spec without OpenSpec**
 - Ask for an OpenSpec change in a project without OpenSpec.
 - Checks: it names what's missing and offers Markdown · it doesn't install anything.

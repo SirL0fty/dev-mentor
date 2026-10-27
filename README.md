@@ -47,6 +47,7 @@ On first use, `mentor` asks three quick questions (or you just say `defaults`). 
 | **Warmth** | 1 blunt · 2 direct · 3 balanced · 4 warm · 5 extra warm | `warmer`, `more direct` |
 | **Pace** | one step at a time · a few steps · everything at once | `slower`, `faster` |
 | **Hands** | I write the code · we share it · you write it and explain | `you write this one` |
+| **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
 
 Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them to `.dev-mentor/profile.md` so it remembers next time.
 
