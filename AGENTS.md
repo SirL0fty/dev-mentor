@@ -8,6 +8,7 @@ Dev Mentor is a set of Agent Skills: plain Markdown that any assistant can load.
 - `skills/mentor-style/SKILL.md`: the **only** home of the settings and ground rules.
 - `docs/skills/<name>.md`: the human guide for each skill (What it does · When to reach for it · It's working if).
 - `scripts/check.mjs`: repo checks, run by CI on every push. `.changeset/`: pending release notes.
+- `scripts/link-skills.sh`: symlinks the skills into `~/.agents/skills` and `~/.claude/skills` for live testing; `--unlink` restores the installed copies.
 
 ## When you add, rename or change a skill
 
@@ -30,4 +31,4 @@ Update all of these in the same change:
 
 1. `npm install` once, then `npm run check`. Fix every ✗.
 2. `npx changeset`, with one user-facing line. Never edit version numbers or `CHANGELOG.md` by hand; the Release workflow does both.
-3. Try the relevant **It's working if** items from the skill's guide in a fresh session.
+3. Try the relevant **It's working if** items from the skill's guide in a fresh session. Run `scripts/link-skills.sh` first so your assistant uses this checkout.
