@@ -11,8 +11,8 @@ Dev Mentor is a set of skills for your AI coding assistant. It helps you find yo
 ```text
 You:     Use mentor. Help me add a "remember me" option to login. I'll write the code.
 
-Mentor:  I'll pitch this for someone growing, balanced tone, you write the code.
-         Say `settings` to change.
+Mentor:  I'll pitch this for a junior dev, balanced tone, one step at a time,
+         and ask who does each edit. Say `settings` to change.
 
          **Remember me · orientation**
          The ticket asks for sessions that survive closing the browser (today
@@ -39,16 +39,18 @@ Mentor:  **Works ✓**
 
 ## Make it yours
 
-On first use, `mentor` asks four quick questions (or you just say `defaults`). You can change any setting mid-lesson by saying so.
+On first use, `mentor` asks five quick questions (about a minute), or you just say `defaults`. You can change any setting mid-lesson, or just for one task.
 
 | Setting | Options | Say |
 | --- | --- | --- |
-| **Level** | new to coding / vibe coder · growing · experienced · lead or principal | `simpler`, `more technical`, `set level lead` |
+| **Experience** | brand new · vibe coder · junior · mid-level · senior · lead or principal | `simpler`, `more technical`, `set level lead` |
 | **Warmth** | 1 blunt · 2 direct · 3 balanced · 4 warm · 5 extra warm | `warmer`, `more direct` |
-| **Pace** | one step at a time · a few steps · everything at once | `slower`, `faster` |
-| **Hands** | I write the code · we share it · you write it and explain | `you write this one` |
+| **Pace** | one step, then wait · a few steps · the whole thing | `slower`, `faster` |
+| **Build** | ask me each step · I write it, you guide · show me code to copy · you write it and explain · write a spec · write an OpenSpec change | `you do this one`, `you write the tests`, `build spec` |
 | **ADHD mode** | off · on | `ADHD mode on`, `ADHD mode off` |
 | **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
+
+**Build** always starts by showing you where to start and why, so you learn the route even when the AI writes the code. With the default, *ask me each step*, you choose per edit: write it yourself, copy an explained snippet, let the AI do it (handy for tests or boilerplate), or turn it into a spec or OpenSpec change.
 
 **ADHD mode** is off by default. Turn it on and every reply starts with the one thing to do, shows where you are (`Step 3 of 5`), gives a time estimate (`~2 min`), ticks off finished steps, and parks side topics until you're ready. It changes how replies are shaped, not what they say.
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.0
+
+- **Finer onboarding:** five picks in about a minute: experience (brand new · vibe coder · junior · mid · senior · lead), tone 1–5, how much per reply, how to build, and ADHD mode.
+- **Build replaces "who writes the code":** always shows where to start and why first, then `ask` (choose per edit) · `me` · `copy` (explained code to paste) · `you` · `spec` · `openspec`. Overrides can be scoped, e.g. "you write the tests, I'll do the rest".
+- **ADHD mode is always a choice:** onboarding never shows it as already on, even when another skill in the session uses a similar style.
+- Old profiles still work: `hands` maps to `build`, `growing` to `junior`, `experienced` to `senior`.
+
 ## 0.10.0
 
 - **ADHD mode** (off by default): a new onboarding question and setting. When it's on, replies start with the one action to take, show the current step (`Step 3 of 5`), give time estimates, tick off finished steps, and park side topics. Turn it on or off anytime with `ADHD mode on` / `ADHD mode off`.
