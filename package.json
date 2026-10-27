@@ -1,0 +1,22 @@
+{
+  "name": "dev-mentor",
+  "version": "0.16.1",
+  "private": true,
+  "description": "Dev Mentor skills: build features you understand",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SirL0fty/dev-mentor"
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "changeset": "changeset",
+    "version": "changeset version && node scripts/sync-version.mjs"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^2.31.1",
+    "yaml": "^2.9.1"
+  }
+}

@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. Dev Mentor is just Markdown, so no build step is needed.
+Thanks for helping. The skills are just Markdown; the only tooling is a check script and changesets for releases.
 
 ## Layout
 
@@ -9,6 +9,9 @@ skills/<name>/SKILL.md          one skill, self-contained
 skills/<name>/references/       only for long, rarely needed detail
 skills/<name>/agents/openai.yaml  display name for Codex / ChatGPT
 evals/README.md                 behaviour checks
+scripts/check.mjs               repo checks (CI runs this)
+scripts/sync-version.mjs        copies the version into the plugin manifests
+.changeset/                     pending release notes
 ```
 
 Every skill ends with the same **Style settings** and **Ground rules** sections. If you change them, change them in all ten skills (`mentor` has a slightly longer version).
@@ -23,6 +26,5 @@ Every skill ends with the same **Style settings** and **Ground rules** sections.
 ## Before opening a PR
 
 1. Run the [behaviour checks](evals/README.md) that touch what you changed.
-2. Keep each skill's `description:` free of `: ` (colon then space). It breaks the YAML header and the skill fails to install or update.
-3. If you change the version, update it in `plugin.json`, `.claude-plugin/plugin.json` and `.cursor-plugin/plugin.json`.
-4. Add a line to [CHANGELOG.md](CHANGELOG.md).
+2. Run `npm install` once, then `npm run check`. It fails on a broken skill header (for example a `: ` in a description), mismatched versions, broken links, or a skill missing from the README. CI runs the same check on every push.
+3. Run `npx changeset` and describe the change in one line. Don't edit version numbers or `CHANGELOG.md` by hand: the Release workflow does both when its "chore: version" PR is merged.
