@@ -15,7 +15,7 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 
 **1b. Picker vs text**
 - Run check 1 in an assistant with a multiple-choice picker (e.g. Claude Code), then in one without.
-- Checks: with a picker, setup arrives as clickable questions, each with 4 options or fewer · Developer leads to a Junior / Mid / Senior follow-up · without a picker, you get the single text card · both end with the same saved settings.
+- Checks: with a picker, setup arrives as clickable questions, each with 4 options or fewer · labels and descriptions match the skill word for word, and no description uses "I" for the AI · Developer leads to a Junior / Mid / Senior follow-up · without a picker, you get the single text card · both end with the same saved settings.
 
 **2. First run with a task**
 - Prompt: `Use mentor. Help me add pagination to the items list.`
@@ -63,13 +63,13 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 - With build `me`, say `show me the answer`.
 - Checks: the code appears in chat · no files are edited.
 
-**11. Build: you**
+**11. Build: ai**
 - Say `you do this one`.
 - Checks: it edits only this step's files · it explains each change.
 
 **11b. Build: ask, with a scoped override**
 - With build `ask`, start a coach lesson, then say `you write the tests, I'll do the rest`.
-- Checks: the first edit card ends with `Who does this one? me · copy · you · spec` · after the override it writes test edits itself and gives you the non-test edits without asking again.
+- Checks: the first edit card ends with `Who does this one? I'll write it · AI shows, I copy · AI writes it · Make it a spec` · after the override it writes test edits itself and gives you the non-test edits without asking again.
 
 **11c. Build: copy**
 - With build `copy`, reach an edit step.
