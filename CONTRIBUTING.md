@@ -8,7 +8,7 @@ Thanks for helping. The skills are just Markdown; the only tooling is a check sc
 skills/<name>/SKILL.md          one skill, self-contained
 skills/<name>/references/       only for long, rarely needed detail
 skills/<name>/agents/openai.yaml  display name for Codex / ChatGPT
-evals/README.md                 behaviour checks
+docs/skills/<name>.md           guide per skill, ending in "It's working if"
 scripts/check.mjs               repo checks (CI runs this)
 scripts/sync-version.mjs        copies the version into the plugin manifests
 .changeset/                     pending release notes
@@ -25,6 +25,6 @@ Settings and ground rules live only in `skills/mentor-style/SKILL.md`. Every oth
 
 ## Before opening a PR
 
-1. Run the [behaviour checks](evals/README.md) that touch what you changed.
+1. Try the **It's working if** items in the [skill guide](docs/skills/README.md) for what you changed, in a fresh session. If you change how a skill behaves, update its guide too.
 2. Run `npm install` once, then `npm run check`. It fails on a broken skill header (for example a `: ` in a description), mismatched versions, broken links, or a skill missing from the README. CI runs the same check on every push.
 3. Run `npx changeset` and describe the change in one line. Don't edit version numbers or `CHANGELOG.md` by hand: the Release workflow does both when its "chore: version" PR is merged.

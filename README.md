@@ -104,7 +104,7 @@ flowchart LR
 | [share](skills/share/SKILL.md) | Write up a plan or lesson for a colleague to review (file, Obsidian or Notion). |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec). |
 
-Install them all: every skill loads `mentor-style` for your settings, and hands saved lessons and exports over to `mentor`.
+Install them all: every skill loads `mentor-style` for your settings, and hands saved lessons and exports over to `mentor`. Each skill has a short [guide](docs/skills/README.md) with what it does, when to use it, and how to tell it's working.
 
 ## Install
 
@@ -170,7 +170,7 @@ If what you ask about isn't in the project, it tells you which project it looked
 
 ## Contributing
 
-Found a skill doing the wrong thing? [Open an issue](https://github.com/SirL0fty/dev-mentor/issues/new?template=skill-misbehaved.md) with the transcript. Want to change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [behaviour checks](evals/README.md).
+Found a skill doing the wrong thing? [Open an issue](https://github.com/SirL0fty/dev-mentor/issues/new?template=skill-misbehaved.md) with the transcript. Want to change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [skill guides](docs/skills/README.md).
 
 Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack).
 
