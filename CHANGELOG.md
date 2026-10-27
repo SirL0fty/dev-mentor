@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.14.0
+
+- **Global settings:** settings now save to `~/.dev-mentor/profile.md` by default, so they follow you to every project. Pick "Just this project" to save `.dev-mentor/profile.md` instead; its lines override the global file. `save globally` and `save for this project` move them.
+
 ## 0.13.0
 
 - **Change settings later:** `settings` shows your choices, then a picker asks what to change and re-asks only that question. `change tone`, `change build`, `change experience`… jump straight to one question; `change everything` runs the full setup again.

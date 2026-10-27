@@ -65,9 +65,9 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 | `you do this one` | For this step only; your settings stay the same. |
 | `reset settings` | Back to defaults, or run setup again. |
 
-If you saved a profile, changes are saved automatically and the AI tells you in one line.
+If you saved a profile, changes are saved automatically to the same place and the AI tells you in one line.
 
-Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them to `.dev-mentor/profile.md` so it remembers next time.
+Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them for all your projects (`~/.dev-mentor/profile.md` in your home folder) or just one project (`.dev-mentor/profile.md`, which overrides the global file).
 
 ## The flow
 
