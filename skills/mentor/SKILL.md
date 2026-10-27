@@ -156,8 +156,24 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
   ```
 
   It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. The `debate` lines are optional and only used by `devils-advocate`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
-- **save / pause**: write `.dev-mentor/lesson.md` with the goal, workflow, commit you inspected, steps done, the current step, any edit you're waiting on, and the next action. Suggest adding `.dev-mentor/` to `.gitignore`.
-- **resume**: read it, check whether the code has changed since that commit, and pick up at the same step. Resuming doesn't count as `next`.
+### Saved lessons
+
+Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md`, named after the goal in a few lowercase words (`slide-navigation.md`, `pagination.md`).
+
+- **`save` / `pause`:** write the lesson's file with: a title, the goal, the workflow, the commit you inspected, steps done, the current step (`Step 1 of 3`), any edit you're waiting on, the next action, and the time saved. Saving the same lesson again updates its file; a different lesson gets a new file, never overwriting another. Confirm with the full path. The first time, suggest adding `.dev-mentor/` to `.gitignore`.
+- **`resume`:** list the files in `.dev-mentor/lessons/`.
+  - None: say there are no saved lessons in this project.
+  - One: pick it up straight away.
+  - Several: ask with the picker if there is one, most recent first, up to 4 options (the picker's "Other" box covers the rest; without a picker, a numbered list):
+
+    **Resume** · Which lesson do you want to pick up?
+    - Slide navigation · Step 1 of 3 · saved 11:50
+    - Pagination · Step 2 of 5 · saved yesterday
+
+  `resume pagination` skips the question. Then check whether the code has changed since the saved commit, say so if it has, and show the saved step again. Resuming doesn't count as `next`.
+- **`lessons`:** list every saved lesson with its step and when it was saved.
+- **`delete lesson <name>`:** confirm first, then remove that one file.
+- **Old saves:** if `.dev-mentor/lesson.md` exists, treat it as one more saved lesson; the first time it's resumed or saved, move it to `.dev-mentor/lessons/<short-name>.md` and say so.
 
 ## 5. Watch a PR
 
@@ -177,7 +193,7 @@ Read your settings from `~/.dev-mentor/profile.md` (every project), then `.dev-m
 
 `warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change **only that one setting, by one step** (e.g. warmth 2 → 3; `warmer` never jumps to 5), straight away, and keep their place in the lesson. Never change any other setting as a side effect. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
 
-`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any settings change, confirm it in one line, then show the current card again in the new settings and wait; don't advance. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
+`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow; `save`, `resume`, `lessons` and `delete lesson` follow mentor's saved-lessons flow (one file per lesson in `.dev-mentor/lessons/`). After any settings change, confirm it in one line, then show the current card again in the new settings and wait; don't advance. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
 
 **ADHD mode on** changes the shape of every reply, not the content or the honesty:
 

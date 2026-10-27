@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.15.0
+
+- **Several saved lessons:** each lesson saves to its own file in `.dev-mentor/lessons/`, so saving a new one never overwrites another. `resume` asks which one (most recent first, with your step), `resume <name>` goes straight there, `lessons` lists them and `delete lesson <name>` removes one. An old `.dev-mentor/lesson.md` is picked up and moved automatically.
+
 ## 0.14.2
 
 - **Quick commands change one thing:** `warmer`, `more direct` and the rest move only their own setting by one step, never another setting.
