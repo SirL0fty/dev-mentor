@@ -10,7 +10,7 @@ Pstack includes a Claude Code adapter for tool names, invocation, models, and un
 
 ## Dev Mentor's design
 
-Maintain ten plain Agent Skills with one set of teaching, session, and export references. `mentor` keeps the current conversational role and routes to the appropriate workflow. Native Cursor/Claude manifests reference the same content; a Skills Pack distributes it to the other supported hosts. No dedicated named agent or custom installer is necessary.
+Maintain ten plain, self-contained Agent Skills that share a short style and ground-rules section. `mentor` keeps the current conversational role and routes to the appropriate workflow. Native Cursor/Claude manifests reference the same content; a Skills Pack distributes it to the other supported hosts. No dedicated named agent or custom installer is necessary.
 
 Adapt to available capabilities rather than copying Cursor tool names into every workflow. When native delegation supports three selected models, the current assistant coordinates them. Otherwise an authorised existing integration or user-run sessions can supply independent reviews. Missing capabilities remain visible instead of being simulated.
 
