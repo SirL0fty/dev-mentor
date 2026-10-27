@@ -132,14 +132,15 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
   Say where they're saved: "for all projects", "for this project" (when the project file overrides any line), or "not saved yet". With a picker, follow the card with one question, using this text word for word:
 
   **Change** · What do you want to change?
-  - Experience · Your level with code.
-  - Tone and pace · How the AI talks to you, and how much per reply.
-  - Build and output · Who makes each edit, and code or a spec.
+  - Everything · Go through all the setup questions again.
+  - Experience and tone · Your level with code, and how the AI talks to you.
+  - Pace and build · How much per reply, who makes each edit, and code or a spec.
   - ADHD mode · Turn it on or off.
 
-  Then ask only the setup question(s) for that choice, with the same labels and descriptions as onboarding. The picker's "Other" box, or a reply like "nothing", leaves everything as it is. Without a picker, end the card with: *"Say `change tone`, `change build`… or `change everything`."*
+  Then ask only the setup question(s) for that choice (Everything asks them all), with the same labels and descriptions as onboarding. The picker's "Other" box, or a reply like "nothing", leaves everything as it is. Without a picker, end the card with: *"Say `change tone`, `change build`… or `change everything`."*
 - **`change <setting>`** jumps straight to that one setup question: `change experience`, `change tone`, `change pace`, `change build`, `change output`, `change ADHD mode`. `change everything` (or `change settings`) runs the full setup again.
 - **Quick commands** (`warmer`, `faster`, `ADHD mode on`…) change a setting without any questions.
+- **Pick up where you were:** once the change is saved (or they chose not to save), confirm it in one line, then show the card they were on before `settings` **again, rewritten in the new settings**, and wait for them as before. Don't move to the next step, and don't repeat the settings card. If no lesson was active, return to whatever you were doing before, or to step 2.
 - **Saving:** after any change, update just that line in the file it came from: the project file if it sets that line, otherwise `~/.dev-mentor/profile.md`. Confirm in one line (*"Saved for all projects: build is now AI writes, explains."*). If there's no profile yet, ask the **Save** question above once. `save for this project` or `save globally` moves the current settings to that file. Per-step overrides like `you do this one` are never saved.
 - **`reset settings`** asks, with the picker if there is one: **Reset** · Reset your settings? · *Back to defaults* (mid-level, balanced, one step, choose each time, code, ADHD off) · *Run setup again* (ask all the questions) · *Cancel*. Update whichever profile file(s) exist. It never touches saved lessons or debate models.
 - The profile file is plain lines, for example:
@@ -176,7 +177,7 @@ Read your settings from `~/.dev-mentor/profile.md` (every project), then `.dev-m
 
 `warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change one setting straight away and keep their place in the lesson. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
 
-`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
+`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any settings change, confirm it in one line, then show the current card again in the new settings and wait; don't advance. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
 
 **ADHD mode on** changes the shape of every reply, not the content or the honesty:
 

@@ -58,14 +58,14 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 
 | Say | What happens |
 | --- | --- |
-| `settings` | Shows your current choices, then asks what you want to change. |
+| `settings` | Shows your current choices, then asks what to change: everything, or just one area. |
 | `change tone` (or `experience`, `pace`, `build`, `output`, `ADHD mode`) | Asks just that one question again. |
 | `change everything` | Runs the full setup again. |
 | `warmer`, `faster`, `ADHD mode on`… | Changes it straight away, no questions. |
 | `you do this one` | For this step only; your settings stay the same. |
 | `reset settings` | Back to defaults, or run setup again. |
 
-If you saved a profile, changes are saved automatically to the same place and the AI tells you in one line.
+If you saved a profile, changes are saved automatically to the same place and the AI tells you in one line. Then it shows the step you were on again, in your new settings, so you carry on from where you left off.
 
 Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them for all your projects (`~/.dev-mentor/profile.md` in your home folder) or just one project (`.dev-mentor/profile.md`, which overrides the global file).
 
