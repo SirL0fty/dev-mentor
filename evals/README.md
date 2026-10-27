@@ -11,7 +11,7 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 **1. First run, no task**
 - Setup: no `.dev-mentor/` folder.
 - Prompt: `Use mentor.`
-- Checks: one welcome card with the three picks · accepts `defaults` · doesn't scan the whole repo before asking.
+- Checks: one welcome card with the four picks (including ADHD mode) · accepts `defaults` · doesn't scan the whole repo before asking.
 
 **2. First run with a task**
 - Prompt: `Use mentor. Help me add pagination to the items list.`
@@ -24,6 +24,10 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 **4. Level: new vs lead**
 - Ask the same question at `level new` and at `level lead`.
 - Checks: `new` explains terms and commands · `lead` skips the basics and covers trade-offs or risk.
+
+**4b. ADHD mode**
+- Run the same coach step with `ADHD mode off`, then `ADHD mode on`.
+- Checks: off gives a normal card · on starts with the action, shows `Step N of M`, gives a time estimate, marks a finished step with ✓, and parks a side issue instead of explaining it · the facts and any problems stated are the same in both.
 
 **5. Saved profile**
 - Accept the offer to save settings, then start a fresh session.
