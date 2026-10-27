@@ -4,98 +4,133 @@
 
 **Build features you understand. Learn where to start next time.**
 
-Dev Mentor helps you find your way around a codebase, plan a feature, make changes one step at a time, and check your work. Start with **mentor**; it guides you to the right skill.
+Dev Mentor is a set of skills for your AI coding assistant. It helps you find your way around a codebase, plan a feature, build it one step at a time, and check your work. It adapts to you, whether you're vibe coding your first app or you're a principal engineer reviewing a design.
+
+## What it looks like
+
+```text
+You:     Use mentor. Help me add a "remember me" option to login. I'll write the code.
+
+Mentor:  I'll pitch this for someone growing, balanced tone, you write the code.
+         Say `settings` to change.
+
+         **Remember me · orientation**
+         The ticket asks for sessions that survive closing the browser (today
+         they end on close). Login flows through:
+
+           LoginForm.tsx → POST /api/login → auth/session.ts (createSession)
+                                                    ▲ start here
+
+         Open `auth/session.ts` and look at how `createSession` sets the cookie.
+         Nothing to edit yet.
+
+You:     next
+
+Mentor:  **Remember me · the cookie today**
+         `createSession` sets `maxAge` to undefined, so the browser treats the
+         cookie as a session cookie and deletes it on close…
+
+You:     done
+
+Mentor:  **Works ✓**
+         Your diff passes `remember` through and sets `maxAge` only when it's
+         true. `npm test auth` passes (12 tests). Next: the checkbox in LoginForm.
+```
+
+## Make it yours
+
+On first use, `mentor` asks three quick questions (or you just say `defaults`). You can change any setting mid-lesson by saying so.
+
+| Setting | Options | Say |
+| --- | --- | --- |
+| **Level** | new to coding / vibe coder · growing · experienced · lead or principal | `simpler`, `more technical`, `set level lead` |
+| **Warmth** | 1 blunt · 2 direct · 3 balanced · 4 warm · 5 extra warm | `warmer`, `more direct` |
+| **Pace** | one step at a time · a few steps · everything at once | `slower`, `faster` |
+| **Hands** | I write the code · we share it · you write it and explain | `you write this one` |
+| **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
+
+Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them to `.dev-mentor/profile.md` so it remembers next time.
+
+## The flow
+
+```mermaid
+flowchart LR
+    Start(["mentor<br/>onboard + settings"]) --> Where["Find a starting point<br/>in your real code"]
+    Where --> Pick{"What do you<br/>want to do?"}
+    Pick -->|understand| U["explain · learn<br/>review · walkthrough"]
+    Pick -->|build| C["coach"]
+    Pick -->|decide| D["architect<br/>devils-advocate"]
+    C --> Edit["You write one step"] --> Check["done → mentor checks<br/>your diff + runs a test"]
+    Check -->|next step| C
+    C -. capture .-> S["share · spec"]
+```
 
 ## Skills
 
-| Skill | What it helps you do |
+| Skill | Helps you |
 | --- | --- |
-| [mentor](skills/mentor/SKILL.md) | Find where to start, resume a lesson, or watch a PR's comments and CI. |
+| [mentor](skills/mentor/SKILL.md) | Get started, change settings, find where to start, resume a lesson, or watch a PR's comments and CI. |
+| [coach](skills/coach/SKILL.md) | Build a feature step by step while you write the code. |
 | [explain](skills/explain/SKILL.md) | Understand how existing code runs. |
-| [coach](skills/coach/SKILL.md) | Build a feature with guidance while you write the code. |
 | [learn](skills/learn/SKILL.md) | Learn a concept or technology. |
 | [review](skills/review/SKILL.md) | Understand a colleague's PR so you can review it. |
+| [walkthrough](skills/walkthrough/SKILL.md) | Tour changes that are already finished. |
 | [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. |
-| [devils-advocate](skills/devils-advocate/SKILL.md) | Challenge a proposal with three distinct models. |
-| [walkthrough](skills/walkthrough/SKILL.md) | Take a guided tour of completed changes. |
-| [share](skills/share/SKILL.md) | Prepare a plan or lesson for a colleague to review. |
-| [spec](skills/spec/SKILL.md) | Turn a plan into a feature spec or an OpenSpec change. |
+| [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal, or run a three-model debate. |
+| [share](skills/share/SKILL.md) | Write up a plan for a colleague to review. |
+| [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec). |
+
+Each skill is a single, self-contained `SKILL.md`, so you can install all of them or only the ones you want.
 
 ## Install
 
-**For Cursor, OpenCode, Codex, and other skill-capable assistants**, open a terminal in your project and run:
+**Any skill-capable assistant** (Cursor, Claude Code, Codex, OpenCode and more). Run this in your project:
 
 ```sh
 npx skills add SirL0fty/dev-mentor
 ```
 
-Choose your assistant and the skills you want. Choose **global** to use them across projects on that machine. `npx` requires Node.js 22.20 or newer. For T3 Code or OpenChamber, select the assistant provider used by the app.
-
-Prefer a native plugin? Choose your assistant:
-
-<a id="install-chatgpt"></a>
-**ChatGPT desktop / Codex:** Open **Plugins → Add plugin marketplace**. Enter `SirL0fty/dev-mentor` as the source, `main` as the Git ref, and leave sparse paths blank. Add the marketplace, then install **Dev Mentor** by SirL0fty. Start a new chat.
-
-<a id="install-cursor"></a>
-**Cursor:** Open **Customize → From GitHub Repository**, enter `https://github.com/SirL0fty/dev-mentor`, then install Dev Mentor from the imported marketplace.
+Pick your assistant and choose **global** to use it in every project. This needs Node.js 22.20 or newer.
 
 <a id="install-claude"></a>
-**Claude Code:**
+**Claude Code plugin:**
 
 ```sh
 claude plugin marketplace add SirL0fty/dev-mentor
 claude plugin install dev-mentor@dev-mentor
 ```
 
-<a id="install-opencode"></a><a id="install-other"></a>
-**OpenCode and other assistants:** Use the `npx` command above and select your assistant. Start a new session after installation.
+Then run `/dev-mentor:mentor`.
 
-[Detailed installation, updates and troubleshooting](docs/plugins.md) · [Host compatibility](docs/compatibility.md)
+<a id="install-chatgpt"></a>
+**ChatGPT desktop / Codex:** go to **Plugins → Add plugin marketplace**, enter `SirL0fty/dev-mentor` with Git ref `main`, then install **Dev Mentor**. Select it with `@` in a new chat.
+
+<a id="install-cursor"></a>
+**Cursor:** go to **Customize → From GitHub Repository**, paste `https://github.com/SirL0fty/dev-mentor`, then install Dev Mentor.
+
+<a id="install-opencode"></a><a id="install-other"></a>
+**OpenCode and others:** use the `npx` command above.
+
+[Detailed install, update and troubleshooting](docs/plugins.md) · [Host compatibility](docs/compatibility.md)
 
 ## Get started
 
-Open your project and ask:
-
 ```text
-Use mentor to help me find where to start in this codebase.
+Use mentor to help me get started.
 ```
 
-Or give it a ticket or feature: **“Help me build this one step at a time. I'll write the code.”** In ChatGPT/Codex desktop, select **Dev Mentor** with `@` first. In Claude Code, use `/dev-mentor:mentor help`.
+Or give it a ticket: **"Help me build this one step at a time. I'll write the code."**
 
-The mentor explains the goal and current code, shows where to start, and guides you through small steps. After an edit, say **done** so it can inspect your change and run relevant checks. Say **help**, **next**, **back**, **why**, **example**, or **more detail** as you go.
-
-<a id="help"></a><a id="create-a-spec"></a><a id="watch-a-pr"></a>
-You can also ask it to **walk through a PR**, **prepare a plan for review**, **turn a plan into a spec**, or **watch a PR's comments and CI**. Watching needs a host that supports monitoring. OpenSpec conversion needs the project's OpenSpec setup and the official `openspec-propose` skill. The three-model debate needs access to three distinct models.
-
-## Skill map
-
-```mermaid
-flowchart TB
-    Mentor(["mentor<br/>Find your starting point"])
-    Understand["UNDERSTAND<br/><br/>explain · Existing code<br/>learn · Concepts<br/>review · A colleague's PR<br/>walkthrough · Completed changes"]
-    Coach["coach<br/>Plan one manageable step"]
-    Prepare["CAPTURE THE PLAN<br/><br/>share · Review document<br/>spec · Feature spec"]
-    Design["DESIGN HELP<br/><br/>architect · Compare approaches<br/>devils-advocate · Challenge a decision"]
-    Edit["You write the code"]
-    Check["Inspect your change<br/>Run focused checks"]
-    Mentor --> Understand
-    Mentor --> Coach
-    Mentor --> Prepare
-    Coach -. "if needed" .-> Design
-    Coach --> Edit --> Check
-    Check -->|"feedback or next step"| Coach
-    classDef entry fill:#08224c,color:#ffffff,stroke:#0cbfaf,stroke-width:3px
-    classDef understand fill:#e9f8f4,color:#123e35,stroke:#32a68e
-    classDef build fill:#edf1fc,color:#182c59,stroke:#6d8cce
-    classDef share fill:#fff4db,color:#594011,stroke:#dca735
-    class Mentor entry
-    class Understand understand
-    class Coach,Edit,Check,Design build
-    class Prepare share
-```
+As you go, say **done**, **next**, **back**, **why**, **example**, **help** or **save**. Next time, say **resume** to pick up where you left off.
 
 ## Update
 
-For skills installed with `npx`, run `npx skills update` in your project. If you installed globally, use `npx skills update -g`. See the [update guide](docs/plugins.md#updates) for native plugins.
+`npx skills update` (add `-g` for a global install). For plugins, see the [update guide](docs/plugins.md#updates). See the [changelog](CHANGELOG.md) for what changed.
 
-[MIT licence](https://github.com/SirL0fty/dev-mentor/blob/main/LICENSE) · By [SirL0fty](https://github.com/SirL0fty)
+## Contributing
+
+Found a skill doing the wrong thing? [Open an issue](https://github.com/SirL0fty/dev-mentor/issues/new?template=skill-misbehaved.md) with the transcript. Want to change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [behaviour checks](evals/README.md).
+
+Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack).
+
+[MIT licence](LICENSE) · By [SirL0fty](https://github.com/SirL0fty)
