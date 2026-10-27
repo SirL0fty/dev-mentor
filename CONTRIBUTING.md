@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. The skills are just Markdown; the only tooling is a check script and changesets for releases.
+Thanks for helping. The rules for changing skills are in [AGENTS.md](AGENTS.md), which AI assistants read automatically. The skills are just Markdown; the only tooling is a check script and changesets for releases.
 
 ## Layout
 

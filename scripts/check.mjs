@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Repo checks run in CI and by `npm run check`:
 // skill headers parse, names match folders, metadata parses,
-// manifests share one version, relative links resolve, README lists every skill.
+// manifests share one version, relative links resolve, README lists every skill,
+// every skill has a guide and loads mentor-style.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
@@ -52,6 +53,15 @@ try {
   execFileSync("node", [join(repo, "scripts/sync-version.mjs"), "--check"], { stdio: "pipe" });
 } catch (e) {
   fail(String(e.stderr).trim());
+}
+
+// Every skill has a guide, and every skill except mentor-style loads it
+for (const name of skills) {
+  if (!existsSync(join(repo, `docs/skills/${name}.md`))) fail(`docs/skills/${name}.md: missing guide`);
+  if (name === "mentor-style") continue;
+  const text = readFileSync(join(repo, `skills/${name}/SKILL.md`), "utf8");
+  if (!text.includes('call the Skill tool with "mentor-style"')) fail(`skills/${name}/SKILL.md: doesn't load mentor-style`);
+  if (text.includes("## Ground rules")) fail(`skills/${name}/SKILL.md: has its own Ground rules; they belong in mentor-style`);
 }
 
 // README lists every skill
