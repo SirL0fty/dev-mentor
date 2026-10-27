@@ -13,7 +13,7 @@ Checked against the linked documentation on 2026-10-26. The shared delivery form
 | VS Code | Choose the actual assistant, such as `github-copilot` or `codex` | Extension-dependent; UI untested |
 | Devin | CLI `--agent devin` for Devin for Terminal; repository skill discovery for other Devin surfaces | Documented discovery; no live Devin check |
 | Other skill-capable hosts | Select the host in `npx skills add` | See the current CLI support list; no blanket runtime guarantee |
-| File-reading assistants | Read the extracted `skills/mentor/SKILL.md` and its references | Manual activation; requires accessible files and instruction following |
+| File-reading assistants | Read `skills/mentor/SKILL.md`, then the chosen skill's `SKILL.md` | Manual activation; requires accessible files and instruction following |
 
 The [skills CLI agent list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) owns target names and installation paths. Use the installed CLI's help when versions differ. Do not install both native plugin and standalone copies in the same host unless you deliberately want duplicate entries. Namespace and skill-picker behaviour differ by host. ChatGPT/Codex supports selecting the whole plugin with `@`; Claude Code uses `/dev-mentor:<skill>`. Display metadata labels individual skills `Dev Mentor: <workflow>` in hosts that read `agents/openai.yaml`; other hosts may still show the short skill names. Live rendering of the new labels and icons remains untested.
 
@@ -21,7 +21,7 @@ Native metadata checks used Claude Code 2.1.310, Codex CLI 0.164.0-alpha.11.1, t
 
 ## Runtime capabilities
 
-Normal teaching needs the selected model and access to relevant evidence. The ten workflows share the same session and export rules. Each generated skill contains its references; the mentor skill also includes the other workflows for hosts without a native invocation API.
+Normal teaching needs the selected model and access to relevant evidence. The ten workflows share the same session and export rules. Each skill is a self-contained `SKILL.md`, with its own `references/` folder only where it needs longer detail. Install the whole pack so `mentor` can route to the other skills; if one is missing, mentor says so instead of imitating it.
 
 Three-model debate additionally needs independent sessions, three selectable distinct models, routing/identity evidence, and a way to exchange follow-up rounds. Some hosts restrict subagents to one provider or inherit the parent model. The pack never silently substitutes a model to claim diversity. Use an already configured multi-model tool when authorised, or move the brief to a capable host. User-run sessions with attributable results are a manual option; simulated perspectives do not satisfy the requirement.
 
