@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.12.0
+
+- **Clickable setup:** when your assistant has a multiple-choice picker, onboarding uses it, with every question at 4 options or fewer so it works in any picker. Experience has a Developer → Junior / Mid / Senior follow-up, and "build code or plan it as a spec / OpenSpec" is its own question. Assistants without a picker still get the single text card.
+- `change settings` asks the setup questions again.
+
 ## 0.11.0
 
 - **Finer onboarding:** five picks in about a minute: experience (brand new · vibe coder · junior · mid · senior · lead), tone 1–5, how much per reply, how to build, and ADHD mode.

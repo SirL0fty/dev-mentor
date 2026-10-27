@@ -13,6 +13,10 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 - Prompt: `Use mentor.`
 - Checks: one welcome card with the five picks · ADHD mode is offered as on/off, never shown as already on, even when another ADHD or style skill is active · accepts `defaults` · doesn't scan the whole repo before asking.
 
+**1b. Picker vs text**
+- Run check 1 in an assistant with a multiple-choice picker (e.g. Claude Code), then in one without.
+- Checks: with a picker, setup arrives as clickable questions, each with 4 options or fewer · Developer leads to a Junior / Mid / Senior follow-up · without a picker, you get the single text card · both end with the same saved settings.
+
 **2. First run with a task**
 - Prompt: `Use mentor. Help me add pagination to the items list.`
 - Checks: no questionnaire · a single "I'll pitch this…" line, then an orientation card.
