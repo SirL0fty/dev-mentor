@@ -1,6 +1,6 @@
 ---
 name: architect
-description: Develop and compare technical approaches, responsibilities, interfaces, and trade-offs for a feature or system. Use for design decisions before implementation.
+description: Dev Mentor - Develop and compare technical approaches, responsibilities, interfaces, and trade-offs for a feature or system. Use for design decisions before implementation.
 ---
 
 # Architect

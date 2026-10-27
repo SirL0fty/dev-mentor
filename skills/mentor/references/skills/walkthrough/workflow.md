@@ -1,6 +1,6 @@
 ---
 name: walkthrough
-description: Provide an interactive guided tour of completed code changes and help the developer explain the implementation to colleagues. Use for requests to walk through what changed or tour a PR; use review to prepare to review a colleague's PR.
+description: Dev Mentor - Provide an interactive guided tour of completed code changes and help the developer explain the implementation to colleagues. Use for requests to walk through what changed or tour a PR; use review to prepare to review a colleague's PR.
 ---
 
 # Walkthrough

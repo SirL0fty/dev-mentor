@@ -1,6 +1,6 @@
 ---
 name: coach
-description: Help a developer clarify and implement a feature or ticket through manageable checkpoints while they write the code. Use for guided implementation rather than touring finished work.
+description: Dev Mentor - Help a developer clarify and implement a feature or ticket through manageable checkpoints while they write the code. Use for guided implementation rather than touring finished work.
 ---
 
 # Coach

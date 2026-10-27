@@ -1,6 +1,6 @@
 ---
 name: mentor
-description: Route engineering mentoring, suggest where to start, resume a lesson, or watch a specified PR's comments and CI using available host tools. Use for mentor help, project ideas, PR watching, or guidance without a selected workflow.
+description: Dev Mentor - Route engineering mentoring, suggest where to start, resume a lesson, or watch a specified PR's comments and CI using available host tools. Use for mentor help, project ideas, PR watching, or guidance without a selected workflow.
 ---
 
 # Mentor

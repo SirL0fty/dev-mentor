@@ -1,6 +1,6 @@
 ---
 name: review
-description: Help a developer understand a colleague's PR so they can review the changes themselves. Use for review preparation, unfamiliar diffs, and deciding which questions or checks matter in someone else's change.
+description: Dev Mentor - Help a developer understand a colleague's PR so they can review the changes themselves. Use for review preparation, unfamiliar diffs, and deciding which questions or checks matter in someone else's change.
 ---
 
 # Review

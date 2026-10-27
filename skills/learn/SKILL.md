@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Teach an engineering concept, technology, or certification topic through examples and adjustable checkpoints, including when no repository is available.
+description: Dev Mentor - Teach an engineering concept, technology, or certification topic through examples and adjustable checkpoints, including when no repository is available.
 ---
 
 # Learn

@@ -1,6 +1,6 @@
 ---
 name: share
-description: Prepare or save a self-contained plan or lesson for another developer to assess, including explicit reviewer questions. Use for senior-review documents; this does not send messages, notify people, or grant access.
+description: Dev Mentor - Prepare or save a self-contained plan or lesson for another developer to assess, including explicit reviewer questions. Use for senior-review documents; this does not send messages, notify people, or grant access.
 ---
 
 # Share
