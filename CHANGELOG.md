@@ -7,6 +7,7 @@
 - **Simpler skills:** each skill is now one short, self-contained `SKILL.md`. The ten copies of the shared reference files are gone, and the instructions shrank from about 74k words to about 8k.
 - **Save and resume:** `save` writes `.dev-mentor/lesson.md`; `resume` picks up at the same step.
 - **Devil's advocate:** new quick single-model challenge mode, clearly labelled. The three-model debate is unchanged in spirit.
+- **Debate models setting** (modelled on pstack's `pstack-models.mdc`): pin the debate's three models and a reasoning effort in `.dev-mentor/profile.md` or `~/.dev-mentor/profile.md`. `set up debate models` lists the models your assistant can reach and suggests three from different families. Unlike pstack, a missing model is never swapped silently.
 - **Behaviour checks:** `evals/README.md` lists 16 scenarios covering the core promises.
 - README now shows an example session, the settings, and the flow.
 

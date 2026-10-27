@@ -60,6 +60,18 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
 ## 4. Settings, save and resume
 
 - `settings` shows the current values as one short card, with how to change them.
+- The profile file is plain lines, for example:
+
+  ```text
+  level: growing
+  warmth: 3
+  pace: step
+  hands: me
+  debate models: claude-opus-5-5-xhigh, sol-6.1, <a third model>
+  debate effort: high
+  ```
+
+  The `debate` lines are optional and only used by `devils-advocate`. They can also live in `~/.dev-mentor/profile.md` to apply on every project. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
 - **save / pause**: write `.dev-mentor/lesson.md` with the goal, workflow, commit you inspected, steps done, the current step, any edit you're waiting on, and the next action. Suggest adding `.dev-mentor/` to `.gitignore`.
 - **resume**: read it, check whether the code has changed since that commit, and pick up at the same step. Resuming doesn't count as `next`.
 
