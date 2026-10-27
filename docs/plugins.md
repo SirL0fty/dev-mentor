@@ -42,7 +42,7 @@ codex plugin marketplace add SirL0fty/dev-mentor --ref main
 
 Then open the plugin browser in the desktop app, or run `/plugins` inside Codex CLI, select the Dev Mentor marketplace, and install the plugin. Start a fresh session after installation.
 
-**Check:** the plugin detail page should show **SirL0fty**, version **0.16.1** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
+**Check:** the plugin detail page should show **SirL0fty**, the latest version from the [changelog](../CHANGELOG.md), and all the skills. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
 
 
 <a id="install-cursor"></a>
