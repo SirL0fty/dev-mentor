@@ -1,6 +1,6 @@
 ---
 name: mentor
-description: Start here. Onboards the person, sets how Dev Mentor talks to them (experience level, tone, pace, build mode such as guided, copy, AI-written, spec or OpenSpec, and ADHD mode), suggests where to start in this codebase, routes to the right workflow, resumes a saved lesson, or watches a PR's comments and CI. Use for "help", "where do I start?", "settings", "resume", or any mentoring request without a chosen workflow. (Dev Mentor)
+description: Start here. Onboards the person, sets how Dev Mentor talks to them (experience level, tone, pace, build mode such as guided, copy, AI-written, spec or OpenSpec, and ADHD mode), suggests where to start in this codebase, routes to the right workflow, saves and resumes several lessons, exports lessons as notes to Notion, Obsidian or Markdown, and watches a PR's comments and CI. Use for "help", "where do I start?", "settings", "save", "resume", "lessons", "export lesson", or any mentoring request without a chosen workflow. (Dev Mentor)
 ---
 
 # Mentor

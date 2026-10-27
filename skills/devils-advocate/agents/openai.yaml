@@ -1,4 +1,4 @@
 interface:
   display_name: "Dev Mentor: Devil's advocate"
-  short_description: "Challenge a proposal with three distinct models"
-  default_prompt: "Use $devils-advocate to challenge this proposal with three different models."
+  short_description: "Poke holes in a proposal or run a model debate"
+  default_prompt: "Use $devils-advocate to poke holes in this proposal."
