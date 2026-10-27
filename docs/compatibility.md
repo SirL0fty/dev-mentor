@@ -12,7 +12,7 @@ Dev Mentor is plain Agent Skills, so it runs in any assistant that loads skills 
 
 **v0.9.0 has not been re-tested on any host yet.** The [behaviour checks](../evals/README.md) are how to test it. Packaging checks ran on macOS only.
 
-Install all ten skills so `mentor` can hand off to the others; if one is missing, mentor says so. Don't install both the plugin and the `npx` copy in the same assistant, or you'll see every skill twice. See [installation](plugins.md) for step-by-step setup.
+Install all the skills: every skill loads `mentor-style` for your settings, and `mentor` hands off to the others. If one is missing, the skill says so and falls back to defaults. Don't install both the plugin and the `npx` copy in the same assistant, or you'll see every skill twice. See [installation](plugins.md) for step-by-step setup.
 
 ## Needs extra setup
 
