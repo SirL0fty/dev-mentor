@@ -153,6 +153,7 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
   adhd: off
   debate models: claude-opus-5-5-xhigh, sol-6.1, <a third model>
   debate effort: high
+  export: notion Dev Mentor notes
   ```
 
   It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. The `debate` lines are optional and only used by `devils-advocate`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
@@ -174,6 +175,7 @@ Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md
 - **`lessons`:** list every saved lesson with its step and when it was saved.
 - **`delete lesson <name>`:** confirm first, then remove that one file.
 - **Old saves:** if `.dev-mentor/lesson.md` exists, treat it as one more saved lesson; the first time it's resumed or saved, move it to `.dev-mentor/lessons/<short-name>.md` and say so.
+- **`export lesson`** (also `export lesson <name>`, `export all lessons`): read [export.md](references/export.md). It writes a learning note to Notion, Obsidian or a Markdown folder.
 
 ## 5. Watch a PR
 
@@ -193,7 +195,7 @@ Read your settings from `~/.dev-mentor/profile.md` (every project), then `.dev-m
 
 `warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change **only that one setting, by one step** (e.g. warmth 2 → 3; `warmer` never jumps to 5), straight away, and keep their place in the lesson. Never change any other setting as a side effect. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
 
-`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow; `save`, `resume`, `lessons` and `delete lesson` follow mentor's saved-lessons flow (one file per lesson in `.dev-mentor/lessons/`). After any settings change, confirm it in one line, then show the current card again in the new settings and wait; don't advance. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
+`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow; `save`, `resume`, `lessons`, `delete lesson` and `export lesson` follow mentor's saved-lessons flow (one file per lesson in `.dev-mentor/lessons/`; exports go to Notion, Obsidian or Markdown). After any settings change, confirm it in one line, then show the current card again in the new settings and wait; don't advance. After any setting changes: update that line in the profile it came from (the project file if it has that line, otherwise `~/.dev-mentor/profile.md`) and say so in one line (*"Saved: tone is now warm."*); if there's no profile, offer once to save.
 
 **ADHD mode on** changes the shape of every reply, not the content or the honesty:
 

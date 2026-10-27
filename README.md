@@ -139,7 +139,7 @@ Use mentor to help me get started.
 
 Or give it a ticket: **"Help me build this one step at a time. I'll write the code."**
 
-As you go, say **done**, **next**, **back**, **why**, **example**, **help** or **save**. Next time, say **resume** to pick up where you left off. Each saved lesson keeps its own file in `.dev-mentor/lessons/`, so you can have several on the go; `resume` asks which one, and `lessons` lists them.
+As you go, say **done**, **next**, **back**, **why**, **example**, **help** or **save**. Next time, say **resume** to pick up where you left off. Each saved lesson keeps its own file in `.dev-mentor/lessons/`, so you can have several on the go; `resume` asks which one, and `lessons` lists them. Say **export lesson** to turn one into a learning note in **Notion**, **Obsidian** or a Markdown folder: where to start, how the code flows, what you learned at each step, and how to start next time.
 
 ## Update
 

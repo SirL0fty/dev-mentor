@@ -21,7 +21,7 @@ Install all ten skills so `mentor` can hand off to the others; if one is missing
 | Three-model debate | Three distinct models your assistant can select, each in its own session. Without them you get the quick single-model challenge. |
 | PR watch | A scheduler in your assistant, plus read access to the PR's comments and CI. Without one, mentor watches only while the session is open, or does a single check. |
 | OpenSpec specs | The OpenSpec CLI, a configured project, and the official `openspec-propose` skill. Without them, you get a Markdown spec instead. |
-| Notion / Obsidian export | Your own connected integration or vault. Without one, it saves Markdown in the project. |
+| Notion / Obsidian export | Notion: a Notion connector or MCP server already set up in your assistant. Obsidian: just a vault folder. Without either, it saves Markdown. |
 
 Everything else needs only a model and access to your code.
 
