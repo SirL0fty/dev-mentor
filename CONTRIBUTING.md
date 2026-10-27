@@ -23,5 +23,6 @@ Every skill ends with the same **Style settings** and **Ground rules** sections.
 ## Before opening a PR
 
 1. Run the [behaviour checks](evals/README.md) that touch what you changed.
-2. If you change the version, update it in `plugin.json`, `.claude-plugin/plugin.json` and `.cursor-plugin/plugin.json`.
-3. Add a line to [CHANGELOG.md](CHANGELOG.md).
+2. Keep each skill's `description:` free of `: ` (colon then space). It breaks the YAML header and the skill fails to install or update.
+3. If you change the version, update it in `plugin.json`, `.claude-plugin/plugin.json` and `.cursor-plugin/plugin.json`.
+4. Add a line to [CHANGELOG.md](CHANGELOG.md).
