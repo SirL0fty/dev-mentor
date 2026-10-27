@@ -80,7 +80,7 @@ codex plugin marketplace add SirL0fty/dev-mentor --ref main
 
 Then open the plugin browser in the desktop app, or run `/plugins` inside Codex CLI, select the Dev Mentor marketplace, and install the plugin. Start a fresh session after installation.
 
-**Check:** the plugin detail page should show **SirL0fty**, version **0.7.0** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
+**Check:** the plugin detail page should show **SirL0fty**, version **0.8.0** or newer, and **10 skills**. Adding a marketplace makes the plugin discoverable; installing it is a separate step. See [OpenAI's marketplace guide](https://developers.openai.com/plugins/build/plugins#add-a-marketplace-from-the-cli).
 
 </details>
 
@@ -284,13 +284,21 @@ Spec creation leaves production code and implementation task completion unchange
 
 ## One step at a time
 
-Lessons arrive as small cards: one idea or action, a short reason, and a next step. For example:
+Give the mentor a feature description or ticket link. It first connects the goal to your codebase: what is changing and why, what exists today, a small runtime map, and where to start looking. For example, in a fictional project:
 
-> **Find the entry point**
+> **Add a result limit**
 >
-> Start with the endpoint path in your ticket. Its route registration tells you which handler receives the request.
+> The ticket asks the item endpoint to accept an optional limit. Requests without one should still return results as before. That matters because existing callers must not be forced to change.
 >
-> **Your next step:** Find that registration and share the handler it points to.
+> The route currently passes requests to a handler, which calls the repository. The handler has no limit input yet; the repository runs the existing query.
+>
+> `Request → Route → Handler [start here] → Repository → Response`
+>
+> **Start:** Open `src/items/handler.ts` and look at how it receives and passes the query. We'll trace an existing request before changing it.
+
+On **next**, the mentor walks through that current code and a concrete example before proposing an edit. Later cards show a small before/after comparison and explain what the change does and why it belongs there. The sample is illustrative; your lesson uses evidence from your own project.
+
+After the opening, lessons use focused cards: one idea or action at a time. You can ask for more detail or a smaller step whenever you need it.
 
 After you edit, say **done**. The mentor inspects your actual change, runs relevant checks when available, and gives focused feedback. A missing piece stays in focus before you move on.
 
