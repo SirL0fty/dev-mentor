@@ -1,6 +1,6 @@
 ---
 name: devils-advocate
-description: Stress-test an existing engineering proposal with three distinct models, resolving challenges into a unanimously ratified decision and rationale. Use when the developer requests a devil's advocate debate or independent multi-model challenge.
+description: Dev Mentor - Stress-test an existing engineering proposal with three distinct models, resolving challenges into a unanimously ratified decision and rationale. Use when the developer requests a devil's advocate debate or independent multi-model challenge.
 ---
 
 # Devil's advocate

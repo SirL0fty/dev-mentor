@@ -1,6 +1,6 @@
 ---
 name: spec
-description: Convert an agreed feature plan into a portable Markdown specification, a requested Matt Pocock or pstack inspired format, or an OpenSpec change through the official openspec-propose skill. Use when asked to turn a plan or lesson into a spec; this prepares artifacts without implementing the feature.
+description: Dev Mentor - Convert an agreed feature plan into a portable Markdown specification, a requested Matt Pocock or pstack inspired format, or an OpenSpec change through the official openspec-propose skill. Use when asked to turn a plan or lesson into a spec; this prepares artifacts without implementing the feature.
 ---
 
 # Spec

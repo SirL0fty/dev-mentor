@@ -1,6 +1,6 @@
 ---
 name: explain
-description: Explain existing code, system behaviour, and execution flow using source evidence and paced checkpoints. Use for understanding how code works; use walkthrough for completed changes and review to prepare to review a colleague's PR.
+description: Dev Mentor - Explain existing code, system behaviour, and execution flow using source evidence and paced checkpoints. Use for understanding how code works; use walkthrough for completed changes and review to prepare to review a colleague's PR.
 ---
 
 # Explain
