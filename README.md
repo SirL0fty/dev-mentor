@@ -54,6 +54,19 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 
 **ADHD mode** is off by default. Turn it on and every reply starts with the one thing to do, shows where you are (`Step 3 of 5`), gives a time estimate (`~2 min`), ticks off finished steps, and parks side topics until you're ready. It changes how replies are shaped, not what they say.
 
+**Changing them later:**
+
+| Say | What happens |
+| --- | --- |
+| `settings` | Shows your current choices, then asks what you want to change. |
+| `change tone` (or `experience`, `pace`, `build`, `output`, `ADHD mode`) | Asks just that one question again. |
+| `change everything` | Runs the full setup again. |
+| `warmer`, `faster`, `ADHD mode on`… | Changes it straight away, no questions. |
+| `you do this one` | For this step only; your settings stay the same. |
+| `reset settings` | Back to defaults, or run setup again. |
+
+If you saved a profile, changes are saved automatically and the AI tells you in one line.
+
 Warmth changes the tone, never the truth: problems are always stated plainly. Say `settings` to see your current choices. Mentor can save them to `.dev-mentor/profile.md` so it remembers next time.
 
 ## The flow

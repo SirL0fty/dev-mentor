@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.13.0
+
+- **Change settings later:** `settings` shows your choices, then a picker asks what to change and re-asks only that question. `change tone`, `change build`, `change experience`… jump straight to one question; `change everything` runs the full setup again.
+- **Auto-save:** if you saved a profile, any change updates it and the AI confirms in one line. Per-step overrides like `you do this one` are never saved.
+- **`reset settings`:** go back to the defaults, or run setup again. Saved lessons and debate models are kept.
+
 ## 0.12.1
 
 - **Clearer setup wording:** every picker label and description is now fixed text, and the AI is always called "the AI", so "I write, AI guides" can't be misread as the AI writing. The build value for AI-written edits is now `ai` (old `you` still works).

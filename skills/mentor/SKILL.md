@@ -114,7 +114,27 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
 
 ## 4. Settings, save and resume
 
-- `settings` shows the current values as one short card, with how to change them. `change settings` asks the setup questions again, with the picker if there is one.
+### Change settings later
+
+- **`settings`** shows one card with the current values, then asks what to change:
+
+  > **Your settings** · saved in `.dev-mentor/profile.md`
+  >
+  > Experience: mid-level · Tone: balanced · Pace: one step · Build: choose each time · Output: code · ADHD mode: off
+
+  Say "not saved yet" instead of the path when there's no profile file. With a picker, follow the card with one question, using this text word for word:
+
+  **Change** · What do you want to change?
+  - Experience · Your level with code.
+  - Tone and pace · How the AI talks to you, and how much per reply.
+  - Build and output · Who makes each edit, and code or a spec.
+  - ADHD mode · Turn it on or off.
+
+  Then ask only the setup question(s) for that choice, with the same labels and descriptions as onboarding. The picker's "Other" box, or a reply like "nothing", leaves everything as it is. Without a picker, end the card with: *"Say `change tone`, `change build`… or `change everything`."*
+- **`change <setting>`** jumps straight to that one setup question: `change experience`, `change tone`, `change pace`, `change build`, `change output`, `change ADHD mode`. `change everything` (or `change settings`) runs the full setup again.
+- **Quick commands** (`warmer`, `faster`, `ADHD mode on`…) change a setting without any questions.
+- **Saving:** after any change, if `.dev-mentor/profile.md` exists, update just that line and confirm in one line (*"Saved: build is now AI writes, explains."*). If it doesn't exist, offer once: *"Save this for next time?"* Per-step overrides like `you do this one` are never saved.
+- **`reset settings`** asks, with the picker if there is one: **Reset** · Reset your settings? · *Back to defaults* (mid-level, balanced, one step, choose each time, code, ADHD off) · *Run setup again* (ask all the questions) · *Cancel*. Update the profile file if it exists. It never touches saved lessons or debate models.
 - The profile file is plain lines, for example:
 
   ```text
@@ -147,7 +167,9 @@ Read `.dev-mentor/profile.md` if it exists. Otherwise use what the person said i
 | Build | Always teach where to start and why first. Then for each edit: `ask` (default): offer the choices at each edit. `me`: they write it, you hint. `copy`: show the code to copy, explained line by line. `ai`: you edit for this task and explain each change. `spec` / `openspec`: plan it through the `spec` skill instead of writing code. Overrides can be per step or per kind of work ("you do the tests"); remember them for the lesson. |
 | ADHD mode | `off` (default) or `on`. See below. |
 
-`warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off`, `you do this one` and `build spec` each change one setting straight away and keep their place in the lesson.
+`warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change one setting straight away and keep their place in the lesson. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
+
+`settings`, `change <setting>` (e.g. `change tone`) and `reset settings` follow mentor's settings flow. After any setting changes: if `.dev-mentor/profile.md` exists, update that line and say so in one line (*"Saved: tone is now warm."*); if it doesn't, offer once to save.
 
 **ADHD mode on** changes the shape of every reply, not the content or the honesty:
 
