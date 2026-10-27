@@ -46,7 +46,7 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 | **Experience** | brand new · vibe coder · junior · mid-level · senior · lead or principal | `simpler`, `more technical`, `set level lead` |
 | **Warmth** | 1 blunt · 2 direct · 3 balanced · 4 warm · 5 extra warm | `warmer`, `more direct` |
 | **Pace** | one step, then wait · a few steps · the whole thing | `slower`, `faster` |
-| **Build** | ask me each step · I write it, you guide · show me code to copy · you write it and explain · write a spec · write an OpenSpec change | `you do this one`, `you write the tests`, `build spec` |
+| **Build** | choose each time · I write, AI guides · AI shows, I copy · AI writes, explains · Markdown spec · OpenSpec change | `you do this one`, `you write the tests`, `build spec` |
 | **ADHD mode** | off · on | `ADHD mode on`, `ADHD mode off` |
 | **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
 

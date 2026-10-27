@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.1
+
+- **Clearer setup wording:** every picker label and description is now fixed text, and the AI is always called "the AI", so "I write, AI guides" can't be misread as the AI writing. The build value for AI-written edits is now `ai` (old `you` still works).
+
 ## 0.12.0
 
 - **Clickable setup:** when your assistant has a multiple-choice picker, onboarding uses it, with every question at 4 options or fewer so it works in any picker. Experience has a Developer → Junior / Mid / Senior follow-up, and "build code or plan it as a spec / OpenSpec" is its own question. Assistants without a picker still get the single text card.
