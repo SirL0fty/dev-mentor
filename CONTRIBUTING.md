@@ -14,7 +14,7 @@ scripts/sync-version.mjs        copies the version into the plugin manifests
 .changeset/                     pending release notes
 ```
 
-Every skill ends with the same **Style settings** and **Ground rules** sections. If you change them, change them in all ten skills (`mentor` has a slightly longer version).
+Settings and ground rules live only in `skills/mentor-style/SKILL.md`. Every other skill ends with a short **Style and ground rules** section that calls the Skill tool with "mentor-style". Change the rules there, never by copying them into another skill.
 
 ## Writing style for skills
 

@@ -92,6 +92,7 @@ flowchart LR
 
 | Skill | Helps you |
 | --- | --- |
+| [mentor-style](skills/mentor-style/SKILL.md) | Loaded automatically: the settings and ground rules every other skill follows. You never need to call it. |
 | [mentor](skills/mentor/SKILL.md) | Start here: setup and settings, where to start in your code, save and resume several lessons, export them to Notion or Obsidian, and watch a PR's comments and CI. |
 | [coach](skills/coach/SKILL.md) | Build a feature step by step. Each edit, you write it, copy an explained snippet, or let the AI do it, and your work gets checked. |
 | [explain](skills/explain/SKILL.md) | Understand how existing code runs. |
@@ -103,7 +104,7 @@ flowchart LR
 | [share](skills/share/SKILL.md) | Write up a plan or lesson for a colleague to review (file, Obsidian or Notion). |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec). |
 
-Install all ten: the other skills hand settings, saved lessons and exports over to `mentor`.
+Install them all: every skill loads `mentor-style` for your settings, and hands saved lessons and exports over to `mentor`.
 
 ## Install
 
