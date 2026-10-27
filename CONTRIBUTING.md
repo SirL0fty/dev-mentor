@@ -11,6 +11,7 @@ skills/<name>/agents/openai.yaml  display name for Codex / ChatGPT
 docs/skills/<name>.md           guide per skill, ending in "It's working if"
 scripts/check.mjs               repo checks (CI runs this)
 scripts/sync-version.mjs        copies the version into the plugin manifests
+scripts/link-skills.sh          live-test your checkout in your assistant
 .changeset/                     pending release notes
 ```
 
@@ -22,6 +23,20 @@ Settings and ground rules live only in `skills/mentor-style/SKILL.md`. Every oth
 - Say what to do, not only what not to do.
 - Show an example rather than describing one.
 - Each rule lives in one place.
+
+## Testing your changes live
+
+```bash
+scripts/link-skills.sh
+```
+
+This symlinks every skill in your checkout into `~/.agents/skills` and `~/.claude/skills`, backing up any installed copies. Edits are live in your next assistant session, with no reinstall. When you're done:
+
+```bash
+scripts/link-skills.sh --unlink
+```
+
+That removes the links and restores the installed copies. Don't run `npx skills update` while linked: it would write through the links into your checkout.
 
 ## Before opening a PR
 
