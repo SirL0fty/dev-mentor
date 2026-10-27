@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.16.0
+
+- **Export lessons:** `export lesson`, `export lesson <name>` and `export all lessons` turn lessons into learning notes in **Notion** (through your existing Notion connection), **Obsidian** or a Markdown folder. Notes cover where to start, the flow, what you learned and how to start next time. Re-exporting updates the same note or page. Set a default with `export:` in your profile.
+
 ## 0.15.0
 
 - **Several saved lessons:** each lesson saves to its own file in `.dev-mentor/lessons/`, so saving a new one never overwrites another. `resume` asks which one (most recent first, with your step), `resume <name>` goes straight there, `lessons` lists them and `delete lesson <name>` removes one. An old `.dev-mentor/lesson.md` is picked up and moved automatically.

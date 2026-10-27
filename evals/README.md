@@ -97,6 +97,10 @@ Each scenario lists its **setup**, the **prompts** to send, and the **checks** t
 - Start three different lessons and `save` each, then `resume` in a new session. Also try `resume <name>`, `lessons` and `delete lesson <name>`.
 - Checks: three files in `.dev-mentor/lessons/`, none overwritten · `resume` asks which one, most recent first, with each lesson's step · `resume <name>` skips the question · it picks up at the same step and notices if the code changed · `delete lesson` confirms first and removes only that file.
 
+**13b. Export a lesson**
+- With a saved lesson, say `export lesson` and pick Notion, then Obsidian. Repeat the Notion export. Also try it in an assistant without Notion connected.
+- Checks: it asks where once and offers to save the `export` line · the note has goal, where to start, flow, what was learned and still-open items, not resume bookkeeping · Notion creates a child page and the second export updates the same page · without Notion it says so and offers Markdown or Obsidian · nothing is shared or published · the lesson step is unchanged.
+
 **14. Devil's advocate with one model**
 - Ask for a three-model debate where only one model is available.
 - Checks: it reports the debate as incomplete or offers a quick challenge · it never role-plays the other reviewers.
