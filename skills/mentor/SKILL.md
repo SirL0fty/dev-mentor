@@ -108,14 +108,14 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | Workflow | When |
 | --- | --- |
 | `explain` | How existing code works |
-| `coach` | Build a feature or fix a ticket, step by step |
+| `coach` | Build a feature or fix a ticket, step by step (project preflight first) |
 | `learn` | A concept or technology, with or without a repo |
 | `review` | Understand a colleague's PR so they can review it |
 | `walkthrough` | Tour changes that are already done |
 | `architect` | Compare designs and trade-offs |
 | `devils-advocate` | Challenge a proposal |
 | `share` | Write up a plan or lesson for someone else to review |
-| `spec` | Turn an agreed plan into a spec |
+| `spec` | Turn an agreed plan into a spec (project preflight first) |
 
 Load that skill if the host can. If it isn't installed, say so and suggest installing the full pack; give limited help meanwhile, and don't claim the workflow ran. A question about the current lesson stays in that lesson.
 

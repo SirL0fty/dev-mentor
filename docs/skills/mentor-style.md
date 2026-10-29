@@ -4,7 +4,7 @@
 
 ## What it does
 
-`mentor-style` holds the settings and ground rules every other Dev Mentor skill follows: experience level, tone, pace, build mode, ADHD mode, and rules like "cite real code" and "`done` means check the diff". Other skills load it automatically, so each rule lives in exactly one place.
+`mentor-style` holds the settings and ground rules every other Dev Mentor skill follows: experience level, tone, pace, build mode, ADHD mode, and rules like "cite real code" and "`done` means check the diff". It also holds the project preflight: before `coach` or `spec` changes anything, it checks the checkout, asks worktree or branch and the branch name, and confirms the full path. Other skills load it automatically, so each rule lives in exactly one place.
 
 ## When to reach for it
 
