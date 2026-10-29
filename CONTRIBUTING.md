@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. The rules for changing skills are in [AGENTS.md](AGENTS.md), which AI assistants read automatically. The skills are just Markdown; the only tooling is a check script and changesets for releases.
+Thanks for helping. The rules for changing skills are in [AGENTS.md](AGENTS.md), which AI assistants read automatically. The skills are just Markdown; the only tooling is a check script and changesets for releases, run with [Bun](https://bun.sh).
 
 ## Layout
 
@@ -41,5 +41,5 @@ That removes the links and restores the installed copies. Don't run `npx skills 
 ## Before opening a PR
 
 1. Try the **It's working if** items in the [skill guide](docs/skills/README.md) for what you changed, in a fresh session. If you change how a skill behaves, update its guide too.
-2. Run `npm install` once, then `npm run check`. It fails on a broken skill header (for example a `: ` in a description, or one not ending in `(Dev Mentor)`), a SKILL.md over 500 lines, a missing or malformed `agents/openai.yaml`, a "Style and ground rules" section that differs from the others, mismatched versions, broken links, or a skill missing from the README, the guide index or mentor's routing table. CI runs the same check on every push.
-3. Run `npx changeset` and describe the change in one line. Don't edit version numbers or `CHANGELOG.md` by hand: the Release workflow does both when its "chore: version" PR is merged.
+2. Run `bun install` once, then `bun run check`. It fails on a broken skill header (for example a `: ` in a description, or one not ending in `(Dev Mentor)`), a SKILL.md over 500 lines, a missing or malformed `agents/openai.yaml`, a "Style and ground rules" section that differs from the others, mismatched versions, broken links, or a skill missing from the README, the guide index or mentor's routing table. CI runs the same check on every push.
+3. Run `bunx changeset` and describe the change in one line. Don't edit version numbers or `CHANGELOG.md` by hand: the Release workflow does both when its "chore: version" PR is merged.

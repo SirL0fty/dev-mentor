@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Repo checks run in CI and by `npm run check`:
+// Repo checks run in CI and by `bun run check`:
 // skill headers parse, names match folders, descriptions follow AGENTS.md,
 // SKILL.md stays under 500 lines, metadata parses, manifests share one version,
 // relative links resolve, README, guide index and mentor routing list every skill,
@@ -64,7 +64,7 @@ for (const name of skills) {
 
 // Versions
 try {
-  execFileSync("node", [join(repo, "scripts/sync-version.mjs"), "--check"], { stdio: "pipe" });
+  execFileSync(process.execPath, [join(repo, "scripts/sync-version.mjs"), "--check"], { stdio: "pipe" });
 } catch (e) {
   fail(String(e.stderr).trim());
 }
