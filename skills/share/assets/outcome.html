@@ -1,0 +1,138 @@
+<!doctype html>
+<!--
+  Dev Mentor outcome report template.
+  Copy this file, keep the structure and styles, and replace every example value.
+  Delete any section that has nothing recorded, except "Still open" and "Evidence and limits".
+  Status classes: agreed, conditional, disputed, incomplete. Vote classes: agree, object, missing.
+  Keep it one self-contained file: no external scripts, fonts or images.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cache layer decision</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1b; --muted: #6b6b66; --line: #e4e4df;
+    --accent: #3b5bdb; --ok: #2b8a3e; --warn: #b7791f; --bad: #c92a2a; --soft: #eef1fd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161615; --card: #22221f; --text: #ededea; --muted: #a3a39c; --line: #34342f;
+            --accent: #91a7ff; --ok: #69db7c; --warn: #ffd43b; --bad: #ff8787; --soft: #262a3d; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 8px 0; }
+  h2 { font-size: 1.2rem; margin: 40px 0 12px; }
+  h3 { font-size: 1rem; margin: 0 0 6px; }
+  p, ul, ol { margin: 0 0 12px; }
+  a { color: var(--accent); }
+  code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--soft); padding: 1px 5px; border-radius: 4px; }
+  .meta { color: var(--muted); font-size: 0.92rem; }
+  .badge { display: inline-block; font-size: 0.8rem; font-weight: 600; padding: 3px 10px; border-radius: 99px; border: 1px solid currentColor; }
+  .agreed { color: var(--ok); } .conditional { color: var(--warn); } .disputed, .incomplete { color: var(--bad); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; }
+  .bottom-line { border-left: 4px solid var(--accent); }
+  .note { background: var(--soft); border-radius: 10px; padding: 12px 16px; margin: 12px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 10px 0 2px; }
+  .shift { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: start; }
+  .shift .arrow { color: var(--muted); padding-top: 22px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .vote { font-weight: 700; } .agree { color: var(--ok); } .object, .missing { color: var(--bad); }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; }
+  summary { cursor: pointer; padding: 12px 16px; font-weight: 600; }
+  details > div { padding: 0 16px 16px; }
+  .table-wrap { overflow-x: auto; }
+  @media (max-width: 600px) { .shift { grid-template-columns: 1fr; } .shift .arrow { display: none; } h1 { font-size: 1.5rem; } }
+  @media print { body { background: #fff; } details { break-inside: avoid; } details > div { display: block; } }
+</style>
+</head>
+<body>
+<main>
+
+<!-- 1. Header: what this is, for whom, and why. Never "please approve" unless that is the stated purpose. -->
+<p class="meta">29 October 2026 · about 5 minutes to read</p>
+<h1>Cache layer decision</h1>
+<p><span class="badge conditional">Agreed · conditional</span></p>
+<p class="meta"><strong>For:</strong> Sam, who asked the original question. <strong>Purpose:</strong> report the arguments, what was agreed and what is still open. This is not a request to approve a build plan.</p>
+
+<!-- 2. Bottom line: the agreed outcome, its status, and what agreement does and doesn't mean. -->
+<section class="card bottom-line">
+  <h2 style="margin-top:0">Bottom line</h2>
+  <p><strong>All three reviewers agreed to recommend an in-process cache with a 60-second expiry, on condition that a load test confirms memory use.</strong></p>
+  <p>Model agreement is a recommendation. It is not a tested result or approval to build.</p>
+</section>
+
+<!-- 3. The question: original wording, constraints, anything added later. -->
+<h2>What was asked</h2>
+<p>Should the items API add a cache, and if so, where? Responses must stay under 200 ms at peak.</p>
+<p class="note"><strong>Added during the session:</strong> the catalogue is reloaded nightly, so data older than a day is never valid.</p>
+
+<!-- 4. Reviewers: one card each, from their recorded first answer only. -->
+<h2>Where each reviewer started</h2>
+<div class="grid">
+  <article class="card">
+    <h3>Reviewer A · claude-opus-5-5</h3>
+    <p class="label">First position</p><p>Redis, shared across instances.</p>
+    <p class="label">Main arguments</p><ul><li>Consistent across instances.</li></ul>
+    <p class="label">Strongest objection to its own view</p><p>Adds a service to run and monitor.</p>
+  </article>
+  <!-- Repeat for each reviewer. -->
+</div>
+
+<!-- 5. Disagreements: who argued what, what changed the call, how it ended. Keep every material one. -->
+<h2>Where they disagreed, and what changed</h2>
+<article class="card">
+  <h3>A · Shared or in-process cache?</h3>
+  <div class="shift">
+    <div><p class="label">Before</p><p>A wanted Redis; B and C wanted in-process.</p></div>
+    <div class="arrow">→</div>
+    <div><p class="label">After</p><p>In-process, with a 60-second expiry. A agreed once stale reads were shown to be harmless here.</p></div>
+  </div>
+  <p class="label">What changed the call</p><p>B showed the nightly reload makes cross-instance staleness irrelevant (<code>src/jobs/reload.ts:12</code>).</p>
+</article>
+
+<!-- 6. Corrections: factual claims that were checked and found wrong. -->
+<h2>Claims that were corrected</h2>
+<ul><li>C said the API has no rate limit. It does: <code>src/middleware/limit.ts:8</code>.</li></ul>
+
+<!-- 7. What was agreed and what was rejected or kept conditional. -->
+<h2>What was agreed</h2>
+<ol><li>Add an in-process cache with a 60-second expiry.</li></ol>
+<h2>Rejected or kept conditional</h2>
+<ul><li><strong>Redis:</strong> rejected for now; reconsider if instances need shared state.</li></ul>
+
+<!-- 8. Still open: kept separate by kind, each with what would settle it. Always include this section. -->
+<h2>Still open</h2>
+<p class="note">No reviewer objects to the conditional recommendation. That is not the same as nothing being open.</p>
+<div class="table-wrap"><table>
+  <tr><th>Kind</th><th>What</th><th>What would settle it</th></tr>
+  <tr><td>Prerequisite</td><td>Memory use under peak load</td><td>A load test at 2× peak</td></tr>
+  <tr><td>Question</td><td>Who owns cache invalidation?</td><td>A decision from the team</td></tr>
+</table></div>
+
+<!-- 9. Process and votes: what actually happened, exactly as recorded. -->
+<h2>How the decision was made</h2>
+<p>Three reviewers each assessed the same evidence independently, then voted on the same decision text (version 2).</p>
+<div class="table-wrap"><table>
+  <tr><th>Seat</th><th>Requested</th><th>Confirmed at runtime</th><th>Vote on v2</th></tr>
+  <tr><td>A</td><td>claude-opus-5-5</td><td>claude-opus-5-5</td><td class="vote agree">AGREE</td></tr>
+</table></div>
+
+<!-- 10. Evidence and limits: source, commit, and what was NOT done. Always include this section. -->
+<h2>Evidence and limits</h2>
+<p><strong>Repository:</strong> <code>shop-api</code> · <strong>Commit:</strong> <code>a1b2c3d</code></p>
+<p>Source files were read. <strong>No tests, load tests or benchmarks were run.</strong></p>
+
+<!-- 11. Full record: collapsed by default. Reviewer responses as recorded, with editorial notes labelled. -->
+<h2>Full record</h2>
+<details><summary>Reviewer A · first answer</summary><div><p>…as recorded…</p></div></details>
+<details><summary>Decision v2 · exact text</summary><div><p>…as ratified…</p></div></details>
+
+</main>
+</body>
+</html>

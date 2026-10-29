@@ -155,9 +155,10 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
   debate models: claude-opus-5-5-xhigh, sol-6.1, <a third model>
   debate effort: high
   export: notion Dev Mentor notes
+  plannotator: no
   ```
 
-  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. The `debate` lines are optional and only used by `devils-advocate`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
+  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. The `debate` lines are optional and only used by `devils-advocate`; `plannotator: no` stops `share` offering to install Plannotator. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
 ### Saved lessons
 
 Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md`, named after the goal in a few lowercase words (`slide-navigation.md`, `pagination.md`).
