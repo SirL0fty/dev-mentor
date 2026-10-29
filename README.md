@@ -100,9 +100,9 @@ flowchart LR
 | [learn](skills/learn/SKILL.md) | Learn a concept or technology. |
 | [review](skills/review/SKILL.md) | Understand a colleague's PR so you can review it. |
 | [walkthrough](skills/walkthrough/SKILL.md) | Tour changes that are already finished. |
-| [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. |
+| [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. For "how should we store or build X?", it proposes a concrete design (such as a table's keys and indexes) and walks each of your queries through it. |
 | [challenge](skills/challenge/SKILL.md) | Check a recommendation before you act on it: how it was reached, whether it matches your code's style, and what it skipped. Brings in devils-advocate when the case looks weak. |
-| [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. |
+| [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. Design questions get a proposed design that every reviewer votes on. |
 | [share](skills/share/SKILL.md) | Share a plan for a colleague or senior dev to review before you build, a lesson as a note for Notion or Obsidian, or a debate or review outcome as an ADR for the team. Sends as a Plannotator link, an HTML file (password optional), or in a tool you already use. |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec), written on its own worktree or branch. |
 

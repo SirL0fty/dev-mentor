@@ -2,7 +2,7 @@
 
 One page per skill: what it does, when to reach for it, and what you should see when it's working. The **It's working if** lists double as checks: before changing a skill, try the relevant ones in a fresh session.
 
-Lessons that change code (`coach`, `spec`) start with the project preflight; its checks are in the [mentor-style](mentor-style.md) guide.
+Lessons that change code (`coach`, `spec`) start with the project preflight; its checks are in the [mentor-style](mentor-style.md) guide. Design questions get a concrete proposed design in `architect`, `devils-advocate` and `share`'s ADR; see their guides.
 
 - [mentor](mentor.md)
 - [mentor-style](mentor-style.md)
