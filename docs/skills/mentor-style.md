@@ -24,4 +24,5 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - With no remote, or with `origin/HEAD` unset, the preflight on `main`, `master` or `develop` still treats it as the default branch and doesn't offer *Stay*.
 - If the app says a worktree is attached but `git worktree list` doesn't show it, the lesson stops and reports both paths; it doesn't delete, recreate or fall back to `main`.
 - File links are absolute paths in the confirmed checkout (`/Users/you/code/shop-PROJ-123/src/items.ts`), never relative, and switch to the new path if the checkout changes.
+- A design question ("how should we store X?") never ends at "use DynamoDB": the answer includes a proposed design, labelled proposed, with every query from the question walked through it.
 - Opening an IDE says "sent the open request", not "opened", until you confirm.

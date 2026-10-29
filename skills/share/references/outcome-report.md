@@ -12,15 +12,16 @@ Write it as Markdown, using the project's ADR template if it has one: keep its h
 2. **Bottom line.** What was agreed, its status, and one line on what agreement means: models agreeing is a recommendation, not a tested fact or approval.
 3. **Context.** The original question, the material constraints, and anything added along the way. If the reader asked the question, say this answers it.
 4. **Decision.** What was agreed, in the decided wording.
-5. **Consequences.** The trade-offs accepted, and what becomes easier or harder.
-6. **Alternatives considered.** What was rejected or kept conditional, and why.
-7. **Where each reviewer started.** Model, first position, main arguments, strongest objection to their own view. Keep minority positions.
-8. **Where they disagreed, and what changed.** Every material disagreement: who argued what, the evidence or argument that changed the recommendation, and how it ended. Keep these even when asked for a short version.
-9. **Claims that were corrected.** Factual claims that turned out wrong, and the evidence.
-10. **Still open.** Separate the kinds: unresolved objections, unanswered questions, assumptions, and prerequisites that must be checked. Say what would settle each. If no reviewer objects to a conditional recommendation, say exactly that; it is not "nothing remains open".
-11. **How the decision was made.** The real process (independent round, challenge rounds, ratification), the decision version voted on, and each seat's requested model, runtime-confirmed model and vote. If models couldn't be confirmed, say so.
-12. **Evidence and limits.** Repository, branch, commit, key files. State plainly what was not done: tests, payload checks, benchmarks, implementation. Never imply they happened.
-13. **Full record.** Each reviewer's recorded replies and the exact decision text (collapsed sections on the page). Label any editorial note as editorial.
+5. **Proposed design.** When the question asked for a design: the recorded design (keys, item types and indexes for a table) labelled *proposed, to validate*, and each query from the question walked through it. If reviewers proposed different designs and none was agreed, show each, attributed, and say none was agreed.
+6. **Consequences.** The trade-offs accepted, and what becomes easier or harder.
+7. **Alternatives considered.** What was rejected or kept conditional, and why.
+8. **Where each reviewer started.** Model, first position, main arguments, strongest objection to their own view. Keep minority positions.
+9. **Where they disagreed, and what changed.** Every material disagreement: who argued what, the evidence or argument that changed the recommendation, and how it ended. Keep these even when asked for a short version.
+10. **Claims that were corrected.** Factual claims that turned out wrong, and the evidence.
+11. **Still open.** Separate the kinds: unresolved objections, unanswered questions, assumptions, and prerequisites that must be checked. Say what would settle each. If no reviewer objects to a conditional recommendation, say exactly that; it is not "nothing remains open".
+12. **How the decision was made.** The real process (independent round, challenge rounds, ratification), the decision version voted on, and each seat's requested model, runtime-confirmed model and vote. If models couldn't be confirmed, say so.
+13. **Evidence and limits.** Repository, branch, commit, key files. State plainly what was not done: tests, payload checks, benchmarks, implementation. Never imply they happened.
+14. **Full record.** Each reviewer's recorded replies and the exact decision text (collapsed sections on the page). Label any editorial note as editorial.
 
 Use plain words and descriptive headings. Link to evidence where it helps. In Markdown, put the full record under a last heading.
 

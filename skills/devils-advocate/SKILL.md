@@ -1,6 +1,6 @@
 ---
 name: devils-advocate
-description: Stress-test an engineering proposal. By default it checks which models this assistant can really run, then has three (or two) distinct models challenge each other until they all ratify one decision and its reasons; with only one model, or when asked for a quick take, it runs a clearly labelled single-model challenge. Use for "play devil's advocate", "poke holes in this", "multi-model debate", or "quick challenge". (Dev Mentor)
+description: Stress-test an engineering proposal. By default it checks which models this assistant can really run, then has three (or two) distinct models challenge each other until they all ratify one decision and its reasons, including a concrete proposed design when the question asks for one; with only one model, or when asked for a quick take, it runs a clearly labelled single-model challenge. Use for "play devil's advocate", "poke holes in this", "multi-model debate", or "quick challenge". (Dev Mentor)
 ---
 
 # Devil's advocate
@@ -34,7 +34,7 @@ Follow [debate.md](references/debate.md). It only counts as complete when every 
 
 ## Output
 
-The decision (or for quick mode, the strongest objections), the reasons tied to evidence, the rejected alternatives and why, accepted trade-offs, conditions, and what still needs verifying. Consensus is a recommendation, not proof and not approval to build.
+The decision (or for quick mode, the strongest objections), the proposed design and query walkthrough when the question asks for a design, the reasons tied to evidence, the rejected alternatives and why, accepted trade-offs, conditions, and what still needs verifying. Consensus is a recommendation, not proof and not approval to build.
 
 For **lead**, include second-order effects: team load, migration, and reversibility. For **new**, explain each objection with a concrete "here's what could go wrong" example.
 

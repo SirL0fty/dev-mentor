@@ -22,3 +22,4 @@ Say "poke holes in this" or ask for a debate. Say "quick challenge" or "just you
 - "Quick challenge" or "just you" skips the debate.
 - The report lists each seat's requested model, the model confirmed at runtime, and its session ID. Without confirmed distinct models, it's labelled unverified, not a consensus.
 - The result is a recommendation, not approval to build.
+- When the question asks for a design, the decision the reviewers vote on includes the proposed design and a walkthrough of each query in the question, not only the direction ("use DynamoDB").

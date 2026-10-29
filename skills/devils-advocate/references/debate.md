@@ -61,8 +61,8 @@ Copy replies as returned; label anything you add as editorial. Don't record priv
 
 1. **Independent round:** every seat gets the same evidence pack and returns: their preferred option and why, the strongest case against it, concrete failure cases, and their blocking objections plus what would resolve them. Collect every answer before anyone sees the others'. Don't hint at a preferred winner.
 2. **Challenge rounds:** keep a small issue table (ID, claim, evidence, each seat's position, status). Share every material disagreement, minority ones included. Check disputed facts with read-only checks. If the evidence changes, bump the evidence version and have every seat reassess.
-3. **Candidate decision:** the option, its scope, the reasons, the rejected alternatives, the trade-offs, the conditions, and what still needs verifying. "Defer until we measure X" is a valid decision; "needs more work" is not.
-4. **Ratify:** send the exact same versioned text to every seat. Each replies `AGREE` or `OBJECT`, with reasons and any remaining objections. A reply that still asks for changes counts as `OBJECT`. If the text changes, everyone votes again.
+3. **Candidate decision:** the option, its scope, the proposed design and query walkthrough when the question asks for a design (see **Design questions get a design** in the ground rules), the reasons, the rejected alternatives, the trade-offs, the conditions, and what still needs verifying. "Defer until we measure X" is a valid decision; "needs more work" is not.
+4. **Ratify:** send the exact same versioned text to every seat. Each replies `AGREE` or `OBJECT`, with reasons and any remaining objections, covering the design and its query walkthrough as well as the direction. A reply that still asks for changes counts as `OBJECT`. If the text changes, everyone votes again.
 
 ## 5. Limits
 
