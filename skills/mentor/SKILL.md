@@ -112,9 +112,9 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | `learn` | A concept or technology, with or without a repo |
 | `review` | Understand a colleague's PR so they can review it |
 | `walkthrough` | Tour changes that are already done |
-| `architect` | Compare designs and trade-offs after confirming the system context (repo plus any diagrams or docs), with the smallest proposed design for build or storage questions |
+| `architect` | Compare designs and trade-offs after confirming the system context (repo plus any diagrams or docs), with the simplest proposed design for build or storage questions, starting from what already exists |
 | `challenge` | Check a recommendation (yours or another agent's) against the code before acting on it |
-| `devils-advocate` | Stress-test a proposal, with every reviewer given the same confirmed context, including its proposed design |
+| `devils-advocate` | Stress-test a proposal, with every reviewer given the same confirmed context, starting from the simplest design that works |
 | `share` | Share a plan for review, a lesson as a note, or a debate outcome as an ADR, sent as an HTML file, Markdown or a connected tool |
 | `spec` | Turn an agreed plan into a spec (project preflight first) |
 
