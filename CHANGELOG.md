@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.21.0
+
+### Minor Changes
+
+- [#15](https://github.com/SirL0fty/dev-mentor/pull/15) [`5fed7ff`](https://github.com/SirL0fty/dev-mentor/commit/5fed7ff3c04c47a84893639aa122e1390cfdb886) - `share` no longer uses Plannotator, because its links can't be shared in Slack. It now offers an HTML file (the default, password optional), the Markdown file as it is, or a tool you already have connected. The `plannotator` setting is gone; an old `plannotator:` line in a profile is ignored.
+
 ## 0.20.0
 
 ### Minor Changes
