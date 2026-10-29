@@ -59,7 +59,7 @@ Copy replies as returned; label anything you add as editorial. Don't record priv
 
 ## 4. Rounds
 
-1. **Independent round:** every seat gets the same evidence pack and returns: their preferred option and why, the **smallest design** that meets the stated requirements (when the question asks for one), the strongest case against it, and at most **three material objections**, each with what would resolve it. Collect every answer before anyone sees the others'. Don't hint at a preferred winner.
+1. **Independent round:** every seat gets the same evidence pack and returns: their preferred option and why, for a design question the **lowest rung** of the *Simple first* ladder (see the ground rules) that serves every query, with the query that breaks the rung below, the strongest case against it, and at most **three material objections**, each with what would resolve it. Collect every answer before anyone sees the others'. Don't hint at a preferred winner.
 2. **Challenge rounds:** keep a small issue table (ID, claim, evidence, each seat's position, class, status). Share every material disagreement, minority ones included. Check disputed facts with read-only checks. If the evidence changes, bump the evidence version and have every seat reassess.
 
    **Sort every objection before acting on it:**
@@ -70,9 +70,12 @@ Copy replies as returned; label anything you add as editorial. Don't record priv
    | Conditional | Only matters if some requirement turns out to be true | Becomes an open question naming that requirement |
    | Deferred | A real risk, but nothing stated needs it handled now | Listed under *If you later need…* |
 
+   **The baseline** is the lowest-rung design any seat has shown serves every query. A more complex candidate must name a query or requirement the baseline fails; otherwise the baseline stays.
+
    Only **Required now** changes the design. For each one ask "which stated requirement, or which evidence, makes this necessary?" Evidence counts: code, tests or docs showing the proposal breaks an existing contract or caller is Required now even if the person never stated it. If no one can name either, it's Conditional or Deferred. If fixing an objection would add a new mechanism (a table, index, service, state machine, publication or locking protocol), stop and ask the person whether that requirement is real before adding it.
 3. **Candidate decision:** the option, its scope, the smallest proposed design and its query walkthrough when the question asks for a design (see **Design questions get the smallest design that fits** in the ground rules), the reasons, the rejected alternatives, the trade-offs, the conditions, and what still needs verifying. "Defer until we measure X" is a valid decision; "needs more work" is not.
-4. **Ratify:** send the exact same versioned text to every seat. Each replies `AGREE`, `AGREE with deferred concerns`, or `OBJECT`, with reasons, covering the design and its query walkthrough as well as the direction. Seats ratify the **simplest adequate** decision, not one that holds every safeguard anyone suggested. An `OBJECT` must name the stated requirement or evidence the decision fails; otherwise it's a deferred concern, recorded under Still open. If the text changes, everyone votes again.
+4. **Simplify, then ratify.** Before the vote, ask every seat once: "What can be removed and still serve every query and stated requirement?" Remove what they agree on.
+5. **Ratify:** send the exact same versioned text to every seat. Each replies `AGREE`, `AGREE with deferred concerns`, or `OBJECT`, with reasons, covering the design and its query walkthrough as well as the direction. Seats ratify the **simplest adequate** decision, not one that holds every safeguard anyone suggested. An `OBJECT` must name the stated requirement or evidence the decision fails; otherwise it's a deferred concern, recorded under Still open. If the text changes, everyone votes again.
 
 Keep the person updated with one line per round (e.g. `Round 2: 2 agree, 1 objects on name matching`), never one message per vote.
 

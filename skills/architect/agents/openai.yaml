@@ -1,4 +1,4 @@
 interface:
   display_name: "Dev Mentor: Architect"
-  short_description: "Confirm context, compare designs, propose the smallest"
+  short_description: "Confirm context, compare designs, propose the simplest"
   default_prompt: "Use $architect to compare approaches and propose a design for this feature."
