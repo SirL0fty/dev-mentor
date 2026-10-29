@@ -103,6 +103,14 @@
 <!-- 7. Decision, consequences, and alternatives rejected or kept conditional. -->
 <h2>Decision</h2>
 <ol><li>Add an in-process cache with a 60-second expiry.</li></ol>
+<h2>Proposed design</h2>
+<p class="meta">Proposed, to validate. Index names and capacity are still open.</p>
+<div class="table-wrap"><table>
+  <tr><th>Item</th><th>PK</th><th>SK</th><th>Holds</th></tr>
+  <tr><td>Product</td><td><code>PRODUCT#&lt;id&gt;</code></td><td><code>DETAILS</code></td><td>Name, price, stock</td></tr>
+</table></div>
+<p class="label">How each query from the question works</p>
+<ol><li><strong>Get one product by ID:</strong> read <code>PRODUCT#&lt;id&gt;</code> / <code>DETAILS</code> from the cache, else the table.</li></ol>
 <h2>Consequences</h2>
 <ul><li>Each instance may serve data up to 60 seconds old. Accepted because the catalogue only changes nightly.</li></ul>
 <h2>Alternatives considered</h2>

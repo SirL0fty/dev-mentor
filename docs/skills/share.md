@@ -20,6 +20,7 @@ Say `share`, or name it: "share this plan with my senior", "share this lesson", 
 
 - `share` on its own asks **A plan · A lesson · An outcome** first. "Share this plan" skips the question.
 - **A lesson** goes through `export lesson` and asks where to save it (Notion, Obsidian or a folder).
+- When the outcome answered a design question, the ADR has a **Proposed design** section with each query from the question walked through it.
 - **An outcome** is saved as the next numbered ADR in the project's ADR folder, using its template if it has one, with **Status: Proposed** unless you say the team accepted it.
 - It asks what the document should do for the reader: answer their question, keep them informed, or ask for their input. Only the last adds questions for them.
 - **An ordinary plan** still has goal, evidence, design and steps marked proposed, done or checked; only things actually run are called checked. It saves to `docs/plans/` unless you name a place.

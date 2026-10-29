@@ -16,3 +16,4 @@ Ask "how should we design this?" or "A or B?". To stress-test the choice, use `d
 - Evidence, assumptions and proposals are kept clearly apart.
 - The recommendation lists the trade-offs it accepts and the first steps, each with a way to check it.
 - Disagreements are recorded, not smoothed over.
+- Asked how to store or build something ("design a table for…"), it gives a concrete proposed design, labelled proposed, and walks every query from the question through it, including awkward ones like "the client doesn't know the ID".
