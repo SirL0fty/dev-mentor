@@ -1,6 +1,6 @@
 ---
 name: devils-advocate
-description: Stress-test an engineering proposal. By default it checks which models this assistant can really run, then has three (or two) distinct models challenge each other until they all ratify one decision and its reasons, including a concrete proposed design when the question asks for one; with only one model, or when asked for a quick take, it runs a clearly labelled single-model challenge. Use for "play devil's advocate", "poke holes in this", "multi-model debate", or "quick challenge". (Dev Mentor)
+description: Stress-test an engineering proposal. It first gathers shared context (the repo plus any architecture diagrams or docs you add) so every reviewer starts from the same picture. By default it checks which models this assistant can really run, then has three (or two) distinct models challenge each other until they all ratify one decision and its reasons, including a concrete proposed design when the question asks for one; with only one model, or when asked for a quick take, it runs a clearly labelled single-model challenge. Use for "play devil's advocate", "poke holes in this", "multi-model debate", or "quick challenge". (Dev Mentor)
 ---
 
 # Devil's advocate

@@ -24,7 +24,7 @@ Say "poke holes in this" or ask for a debate. Say "quick challenge" or "just you
 - The result is a recommendation, not approval to build.
 - Before any reviewer starts, it reads the repo, says what it couldn't see, asks for architecture diagrams or docs, and has you confirm a short summary of how the system works. Every reviewer gets the same docs, not a summary of them.
 - Your requirements reach the reviewers word for word; anything it added is labelled as an assumption.
-- Each objection is sorted into Required now, Conditional or Deferred. Only Required now changes the design, and it asks you before an objection adds a new mechanism (an extra table, a state machine, a locking protocol).
+- Each objection is sorted into Required now, Conditional or Deferred. Only Required now (backed by a stated requirement or by evidence, such as code showing a caller would break) changes the design, and it asks you before an objection adds a new mechanism (an extra table, a state machine, a locking protocol).
 - A reviewer can agree with deferred concerns; an objection must name the requirement or evidence the decision fails.
 - You get one progress line per round, and the result opens with about a page that answers your question.
 - When the question asks for a design, the decision the reviewers vote on includes the proposed design and a walkthrough of each query in the question, not only the direction ("use DynamoDB").
