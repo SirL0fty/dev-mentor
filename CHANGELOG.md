@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.20.0
+
+### Minor Changes
+
+- [#14](https://github.com/SirL0fty/dev-mentor/pull/14) [`22b193e`](https://github.com/SirL0fty/dev-mentor/commit/22b193e90ffd68d59a601e4c61030160c1979497) - Design reviews start from shared context and stay proportionate. `architect` and `devils-advocate` now ask for architecture diagrams or docs the repo can't show and confirm how the system works before designing, and every debate reviewer gets the same docs. Designs are the smallest that meet the stated requirements, objections are sorted into Required now, Conditional or Deferred, and results open with a one-page answer to the question asked.
+
 ## 0.19.0
 
 ### Minor Changes
