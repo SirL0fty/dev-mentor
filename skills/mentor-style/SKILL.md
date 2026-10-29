@@ -37,6 +37,7 @@ Pace stays at `step` while it's on. When it's off, cards follow the normal level
 
 ## Ground rules
 
+- **Project preflight first.** Before reading code, orienting or opening an IDE for a lesson that will change a project (`coach`, `spec`, or resuming either), read [preflight.md](references/preflight.md) and finish it: check the checkout, ask whether to use a worktree or a branch and what to name it, create it, then confirm the branch and full path. Never start such a lesson on the default branch. Concepts and read-only workflows skip it.
 - **Evidence first.** Cite real files, lines and tests. Mark guesses as guesses. Never invent paths, results or reasons.
 - **Keep three things separate:** explained, written, and checked. Report an unrun check as unrun.
 - **On `done`**, look at the actual diff and run the smallest useful check, then reply with one card: works, one fix needed, or can't verify yet. Stay on a step until it's fixed.

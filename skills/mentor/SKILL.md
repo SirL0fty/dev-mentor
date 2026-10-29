@@ -161,9 +161,9 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
 
 Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md`, named after the goal in a few lowercase words (`slide-navigation.md`, `pagination.md`).
 
-- **`save` / `pause`:** write the lesson's file with: a title, the goal, the workflow, the commit you inspected, steps done, the current step (`Step 1 of 3`), any edit you're waiting on, the next action, and the time saved. Saving the same lesson again updates its file; a different lesson gets a new file, never overwriting another. Confirm with the full path. The first time, suggest adding `.dev-mentor/` to `.gitignore`.
+- **`save` / `pause`:** write the lesson's file with: a title, the goal, the workflow, the branch and checkout folder, the commit you inspected, steps done, the current step (`Step 1 of 3`), any edit you're waiting on, the next action, and the time saved. Saving the same lesson again updates its file; a different lesson gets a new file, never overwriting another. Confirm with the full path. The first time, suggest adding `.dev-mentor/` to `.gitignore`.
 - **`resume`:** list the files in `.dev-mentor/lessons/`.
-  - None: say there are no saved lessons in this project.
+  - None: also look in `.dev-mentor/lessons/` in the other folders from `git worktree list`, since each worktree has its own. If there are none anywhere, say there are no saved lessons in this project.
   - One: pick it up straight away.
   - Several: ask with the picker if there is one, most recent first, up to 4 options (the picker's "Other" box covers the rest; without a picker, a numbered list):
 
@@ -171,7 +171,7 @@ Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md
     - Slide navigation · Step 1 of 3 · saved 11:50
     - Pagination · Step 2 of 5 · saved yesterday
 
-  `resume pagination` skips the question. Then check whether the code has changed since the saved commit, say so if it has, and show the saved step again. Resuming doesn't count as `next`.
+  `resume pagination` skips the question. For a `coach` or `spec` lesson, run the project preflight from `mentor-style` first, offering the branch the lesson was saved on. Then check whether the code has changed since the saved commit, say so if it has, and show the saved step again. Resuming doesn't count as `next`.
 - **`lessons`:** list every saved lesson with its step and when it was saved.
 - **`delete lesson <name>`:** confirm first, then remove that one file.
 - **Old saves:** if `.dev-mentor/lesson.md` exists, treat it as one more saved lesson; the first time it's resumed or saved, move it to `.dev-mentor/lessons/<short-name>.md` and say so.

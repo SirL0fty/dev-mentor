@@ -18,3 +18,6 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - With ADHD mode on, every reply starts with the action, shows `Step N of M` and a time estimate, ticks off finished steps and parks side issues. With it off, you get normal cards. The facts are the same either way.
 - `why`, `help` and questions answer without moving the lesson on; `next` then goes to the following step.
 - Nothing is pushed, posted, merged or messaged unless you asked.
+- A lesson that changes code (`coach`, `spec`) never starts on the default branch. The preflight asks worktree or branch, then the name, and confirms the branch and full path first. `explain` and `learn` skip it.
+- If the app says a worktree is attached but `git worktree list` doesn't show it, the lesson stops and reports both paths; it doesn't delete, recreate or fall back to `main`.
+- Opening an IDE says "sent the open request", not "opened", until you confirm.

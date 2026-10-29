@@ -9,7 +9,7 @@ The goal is that next time they could start a similar feature without AI.
 
 ## 1. Orient
 
-Investigate first, then open with one fuller card (around 120–220 words):
+First finish the **project preflight** from `mentor-style`, even when another skill sent you here. Then investigate in the confirmed checkout, then open with one fuller card (around 120–220 words):
 
 - **What and why:** the ticket's title and the reason for the work: who it affects and what should improve. If the reason isn't written down, say so; don't invent one.
 - **What exists:** what the code does today, citing the files and tests you read.
