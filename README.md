@@ -100,7 +100,7 @@ flowchart LR
 | [review](skills/review/SKILL.md) | Understand a colleague's PR so you can review it. |
 | [walkthrough](skills/walkthrough/SKILL.md) | Tour changes that are already finished. |
 | [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. |
-| [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal, or run a three-model debate with your chosen models. |
+| [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. |
 | [share](skills/share/SKILL.md) | Write up a plan or lesson for a colleague to review (file, Obsidian or Notion). |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec), written on its own worktree or branch. |
 
