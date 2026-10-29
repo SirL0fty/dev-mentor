@@ -135,7 +135,7 @@ Help me find where to start in this codebase.
 npx skills add SirL0fty/dev-mentor --agent opencode --skill '*' --global
 ```
 
-**Check:** ask OpenCode to load the `mentor` skill. It should have access to all ten workflows. If it cannot find the skill, check the destination printed by the installer and your skill permissions. OpenCode discovers project and global skill directories, including `.agents/skills`; see its [discovery and troubleshooting guide](https://opencode.ai/docs/skills/).
+**Check:** ask OpenCode to load the `mentor` skill. It should have access to all eleven workflows. If it cannot find the skill, check the destination printed by the installer and your skill permissions. OpenCode discovers project and global skill directories, including `.agents/skills`; see its [discovery and troubleshooting guide](https://opencode.ai/docs/skills/).
 
 
 <a id="install-other"></a>

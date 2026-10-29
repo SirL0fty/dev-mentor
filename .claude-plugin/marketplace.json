@@ -1,6 +1,6 @@
 {
   "name": "dev-mentor",
-  "description": "Dev Mentor's ten focused engineering mentoring workflows.",
+  "description": "Dev Mentor's eleven focused engineering mentoring workflows.",
   "owner": { "name": "SirL0fty" },
   "plugins": [
     {

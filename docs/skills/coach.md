@@ -4,7 +4,7 @@
 
 ## What it does
 
-`coach` walks you through building a feature or fixing a ticket, one small step at a time. It always shows where to start and why first, so you learn the route even when the AI writes the code. Then for each edit you write it, copy an explained snippet, let the AI do it, or turn it into a spec.
+`coach` walks you through building a feature or fixing a ticket, one small step at a time. It first runs the project preflight (a new worktree or branch, named by you, such as the ticket key), then always shows where to start and why, so you learn the route even when the AI writes the code. Then for each edit you write it, copy an explained snippet, let the AI do it, or turn it into a spec.
 
 It doesn't move on until your edit has been checked against the real diff.
 
@@ -14,6 +14,7 @@ Say "help me build this" or give it a ticket. For understanding code without cha
 
 ## It's working if
 
+- On `main` with a ticket like `PROJ-123`, it first asks *New worktree · New branch here*, then offers `PROJ-123` as the branch name. It creates it and shows `✓ Preflight: branch PROJ-123 · <full path>` before it reads any code.
 - The first card explains the ticket's why, what exists today, a small flow map, and one file to open. Nothing to edit yet.
 - With pace `step`, each reply has one idea and one next action, and waits for you.
 - A deliberately incomplete edit followed by `done` gets the missing piece named, and the lesson stays on that step.

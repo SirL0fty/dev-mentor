@@ -1,4 +1,4 @@
 interface:
   display_name: "Dev Mentor: Style"
-  short_description: "Shared settings and ground rules"
+  short_description: "Shared settings, ground rules and project preflight"
   default_prompt: "Use $mentor-style to show how Dev Mentor will talk to me."

@@ -79,7 +79,7 @@ const walk = (dir) =>
   });
 
 for (const file of walk(repo)) {
-  const text = readFileSync(file, "utf8").replace(/```[\s\S]*?```/g, "");
+  const text = readFileSync(file, "utf8").replace(/```[\s\S]*?```/g, "").replace(/`[^`\n]*`/g, "");
   for (const [, target] of text.matchAll(/\]\(([^)\s#]+)(?:#[^)]*)?\)/g)) {
     if (/^[a-z]+:/.test(target) || target.includes("<")) continue;
     if (!existsSync(join(dirname(file), target))) fail(`${relative(repo, file)}: broken link ${target}`);

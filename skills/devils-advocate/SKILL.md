@@ -1,6 +1,6 @@
 ---
 name: devils-advocate
-description: Stress-test an engineering proposal. Quick mode runs a single-model challenge; debate mode has three distinct models challenge each other until they all ratify one decision and its reasons. Use for "play devil's advocate", "poke holes in this", or "multi-model debate". (Dev Mentor)
+description: Stress-test an engineering proposal. By default it checks which models this assistant can really run, then has three (or two) distinct models challenge each other until they all ratify one decision and its reasons; with only one model, or when asked for a quick take, it runs a clearly labelled single-model challenge. Use for "play devil's advocate", "poke holes in this", "multi-model debate", or "quick challenge". (Dev Mentor)
 ---
 
 # Devil's advocate
@@ -9,8 +9,28 @@ Reuse the current proposal. First build one shared **evidence pack**: the decisi
 
 ## Choose a mode
 
-- **Quick challenge** (the default when they ask to "poke holes"): you argue the strongest case against the proposal. Give 3–5 concrete objections, each with evidence, impact, and what would settle it; the best alternative; and what you'd want checked first. Label it **"Single-model challenge, not an independent review."**
-- **Three-model debate** (when they ask for a debate, multiple models, or independent reviewers): read [debate.md](references/debate.md). It uses the three models in the `debate models` setting, or helps them pick and save three on first use (`set up debate models` changes them later). It only counts as complete when three *distinct* models each explicitly agree to the same written decision and its reasons. If you can't run three distinct models, say so, offer the quick challenge or a brief they can run elsewhere, and never role-play the missing reviewers.
+A multi-model debate is the default. Choose the mode only **after** checking what this session can really do, every time:
+
+1. **Discover.** Read [debate.md](references/debate.md) and follow its step 1: find the tools that start a reviewer with a chosen model, which models they accept, and the saved `debate models`. Go by the tools this session actually has, not the host's name.
+2. **Count the distinct models** you can seat, then pick:
+
+| Distinct models you can seat | Mode | Label |
+| --- | --- | --- |
+| 3 or more | Three-model debate. Prefer three different families; if the host only offers one supplier's models, use three distinct ones from it. | "Three-model debate" (add "one supplier: they may share blind spots" when it applies) |
+| 2 | Two-model debate | "Two-model debate, not three" |
+| 1, or no way to choose a reviewer's model | Quick challenge | "Single-model challenge, not an independent review. Only one model is available here." |
+
+Personas, extra sessions, or different settings of the same model are one model, not several. Never role-play a missing reviewer.
+
+**Asked for a quick take** ("quick challenge", "just you", "single model", "no debate")? Skip discovery and run the quick challenge.
+
+### Quick challenge
+
+You argue the strongest case against the proposal. Give 3–5 concrete objections, each with evidence, impact, and what would settle it; the best alternative; and what you'd want checked first. Start with its label from the table, and when it's a fallback, say why.
+
+### Debate
+
+Follow [debate.md](references/debate.md). It only counts as complete when every seated model explicitly agrees to the same versioned decision and its reasons, and each model's identity is confirmed at runtime.
 
 ## Output
 

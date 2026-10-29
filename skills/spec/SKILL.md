@@ -5,6 +5,8 @@ description: Turn an agreed feature plan into a portable Markdown spec, a Matt P
 
 # Spec
 
+Before writing any file, finish the **project preflight** from `mentor-style`, unless it already ran for this lesson.
+
 Reuse the current plan, decisions and evidence; don't interview them again about settled points. If agreement is unclear, label the result **draft** and list the open decisions.
 
 ## Pick the format

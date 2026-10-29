@@ -1,4 +1,4 @@
 interface:
   display_name: "Dev Mentor: Spec"
-  short_description: "Turn a feature plan into a spec in your chosen format"
+  short_description: "Turn a plan into a spec, on its own branch"
   default_prompt: "Use $spec to turn our agreed feature plan into a portable specification."
