@@ -115,7 +115,7 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | `architect` | Compare designs and trade-offs after confirming the system context (repo plus any diagrams or docs), with the smallest proposed design for build or storage questions |
 | `challenge` | Check a recommendation (yours or another agent's) against the code before acting on it |
 | `devils-advocate` | Stress-test a proposal, with every reviewer given the same confirmed context, including its proposed design |
-| `share` | Share a plan for review, a lesson as a note, or a debate outcome as an ADR |
+| `share` | Share a plan for review, a lesson as a note, or a debate outcome as an ADR, sent as an HTML file, Markdown or a connected tool |
 | `spec` | Turn an agreed plan into a spec (project preflight first) |
 
 Call the Skill tool with that workflow's name. If it isn't installed, say so and suggest installing the full pack; give limited help meanwhile, and don't claim the workflow ran. A question about the current lesson stays in that lesson.
@@ -155,10 +155,9 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
   debate models: claude-opus-5-5, sol-6.1, <a third model>
   debate effort: high
   export: notion Dev Mentor notes
-  plannotator: no
   ```
 
-  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. `warmth` is the line for tone. The `debate` lines are optional and only used by `devils-advocate`; `plannotator: no` stops `share` offering to install Plannotator. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
+  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. `warmth` is the line for tone. The `debate` lines are optional and only used by `devils-advocate`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
 
 ### Saved lessons
 
