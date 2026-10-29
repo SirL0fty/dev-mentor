@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.18.0
+
+### Minor Changes
+
+- [#4](https://github.com/SirL0fty/dev-mentor/pull/4) [`32d4ce3`](https://github.com/SirL0fty/dev-mentor/commit/32d4ce3da477913dceac3b0dd3258fab64b885ee) - Devil's advocate now defaults to a multi-model debate: it checks which models your assistant can really run, uses three (preferring different families) or two, starts straight away with saved models, and falls back to a labelled single-model challenge only when one model is available or you ask for a quick take.
+
+- [#4](https://github.com/SirL0fty/dev-mentor/pull/4) [`32d4ce3`](https://github.com/SirL0fty/dev-mentor/commit/32d4ce3da477913dceac3b0dd3258fab64b885ee) - Add the `challenge` skill: say "is this right?" or "does this match our code?" about a recommendation and it shows how it was reached, checks it against your codebase's existing patterns, names skipped options, and brings in devil's advocate with a fresh reviewer when the case looks weak.
+
+- [#4](https://github.com/SirL0fty/dev-mentor/pull/4) [`32d4ce3`](https://github.com/SirL0fty/dev-mentor/commit/32d4ce3da477913dceac3b0dd3258fab64b885ee) - Add a project preflight: before a coach or spec lesson, Dev Mentor checks the checkout, asks whether to use a new worktree or branch and what to call it (such as the ticket key), and never starts on the default branch.
+
+  File links now use absolute paths in the verified checkout.
+
+- [#6](https://github.com/SirL0fty/dev-mentor/pull/6) [`72df5de`](https://github.com/SirL0fty/dev-mentor/commit/72df5de8a991c2275a4f8a74a12aa01d33371dab) - `share` now asks whether you're sharing a plan (for review before building), a lesson (a note for Notion or Obsidian) or an outcome. It can report the outcome of a debate, challenge or review as an ADR that keeps every reviewer's position, disagreement and open question, and can share it as a Plannotator link (the default, installed only if you choose), an HTML file with an optional password, or in a tool you already use. `devils-advocate` now keeps a debate record for it.
+
+### Patch Changes
+
+- [#7](https://github.com/SirL0fty/dev-mentor/pull/7) [`85f6431`](https://github.com/SirL0fty/dev-mentor/commit/85f64312f8ae70254537f86b60f753b7540e793a) - During a ticket lesson, `coach` stays in charge: it recommends an implementation approach and teaches why it fits instead of asking you to choose, and `architect`, `challenge` and `devils-advocate` run only as short side checks that return to the same step.
+
 ## 0.17.1
 
 ### Patch Changes
