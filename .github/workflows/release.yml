@@ -1,5 +1,10 @@
 name: Release
 
+# Every push to main with pending changesets becomes a release straight away:
+# bump the version, update CHANGELOG.md, commit to main, tag, and create the
+# GitHub release. Pushes made here with GITHUB_TOKEN don't start new workflow
+# runs, so the release commit doesn't trigger another release.
+
 on:
   push:
     branches: [main]
@@ -11,20 +16,37 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: package.json
       - run: bun install --frozen-lockfile
-      - name: Open a version PR, or tag the release
-        uses: changesets/action@v1
-        with:
-          version: bun run version
-          publish: bunx changeset tag
-          commit: "chore: version"
-          title: "chore: version"
-          createGithubReleases: true
+
+      - name: Look for pending changesets
+        id: pending
+        run: |
+          if find .changeset -maxdepth 1 -name '*.md' ! -name README.md | grep -q .; then
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No pending changesets; nothing to release."
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Version, commit, tag and release
+        if: steps.pending.outputs.release == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bun run version
+          version="$(jq -r .version package.json)"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: release v$version"
+          git tag "v$version"
+          git push origin HEAD:main "v$version"
+
+          awk -v heading="## $version" '$0 == heading { found = 1; next } /^## / && found { exit } found' CHANGELOG.md > "$RUNNER_TEMP/release-notes.md"
+          gh release create "v$version" --title "v$version" --notes-file "$RUNNER_TEMP/release-notes.md"
