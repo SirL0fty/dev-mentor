@@ -17,6 +17,8 @@ Say "help me build this" or give it a ticket. For understanding code without cha
 - On `main` with a ticket like `PROJ-123`, it first asks *New worktree · New branch here*, then offers `PROJ-123` as the branch name. It creates it and shows `✓ Preflight: branch PROJ-123 · <full path>` before it reads any code.
 - The first card explains the ticket's why, what exists today, a small flow map, and one file to open. Nothing to edit yet.
 - With pace `step`, each reply has one idea and one next action, and waits for you.
+- When an implementation choice comes up (say, one query or two), it recommends one, explains why it fits this ticket and repo, and carries on. It doesn't ask you to pick between designs unless a missing requirement changes what callers get.
+- Asking "is this right?" mid-lesson runs a short `challenge`, then shows the same step again. `next` after that goes to the next lesson step, not into another design discussion.
 - A deliberately incomplete edit followed by `done` gets the missing piece named, and the lesson stays on that step.
 - In a project whose tests can't run, it says the diff looks right but is unverified. It never says "verified".
 - With build `ask`, edit cards end with *Who does this one? I'll write it · AI shows, I copy · AI writes it · Make it a spec*. "You write the tests, I'll do the rest" is remembered for the lesson.

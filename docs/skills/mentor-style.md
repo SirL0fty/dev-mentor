@@ -16,7 +16,8 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - With tone at 5, a real problem is still stated plainly.
 - The same question at level `new` explains terms and commands; at `lead` it skips basics and covers trade-offs and risk.
 - With ADHD mode on, every reply starts with the action, shows `Step N of M` and a time estimate, ticks off finished steps and parks side issues. With it off, you get normal cards. The facts are the same either way.
-- `why`, `help` and questions answer without moving the lesson on; `next` then goes to the following step.
+- `why`, `help` and questions answer without moving the lesson on; `next` then goes to the following step, never into another design workflow.
+- During a coach lesson, `architect`, `challenge` and `devils-advocate` only run when you ask or doubt a recommendation, answer that one concern, and return to the same step.
 - Nothing is pushed, posted, merged or messaged unless you asked.
 - A lesson that changes code (`coach`, `spec`) never starts on the default branch. The preflight asks worktree or branch, then the name, and confirms the branch and full path first. `explain` and `learn` skip it.
 - If the app says a worktree is attached but `git worktree list` doesn't show it, the lesson stops and reports both paths; it doesn't delete, recreate or fall back to `main`.
