@@ -58,7 +58,7 @@ Use these headers, questions, labels and descriptions **word for word**; don't r
 - Off · Normal replies.
 - On · Each reply starts with the one thing to do, shows step 3 of 5, gives a time estimate, ticks off finished steps and parks side topics.
 
-Mark defaults as shown, but **never pre-select or mark ADHD mode**. If something else in the session already shapes replies (such as an ADHD skill), say so in that question's text and still let them pick. If the tool only allows a few questions per call, ask 1, 2, 3 and 6 first, then 1b (if needed), 4 and 5. Output `spec` or `openspec` sets build to that mode; otherwise build is the answer to question 4.
+Mark defaults as shown, but **never pre-select or mark ADHD mode**. If something else in the session already shapes replies (such as an ADHD skill), say so in that question's text and still let them pick. If the tool only allows a few questions per call, ask 1, 2, 3 and 6 first, then 1b (if needed), 4 and 5. Output `spec` or `openspec` sets build to that mode; otherwise build is the answer to question 4. Output isn't its own profile line: it's saved as `build: spec` or `build: openspec`, and `change output` updates the `build` line.
 
 ### Otherwise, one text card
 
@@ -118,7 +118,7 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | `share` | Share a plan for review, a lesson as a note, or a debate outcome as an ADR |
 | `spec` | Turn an agreed plan into a spec (project preflight first) |
 
-Load that skill if the host can. If it isn't installed, say so and suggest installing the full pack; give limited help meanwhile, and don't claim the workflow ran. A question about the current lesson stays in that lesson.
+Call the Skill tool with that workflow's name. If it isn't installed, say so and suggest installing the full pack; give limited help meanwhile, and don't claim the workflow ran. A question about the current lesson stays in that lesson.
 
 ## 4. Settings, save and resume
 
@@ -152,13 +152,14 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
   pace: step
   build: ask
   adhd: off
-  debate models: claude-opus-5-5-xhigh, sol-6.1, <a third model>
+  debate models: claude-opus-5-5, sol-6.1, <a third model>
   debate effort: high
   export: notion Dev Mentor notes
   plannotator: no
   ```
 
-  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. The `debate` lines are optional and only used by `devils-advocate`; `plannotator: no` stops `share` offering to install Plannotator. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
+  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. `warmth` is the line for tone. The `debate` lines are optional and only used by `devils-advocate`; `plannotator: no` stops `share` offering to install Plannotator. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
+
 ### Saved lessons
 
 Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md`, named after the goal in a few lowercase words (`slide-navigation.md`, `pagination.md`).

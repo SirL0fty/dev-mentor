@@ -8,7 +8,7 @@
 
 ## When to reach for it
 
-Ask "how does this work?" or "what happens when…". For finished changes, use `walkthrough`; for a colleague's PR, use `review`.
+Ask "how does this work?" or "what happens when…". For finished changes, use `walkthrough`; for a colleague's PR, use `review`; for a general concept rather than this codebase, use `learn`.
 
 ## It's working if
 
