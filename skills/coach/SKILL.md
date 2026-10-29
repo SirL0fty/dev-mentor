@@ -24,6 +24,15 @@ On `next`, explain the code at the starting point and trace one concrete value t
 
 ## 3. One edit per card
 
+**New mechanism? Explain it first.** Before an edit that adds a new architectural mechanism (a new resolver type, table, queue, cache or service), give one card with:
+
+1. **The requirement** that creates the need.
+2. **Why the current code can't meet it**, citing it.
+3. **Why this mechanism fits this repo**, e.g. an existing pattern it follows.
+4. **Its main trade-off.**
+
+Label each point **Ticket requirement** or **Implementation choice**. Never imply the ticket asked for the mechanism unless it says so. Then show the before → after in their build mode.
+
 For each change, show a small **before → after** and say in one line why this approach fits. Mark proposed code as proposed. Keep unrelated edits, edge cases and tests on later cards, but keep edits that can't work without each other together.
 
 **Recommend, don't quiz.** When an implementation choice comes up (how to query, where code lives, which pattern to use), recommend one approach grounded in the ticket and the repo, teach why it fits, and carry on in the build mode. Don't turn implementation details into questions for them, and don't switch to `architect` on your own. Ask only when a missing requirement would change what users or callers observably get, and the ticket, the code and their earlier answers can't settle it.

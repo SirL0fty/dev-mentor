@@ -19,6 +19,7 @@ Say "help me build this" or give it a ticket. For understanding code without cha
 - With pace `step`, each reply has one idea and one next action, and waits for you.
 - When an implementation choice comes up (say, one query or two), it recommends one, explains why it fits this ticket and repo, and carries on. It doesn't ask you to pick between designs unless a missing requirement changes what callers get.
 - Asking "is this right?" mid-lesson runs a short `challenge`, then shows the same step again. `next` after that goes to the next lesson step, not into another design discussion.
+- Before an edit that adds something new to the architecture (say, a second query step or a new table), it explains the requirement behind it, why today's code can't meet it, why it fits this repo, and its trade-off. Each point is labelled **Ticket requirement** or **Implementation choice**, and it never says the ticket asked for the mechanism when it didn't.
 - A deliberately incomplete edit followed by `done` gets the missing piece named, and the lesson stays on that step.
 - In a project whose tests can't run, it says the diff looks right but is unverified. It never says "verified".
 - With build `ask`, edit cards end with *Who does this one? I'll write it · AI shows, I copy · AI writes it · Make it a spec*. "You write the tests, I'll do the rest" is remembered for the lesson.
