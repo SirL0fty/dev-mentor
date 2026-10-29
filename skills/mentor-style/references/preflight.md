@@ -50,11 +50,13 @@ First look for one that already exists: `git branch --list <name>`, `git branch 
 
 Never stash, reset, discard or commit their changes to make this work.
 
+**Move into the new worktree.** `git worktree add` doesn't change your folder. From now on, run every command in the new path (`cd <full path> && …`, or your tool's working-directory option) and read files by their full path there. Then rerun step 1 in it. Go on to step 5 only when `git rev-parse --show-toplevel` prints the new path and `git branch --show-current` prints `<name>`.
+
 **If moving to the new worktree ends your turn** (some apps restart the session there), end with a line they can paste:
 
 > `Continue Dev Mentor preflight for <name> in <full path>, then start the lesson.`
 
-When that arrives, rerun step 1 in the new folder, then step 5.
+When that arrives, rerun step 1 in the new folder, with the same check, then step 5.
 
 ## 5. Confirm, then start
 
