@@ -14,6 +14,7 @@ git worktree list --porcelain   # every worktree Git knows about
 git branch --show-current       # current branch
 git status --short              # uncommitted changes
 git ls-files | head -3          # tracked project files are present
+git symbolic-ref --short refs/remotes/origin/HEAD   # the real default branch, e.g. origin/main
 ```
 
 If the app says a worktree is attached to this session, compare its path with Git's list. The app's word alone isn't proof.
@@ -29,7 +30,7 @@ Ask once, with the picker if there is one, word for word:
 - New branch here · A new branch in this folder. Uncommitted changes come with you.
 - Stay on `<branch>` · Keep working on the current branch as it is.
 
-Offer **Stay** only when the current branch isn't the default branch (`main`, `master`, `develop`). Never start a lesson on the default branch.
+Offer **Stay** only when the current branch isn't the default branch. Take the default from the `symbolic-ref` line in step 1; if it fails (no remote, or `origin/HEAD` unset), treat `main`, `master` and `develop` as default. Never start a lesson on the default branch.
 
 ## 3. Ask for the branch name
 

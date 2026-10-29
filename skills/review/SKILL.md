@@ -1,6 +1,6 @@
 ---
 name: review
-description: Help someone understand a colleague's pull request well enough to review it themselves, step by step. Read-only; never posts or approves. Use for "help me review this PR", or an unfamiliar diff from someone else. (Dev Mentor)
+description: Help someone understand a colleague's pull request well enough to review it themselves, step by step, by behaviour rather than file order, labelling each concern as a confirmed bug, question, preference or missing evidence. Read-only; never posts comments, approves or requests changes. Use for "help me review this PR", "what is this PR doing?", "is this PR safe to approve?", a PR link, or an unfamiliar diff from someone else. For a tour of your own finished changes, use walkthrough. (Dev Mentor)
 ---
 
 # Review

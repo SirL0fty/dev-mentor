@@ -1,6 +1,6 @@
 ---
 name: spec
-description: Turn an agreed feature plan into a portable Markdown spec, a Matt Pocock or pstack inspired format, or an OpenSpec change through the official openspec-propose skill. Writes the spec only; doesn't implement anything. Use for "turn this plan into a spec". (Dev Mentor)
+description: Turn an agreed feature plan into a written spec, either portable Markdown with numbered requirements, scenarios, design and checkable steps, a Matt Pocock or pstack inspired format, or an OpenSpec change through the official openspec-propose skill. Writes the spec only; doesn't implement, create issues or notify anyone. Use for "turn this plan into a spec", "write this up as a spec", "make an OpenSpec change", "spec this feature before we build it", or build mode spec. (Dev Mentor)
 ---
 
 # Spec
