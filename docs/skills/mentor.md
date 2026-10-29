@@ -17,6 +17,7 @@ Say `use mentor`, or ask for help without naming a skill. Reach for it when you 
 - First time, with no saved settings, you get the setup questions: clickable if your assistant has a picker, one text card if not. ADHD mode is offered as a choice, never shown as already on.
 - If you arrive with a task, there's no questionnaire: one "I'll pitch this…" line, then the task.
 - `settings` shows your current choices, then asks what to change (Everything, or one area); `change tone` asks only that question; `reset settings` offers defaults or setup again.
+- `change output` to Markdown spec saves `build: spec` in your profile; there's no separate `output` line.
 - After a change, one line says which file it saved to, then the step you were on comes back in the new style without moving on.
 - Saving for "All my projects" writes `~/.dev-mentor/profile.md`, and a different repo uses it without asking again. A project `.dev-mentor/profile.md` overrides only the lines it contains.
 - `save` on three different lessons leaves three files in `.dev-mentor/lessons/`; `resume` asks which one, most recent first, with your step; `resume <name>` skips the question.

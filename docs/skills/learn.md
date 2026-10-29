@@ -8,7 +8,7 @@
 
 ## When to reach for it
 
-Ask "teach me X" or "what is X?", or use it for exam study.
+Ask "teach me X", "help me understand X properly" or "quiz me on X", or use it for exam and certification study. For how this project's own code works, use `explain`.
 
 ## It's working if
 
