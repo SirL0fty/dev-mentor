@@ -1,42 +1,21 @@
 # Getting it to them
 
-Ask once, after the document is saved, offering only options that work in this session. Plannotator is the default.
-
-The Plannotator link and the HTML file both share an **HTML page** next to the saved Markdown: for an outcome, fill [outcome.html](../assets/outcome.html); for a plan, use its styles and the plan's own sections.
+Ask once, after the document is saved, offering only options that work in this session. An HTML file is the default.
 
 **Share** · How should this reach them?
-- Plannotator link (default) · Opens in Plannotator; click Share there for an encrypted link that lasts 7 days.
-- HTML file · One file you send yourself, with an optional password.
+- HTML file (default) · One page that opens in any browser, with an optional password. You send it yourself.
+- Markdown file · The saved Markdown as it is; it reads well in GitHub, Slack and most editors.
 - `<connected tool>` · Saves it in a tool you already use, such as Notion, Confluence or a Slack canvas.
 
 Show a connected tool only if this session has a tool for it. Never upload to a public paste site or any service they didn't choose.
 
-## Plannotator (default)
+## Markdown file
 
-[Plannotator](https://github.com/backnotprop/plannotator) by backnotprop is an open-source (MIT / Apache-2.0) review tool with built-in sharing.
-
-**If `command -v plannotator` finds it:**
-
-1. Run `plannotator annotate <page.html>` in the background. It opens the report in the browser exactly as designed.
-2. Tell them: *"Click **Share** in the Plannotator tab and send that link. Anyone with the full link can read it, so send it only to them. It expires after 7 days."*
-3. If they annotate the page, their notes come back when the tab is closed or submitted; treat them as feedback, below.
-
-Share the **HTML** report, not Markdown: Plannotator encrypts HTML and large documents (AES-256-GCM, key only in the link, expires after 7 days), but squeezes small Markdown documents into the link without encryption. Don't promise a shorter expiry; Plannotator doesn't offer one for documents. You never click Share yourself.
-
-**If it isn't installed**, ask once, unless their **Plannotator** setting is `no` (read it the way `mentor-style` reads every setting, so a project file's line wins):
-
-**Plannotator** · Install Plannotator to share this as a link?
-- Install it · Downloads the official Plannotator program from plannotator.ai. The program only; no hooks or plugins.
-- Not now · Choose another way to share this time.
-- Don't ask again · Choose another way, and don't offer Plannotator again.
-
-- **Install it** (macOS, Linux, WSL): `curl -fsSL https://plannotator.ai/install.sh | bash -s -- --minimal`. It installs only the `plannotator` program into `~/.local/bin`. Check with `plannotator --version`, then continue as above. On Windows, link the [installation guide](https://docs.plannotator.ai/open-source/start/installation) instead of running anything.
-- **Don't ask again:** set the **Plannotator** setting to `no` and save it the way `mentor-style` saves every setting: in the project file if it has a `plannotator` line, otherwise in `~/.dev-mentor/profile.md`. Say which file in one line. `plannotator: yes` turns the offer back on.
-- If the install fails, say what failed and offer the other options. Never retry in a loop.
+Give the full path of the saved Markdown. Done.
 
 ## HTML file
 
-Make the HTML page first, as described at the top, if it doesn't exist yet: a saved Markdown plan must be turned into HTML, because the password script only encrypts what it's given. The page is one self-contained file that opens in any browser. Ask once, with the picker if there is one:
+Make an HTML page next to the saved Markdown: for an outcome, fill [outcome.html](../assets/outcome.html); for a plan, use its styles and the plan's own sections. A Markdown plan must be turned into HTML first, because the password script only encrypts what it's given. The page is one self-contained file that opens in any browser. Ask once, with the picker if there is one:
 
 **Password** · Lock the file with a password?
 - No password (default) · Send the file as it is. Anyone who gets it can read it.

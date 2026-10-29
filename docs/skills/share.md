@@ -10,7 +10,7 @@
 - **A lesson,** as a learning note for your own history in Notion, Obsidian or a notes folder. This hands over to `mentor`'s `export lesson`.
 - **An outcome** of a debate, challenge or review, as an architecture decision record (ADR) for a person or the team. It goes in the project's ADR folder (or `docs/decisions/`), marked **Status: Proposed**, with context, decision, consequences and alternatives, then where each reviewer started, what they disagreed about and what changed, what's still open, and the full record. It reports what happened; it doesn't turn it into a new plan or an approval request.
 
-To send it, the default is a [Plannotator](https://github.com/backnotprop/plannotator) link (an open-source tool by backnotprop): the page opens in Plannotator and you click **Share** for an encrypted link that lasts 7 days. If you don't have Plannotator, it offers to install just the program once, or you can pick an HTML file, with a password if you want one, or a tool you already have connected.
+To send it, the default is one HTML file that opens in any browser, with a password if you want one. You can also send the Markdown as it is, or save it in a tool you already have connected.
 
 ## When to reach for it
 
@@ -30,6 +30,6 @@ Say `share`, or name it: "share this plan with my senior", "share this lesson", 
 - **An incomplete debate** says "incomplete", shows the latest decision text, the open objections and where to resume.
 - **When the reader asked the original question**, the report is framed as the answer to it, with no approval questions.
 - Anything that wasn't recorded says "unknown"; it never invents reasons, concessions or test results.
-- With Plannotator installed, it opens the HTML report with `plannotator annotate` and tells you to click Share; it never clicks Share itself. Without it, it asks once to install the program only, and `Don't ask again` sets `plannotator: no` in the profile that setting came from (a project file's line wins).
+- **Share** offers HTML file (default), Markdown file, and a connected tool only if this session has one. Nothing is uploaded anywhere you didn't choose.
 - Choosing **HTML file** asks whether to add a password; **No password** is the default and just gives you the file's path. With **Add a password**, the file opens in a browser, asks for the password, and shows the report. The password is shown once and never saved.
 - Nothing is sent or published until you choose how, and it never changes who has access.

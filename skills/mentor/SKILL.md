@@ -155,10 +155,9 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
   debate models: claude-opus-5-5, sol-6.1, <a third model>
   debate effort: high
   export: notion Dev Mentor notes
-  plannotator: no
   ```
 
-  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. `warmth` is the line for tone. The `debate` lines are optional and only used by `devils-advocate`; `plannotator: no` stops `share` offering to install Plannotator. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
+  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. `warmth` is the line for tone. The `debate` lines are optional and only used by `devils-advocate`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
 
 ### Saved lessons
 

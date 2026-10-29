@@ -51,7 +51,6 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 | **ADHD mode** | off · on | `ADHD mode on`, `ADHD mode off` |
 | **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
 | **Export** | where lesson notes go: Notion · Obsidian · Markdown folder | `export lesson` asks the first time |
-| **Plannotator** | whether `share` offers to install [Plannotator](https://github.com/backnotprop/plannotator) for share links | `share` asks the first time; `plannotator: no` in your profile stops it |
 
 **Build** always starts by showing you where to start and why, so you learn the route even when the AI writes the code. With the default, *ask me each step*, you choose per edit: write it yourself, copy an explained snippet, let the AI do it (handy for tests or boilerplate), or turn it into a spec or OpenSpec change.
 
@@ -103,7 +102,7 @@ flowchart LR
 | [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. For "how should we store or build X?", it proposes a concrete design (such as a table's keys and indexes) and walks each of your queries through it. |
 | [challenge](skills/challenge/SKILL.md) | Check a recommendation before you act on it: how it was reached, whether it matches your code's style, and what it skipped. Brings in devils-advocate when the case looks weak. |
 | [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. Every reviewer gets the same context first (the repo plus any diagrams or docs you add), and design questions get the smallest design that fits, which every reviewer votes on. |
-| [share](skills/share/SKILL.md) | Share a plan for a colleague or senior dev to review before you build, a lesson as a note for Notion or Obsidian, or a debate or review outcome as an ADR for the team. Sends as a Plannotator link, an HTML file (password optional), or in a tool you already use. |
+| [share](skills/share/SKILL.md) | Share a plan for a colleague or senior dev to review before you build, a lesson as a note for Notion or Obsidian, or a debate or review outcome as an ADR for the team. Sends as an HTML file (password optional), as Markdown, or in a tool you already use. |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec), written on its own worktree or branch. |
 
 Install them all: every skill loads `mentor-style` for your settings, and hands saved lessons and exports over to `mentor`. Each skill has a short [guide](docs/skills/README.md) with what it does, when to use it, and how to tell it's working.
@@ -175,6 +174,6 @@ If what you ask about isn't in the project, it tells you which project it looked
 
 Found a skill doing the wrong thing? [Open an issue](https://github.com/SirL0fty/dev-mentor/issues/new?template=skill-misbehaved.md) with the transcript. Want to change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [skill guides](docs/skills/README.md).
 
-Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack). Share links are powered by [Plannotator](https://github.com/backnotprop/plannotator) by backnotprop (MIT / Apache-2.0), installed only if you choose to.
+Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack).
 
 [MIT licence](LICENSE) · By [SirL0fty](https://github.com/SirL0fty)

@@ -1,6 +1,6 @@
 ---
 name: share
-description: Share a plan before building it (for a colleague or senior dev to review), a lesson as a learning note for Notion or Obsidian, or the outcome of a debate, challenge or review as a decision record (ADR) for a person or the team. Outcome records keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Sends with a Plannotator link, an HTML file (optionally password-protected), or a tool you already use. Use for "share this plan with my senior", "share this lesson", "share this outcome", or "write up this debate as an ADR". (Dev Mentor)
+description: Share a plan before building it (for a colleague or senior dev to review), a lesson as a learning note for Notion or Obsidian, or the outcome of a debate, challenge or review as a decision record (ADR) for a person or the team. Outcome records keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Sends as an HTML file (optionally password-protected), the Markdown file, or in a tool you already use. Use for "share this plan with my senior", "share this lesson", "share this outcome", or "write up this debate as an ADR". (Dev Mentor)
 ---
 
 # Share
@@ -54,7 +54,7 @@ Name who it's for: a person (e.g. a senior dev) or the team. Only **Ask for thei
 
 ## 4. Get it to them
 
-Read [destinations.md](references/destinations.md). Plannotator is the default; an HTML file (with an optional password) or a connected tool are the alternatives.
+Read [destinations.md](references/destinations.md). An HTML file (with an optional password) is the default; the Markdown file or a connected tool are the alternatives.
 
 Nothing is sent, posted, published or shared until they choose how. Never change who has access unless they ask. If a tool would notify people automatically, warn them before writing.
 

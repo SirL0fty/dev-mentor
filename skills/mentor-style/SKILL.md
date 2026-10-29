@@ -18,7 +18,6 @@ Read your settings from `~/.dev-mentor/profile.md` (every project), then `.dev-m
 | Pace | `step`: one card per reply, then wait. `chunk`: a few steps per reply. `full`: the whole explanation at once. Default: `step`. |
 | Build | Always teach where to start and why first. Then for each edit: `ask` (default): offer the choices at each edit. `me`: they write it, you hint. `copy`: show the code to copy, explained line by line. `ai`: you edit for this task and explain each change. `spec` / `openspec`: call the Skill tool with "spec" and plan it instead of writing code. Overrides can be per step or per kind of work ("you do the tests"); remember them for the rest of the lesson and don't ask again for that kind of work. |
 | ADHD mode | `off` (default) or `on`. See below. |
-| Plannotator | `yes` (default): `share` may offer to install Plannotator for share links. `no`: never offer it. Read and saved like every other setting, so a project file's line wins. |
 
 `warmer`, `more direct`, `simpler`, `more technical`, `faster`, `slower`, `ADHD mode on`/`off` and `build spec` each change **only that one setting, by one step** (e.g. warmth 2 → 3; `warmer` never jumps to 5), straight away, and keep their place in the lesson. Never change any other setting as a side effect. `you do this one` or "you write the tests" changes only this step or this kind of work, for this lesson, and isn't saved.
 
