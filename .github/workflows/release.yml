@@ -1,5 +1,10 @@
 name: Release
 
+# Every push to main with pending changesets becomes a release straight away:
+# bump the version, update CHANGELOG.md, commit to main, tag, and create the
+# GitHub release. Pushes made here with GITHUB_TOKEN don't start new workflow
+# runs, so the release commit doesn't trigger another release.
+
 on:
   push:
     branches: [main]
@@ -11,20 +16,47 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version-file: package.json
-      - run: bun install --frozen-lockfile
-      - name: Open a version PR, or tag the release
-        uses: changesets/action@v1
-        with:
-          version: bun run version
-          publish: bunx changeset tag
-          commit: "chore: version"
-          title: "chore: version"
-          createGithubReleases: true
+
+      - name: Version, commit, tag and release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # If another PR lands on main mid-run, the push is rejected. Start
+          # again from the latest main. --atomic pushes the branch and tag
+          # together, so a rejected push never leaves a tag behind.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+
+            if ! find .changeset -maxdepth 1 -name '*.md' ! -name README.md | grep -q .; then
+              echo "No pending changesets; nothing to release."
+              exit 0
+            fi
+
+            bun install --frozen-lockfile
+            bun run version
+            version="$(jq -r .version package.json)"
+            git add -A
+            git commit -m "chore: release v$version"
+            git tag -f "v$version"
+
+            if git push --atomic origin HEAD:main "refs/tags/v$version"; then
+              awk -v heading="## $version" '$0 == heading { found = 1; next } /^## / && found { exit } found' CHANGELOG.md > "$RUNNER_TEMP/release-notes.md"
+              gh release create "v$version" --title "v$version" --notes-file "$RUNNER_TEMP/release-notes.md"
+              exit 0
+            fi
+
+            echo "main moved during the release (attempt $attempt); retrying from the latest main."
+            git tag -d "v$version"
+          done
+
+          echo "Couldn't push the release after 3 attempts."
+          exit 1
