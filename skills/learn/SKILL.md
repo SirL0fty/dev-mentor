@@ -1,6 +1,6 @@
 ---
 name: learn
-description: Teach an engineering concept, technology, or certification topic with concrete examples and an optional hands-on exercise, with or without a codebase. Use for "teach me X", "what is X?", or exam study. (Dev Mentor)
+description: Teach an engineering concept, technology or certification topic properly, problem first, with a realistic example, one way it breaks and an optional hands-on exercise, with or without a codebase. Use for "teach me X", "help me understand X properly", "explain X with an example", "I keep getting confused by X", "quiz me on X", or exam and certification study (e.g. AWS, Kubernetes). For how this project's own code works, use explain. (Dev Mentor)
 ---
 
 # Learn
@@ -9,7 +9,7 @@ description: Teach an engineering concept, technology, or certification topic wi
 2. **Problem first.** Show the concrete problem the concept solves before the definition.
 3. **One realistic example**, then one way it breaks or a boundary case. If there's a repo, use a real example from it; otherwise label the example as illustrative.
 4. **Check current facts.** For anything version-specific, use up-to-date official docs, and say which version you mean.
-5. **Practise.** Offer one small exercise that uses the idea somewhere new. If it changes code in the repo, check it the way `coach` does: read the diff, run a small check, reply with one card.
+5. **Practise.** Offer one small exercise that uses the idea somewhere new. If it changes code in the repo, check it as the **On `done`** ground rule says: read the diff, run a small check, reply with one card.
 6. **Finish** with a short explanation they can reuse and one practical next step.
 
 For **new**, avoid stacked jargon and explain any term the first time it appears. For **lead**, focus on trade-offs, when *not* to use it, and how to teach it to others.

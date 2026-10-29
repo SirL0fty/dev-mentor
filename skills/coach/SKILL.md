@@ -43,9 +43,7 @@ Who makes the edit depends on **build**. The orientation and walk-through above 
 - `me`: hint first, then narrow it down, then give the exact code if asked.
 - `copy`: show the complete snippet with a short line-by-line explanation. They paste it, then say `done` and you check it as normal.
 - `ai`: make the change, then explain what changed and why.
-- `spec` / `openspec`: after the orientation and plan, hand over to `spec` in that format instead of writing code.
-
-Remember scoped choices for the rest of the lesson (e.g. "you do the tests") and don't ask again for that kind of work.
+- `spec` / `openspec`: after the orientation and plan, call the Skill tool with "spec" and name that format, instead of writing code.
 
 ## 4. Check their work
 
@@ -61,7 +59,7 @@ When they say `done` (or `next` while an edit is pending):
 
 Gradually let them make the decisions: first you show the move, then you guide them with a clue, then they choose. Do this through real work, not quizzes. When the feature is done, give a short reusable recipe: how you found the entry point, traced the flow, chose the first change, and checked it.
 
-To write the plan up for a reviewer use `share`; to make a spec use `spec`. Both come back to the same step.
+To write the plan up for a reviewer, call the Skill tool with "share"; to make a spec, call the Skill tool with "spec". Both come back to the same step.
 
 ## Style and ground rules
 
