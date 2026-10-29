@@ -115,7 +115,7 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | `architect` | Compare designs and trade-offs |
 | `challenge` | Check a recommendation (yours or another agent's) against the code before acting on it |
 | `devils-advocate` | Stress-test a proposal |
-| `share` | Write up a plan or lesson for someone else to review |
+| `share` | Share a plan for review, a lesson as a note, or a debate outcome as an ADR |
 | `spec` | Turn an agreed plan into a spec (project preflight first) |
 
 Load that skill if the host can. If it isn't installed, say so and suggest installing the full pack; give limited help meanwhile, and don't claim the workflow ran. A question about the current lesson stays in that lesson.

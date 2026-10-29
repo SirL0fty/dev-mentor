@@ -3,7 +3,7 @@
   Dev Mentor outcome report template.
   Copy this file, keep the structure and styles, and replace every example value.
   Delete any section that has nothing recorded, except "Still open" and "Evidence and limits".
-  Status classes: agreed, conditional, disputed, incomplete. Vote classes: agree, object, missing.
+  ADR status: Proposed unless the team accepted it. Debate classes: agreed, conditional, disputed, incomplete. Vote classes: agree, object, missing.
   Keep it one self-contained file: no external scripts, fonts or images.
 -->
 <html lang="en">
@@ -55,9 +55,9 @@
 <main>
 
 <!-- 1. Header: what this is, for whom, and why. Never "please approve" unless that is the stated purpose. -->
-<p class="meta">29 October 2026 · about 5 minutes to read</p>
+<p class="meta">ADR 0007 · 29 October 2026 · about 5 minutes to read</p>
 <h1>Cache layer decision</h1>
-<p><span class="badge conditional">Agreed · conditional</span></p>
+<p><span class="badge">Status: Proposed</span> <span class="badge conditional">Debate: agreed · conditional</span></p>
 <p class="meta"><strong>For:</strong> Sam, who asked the original question. <strong>Purpose:</strong> report the arguments, what was agreed and what is still open. This is not a request to approve a build plan.</p>
 
 <!-- 2. Bottom line: the agreed outcome, its status, and what agreement does and doesn't mean. -->
@@ -67,8 +67,8 @@
   <p>Model agreement is a recommendation. It is not a tested result or approval to build.</p>
 </section>
 
-<!-- 3. The question: original wording, constraints, anything added later. -->
-<h2>What was asked</h2>
+<!-- 3. Context: original question, constraints, anything added later. -->
+<h2>Context</h2>
 <p>Should the items API add a cache, and if so, where? Responses must stay under 200 ms at peak.</p>
 <p class="note"><strong>Added during the session:</strong> the catalogue is reloaded nightly, so data older than a day is never valid.</p>
 
@@ -100,10 +100,12 @@
 <h2>Claims that were corrected</h2>
 <ul><li>C said the API has no rate limit. It does: <code>src/middleware/limit.ts:8</code>.</li></ul>
 
-<!-- 7. What was agreed and what was rejected or kept conditional. -->
-<h2>What was agreed</h2>
+<!-- 7. Decision, consequences, and alternatives rejected or kept conditional. -->
+<h2>Decision</h2>
 <ol><li>Add an in-process cache with a 60-second expiry.</li></ol>
-<h2>Rejected or kept conditional</h2>
+<h2>Consequences</h2>
+<ul><li>Each instance may serve data up to 60 seconds old. Accepted because the catalogue only changes nightly.</li></ul>
+<h2>Alternatives considered</h2>
 <ul><li><strong>Redis:</strong> rejected for now; reconsider if instances need shared state.</li></ul>
 
 <!-- 8. Still open: kept separate by kind, each with what would settle it. Always include this section. -->

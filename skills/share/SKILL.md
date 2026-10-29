@@ -1,29 +1,37 @@
 ---
 name: share
-description: Write up a plan, a lesson, or the outcome of a debate, challenge or review as a self-contained document someone can read without the chat, then get it to them with a Plannotator link, an HTML file (optionally password-protected), or a tool you already use. Outcome reports keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Use for "share this plan with my senior", "share this outcome", or "send this debate to the team". (Dev Mentor)
+description: Share a plan before building it (for a colleague or senior dev to review), a lesson as a learning note for Notion or Obsidian, or the outcome of a debate, challenge or review as a decision record (ADR) for a person or the team. Outcome records keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Sends with a Plannotator link, an HTML file (optionally password-protected), or a tool you already use. Use for "share this plan with my senior", "share this lesson", "share this outcome", or "write up this debate as an ADR". (Dev Mentor)
 ---
 
 # Share
 
-Reuse what already exists: the current plan, or the recorded outcome. Don't plan again, rerun a debate, or fill gaps with guesses; mark missing parts as gaps or **unknown**.
+Reuse what already exists: the current plan, lesson or recorded outcome. Don't plan again, rerun a debate, or fill gaps with guesses; mark missing parts as gaps or **unknown**.
 
-## 1. Plan, or outcome?
+## 1. What are you sharing?
 
-- **Plan or lesson:** the current plan or lesson step. Use **What goes in a plan** below.
-- **Outcome:** the result of a `devils-advocate` debate or challenge, a `challenge` verdict or a `review`. Read [outcome-report.md](references/outcome-report.md) and follow it.
+Ask first, with the picker if there is one, unless their request already says (e.g. "share this plan"):
 
-If both exist and it's unclear, ask which one.
+**Share what** · What do you want to share?
+- A plan · Before building: a version a colleague or senior dev can review.
+- A lesson · A record of what you learned, for Notion, Obsidian or a notes folder.
+- An outcome · A debate, challenge or review result, written up as a decision record (ADR).
+
+If they pick something that doesn't exist in this conversation or the project, say so and offer the ones that do.
+
+- **A lesson:** this is a learning note for your own history. Call the Skill tool with "mentor" and run `export lesson`; it asks where it goes and writes it. Then stop here.
+- **A plan:** go to step 2, then use **What goes in a plan** below.
+- **An outcome:** go to step 2, then read [outcome-report.md](references/outcome-report.md) and follow it.
 
 ## 2. Ask who it's for and why
 
-Ask once, with the picker if there is one:
+For a plan or an outcome, ask once, with the picker if there is one:
 
 **Purpose** · What should this do for them?
+- Ask for their input · They review it and answer specific questions. *(default for a plan)*
 - Answer their question · They asked; this gives them the answer and the reasoning.
-- Keep them informed · For their information; nothing is asked of them.
-- Ask for their input · They review it and answer specific questions.
+- Keep them informed · For their information; nothing is asked of them. *(default for an outcome)*
 
-Only **Ask for their input** adds questions for the reader (2–4 specific ones, never "any thoughts?"). Never turn a shared outcome into a request for approval.
+Name who it's for: a person (e.g. a senior dev) or the team. Only **Ask for their input** adds questions for the reader (2–4 specific ones, never "any thoughts?"). Never turn a shared outcome into a request for approval.
 
 ## What goes in a plan
 
@@ -36,7 +44,11 @@ Only **Ask for their input** adds questions for the reader (2–4 specific ones,
 
 ## 3. Save it
 
-1. Save where they ask. Otherwise plans go to `docs/plans/<feature>.md` and outcome reports to `docs/decisions/<topic>.html` in the project. If you can't write anywhere, give them the complete document and say it wasn't saved.
+1. Save where they ask. Otherwise:
+   - **Plan:** `docs/plans/<feature>.md`.
+   - **Outcome:** the project's existing ADR folder if it has one (`docs/adr/`, `adr/`, `docs/decisions/`), following its numbering and file naming; otherwise `docs/decisions/NNNN-<topic>.md`, numbered after the last one.
+   
+   If you can't write anywhere, give them the complete document and say it wasn't saved.
 2. Read existing documents before updating them, and keep their edits.
 3. Read the file back to confirm it saved, then give its full path.
 

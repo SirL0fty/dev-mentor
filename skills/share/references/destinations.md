@@ -2,6 +2,8 @@
 
 Ask once, after the document is saved, offering only options that work in this session. Plannotator is the default.
 
+The Plannotator link and the HTML file both share an **HTML page** next to the saved Markdown: for an outcome, fill [outcome.html](../assets/outcome.html); for a plan, use its styles and the plan's own sections.
+
 **Share** · How should this reach them?
 - Plannotator link (default) · Opens in Plannotator; click Share there for an encrypted link that lasts 7 days.
 - HTML file · One file you send yourself, with an optional password.
@@ -15,7 +17,7 @@ Show a connected tool only if this session has a tool for it. Never upload to a 
 
 **If `command -v plannotator` finds it:**
 
-1. If the document is Markdown (a plan), first write an HTML copy next to it using the styles from [outcome.html](../assets/outcome.html). Then run `plannotator annotate <report.html>` in the background. It opens the report in the browser exactly as designed.
+1. Run `plannotator annotate <page.html>` in the background. It opens the report in the browser exactly as designed.
 2. Tell them: *"Click **Share** in the Plannotator tab and send that link. Anyone with the full link can read it, so send it only to them. It expires after 7 days."*
 3. If they annotate the page, their notes come back when the tab is closed or submitted; treat them as feedback, below.
 
@@ -34,14 +36,14 @@ Share the **HTML** report, not Markdown: Plannotator encrypts HTML and large doc
 
 ## HTML file
 
-The saved report is already one self-contained file that opens in any browser. Ask once, with the picker if there is one:
+The HTML page is one self-contained file that opens in any browser. Ask once, with the picker if there is one:
 
 **Password** · Lock the file with a password?
 - No password (default) · Send the file as it is. Anyone who gets it can read it.
 - Add a password · They need a password you send separately to open it.
 
-- **No password:** give the full path of the saved file. Done.
-- **Add a password:** run `node <this skill>/scripts/protect.mjs <report.html> <report-locked.html>`. It prints a generated password and writes one HTML file that opens in any browser and asks for it. Nothing is uploaded. Tell them: *"Send the file and the password by different routes (for example, the file by email and the password in a chat). The title stays visible; everything else is locked. It doesn't expire: anyone with both can open it."* Show the password once. Never save it to a file. If `node` isn't available, say so and give the unlocked file instead.
+- **No password:** give the full path of the HTML page. Done.
+- **Add a password:** run `node <this skill>/scripts/protect.mjs <page.html> <page-locked.html>`. It prints a generated password and writes one HTML file that opens in any browser and asks for it. Nothing is uploaded. Tell them: *"Send the file and the password by different routes (for example, the file by email and the password in a chat). The title stays visible; everything else is locked. It doesn't expire: anyone with both can open it."* Show the password once. Never save it to a file. If `node` isn't available, say so and give the unlocked file instead.
 
 ## Connected tool
 
