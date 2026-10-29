@@ -5,7 +5,10 @@ description: Stress-test an engineering proposal. By default it checks which mod
 
 # Devil's advocate
 
-Reuse the current proposal. First build one shared **evidence pack**: the decision to make, goal, acceptance criteria, the proposal, the alternatives (including doing nothing), constraints, the relevant code and tests, and the commit inspected.
+Reuse the current proposal. Every reviewer must start from the same full picture, so before choosing a mode:
+
+1. **Get the context.** Follow **Context before design** in the ground rules: read the repo, ask for architecture diagrams, design docs or PDFs it can't show, and have the person confirm your summary of how the system works.
+2. **Build one shared evidence pack** from that confirmed picture: the decision to make, the goal, their requirements **quoted word for word**, acceptance criteria, the proposal, the alternatives (including doing nothing), constraints, the relevant code and tests, the docs they gave, and the commit inspected. Label anything you added as an assumption; never strengthen a requirement they stated.
 
 ## Choose a mode
 
@@ -34,7 +37,7 @@ Follow [debate.md](references/debate.md). It only counts as complete when every 
 
 ## Output
 
-The decision (or for quick mode, the strongest objections), the proposed design and query walkthrough when the question asks for a design, the reasons tied to evidence, the rejected alternatives and why, accepted trade-offs, conditions, and what still needs verifying. Consensus is a recommendation, not proof and not approval to build.
+Open with about a page that answers exactly what was asked: the decision (or for quick mode, the strongest objections) and, when the question asks for a design, the smallest proposed design and its query walkthrough. After that: the reasons tied to evidence, the rejected alternatives and why, accepted trade-offs, conditions, and what still needs verifying. Consensus is a recommendation, not proof and not approval to build.
 
 For **lead**, include second-order effects: team load, migration, and reversibility. For **new**, explain each objection with a concrete "here's what could go wrong" example.
 

@@ -5,11 +5,11 @@ description: Compare two or three technical approaches for a feature or system (
 
 # Architect
 
-1. **Frame the decision.** The goal, acceptance criteria, how it works today, the constraints, and what's still open. Reuse any plan you already have.
+1. **Frame the decision.** Get the context first (see **Context before design** in the ground rules): read the repo, ask for diagrams or docs it can't show, and have them confirm how the system works today. Then the goal, acceptance criteria, the constraints in their own words, and what's still open. Reuse any plan you already have.
 2. **Two or three real options**, including "keep what we have" when it's viable. Compare them on the same criteria: who owns what, the contracts and data flow, how each fails, the operational cost, migration, and how you'd test it.
 3. **Map it** when boundaries matter: a small diagram of each option's components and calls.
 4. **Recommend** one option, with the reasons, the trade-offs you're accepting, and the first few build steps, each with a way to check it.
-5. **Show the design.** If the question asks how to build or store something, include the proposed design and walk every query in the question through it (see **Design questions get a design** in the ground rules).
+5. **Show the design.** If the question asks how to build or store something, include the smallest proposed design that meets their stated requirements and walk every query in the question through it (see **Design questions get the smallest design that fits** in the ground rules).
 6. **Record it.** Offer a short ADR when the decision is worth keeping. Writing an ADR doesn't approve building it.
 
 Keep evidence (what the code shows), assumptions and proposals clearly apart. If people disagree, record it; don't invent agreement.

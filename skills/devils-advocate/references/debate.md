@@ -41,7 +41,7 @@ Write the profile line only if they choose **Use and save**.
 
 ## 3. Seat the reviewers
 
-- Give each seat its own fresh context and the **identical evidence pack**, with its version number. You coordinate; you are not a vote.
+- Give each seat its own fresh context and the **identical evidence pack**, with its version number. Pass the person's docs and diagrams themselves (file paths each seat reads, or their full extracted text), not your summary of them. You coordinate; you are not a vote.
 - Record each seat's **requested model**, the **model confirmed at runtime** (from the tool's or runtime's metadata, not the model's own claim), and its **session ID**.
 - If two seats turn out to be the same model, count again and say what changed (e.g. it's now a two-model debate). If you can't confirm at runtime that the seats are distinct models, don't call the result an independent multi-model consensus: label it **unverified** and say which identities are missing.
 - If the host can't start reviewers itself, prepare identical briefs they can paste into other sessions, or use a multi-model tool they've authorised. Never fall back silently to another model.
@@ -50,19 +50,31 @@ Write the profile line only if they choose **Use and save**.
 
 Write `.dev-mentor/debates/<topic>.md` as you go, so `share` can report it later without guessing:
 
-- the question, constraints and evidence pack version(s), with the commit;
+- the question, the person's requirements as quoted, the confirmed context summary, the docs and diagrams they gave, and the evidence pack version(s), with the commit;
 - each seat's requested and confirmed model, session ID, and **first answer as returned**;
-- the issue table after each challenge round, and any corrected claims;
+- the issue table after each challenge round, with each objection's class, and any corrected claims;
 - every decision version's exact text, and each seat's vote and reasons on it.
 
 Copy replies as returned; label anything you add as editorial. Don't record private reasoning you didn't see.
 
 ## 4. Rounds
 
-1. **Independent round:** every seat gets the same evidence pack and returns: their preferred option and why, the strongest case against it, concrete failure cases, and their blocking objections plus what would resolve them. Collect every answer before anyone sees the others'. Don't hint at a preferred winner.
-2. **Challenge rounds:** keep a small issue table (ID, claim, evidence, each seat's position, status). Share every material disagreement, minority ones included. Check disputed facts with read-only checks. If the evidence changes, bump the evidence version and have every seat reassess.
-3. **Candidate decision:** the option, its scope, the proposed design and query walkthrough when the question asks for a design (see **Design questions get a design** in the ground rules), the reasons, the rejected alternatives, the trade-offs, the conditions, and what still needs verifying. "Defer until we measure X" is a valid decision; "needs more work" is not.
-4. **Ratify:** send the exact same versioned text to every seat. Each replies `AGREE` or `OBJECT`, with reasons and any remaining objections, covering the design and its query walkthrough as well as the direction. A reply that still asks for changes counts as `OBJECT`. If the text changes, everyone votes again.
+1. **Independent round:** every seat gets the same evidence pack and returns: their preferred option and why, the **smallest design** that meets the stated requirements (when the question asks for one), the strongest case against it, and at most **three material objections**, each with what would resolve it. Collect every answer before anyone sees the others'. Don't hint at a preferred winner.
+2. **Challenge rounds:** keep a small issue table (ID, claim, evidence, each seat's position, class, status). Share every material disagreement, minority ones included. Check disputed facts with read-only checks. If the evidence changes, bump the evidence version and have every seat reassess.
+
+   **Sort every objection before acting on it:**
+
+   | Class | Means | Effect on the decision |
+   | --- | --- | --- |
+   | Required now | A stated requirement or the evidence shows it will break | May change the design |
+   | Conditional | Only matters if some requirement turns out to be true | Becomes an open question naming that requirement |
+   | Deferred | A real risk, but nothing stated needs it handled now | Listed under *If you later need…* |
+
+   Only **Required now** changes the design. For each one ask "which stated requirement makes this necessary?"; if no one can name it, it's Conditional or Deferred. If fixing an objection would add a new mechanism (a table, index, service, state machine, publication or locking protocol), stop and ask the person whether that requirement is real before adding it.
+3. **Candidate decision:** the option, its scope, the smallest proposed design and its query walkthrough when the question asks for a design (see **Design questions get the smallest design that fits** in the ground rules), the reasons, the rejected alternatives, the trade-offs, the conditions, and what still needs verifying. "Defer until we measure X" is a valid decision; "needs more work" is not.
+4. **Ratify:** send the exact same versioned text to every seat. Each replies `AGREE`, `AGREE with deferred concerns`, or `OBJECT`, with reasons, covering the design and its query walkthrough as well as the direction. Seats ratify the **simplest adequate** decision, not one that holds every safeguard anyone suggested. An `OBJECT` must name the stated requirement or evidence the decision fails; otherwise it's a deferred concern, recorded under Still open. If the text changes, everyone votes again.
+
+Keep the person updated with one line per round (e.g. `Round 2: 2 agree, 1 objects on name matching`), never one message per vote.
 
 ## 5. Limits
 
