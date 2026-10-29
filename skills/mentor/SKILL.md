@@ -113,7 +113,8 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | `review` | Understand a colleague's PR so they can review it |
 | `walkthrough` | Tour changes that are already done |
 | `architect` | Compare designs and trade-offs |
-| `devils-advocate` | Challenge a proposal |
+| `challenge` | Check a recommendation (yours or another agent's) against the code before acting on it |
+| `devils-advocate` | Stress-test a proposal |
 | `share` | Write up a plan or lesson for someone else to review |
 | `spec` | Turn an agreed plan into a spec (project preflight first) |
 

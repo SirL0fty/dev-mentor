@@ -12,6 +12,7 @@ Lessons that change code (`coach`, `spec`) start with the project preflight; its
 - [review](review.md)
 - [walkthrough](walkthrough.md)
 - [architect](architect.md)
+- [challenge](challenge.md)
 - [devils-advocate](devils-advocate.md)
 - [share](share.md)
 - [spec](spec.md)

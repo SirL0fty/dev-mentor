@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Challenge"
+  short_description: "Check a recommendation against your code"
+  default_prompt: "Use $challenge to check whether this recommendation is right for this codebase."

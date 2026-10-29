@@ -80,7 +80,7 @@ flowchart LR
     Start(["mentor<br/>onboard + settings"]) --> Where["Find a starting point<br/>in your real code"]
     Where --> Pick{"What do you<br/>want to do?"}
     Pick -->|understand| U["explain · learn<br/>review · walkthrough"]
-    Pick -->|decide| D["architect<br/>devils-advocate"]
+    Pick -->|decide| D["architect · challenge<br/>devils-advocate"]
     Pick -->|build| PF["preflight<br/>worktree or branch"] --> C["coach"]
     C --> Edit["One step: you write it,<br/>copy it, or the AI does"] --> Check["done → mentor checks<br/>the diff + runs a test"]
     Check -->|next step| C
@@ -100,6 +100,7 @@ flowchart LR
 | [review](skills/review/SKILL.md) | Understand a colleague's PR so you can review it. |
 | [walkthrough](skills/walkthrough/SKILL.md) | Tour changes that are already finished. |
 | [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. |
+| [challenge](skills/challenge/SKILL.md) | Check a recommendation before you act on it: how it was reached, whether it matches your code's style, and what it skipped. Brings in devils-advocate when the case looks weak. |
 | [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. |
 | [share](skills/share/SKILL.md) | Write up a plan or lesson for a colleague to review (file, Obsidian or Notion). |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec), written on its own worktree or branch. |
@@ -153,6 +154,7 @@ Or give it a ticket: **"Help me build this one step at a time. I'll write the co
 | `next` / `back` | Move between steps. |
 | `why` · `example` · `more detail` · `help` | Ask about this step without moving on. |
 | `you do this one` | The AI makes this edit. |
+| `is this right?` · `challenge this` | Check the last recommendation against your code, and bring in a devil's advocate if it looks weak. |
 
 | Lessons | |
 | --- | --- |
