@@ -1,6 +1,6 @@
 ---
 name: explain
-description: Explain how existing code or a system actually works by tracing a real example through the source, at the person's level and pace. Read-only. Use for "how does this work?", "what happens when…", or understanding unfamiliar code. Use walkthrough for finished changes and review for a colleague's PR. (Dev Mentor)
+description: Explain how existing code or a system actually works by tracing one real example through the source (entry point, calls, data, tests) with a small flow map, at the person's level and pace. Read-only. Use for "how does this work?", "what happens when…", "trace this request", "where does this value come from?", "I don't understand this file", or getting to grips with unfamiliar code. Use walkthrough for changes that are already finished, review for a colleague's PR, and learn for a concept rather than this codebase. (Dev Mentor)
 ---
 
 # Explain

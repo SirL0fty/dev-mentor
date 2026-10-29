@@ -1,6 +1,6 @@
 ---
 name: architect
-description: Compare technical approaches for a feature or system (responsibilities, interfaces, data flow, failure behaviour, trade-offs) and recommend one, before anyone writes code. Use for "how should we design this?" or "A or B?". (Dev Mentor)
+description: Compare two or three technical approaches for a feature or system (ownership, interfaces, data flow, failure behaviour, operational cost, migration, testing) and recommend one with its trade-offs, before anyone writes code; can record the decision as a short ADR. Use for "how should we design this?", "A or B?", "which approach is better?", "should this be a queue or a cron job?", "where should this logic live?", or any design choice with real alternatives. For checking a recommendation already made, use challenge; to stress-test one option, use devils-advocate. (Dev Mentor)
 ---
 
 # Architect
@@ -16,7 +16,7 @@ Keep evidence (what the code shows), assumptions and proposals clearly apart. If
 
 For **new**, explain the problem with a concrete example before naming patterns. For **lead**, cover reversibility, team ownership, cost over time, and what would make you change your mind.
 
-To stress-test the choice use `devils-advocate`; to write it up for review use `share`.
+To stress-test the choice, call the Skill tool with "devils-advocate"; to write it up for review, call the Skill tool with "share".
 
 ## Style and ground rules
 

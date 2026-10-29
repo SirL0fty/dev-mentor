@@ -8,7 +8,7 @@
 
 ## When to reach for it
 
-Ask "how should we design this?" or "A or B?". To stress-test the choice, use `devils-advocate`; to write it up, use `share`.
+Ask "how should we design this?", "A or B?" or "where should this logic live?". To check a recommendation that's already been made, use `challenge`; to stress-test the choice, use `devils-advocate`; to write it up, use `share`.
 
 ## It's working if
 

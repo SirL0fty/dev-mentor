@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-// Repo checks run in CI and by `npm run check`:
-// skill headers parse, names match folders, metadata parses,
-// manifests share one version, relative links resolve, README lists every skill,
-// every skill has a guide and loads mentor-style.
+// Repo checks run in CI and by `bun run check`:
+// skill headers parse, names match folders, descriptions follow AGENTS.md,
+// SKILL.md stays under 500 lines, metadata parses, manifests share one version,
+// relative links resolve, README, guide index and mentor routing list every skill,
+// every skill has a guide and loads mentor-style with an identical section.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
@@ -36,12 +37,25 @@ for (const name of skills) {
   }
   if (meta?.name !== name) fail(`${file}: name is "${meta?.name}", folder is "${name}"`);
   if (typeof meta?.description !== "string" || !meta.description.trim()) fail(`${file}: missing description`);
-  else if (meta.description.length > 1024) fail(`${file}: description is ${meta.description.length} characters (max 1024)`);
+  else {
+    const d = meta.description;
+    if (d.length > 1024) fail(`${file}: description is ${d.length} characters (max 1024)`);
+    if (d.includes("\n")) fail(`${file}: description must be one line`);
+    if (!d.trimEnd().endsWith("(Dev Mentor)")) fail(`${file}: description must end with "(Dev Mentor)"`);
+  }
+
+  const lines = text.split("\n").length;
+  if (lines > 500) fail(`${file}: ${lines} lines; keep SKILL.md under 500 and move detail to references/`);
+  if (/\]\(\.\.\/[^)]*SKILL\.md/.test(text) || /\.\.\/(?!assets|scripts|references)[a-z-]+\//.test(text.replace(/```[\s\S]*?```/g, "")))
+    fail(`${file}: links to another skill's folder; write call the Skill tool with "name" instead`);
 
   const yamlFile = `skills/${name}/agents/openai.yaml`;
-  if (existsSync(join(repo, yamlFile))) {
+  if (!existsSync(join(repo, yamlFile))) fail(`${yamlFile}: missing`);
+  else {
     try {
-      parse(readFileSync(join(repo, yamlFile), "utf8"));
+      const y = parse(readFileSync(join(repo, yamlFile), "utf8"));
+      if (!y?.interface?.display_name?.startsWith("Dev Mentor: ")) fail(`${yamlFile}: display_name should start with "Dev Mentor: "`);
+      if (!y?.interface?.short_description) fail(`${yamlFile}: missing short_description`);
     } catch (e) {
       fail(`${yamlFile}: not valid YAML ${e.message.split("\n")[0]}`);
     }
@@ -50,18 +64,26 @@ for (const name of skills) {
 
 // Versions
 try {
-  execFileSync("node", [join(repo, "scripts/sync-version.mjs"), "--check"], { stdio: "pipe" });
+  execFileSync(process.execPath, [join(repo, "scripts/sync-version.mjs"), "--check"], { stdio: "pipe" });
 } catch (e) {
   fail(String(e.stderr).trim());
 }
 
-// Every skill has a guide, and every skill except mentor-style loads it
+// Every skill has a guide and an index entry; every skill except mentor-style loads it
+// with the same "Style and ground rules" section, so the fallback defaults can't drift.
+const guideIndex = readFileSync(join(repo, "docs/skills/README.md"), "utf8");
+const styleSection = (text) => text.split("## Style and ground rules")[1]?.trim();
+const mentorText = readFileSync(join(repo, "skills/mentor/SKILL.md"), "utf8");
+const canonical = styleSection(mentorText);
 for (const name of skills) {
   if (!existsSync(join(repo, `docs/skills/${name}.md`))) fail(`docs/skills/${name}.md: missing guide`);
+  if (!guideIndex.includes(`(${name}.md)`)) fail(`docs/skills/README.md: no link to ${name}.md`);
   if (name === "mentor-style") continue;
   const text = readFileSync(join(repo, `skills/${name}/SKILL.md`), "utf8");
   if (!text.includes('call the Skill tool with "mentor-style"')) fail(`skills/${name}/SKILL.md: doesn't load mentor-style`);
   if (text.includes("## Ground rules")) fail(`skills/${name}/SKILL.md: has its own Ground rules; they belong in mentor-style`);
+  if (styleSection(text) !== canonical) fail(`skills/${name}/SKILL.md: "Style and ground rules" section differs from mentor's; keep them identical`);
+  if (name !== "mentor" && !mentorText.includes(`| \`${name}\` |`)) fail(`skills/mentor/SKILL.md: routing table has no row for ${name}`);
 }
 
 // README lists every skill

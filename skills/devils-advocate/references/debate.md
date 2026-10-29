@@ -16,11 +16,11 @@ Then count the distinct models you can seat and choose the mode from the table i
 Read the `debate models` line from `.dev-mentor/profile.md` in the project, or from `~/.dev-mentor/profile.md` for every project. The project file wins.
 
 ```text
-debate models: claude-opus-5-5-xhigh, sol-6.1, <a third model from your list>
+debate models: claude-opus-5-5, sol-6.1, <a third model from your list>
 debate effort: high
 ```
 
-- **Models:** the seats, in order A, B, C. `current` means this chat's own model in a fresh session; it counts as one seat, so the others must be different models.
+- **Models:** the seats, in order A, B, C, as plain model IDs. Effort goes on its own line, never in the model name. `current` means this chat's own model in a fresh session; it counts as one seat, so the others must be different models.
 - **Effort:** `max`, `xhigh`, `high` or `medium`, for every seat whose model supports it. The default is `high`.
 
 **Saved, and all available:** announce them in one line and start. Don't ask again:

@@ -1,6 +1,6 @@
 ---
 name: walkthrough
-description: Give a guided tour of changes that are already finished (your own branch, a commit range, or a PR) so the person understands them and can explain them to colleagues. Read-only. Use for "walk me through what changed". Use review to prepare to review someone else's PR. (Dev Mentor)
+description: Give a guided tour of changes that are already finished (your own branch, a commit range, or a PR you or the AI wrote), in the order the code runs, so the person understands them and can explain them to colleagues or a lead. Read-only. Use for "walk me through what changed", "explain my branch", "what did we just build?", "help me present this change", or preparing to talk about your own work. To prepare to review someone else's PR, use review. (Dev Mentor)
 ---
 
 # Walkthrough

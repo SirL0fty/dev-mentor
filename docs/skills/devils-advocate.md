@@ -17,6 +17,7 @@ Say "poke holes in this" or ask for a debate. Say "quick challenge" or "just you
 - With nothing saved, it recommends seats from the models it found (three families if possible), asks once, and saves only if you choose **Use and save**.
 - In a host that only offers one supplier's models, it uses three distinct ones from it and says they may share blind spots.
 - With two models, it runs a debate labelled "Two-model debate, not three". With one model, it runs a challenge labelled "Single-model challenge, not an independent review" and says why. It never role-plays a missing reviewer.
+- Saved `debate models` are plain model IDs, and the `debate effort` line applies to every seat that supports it. A model name with an effort baked in isn't treated as a different model.
 - A saved model that isn't available makes it say so and ask before swapping.
 - "Quick challenge" or "just you" skips the debate.
 - The report lists each seat's requested model, the model confirmed at runtime, and its session ID. Without confirmed distinct models, it's labelled unverified, not a consensus.

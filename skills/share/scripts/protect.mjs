@@ -18,9 +18,15 @@ if (!input || !output) {
 
 const ITERATIONS = 310000;
 const alphabet = "abcdefghjkmnpqrstuvwxyz23456789";
-const password = Array.from(crypto.getRandomValues(new Uint8Array(20)), (b) => alphabet[b % alphabet.length])
-  .join("")
-  .replace(/(.{5})(?!$)/g, "$1-");
+// Rejection sampling: drop bytes that would make some letters likelier than others.
+const limit = 256 - (256 % alphabet.length);
+const chars = [];
+while (chars.length < 20) {
+  for (const b of crypto.getRandomValues(new Uint8Array(32))) {
+    if (b < limit && chars.length < 20) chars.push(alphabet[b % alphabet.length]);
+  }
+}
+const password = chars.join("").replace(/(.{5})(?!$)/g, "$1-");
 
 const salt = crypto.getRandomValues(new Uint8Array(16));
 const iv = crypto.getRandomValues(new Uint8Array(12));
