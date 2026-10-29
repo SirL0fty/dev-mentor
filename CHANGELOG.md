@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.19.0
+
+### Minor Changes
+
+- [#12](https://github.com/SirL0fty/dev-mentor/pull/12) [`d102776`](https://github.com/SirL0fty/dev-mentor/commit/d10277629e330a32df856ef56b7f0c922d760831) - Design questions now get a design: when you ask how to build or store something, `architect` and `devils-advocate` include a concrete proposed design (for a table, its keys, items and indexes) and walk every query from your question through it, and `share`'s ADR keeps it in a Proposed design section.
+
+### Patch Changes
+
+- [#8](https://github.com/SirL0fty/dev-mentor/pull/8) [`0d05d3c`](https://github.com/SirL0fty/dev-mentor/commit/0d05d3c6ad4fae46c3d60b3eb5450ed62c57d651) - Before an edit that adds a new architectural mechanism, `coach` now explains the requirement behind it, why the current code can't meet it, why it fits the repo and its trade-off, labelling ticket requirements apart from implementation choices.
+
+- [#10](https://github.com/SirL0fty/dev-mentor/pull/10) [`fffc062`](https://github.com/SirL0fty/dev-mentor/commit/fffc0628fabbe6a6ce2a10f887d805af1096f007) - Skills trigger more reliably and hand off to each other consistently: clearer descriptions for architect, explain, learn, review, spec and walkthrough; preflight detects the repo's real default branch; and CI now enforces the skill-writing rules in AGENTS.md.
+
 ## 0.18.0
 
 ### Minor Changes
