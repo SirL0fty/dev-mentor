@@ -23,7 +23,7 @@ Show a connected tool only if this session has a tool for it. Never upload to a 
 
 Share the **HTML** report, not Markdown: Plannotator encrypts HTML and large documents (AES-256-GCM, key only in the link, expires after 7 days), but squeezes small Markdown documents into the link without encryption. Don't promise a shorter expiry; Plannotator doesn't offer one for documents. You never click Share yourself.
 
-**If it isn't installed**, ask once (skip this if their profile has `plannotator: no`):
+**If it isn't installed**, ask once, unless their **Plannotator** setting is `no` (read it the way `mentor-style` reads every setting, so a project file's line wins):
 
 **Plannotator** · Install Plannotator to share this as a link?
 - Install it · Downloads the official Plannotator program from plannotator.ai. The program only; no hooks or plugins.
@@ -31,12 +31,12 @@ Share the **HTML** report, not Markdown: Plannotator encrypts HTML and large doc
 - Don't ask again · Choose another way, and don't offer Plannotator again.
 
 - **Install it** (macOS, Linux, WSL): `curl -fsSL https://plannotator.ai/install.sh | bash -s -- --minimal`. It installs only the `plannotator` program into `~/.local/bin`. Check with `plannotator --version`, then continue as above. On Windows, link the [installation guide](https://docs.plannotator.ai/open-source/start/installation) instead of running anything.
-- **Don't ask again:** add `plannotator: no` to `~/.dev-mentor/profile.md` and say so in one line. `plannotator: yes` turns the offer back on.
+- **Don't ask again:** set the **Plannotator** setting to `no` and save it the way `mentor-style` saves every setting: in the project file if it has a `plannotator` line, otherwise in `~/.dev-mentor/profile.md`. Say which file in one line. `plannotator: yes` turns the offer back on.
 - If the install fails, say what failed and offer the other options. Never retry in a loop.
 
 ## HTML file
 
-The HTML page is one self-contained file that opens in any browser. Ask once, with the picker if there is one:
+Make the HTML page first, as described at the top, if it doesn't exist yet: a saved Markdown plan must be turned into HTML, because the password script only encrypts what it's given. The page is one self-contained file that opens in any browser. Ask once, with the picker if there is one:
 
 **Password** · Lock the file with a password?
 - No password (default) · Send the file as it is. Anyone who gets it can read it.

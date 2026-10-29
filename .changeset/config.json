@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.1.1/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "SirL0fty/dev-mentor" }],
+  "changelog": ["./changelog.cjs", { "repo": "SirL0fty/dev-mentor" }],
   "commit": false,
   "fixed": [],
   "linked": [],

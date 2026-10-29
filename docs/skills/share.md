@@ -28,6 +28,6 @@ Say `share`, or name it: "share this plan with my senior", "share this lesson", 
 - **An incomplete debate** says "incomplete", shows the latest decision text, the open objections and where to resume.
 - **When the reader asked the original question**, the report is framed as the answer to it, with no approval questions.
 - Anything that wasn't recorded says "unknown"; it never invents reasons, concessions or test results.
-- With Plannotator installed, it opens the HTML report with `plannotator annotate` and tells you to click Share; it never clicks Share itself. Without it, it asks once to install the program only, and `Don't ask again` writes `plannotator: no` to your profile.
+- With Plannotator installed, it opens the HTML report with `plannotator annotate` and tells you to click Share; it never clicks Share itself. Without it, it asks once to install the program only, and `Don't ask again` sets `plannotator: no` in the profile that setting came from (a project file's line wins).
 - Choosing **HTML file** asks whether to add a password; **No password** is the default and just gives you the file's path. With **Add a password**, the file opens in a browser, asks for the password, and shows the report. The password is shown once and never saved.
 - Nothing is sent or published until you choose how, and it never changes who has access.
