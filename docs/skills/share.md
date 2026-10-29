@@ -25,6 +25,7 @@ Say `share`, or name it: "share this plan with my senior", "share this lesson", 
 - It asks what the document should do for the reader: answer their question, keep them informed, or ask for their input. Only the last adds questions for them.
 - **An ordinary plan** still has goal, evidence, design and steps marked proposed, done or checked; only things actually run are called checked. It saves to `docs/plans/` unless you name a place.
 - **A unanimous but conditional debate** is labelled "agreed · conditional", lists the conditions under Still open, and says model agreement isn't approval.
+- **An outcome** answers the original question in its first five sections, about a page; conditional and deferred safeguards are under Still open, not in the design.
 - **A debate with dissent** names who objected and why, and keeps the objection under Still open.
 - **An incomplete debate** says "incomplete", shows the latest decision text, the open objections and where to resume.
 - **When the reader asked the original question**, the report is framed as the answer to it, with no approval questions.

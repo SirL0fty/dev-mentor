@@ -18,6 +18,8 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - With ADHD mode on, every reply starts with the action, shows `Step N of M` and a time estimate, ticks off finished steps and parks side issues. With it off, you get normal cards. The facts are the same either way.
 - `why`, `help` and questions answer without moving the lesson on; `next` then goes to the following step, never into another design workflow.
 - During a coach lesson, `architect`, `challenge` and `devils-advocate` only run when you ask or doubt a recommendation, answer that one concern, and return to the same step.
+- Before `architect` or `devils-advocate` designs anything, it asks **Context** (Add docs · Point me to it · Repo is enough) and waits for you to confirm its summary of the system.
+- A design question gets about a page first: the smallest design that fits, walked through each query you asked about. Extra machinery only appears if a stated requirement needs it.
 - Nothing is pushed, posted, merged or messaged unless you asked.
 - A lesson that changes code (`coach`, `spec`) never starts on the default branch. The preflight asks worktree or branch, then the name, and confirms the branch and full path first. `explain` and `learn` skip it.
 - In a repo whose default branch is `trunk` (`origin/HEAD` points to `origin/trunk`), the preflight on `trunk` doesn't offer *Stay on `trunk`*. On a feature branch in that repo, it does.

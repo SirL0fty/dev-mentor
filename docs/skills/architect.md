@@ -12,6 +12,8 @@ Ask "how should we design this?", "A or B?" or "where should this logic live?". 
 
 ## It's working if
 
+- Before proposing anything, it asks for diagrams or docs the repo can't show and has you confirm how the system works today.
+- The design is the smallest that meets what you asked for; safeguards for requirements you didn't state are listed under *If you later need…*, not built in.
 - "Keep what we have" is an option when it's viable.
 - Evidence, assumptions and proposals are kept clearly apart.
 - The recommendation lists the trade-offs it accepts and the first steps, each with a way to check it.
