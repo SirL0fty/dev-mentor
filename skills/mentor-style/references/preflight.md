@@ -62,4 +62,6 @@ One line, then the lesson:
 
 > `✓ Preflight: branch <name> · <full path> · clean` (or `· 3 uncommitted files`)
 
+From here on, every file link uses this full path (see **File links** in the ground rules).
+
 If they want it in an IDE, open that exact path (`open -a "PyCharm" <path>` on macOS, or the IDE's own command-line tool). Say *"Sent the open request for <path>."* Only say the IDE opened the right project once they confirm it, or you can see it.
