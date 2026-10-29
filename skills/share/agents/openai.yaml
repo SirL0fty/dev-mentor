@@ -1,4 +1,4 @@
 interface:
   display_name: "Dev Mentor: Share"
-  short_description: "Prepare a plan or lesson for colleague review"
+  short_description: "Share a plan, a lesson, or a debate as an ADR"
   default_prompt: "Use $share to prepare this plan for my colleague's review."

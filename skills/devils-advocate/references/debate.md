@@ -46,6 +46,17 @@ Write the profile line only if they choose **Use and save**.
 - If two seats turn out to be the same model, count again and say what changed (e.g. it's now a two-model debate). If you can't confirm at runtime that the seats are distinct models, don't call the result an independent multi-model consensus: label it **unverified** and say which identities are missing.
 - If the host can't start reviewers itself, prepare identical briefs they can paste into other sessions, or use a multi-model tool they've authorised. Never fall back silently to another model.
 
+## Keep a record
+
+Write `.dev-mentor/debates/<topic>.md` as you go, so `share` can report it later without guessing:
+
+- the question, constraints and evidence pack version(s), with the commit;
+- each seat's requested and confirmed model, session ID, and **first answer as returned**;
+- the issue table after each challenge round, and any corrected claims;
+- every decision version's exact text, and each seat's vote and reasons on it.
+
+Copy replies as returned; label anything you add as editorial. Don't record private reasoning you didn't see.
+
 ## 4. Rounds
 
 1. **Independent round:** every seat gets the same evidence pack and returns: their preferred option and why, the strongest case against it, concrete failure cases, and their blocking objections plus what would resolve them. Collect every answer before anyone sees the others'. Don't hint at a preferred winner.

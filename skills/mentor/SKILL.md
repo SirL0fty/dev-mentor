@@ -115,7 +115,7 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | `architect` | Compare designs and trade-offs |
 | `challenge` | Check a recommendation (yours or another agent's) against the code before acting on it |
 | `devils-advocate` | Stress-test a proposal |
-| `share` | Write up a plan or lesson for someone else to review |
+| `share` | Share a plan for review, a lesson as a note, or a debate outcome as an ADR |
 | `spec` | Turn an agreed plan into a spec (project preflight first) |
 
 Load that skill if the host can. If it isn't installed, say so and suggest installing the full pack; give limited help meanwhile, and don't claim the workflow ran. A question about the current lesson stays in that lesson.
@@ -155,9 +155,10 @@ Load that skill if the host can. If it isn't installed, say so and suggest insta
   debate models: claude-opus-5-5-xhigh, sol-6.1, <a third model>
   debate effort: high
   export: notion Dev Mentor notes
+  plannotator: no
   ```
 
-  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. The `debate` lines are optional and only used by `devils-advocate`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
+  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. The `debate` lines are optional and only used by `devils-advocate`; `plannotator: no` stops `share` offering to install Plannotator. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
 ### Saved lessons
 
 Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md`, named after the goal in a few lowercase words (`slide-navigation.md`, `pagination.md`).
