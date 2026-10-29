@@ -103,7 +103,7 @@ flowchart LR
 | [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. |
 | [challenge](skills/challenge/SKILL.md) | Check a recommendation before you act on it: how it was reached, whether it matches your code's style, and what it skipped. Brings in devils-advocate when the case looks weak. |
 | [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. |
-| [share](skills/share/SKILL.md) | Write up a plan, a lesson, or a debate or review outcome for someone else, then share it as a Plannotator link, a password-protected file, or in a tool you already use. |
+| [share](skills/share/SKILL.md) | Write up a plan, a lesson, or a debate or review outcome for someone else, then share it as a Plannotator link, an HTML file (password optional), or in a tool you already use. |
 | [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec), written on its own worktree or branch. |
 
 Install them all: every skill loads `mentor-style` for your settings, and hands saved lessons and exports over to `mentor`. Each skill has a short [guide](docs/skills/README.md) with what it does, when to use it, and how to tell it's working.

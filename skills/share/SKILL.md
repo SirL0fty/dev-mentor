@@ -1,6 +1,6 @@
 ---
 name: share
-description: Write up a plan, a lesson, or the outcome of a debate, challenge or review as a self-contained document someone can read without the chat, then get it to them with a Plannotator link, a password-protected file, or a tool you already use. Outcome reports keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Use for "share this plan with my senior", "share this outcome", or "send this debate to the team". (Dev Mentor)
+description: Write up a plan, a lesson, or the outcome of a debate, challenge or review as a self-contained document someone can read without the chat, then get it to them with a Plannotator link, an HTML file (optionally password-protected), or a tool you already use. Outcome reports keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Use for "share this plan with my senior", "share this outcome", or "send this debate to the team". (Dev Mentor)
 ---
 
 # Share
@@ -42,7 +42,7 @@ Only **Ask for their input** adds questions for the reader (2–4 specific ones,
 
 ## 4. Get it to them
 
-Read [destinations.md](references/destinations.md). Plannotator is the default; a password-protected file, a connected tool, or the plain file are the alternatives.
+Read [destinations.md](references/destinations.md). Plannotator is the default; an HTML file (with an optional password) or a connected tool are the alternatives.
 
 Nothing is sent, posted, published or shared until they choose how. Never change who has access unless they ask. If a tool would notify people automatically, warn them before writing.
 

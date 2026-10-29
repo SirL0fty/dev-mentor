@@ -9,7 +9,7 @@
 - **Plans and lessons** work as before: goal, evidence, design, steps, status.
 - **Outcomes** become a one-page report: the bottom line first, then where each reviewer started, what they disagreed about and what changed, what's still open, and the full record in collapsed sections at the end. It reports what happened; it doesn't turn it into a new plan or an approval request.
 
-To send it, the default is a [Plannotator](https://github.com/backnotprop/plannotator) link (an open-source tool by backnotprop): the page opens in Plannotator and you click **Share** for an encrypted link that lasts 7 days. If you don't have Plannotator, it offers to install just the program once, or you can pick a password-protected HTML file, a tool you already have connected, or the plain file.
+To send it, the default is a [Plannotator](https://github.com/backnotprop/plannotator) link (an open-source tool by backnotprop): the page opens in Plannotator and you click **Share** for an encrypted link that lasts 7 days. If you don't have Plannotator, it offers to install just the program once, or you can pick an HTML file, with a password if you want one, or a tool you already have connected.
 
 ## When to reach for it
 
@@ -25,5 +25,5 @@ Say "share this plan with my senior", "share this outcome with Sam", or "send th
 - **When the reader asked the original question**, the report is framed as the answer to it, with no approval questions.
 - Anything that wasn't recorded says "unknown"; it never invents reasons, concessions or test results.
 - With Plannotator installed, it opens the HTML report with `plannotator annotate` and tells you to click Share; it never clicks Share itself. Without it, it asks once to install the program only, and `Don't ask again` writes `plannotator: no` to your profile.
-- The password-protected file opens in a browser, asks for the password, and shows the report. The password is shown once and never saved.
+- Choosing **HTML file** asks whether to add a password; **No password** is the default and just gives you the file's path. With **Add a password**, the file opens in a browser, asks for the password, and shows the report. The password is shown once and never saved.
 - Nothing is sent or published until you choose how, and it never changes who has access.

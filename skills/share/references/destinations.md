@@ -4,9 +4,8 @@ Ask once, after the document is saved, offering only options that work in this s
 
 **Share** · How should this reach them?
 - Plannotator link (default) · Opens in Plannotator; click Share there for an encrypted link that lasts 7 days.
-- Password-protected file · One HTML file plus a password you send separately.
+- HTML file · One file you send yourself, with an optional password.
 - `<connected tool>` · Saves it in a tool you already use, such as Notion, Confluence or a Slack canvas.
-- Just the file · Keep the saved file; you send it yourself.
 
 Show a connected tool only if this session has a tool for it. Never upload to a public paste site or any service they didn't choose.
 
@@ -33,13 +32,16 @@ Share the **HTML** report, not Markdown: Plannotator encrypts HTML and large doc
 - **Don't ask again:** add `plannotator: no` to `~/.dev-mentor/profile.md` and say so in one line. `plannotator: yes` turns the offer back on.
 - If the install fails, say what failed and offer the other options. Never retry in a loop.
 
-## Password-protected file
+## HTML file
 
-Run `node <this skill>/scripts/protect.mjs <report.html> <report-locked.html>`. It prints a generated password and writes one HTML file that opens in any browser and asks for it. Nothing is uploaded.
+The saved report is already one self-contained file that opens in any browser. Ask once, with the picker if there is one:
 
-Tell them: *"Send the file and the password by different routes (for example, the file by email and the password in a chat). The title stays visible; everything else is locked. It doesn't expire: anyone with both can open it."* Show the password once. Never save it to a file.
+**Password** · Lock the file with a password?
+- No password (default) · Send the file as it is. Anyone who gets it can read it.
+- Add a password · They need a password you send separately to open it.
 
-If `node` isn't available, say so and offer **Just the file**.
+- **No password:** give the full path of the saved file. Done.
+- **Add a password:** run `node <this skill>/scripts/protect.mjs <report.html> <report-locked.html>`. It prints a generated password and writes one HTML file that opens in any browser and asks for it. Nothing is uploaded. Tell them: *"Send the file and the password by different routes (for example, the file by email and the password in a chat). The title stays visible; everything else is locked. It doesn't expire: anyone with both can open it."* Show the password once. Never save it to a file. If `node` isn't available, say so and give the unlocked file instead.
 
 ## Connected tool
 
