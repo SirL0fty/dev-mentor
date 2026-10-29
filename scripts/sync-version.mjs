@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Copies package.json's version into the three plugin manifests.
-// Runs as part of `npm run version`, right after `changeset version`.
+// Runs as part of `bun run version`, right after `changeset version`.
 // With --check it changes nothing and exits 1 if any manifest differs.
 
 import { readFileSync, writeFileSync } from "node:fs";
@@ -19,7 +19,7 @@ for (const file of manifests) {
   const current = JSON.parse(source).version;
   if (current === version) continue;
   if (check) {
-    console.error(`${file} is ${current}, package.json is ${version}. Run \`node scripts/sync-version.mjs\`.`);
+    console.error(`${file} is ${current}, package.json is ${version}. Run \`bun scripts/sync-version.mjs\`.`);
     stale++;
     continue;
   }

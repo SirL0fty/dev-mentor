@@ -29,6 +29,6 @@ Update all of these in the same change:
 
 ## Before you push
 
-1. `npm install` once, then `npm run check`. Fix every ✗.
-2. `npx changeset`, with one user-facing line. Never edit version numbers or `CHANGELOG.md` by hand; the Release workflow does both.
+1. `bun install` once, then `bun run check`. Fix every ✗.
+2. `bunx changeset`, with one user-facing line. Never edit version numbers or `CHANGELOG.md` by hand; the Release workflow does both.
 3. Try the relevant **It's working if** items from the skill's guide in a fresh session. Run `scripts/link-skills.sh` first so your assistant uses this checkout.
