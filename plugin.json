@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "dev-mentor",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "Learn to build features in your codebase, one focused step at a time.",
   "author": { "name": "SirL0fty" },
   "homepage": "https://github.com/SirL0fty/dev-mentor#dev-mentor",
