@@ -108,7 +108,7 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | Workflow | When |
 | --- | --- |
 | `explain` | How existing code works |
-| `coach` | Build a feature or fix a ticket, step by step (project preflight first) |
+| `coach` | Build a feature or fix a ticket, step by step, with before → after on every edit (project preflight first) |
 | `learn` | A concept or technology, with or without a repo |
 | `review` | Understand a colleague's PR so they can review it |
 | `walkthrough` | Tour changes that are already done |

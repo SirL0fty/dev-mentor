@@ -96,7 +96,7 @@ flowchart LR
 | --- | --- |
 | [mentor-style](skills/mentor-style/SKILL.md) | Loaded automatically: the settings and ground rules every other skill follows, including the project preflight that puts code-changing lessons on their own worktree or branch. You never need to call it. |
 | [mentor](skills/mentor/SKILL.md) | Start here: setup and settings (shown in full, with revert), where to start in your code, save and resume several lessons, export them to Notion or Obsidian, and watch a PR's comments and CI. |
-| [coach](skills/coach/SKILL.md) | Build a feature step by step, on a new worktree or branch you name (such as the ticket key). Each edit, you write it, copy an explained snippet, or let the AI do it, and your work gets checked. |
+| [coach](skills/coach/SKILL.md) | Build a feature step by step, on a new worktree or branch you name (such as the ticket key). Each edit shows the code before and after; you write it, copy an explained snippet, or let the AI do it, and your work gets checked. |
 | [explain](skills/explain/SKILL.md) | Understand how existing code runs. |
 | [learn](skills/learn/SKILL.md) | Learn a concept or technology. |
 | [review](skills/review/SKILL.md) | Understand a colleague's PR so you can review it. |
