@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.23.0
+
+### Minor Changes
+
+- [#17](https://github.com/SirL0fty/dev-mentor/pull/17) [`dd3ac1c`](https://github.com/SirL0fty/dev-mentor/commit/dd3ac1c15208a0f19e40e1c441325c427554ef5f) - Settings are easier to see and to undo. `settings` (or "what are my settings?") now shows every setting in one table, with the label you picked, its saved line, every choice and where it's saved. Asking to see settings never changes them, and a reply that would change two settings asks first. Every change is logged in `settings-history.md` next to your profile, and `revert` puts back the last change, one setting (`revert build`) or everything changed in this conversation (`revert all`).
+
+### Patch Changes
+
+- [#17](https://github.com/SirL0fty/dev-mentor/pull/17) [`dd3ac1c`](https://github.com/SirL0fty/dev-mentor/commit/dd3ac1c15208a0f19e40e1c441325c427554ef5f) - `coach` edit cards keep their shape for the whole lesson. Every edit card, including a fix, shows where, **Before** (the file's real lines, re-read each time), **After** in your build mode and why: with `build: me` the After shows the shape with your part as a hint. Every card is checked against your current settings, so long lessons don't drift and settings changes apply from the next card.
+
 ## 0.22.0
 
 ### Minor Changes
