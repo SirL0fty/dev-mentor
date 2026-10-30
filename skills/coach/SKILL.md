@@ -57,7 +57,7 @@ Who makes the edit depends on **build**. The orientation and walk-through above 
 When they say `done` (or `next` while an edit is pending):
 
 1. Read the actual diff for this step only. Their word, or pasted code, is not proof.
-2. Run the narrowest useful check the project already has: a type check, one test, a quick run. Don't install or deploy anything to check.
+2. Run the narrowest useful check the project already has: a type check, one test, a quick run. Whoever runs it (see **Who runs it** in mentor-style), show the command and its output for their level (see **What each level sees**). Don't install or deploy anything to check.
 3. Reply with one card: **works** (what you checked and one next step), **one fix** (a hint first, stay on this step), or **can't verify** (what evidence you need).
 
 "The diff looks right but it hasn't been run" is a valid result; don't call that verified.
