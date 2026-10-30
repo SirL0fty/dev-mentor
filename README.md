@@ -54,6 +54,8 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 
 **Build** always starts by showing you where to start and why, so you learn the route even when the AI writes the code. With the default, *ask me each step*, you choose per edit: write it yourself, copy an explained snippet, let the AI do it (handy for tests or boilerplate), or turn it into a spec or OpenSpec change.
 
+**Experience** sets what you see in every example (a code change, a command, a test result, an error, a request traced through the code). Everyone sees the real thing: the command, the output, the lines. New to code and vibe coder get it trimmed, with what it means, how it runs and what to look for, plus one real example traced step by step. Junior and up get the full output and exact values, so you can confirm it works yourself. When something can be run, it asks whether **you run it** or **the AI runs it**, at every level.
+
 **ADHD mode** is off by default. Turn it on and every reply starts with the one thing to do, shows where you are (`Step 3 of 5`), gives a time estimate (`~2 min`), ticks off finished steps, and parks side topics until you're ready. It changes how replies are shaped, not what they say.
 
 **Changing them later:**
@@ -67,6 +69,8 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 | `change everything` | Runs the full setup again. |
 | `warmer`, `faster`, `ADHD mode on`… | Changes it straight away, no questions. |
 | `you do this one` | For this step only; your settings stay the same. |
+| `I'll run it` · `you run it` | Who runs tests and commands from now on in this lesson. |
+| `show output` · `show the flow` · `how do I run that?` | The full output, a real example traced through the code, or the command and where to type it. |
 | `reset settings` | Back to defaults, or run setup again. |
 
 If you saved a profile, changes are saved automatically to the same place and the AI tells you in one line. Each change is also logged in `settings-history.md` next to it, so `revert` can undo it. Asking about settings never changes them. Then it shows the step you were on again, in your new settings, so you carry on from where you left off.
@@ -94,7 +98,7 @@ flowchart LR
 
 | Skill | Helps you |
 | --- | --- |
-| [mentor-style](skills/mentor-style/SKILL.md) | Loaded automatically: the settings and ground rules every other skill follows, including the project preflight that puts code-changing lessons on their own worktree or branch. You never need to call it. |
+| [mentor-style](skills/mentor-style/SKILL.md) | Loaded automatically: the settings, what each level sees in every example, and the ground rules every other skill follows, including the project preflight that puts code-changing lessons on their own worktree or branch. You never need to call it. |
 | [mentor](skills/mentor/SKILL.md) | Start here: setup and settings (shown in full, with revert), where to start in your code, save and resume several lessons, export them to Notion or Obsidian, and watch a PR's comments and CI. |
 | [coach](skills/coach/SKILL.md) | Build a feature step by step, on a new worktree or branch you name (such as the ticket key). Each edit shows the code before and after; you write it, copy an explained snippet, or let the AI do it, and your work gets checked. |
 | [explain](skills/explain/SKILL.md) | Understand how existing code runs. |

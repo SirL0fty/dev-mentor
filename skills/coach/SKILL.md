@@ -35,7 +35,7 @@ Label each point **Ticket requirement** or **Implementation choice**. Never impl
 
 **Every edit card has the same shape, in every build mode, including fix cards:**
 
-1. **Where:** the file link and line.
+1. **Where:** the file link, line number and the exact line it goes before or after (see **Say exactly where** in mentor-style; at `new` and `vibe`, shown in place with the lines around it).
 2. **Before:** the exact lines as they are now. Re-read the file for every card; never quote it from memory.
 3. **After:** in their build mode (below).
 4. **Why** this approach fits, in one line.
@@ -57,7 +57,7 @@ Who makes the edit depends on **build**. The orientation and walk-through above 
 When they say `done` (or `next` while an edit is pending):
 
 1. Read the actual diff for this step only. Their word, or pasted code, is not proof.
-2. Run the narrowest useful check the project already has: a type check, one test, a quick run. Don't install or deploy anything to check.
+2. Run the narrowest useful check the project already has: a type check, one test, a quick run. Whoever runs it (see **Who runs it** in mentor-style), show the command and its output for their level (see **What each level sees**). Don't install or deploy anything to check.
 3. Reply with one card: **works** (what you checked and one next step), **one fix** (a hint first, stay on this step), or **can't verify** (what evidence you need).
 
 "The diff looks right but it hasn't been run" is a valid result; don't call that verified.

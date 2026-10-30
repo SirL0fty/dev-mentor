@@ -14,7 +14,10 @@ Say "help me build this" or give it a ticket. For understanding code without cha
 
 ## It's working if
 
+- At `new`, an edit card never needs a follow-up "what does this mean?": it names the exact lines it goes between, shows them in place, and explains each new word in the code (like `@pytest.fixture`).
+
 - Every edit card, including a fix, shows where, **Before** (the file's real lines, re-read), **After** and why. With `build: me` the After shows the shape with your part as a hint; with `copy` it's the complete code. This holds on step 19 as well as step 1.
+- After `done`, the check card shows the command and its output for your level, not just "green". At `new` it says what the check is, how it ran and which line proves your change works.
 
 - On `main` with a ticket like `PROJ-123`, it first asks *New worktree · New branch here*, then offers `PROJ-123` as the branch name. It creates it and shows `✓ Preflight: branch PROJ-123 · <full path>` before it reads any code.
 - The first card explains the ticket's why, what exists today, a small flow map, and one file to open. Nothing to edit yet.

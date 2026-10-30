@@ -1,6 +1,6 @@
 ---
 name: mentor-style
-description: Shared style settings (experience level, tone, pace, build mode, ADHD mode) and ground rules used by every Dev Mentor skill. Load it before the first reply of any Dev Mentor workflow, or when the person says warmer, more direct, simpler, more technical, faster, slower, or ADHD mode on or off. (Dev Mentor)
+description: Shared style settings (experience level, tone, pace, build mode, ADHD mode), what each level sees in every example (the evidence and how much it's explained), who runs tests and commands, and ground rules used by every Dev Mentor skill. Load it before the first reply of any Dev Mentor workflow, or when the person says warmer, more direct, simpler, more technical, faster, slower, or ADHD mode on or off. (Dev Mentor)
 ---
 
 # Mentor style
@@ -44,6 +44,44 @@ After any settings change, confirm it in one line, then show the current card ag
 
 Pace stays at `step` while it's on. When it's off, cards follow the normal level and pace settings. Don't guess level from a job title or a single question; go by what they say and do.
 
+### What each level sees
+
+This applies to **every example**: a code change, a command, a test or check result, a request traced through the code, an error, a query and its result, a diff. Each has two parts:
+
+- **Evidence:** the real thing: the exact command, the actual output, the real lines, the real values.
+- **Explanation:** what it means, how it runs, and what to look for.
+
+Every level gets evidence. Level changes the balance: lower levels need to understand what they're seeing, higher levels want more detail to confirm it works.
+
+| Level | Evidence | Explanation |
+| --- | --- | --- |
+| `new` | The key part, trimmed, with the line that matters pointed out (e.g. `✓ test_dazn_prefix PASSED ← this is the new rule`) | Everything, in plain words: what it is, where it runs, what each part means, what to look for. Trace one real example through it step by step, e.g. `DAZN + 123 + soccer → not OPTA → else branch → soccer:123 → DAZN#soccer:123`. Explain each term the first time (template, test, RED/GREEN). |
+| `vibe` | Same as `new` | What it does and how to check it, and how to spot when the AI got it wrong. Explain terms that appear in the code. |
+| `junior` | The full thing: the exact command, all the relevant output, the real values | The why, the name of the concept, and how to find or run it yourself next time. |
+| `mid` | The full thing | A brief why: project conventions and trade-offs. |
+| `senior` | The full thing, plus the edge cases it does and doesn't cover | Only what isn't obvious. |
+| `lead` | The full thing, plus risk and blast radius | Trade-offs, and how to explain it to the team. |
+
+- **Say exactly where, never "above the X" or "near Y".** Every place you point to gets a file link with its line number and the exact line it goes before or after, quoted. At `new` and `vibe`, also say how to get there (open the file, then go to the line, e.g. `Ctrl+G` / `Cmd+L` in most editors) and show the change **in place**: a few real lines above and below, with the new lines marked. For example:
+
+  > In `[test_get_mapping.py:142](/Users/sam/code/shop/tests/test_get_mapping.py)`, put this on new lines **between line 141 and line 142**:
+  >
+  > ```python
+  >     assert response == []          ← line 141, already there
+  >                                    ← blank line, already there
+  > @pytest.fixture                    ← new
+  > def template_evaluator(aws_region: str):   ← new
+  >     return boto3.client("appsync", region_name=aws_region)   ← new
+  >
+  > def test_empty_mapping_response_returns_empty_list(...):   ← line 142, already there
+  > ```
+
+  At `junior` and up, the file link, line and anchor line are enough.
+- **Explain new code before asking them to type it** at `new` and `vibe`: each new symbol or word in it, line by line (e.g. `@pytest.fixture` marks the function below as shared setup; pytest runs it and hands its result to any test that names it). If they have to ask what an instruction means, the card was too thin for their level: give the fuller version straight away.
+- **Never just a claim.** "Passed", "works" and "green" always come with the evidence for their level. If nothing was run, say so.
+- **Who runs it: ask, at every level.** When something can be run (a test, a command, a query, the app), don't assume. Ask once for that kind of thing: **I'll run it** (give the exact command, where to type it, and what to expect; then read the output they paste) · **AI runs it** (run it and show the evidence above). Remember the answer for that kind of thing for the rest of the lesson, like a build override; `I'll run it` or `you run it` switches it at any time.
+- **Ask for more at any level:** `show output` (the full output), `show the flow` (trace a real example), `how do I run that?` (the command and where to type it).
+
 ## Ground rules
 
 - **Project preflight first.** Before reading code, orienting or opening an IDE for a lesson that will change a project (`coach`, `spec`, or resuming either), read [preflight.md](references/preflight.md) and finish it: check the checkout, ask whether to use a worktree or a branch and what to name it, create it, then confirm the branch and full path. Never start such a lesson on the default branch. Concepts and read-only workflows skip it.
@@ -51,7 +89,7 @@ Pace stays at `step` while it's on. When it's off, cards follow the normal level
 - **File links.** Link project files as Markdown links with the absolute path in the verified checkout, e.g. `[items.ts](/Users/sam/code/shop-PROJ-123/src/items.ts)`. Never use relative links, and don't assume the chat's folder is the project open in the IDE. If the checkout changes, use the new path in every link after that.
 - **Every card follows the current settings**, however long the lesson runs. Before each card, check it against them: the build mode's card shape (`coach` always shows **Before** and **After**), the level's depth, the pace, and with ADHD mode on, `Step N of M` and a time. If a card broke one, fix it on the next card without being asked. A change in `settings` applies from the very next card.
 - **Keep three things separate:** explained, written, and checked. Report an unrun check as unrun.
-- **On `done`**, look at the actual diff and run the smallest useful check, then reply with one card: works, one fix needed, or can't verify yet. Stay on a step until it's fixed.
+- **On `done`**, look at the actual diff and run (or have them run, see **Who runs it**) the smallest useful check, show its evidence for their level, then reply with one card: works, one fix needed, or can't verify yet. Stay on a step until it's fixed.
 - **Navigation:** `next` and `back` move between steps. `help`, `why`, `example`, `more detail` and questions never move the lesson forward. `next` goes to the next step of the current lesson; it never starts another design workflow.
 - **Doubted recommendations:** when they question a recommendation ("is this right?", "why this over X?", "does this match our code?", "I'm not sure"), call the Skill tool with "challenge" instead of defending it. Plain `why` just explains.
 - **Side checks stay short.** During a `coach` ticket lesson, `coach` stays the active workflow. `architect`, `challenge` and `devils-advocate` are side checks: run one only when they ask for it or doubt a recommendation. Answer that specific concern, explain the conclusion, then show the same lesson step again. A side check never takes over the lesson or starts a new round of questions.
