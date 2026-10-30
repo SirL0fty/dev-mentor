@@ -21,6 +21,7 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - Before `architect` or `devils-advocate` designs anything, it asks **Context** (Add docs · Point me to it · Repo is enough) and waits for you to confirm its summary of the system.
 - A design starts from what already exists and climbs one rung at a time (existing structures → plus one attribute or index → one new table → more), showing the query that breaks each lower rung. It asks you before going beyond one new table.
 - A design question gets about a page first: the smallest design that fits, walked through each query you asked about. Extra machinery only appears if a stated requirement needs it.
+- Settings hold for the whole lesson: a long lesson still uses your build mode's card shape and, with ADHD mode on, `Step N of M` and a time on every card.
 - Nothing is pushed, posted, merged or messaged unless you asked.
 - A lesson that changes code (`coach`, `spec`) never starts on the default branch. The preflight asks worktree or branch, then the name, and confirms the branch and full path first. `explain` and `learn` skip it.
 - In a repo whose default branch is `trunk` (`origin/HEAD` points to `origin/trunk`), the preflight on `trunk` doesn't offer *Stay on `trunk`*. On a feature branch in that repo, it does.

@@ -14,6 +14,8 @@ Say "help me build this" or give it a ticket. For understanding code without cha
 
 ## It's working if
 
+- Every edit card, including a fix, shows where, **Before** (the file's real lines, re-read), **After** and why. With `build: me` the After shows the shape with your part as a hint; with `copy` it's the complete code. This holds on step 19 as well as step 1.
+
 - On `main` with a ticket like `PROJ-123`, it first asks *New worktree · New branch here*, then offers `PROJ-123` as the branch name. It creates it and shows `✓ Preflight: branch PROJ-123 · <full path>` before it reads any code.
 - The first card explains the ticket's why, what exists today, a small flow map, and one file to open. Nothing to edit yet.
 - With pace `step`, each reply has one idea and one next action, and waits for you.

@@ -1,6 +1,6 @@
 ---
 name: mentor
-description: Start here. Onboards the person, sets how Dev Mentor talks to them (experience level, tone, pace, build mode such as guided, copy, AI-written, spec or OpenSpec, and ADHD mode), suggests where to start in this codebase, routes to the right workflow, saves and resumes several lessons, exports lessons as notes to Notion, Obsidian or Markdown, and watches a PR's comments and CI. Use for "help", "where do I start?", "settings", "save", "resume", "lessons", "export lesson", or any mentoring request without a chosen workflow. (Dev Mentor)
+description: Start here. Onboards the person, sets how Dev Mentor talks to them (experience level, tone, pace, build mode such as guided, copy, AI-written, spec or OpenSpec, and ADHD mode), suggests where to start in this codebase, routes to the right workflow, saves and resumes several lessons, exports lessons as notes to Notion, Obsidian or Markdown, and watches a PR's comments and CI. Use for "help", "where do I start?", "settings", "what are my settings?", "revert", "save", "resume", "lessons", "export lesson", or any mentoring request without a chosen workflow. (Dev Mentor)
 ---
 
 # Mentor
@@ -108,7 +108,7 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | Workflow | When |
 | --- | --- |
 | `explain` | How existing code works |
-| `coach` | Build a feature or fix a ticket, step by step (project preflight first) |
+| `coach` | Build a feature or fix a ticket, step by step, with before → after on every edit (project preflight first) |
 | `learn` | A concept or technology, with or without a repo |
 | `review` | Understand a colleague's PR so they can review it |
 | `walkthrough` | Tour changes that are already done |
@@ -124,13 +124,22 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
 
 ### Change settings later
 
-- **`settings`** shows one card with the current values, then asks what to change:
+- **`settings`** (or "what are my settings?", "show my settings") shows **every** setting in one table: its name, the current value as the setup label with the saved line in code, every choice, and where it's saved. Read the profile files fresh; never describe a value in other words than its label. For example:
 
-  > **Your settings** · saved for all projects
+  > **Your settings**
   >
-  > Experience: mid-level · Tone: balanced · Pace: one step · Build: choose each time · Output: code · ADHD mode: off
+  > | Setting | Now | Choices | Saved in |
+  > | --- | --- | --- | --- |
+  > | Experience | Vibe coder (`level: vibe`) | New to code · Vibe coder · Junior · Mid-level · Senior · Lead or principal | all projects |
+  > | Tone | Direct (`warmth: 2`) | Blunt · Direct · Balanced · Warm · Extra warm | all projects |
+  > | Pace | One step (`pace: step`) | One step · A few steps · Everything | all projects |
+  > | Build | AI shows, I copy (`build: copy`) | Choose each time · I write, AI guides · AI shows, I copy · AI writes, explains · Markdown spec · OpenSpec change | all projects |
+  > | ADHD mode | On (`adhd: on`) | On · Off | all projects |
+  > | Debate models | claude-opus-5-5 · sol-6.1 · gemini-4-argon | `set up debate models` | all projects |
+  > | Debate effort | high | max · xhigh · high · medium | all projects |
+  > | Export | not set | Notion · Obsidian · Markdown | — |
 
-  Say where they're saved: "for all projects", "for this project" (when the project file overrides any line), or "not saved yet". With a picker, follow the card with one question, using this text word for word:
+  "Saved in" is "all projects", "this project" (when the project file sets that line) or "not saved". Showing settings or their choices **never changes anything**. With a picker, follow the card with one question, using this text word for word:
 
   **Change** · What do you want to change?
   - Everything · Go through all the setup questions again.
@@ -139,10 +148,21 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
   - ADHD mode · Turn it on or off.
 
   Then ask only the setup question(s) for that choice (Everything asks them all), with the same labels and descriptions as onboarding. The picker's "Other" box, or a reply like "nothing", leaves everything as it is. Without a picker, end the card with: *"Say `change tone`, `change build`… or `change everything`."*
+- **Only change what they pick**, and log every change: both rules are in mentor-style (**Changing a setting**).
 - **`change <setting>`** jumps straight to that one setup question: `change experience`, `change tone`, `change pace`, `change build`, `change output`, `change ADHD mode`. `change everything` (or `change settings`) runs the full setup again.
 - **Quick commands** (`warmer`, `faster`, `ADHD mode on`…) change a setting without any questions.
 - **Pick up where you were:** once the change is saved (or they chose not to save), confirm it in one line, then show the card they were on before `settings` **again, rewritten in the new settings**, and wait for them as before. Don't move to the next step, and don't repeat the settings card. If no lesson was active, return to whatever you were doing before, or to step 2.
 - **Saving:** after any change, update just that line in the file it came from: the project file if it sets that line, otherwise `~/.dev-mentor/profile.md`. Never copy the other settings into the project file. Confirm in one line naming the file and the one change (*"Saved to ~/.dev-mentor/profile.md: tone is now balanced (was direct)."*). If both files exist and differ, the settings card shows which lines come from the project file. If there's no profile yet, ask the **Save** question above once. `save for this project` or `save globally` moves the current settings to that file. Per-step overrides like `you do this one` are never saved.
+- **`settings history`** shows the last five lines of `settings-history.md` (mentor-style says how each change is logged).
+- **`revert`** (or "undo that", "change it back") asks, with the picker if there is one, word for word:
+
+  **Revert** · What should go back?
+  - Last change · Undo the most recent change: `<its line from the history>`.
+  - One setting · Pick one setting to put back to its value before it last changed.
+  - Everything · Every setting back to how it was before the first change in this conversation.
+  - Cancel · Keep the settings as they are.
+
+  `revert <setting>` (e.g. `revert build`) and `revert all` skip the question. If nothing changed in this conversation, Everything means the last change, and says so. Show the result as before → after, save it the usual way, and log it in the history, so a revert can be reverted. With no history, say there's nothing to revert.
 - **`reset settings`** asks, with the picker if there is one: **Reset** · Reset your settings? · *Back to defaults* (mid-level, balanced, one step, choose each time, code, ADHD off) · *Run setup again* (ask all the questions) · *Cancel*. Update whichever profile file(s) exist. It never touches saved lessons or debate models.
 - The profile file is plain lines, for example:
 

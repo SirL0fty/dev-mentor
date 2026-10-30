@@ -1,6 +1,6 @@
 ---
 name: coach
-description: Guide someone through building a feature or fixing a ticket in their codebase, one small step at a time. Always shows where to start and why first; then for each edit they write it, copy an explained snippet, let the AI write it, or plan it as a spec or OpenSpec change. Checks their work after each step. Use for "help me build this", "I'll write the code", or a ticket to implement. (Dev Mentor)
+description: Guide someone through building a feature or fixing a ticket in their codebase, one small step at a time. Always shows where to start and why first; then each edit shows the code before and after, and they write it, copy an explained snippet, let the AI write it, or plan it as a spec or OpenSpec change. Checks their work after each step. Use for "help me build this", "I'll write the code", or a ticket to implement. (Dev Mentor)
 ---
 
 # Coach
@@ -33,16 +33,23 @@ On `next`, explain the code at the starting point and trace one concrete value t
 
 Label each point **Ticket requirement** or **Implementation choice**. Never imply the ticket asked for the mechanism unless it says so. Then show the before → after in their build mode.
 
-For each change, show a small **before → after** and say in one line why this approach fits. Mark proposed code as proposed. Keep unrelated edits, edge cases and tests on later cards, but keep edits that can't work without each other together.
+**Every edit card has the same shape, in every build mode, including fix cards:**
+
+1. **Where:** the file link and line.
+2. **Before:** the exact lines as they are now. Re-read the file for every card; never quote it from memory.
+3. **After:** in their build mode (below).
+4. **Why** this approach fits, in one line.
+
+Mark proposed code as proposed. Keep unrelated edits, edge cases and tests on later cards, but keep edits that can't work without each other together.
 
 **Recommend, don't quiz.** When an implementation choice comes up (how to query, where code lives, which pattern to use), recommend one approach grounded in the ticket and the repo, teach why it fits, and carry on in the build mode. Don't turn implementation details into questions for them, and don't switch to `architect` on your own. Ask only when a missing requirement would change what users or callers observably get, and the ticket, the code and their earlier answers can't settle it.
 
 Who makes the edit depends on **build**. The orientation and walk-through above always come first, whatever the mode, because that's where they learn where to start.
 
 - `ask`: end the edit card with one line: *Who does this one? **I'll write it** · **AI shows, I copy** · **AI writes it** · **Make it a spec***. Accept short replies too: `me`, `copy`, `ai`, `you do it`, `spec`.
-- `me`: hint first, then narrow it down, then give the exact code if asked.
-- `copy`: show the complete snippet with a short line-by-line explanation. They paste it, then say `done` and you check it as normal.
-- `ai`: make the change, then explain what changed and why.
+- `me`: the **After** shows the shape with the part they write as a hint, e.g. `<your filter: stored entityType equals the caller's>`. If they're stuck, narrow the hint; give the exact code only if they ask.
+- `copy`: the **After** is the complete code, with a short line-by-line explanation. They paste it, then say `done` and you check it as normal.
+- `ai`: make the change, then show the **Before** and **After** you applied and explain why.
 - `spec` / `openspec`: after the orientation and plan, call the Skill tool with "spec" and name that format, instead of writing code.
 
 ## 4. Check their work
