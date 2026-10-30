@@ -148,18 +148,12 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
   - ADHD mode · Turn it on or off.
 
   Then ask only the setup question(s) for that choice (Everything asks them all), with the same labels and descriptions as onboarding. The picker's "Other" box, or a reply like "nothing", leaves everything as it is. Without a picker, end the card with: *"Say `change tone`, `change build`… or `change everything`."*
-- **Only change what they pick.** A setting changes only when they choose a value for that setting. If one reply would change more than one setting, show each as before → after and ask them to confirm first.
+- **Only change what they pick**, and log every change: both rules are in mentor-style (**Changing a setting**).
 - **`change <setting>`** jumps straight to that one setup question: `change experience`, `change tone`, `change pace`, `change build`, `change output`, `change ADHD mode`. `change everything` (or `change settings`) runs the full setup again.
 - **Quick commands** (`warmer`, `faster`, `ADHD mode on`…) change a setting without any questions.
 - **Pick up where you were:** once the change is saved (or they chose not to save), confirm it in one line, then show the card they were on before `settings` **again, rewritten in the new settings**, and wait for them as before. Don't move to the next step, and don't repeat the settings card. If no lesson was active, return to whatever you were doing before, or to step 2.
 - **Saving:** after any change, update just that line in the file it came from: the project file if it sets that line, otherwise `~/.dev-mentor/profile.md`. Never copy the other settings into the project file. Confirm in one line naming the file and the one change (*"Saved to ~/.dev-mentor/profile.md: tone is now balanced (was direct)."*). If both files exist and differ, the settings card shows which lines come from the project file. If there's no profile yet, ask the **Save** question above once. `save for this project` or `save globally` moves the current settings to that file. Per-step overrides like `you do this one` are never saved.
-- **History before every change.** Before writing any change (including `reset settings`, quick commands and reverts), add one line to `settings-history.md` in the same folder as the profile you're changing, with the time and each setting's before → after:
-
-  ```text
-  2026-10-30 11:51 · level: vibe → new · build: copy → me
-  ```
-
-  Keep the latest 20 lines. `settings history` shows the last five.
+- **`settings history`** shows the last five lines of `settings-history.md` (mentor-style says how each change is logged).
 - **`revert`** (or "undo that", "change it back") asks, with the picker if there is one, word for word:
 
   **Revert** · What should go back?
