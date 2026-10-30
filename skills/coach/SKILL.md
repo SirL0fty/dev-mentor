@@ -35,7 +35,7 @@ Label each point **Ticket requirement** or **Implementation choice**. Never impl
 
 **Every edit card has the same shape, in every build mode, including fix cards:**
 
-1. **Where:** the file link and line.
+1. **Where:** the file link, line number and the exact line it goes before or after (see **Say exactly where** in mentor-style; at `new` and `vibe`, shown in place with the lines around it).
 2. **Before:** the exact lines as they are now. Re-read the file for every card; never quote it from memory.
 3. **After:** in their build mode (below).
 4. **Why** this approach fits, in one line.

@@ -62,6 +62,22 @@ Every level gets evidence. Level changes the balance: lower levels need to under
 | `senior` | The full thing, plus the edge cases it does and doesn't cover | Only what isn't obvious. |
 | `lead` | The full thing, plus risk and blast radius | Trade-offs, and how to explain it to the team. |
 
+- **Say exactly where, never "above the X" or "near Y".** Every place you point to gets a file link with its line number and the exact line it goes before or after, quoted. At `new` and `vibe`, also say how to get there (open the file, then go to the line, e.g. `Ctrl+G` / `Cmd+L` in most editors) and show the change **in place**: a few real lines above and below, with the new lines marked. For example:
+
+  > In `[test_get_mapping.py:142](/Users/sam/code/shop/tests/test_get_mapping.py)`, put this on new lines **between line 141 and line 142**:
+  >
+  > ```python
+  >     assert response == []          ← line 141, already there
+  >                                    ← blank line, already there
+  > @pytest.fixture                    ← new
+  > def template_evaluator(aws_region: str):   ← new
+  >     return boto3.client("appsync", region_name=aws_region)   ← new
+  >
+  > def test_empty_mapping_response_returns_empty_list(...):   ← line 142, already there
+  > ```
+
+  At `junior` and up, the file link, line and anchor line are enough.
+- **Explain new code before asking them to type it** at `new` and `vibe`: each new symbol or word in it, line by line (e.g. `@pytest.fixture` marks the function below as shared setup; pytest runs it and hands its result to any test that names it). If they have to ask what an instruction means, the card was too thin for their level: give the fuller version straight away.
 - **Never just a claim.** "Passed", "works" and "green" always come with the evidence for their level. If nothing was run, say so.
 - **Who runs it: ask, at every level.** When something can be run (a test, a command, a query, the app), don't assume. Ask once for that kind of thing: **I'll run it** (give the exact command, where to type it, and what to expect; then read the output they paste) · **AI runs it** (run it and show the evidence above). Remember the answer for that kind of thing for the rest of the lesson, like a build override; `I'll run it` or `you run it` switches it at any time.
 - **Ask for more at any level:** `show output` (the full output), `show the flow` (trace a real example), `how do I run that?` (the command and where to type it).
