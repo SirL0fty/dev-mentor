@@ -1,4 +1,4 @@
 interface:
   display_name: "Dev Mentor: Mentor"
-  short_description: "Start here: settings, lessons and exports"
+  short_description: "Start here: settings and revert, lessons and exports"
   default_prompt: "Use $mentor to help me find where to start in this codebase."

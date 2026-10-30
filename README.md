@@ -60,14 +60,16 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 
 | Say | What happens |
 | --- | --- |
-| `settings` | Shows your current choices, then asks what to change: everything, or just one area. |
+| `settings` | Shows every setting in one table, with its choices and where it's saved, then asks what to change: everything, or just one area. |
+| `revert` | Puts settings back: the last change, one setting (`revert build`), or everything changed in this conversation (`revert all`). |
+| `settings history` | Shows your last five settings changes. |
 | `change tone` (or `experience`, `pace`, `build`, `output`, `ADHD mode`) | Asks just that one question again. |
 | `change everything` | Runs the full setup again. |
 | `warmer`, `faster`, `ADHD mode on`… | Changes it straight away, no questions. |
 | `you do this one` | For this step only; your settings stay the same. |
 | `reset settings` | Back to defaults, or run setup again. |
 
-If you saved a profile, changes are saved automatically to the same place and the AI tells you in one line. Then it shows the step you were on again, in your new settings, so you carry on from where you left off.
+If you saved a profile, changes are saved automatically to the same place and the AI tells you in one line. Each change is also logged in `settings-history.md` next to it, so `revert` can undo it. Asking about settings never changes them. Then it shows the step you were on again, in your new settings, so you carry on from where you left off.
 
 Tone changes how things are said, never the truth: problems are always stated plainly.
 
@@ -93,7 +95,7 @@ flowchart LR
 | Skill | Helps you |
 | --- | --- |
 | [mentor-style](skills/mentor-style/SKILL.md) | Loaded automatically: the settings and ground rules every other skill follows, including the project preflight that puts code-changing lessons on their own worktree or branch. You never need to call it. |
-| [mentor](skills/mentor/SKILL.md) | Start here: setup and settings, where to start in your code, save and resume several lessons, export them to Notion or Obsidian, and watch a PR's comments and CI. |
+| [mentor](skills/mentor/SKILL.md) | Start here: setup and settings (shown in full, with revert), where to start in your code, save and resume several lessons, export them to Notion or Obsidian, and watch a PR's comments and CI. |
 | [coach](skills/coach/SKILL.md) | Build a feature step by step, on a new worktree or branch you name (such as the ticket key). Each edit, you write it, copy an explained snippet, or let the AI do it, and your work gets checked. |
 | [explain](skills/explain/SKILL.md) | Understand how existing code runs. |
 | [learn](skills/learn/SKILL.md) | Learn a concept or technology. |

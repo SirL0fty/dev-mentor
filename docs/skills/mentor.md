@@ -16,7 +16,9 @@ Say `use mentor`, or ask for help without naming a skill. Reach for it when you 
 
 - First time, with no saved settings, you get the setup questions: clickable if your assistant has a picker, one text card if not. ADHD mode is offered as a choice, never shown as already on.
 - If you arrive with a task, there's no questionnaire: one "I'll pitch this…" line, then the task.
-- `settings` shows your current choices, then asks what to change (Everything, or one area); `change tone` asks only that question; `reset settings` offers defaults or setup again.
+- `settings` (or "what settings do I have?") shows every setting in one table, with the label you picked, its saved line, every choice and where it's saved. Then it asks what to change (Everything, or one area). `change tone` asks only that question; `reset settings` offers defaults or setup again.
+- Asking to see your settings or their choices changes nothing. If one reply would change two settings, it shows both as before → after and asks first.
+- Every change adds a line to `settings-history.md` next to the profile. `revert` offers Last change, One setting, Everything or Cancel; `revert build` puts back only build; `revert all` puts back everything changed in this conversation. A revert is logged too, so it can be undone.
 - `change output` to Markdown spec saves `build: spec` in your profile; there's no separate `output` line.
 - After a change, one line says which file it saved to, then the step you were on comes back in the new style without moving on.
 - Saving for "All my projects" writes `~/.dev-mentor/profile.md`, and a different repo uses it without asking again. A project `.dev-mentor/profile.md` overrides only the lines it contains.
