@@ -17,5 +17,6 @@ Ask "how does this work?" or "what happens when…". For finished changes, use `
 - It separates what the code enforces from what a comment or type only suggests.
 - It ends with an explanation you could repeat to a colleague, plus what it didn't check.
 - If it spots a bug, it says so and offers to look separately; no files change.
+- Each hop names the editor move that gets there (Go to definition, Find usages, or a search), and at `junior` and below you make the next hop yourself after seeing two.
 - At `junior` and below, a flow with more than three parts appears one part at a time, each new part marked `← new`; `map` shows it all.
 - "Why is it built like this?" gets the commit, PR or ticket that introduced the lines, with the command used (`git log -L …`), the authors' words quoted, and inferences labelled.

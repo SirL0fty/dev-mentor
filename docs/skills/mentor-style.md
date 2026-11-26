@@ -28,7 +28,15 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - A card never says "above the tests" or "near the top". It names the file, the line number and the exact line before or after. At `new` and `vibe` it says how to jump to the line and shows the new lines in place, between the real lines around them, with each new symbol explained.
 - "Passed" or "works" never appears without its command and output.
 - Every passing check is followed by one *Doesn't prove: …* line. At `senior` and `lead` it also says how far the claim got (said so · pointed at the line · walked the failure · ran it · reproduced in the app).
-- At `junior` and below, or with build `me`, it sometimes asks you to predict the next value before showing it. Any answer or `next` reveals it; `just tell me` stops it for the lesson.
+- At `junior` and below, or with build `me`, it sometimes asks you to predict the next value before showing it. Any answer or `next` reveals it; `skip predictions` stops it for the lesson.
+- Every acronym or domain term is spelled out the first time, at every level, from the glossary or repo; if it can't find the meaning, it says so instead of guessing.
+- A claim about data, infrastructure or a deploy comes with **See it yourself**: the console path, Postman request or command, and what you should see.
+- Lessons that touch code show `Repo · branch · folder` at the start and on every switch. If it contradicts something it said earlier, it says so and why.
+- A new file, diagram or mock comes with its absolute link and how to open it; it never says "opened" until you do. Messages and PR text never contain local paths.
+- A pasted error gets one card: what it says in plain words, the likeliest cause with evidence, and one check, before any fix. HTTP 200 with errors in the body is called a failure.
+- After "just tell me" or "don't edit", nothing changes on disk for the rest of the conversation until you say go ahead.
+- A term asked about twice leads to one offer to add it to `.dev-mentor/glossary.md`; later explanations use the glossary's wording.
+- Questions get a one-sentence answer first, then detail.
 - `plain words` repeats the current card with no jargon and changes no setting. `catch me up` says what's waiting on you, what changed since your last message in under 100 words, and the AI's pick for each decision, then shows your step again.
 - Cards never label a point ("the key insight", "TL;DR") or announce difficulty ("here's the tricky part"); they just say it.
 - Say "simpler" twice in one conversation: the second time it also offers to change your level, once, and changes nothing unless you say yes.

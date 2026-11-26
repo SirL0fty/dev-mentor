@@ -45,6 +45,8 @@ Label each point **Ticket requirement** or **Implementation choice**. Never impl
 3. **After:** in their build mode (below).
 4. **Why** this approach fits, in one line.
 
+**Scope check.** Before the AI makes any edit, say which files it will touch and why. If that's more than the step needs, or reaches outside the ticket, ask first. After the edit, list the files that actually changed; anything not announced gets explained or undone.
+
 Mark proposed code as proposed. Keep unrelated edits, edge cases and tests on later cards, but keep edits that can't work without each other together.
 
 **Recommend, don't quiz.** When an implementation choice comes up (how to query, where code lives, which pattern to use), recommend one approach grounded in the ticket and the repo, teach why it fits, and carry on in the build mode. Don't turn implementation details into questions for them, and don't switch to `architect` on your own. Ask only when a missing requirement would change what users or callers observably get, and the ticket, the code and their earlier answers can't settle it.

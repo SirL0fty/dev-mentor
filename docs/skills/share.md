@@ -7,6 +7,7 @@
 `share` starts by asking what you're sharing:
 
 - **A plan,** before you build it: a version a colleague or senior dev can review without the chat (goal, evidence, design, steps, status), saved to `docs/plans/`.
+- **A message:** a short Slack or Teams reply, standup update or question for a senior, in your voice, ready to copy. It never sends anything.
 - **A lesson,** as a learning note for your own history in Notion, Obsidian or a notes folder. This hands over to `mentor`'s `export lesson`.
 - **An outcome** of a debate, challenge or review, as an architecture decision record (ADR) for a person or the team. It goes in the project's ADR folder (or `docs/decisions/`), marked **Status: Proposed**, with context, decision, consequences and alternatives, then where each reviewer started, what they disagreed about and what changed, what's still open, and the full record. It reports what happened; it doesn't turn it into a new plan or an approval request.
 
@@ -14,11 +15,12 @@ To send it, the default is one HTML file that opens in any browser, with a passw
 
 ## When to reach for it
 
-Say `share`, or name it: "share this plan with my senior", "share this lesson", "write up this debate as an ADR for the team". To turn an agreed plan into a spec, use `spec`.
+Say `share`, or name it: "share this plan with my senior", "write me a Slack reply to this", "share this lesson", "write up this debate as an ADR for the team". To turn an agreed plan into a spec, use `spec`.
 
 ## It's working if
 
-- `share` on its own asks **A plan · A lesson · An outcome** first. "Share this plan" skips the question.
+- `share` on its own asks **A plan · A lesson · An outcome · A message** first. "Share this plan" or "write me a Slack reply" skips the question.
+- A message leads with the point, is one to three sentences (or up to five bullets for an update), spells out acronyms, has no local file paths, and comes in a code block. "Make it flow" changes only the flow. A question for a senior says what you traced, what you expected, what you saw and where you're stuck.
 - **A lesson** goes through `export lesson` and asks where to save it (Notion, Obsidian or a folder).
 - When the outcome answered a design question, the ADR has a **Proposed design** section with each query from the question walked through it.
 - **An outcome** is saved as the next numbered ADR in the project's ADR folder, using its template if it has one, with **Status: Proposed** unless you say the team accepted it.
