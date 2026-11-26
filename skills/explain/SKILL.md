@@ -7,13 +7,15 @@ description: Explain how existing code or a system actually works by tracing one
 
 1. **Pin down the question.** Which behaviour, and which part of the code? Keep that scope for the whole lesson.
 2. **Investigate.** Read the entry point, the code it calls, the data it passes, and the relevant tests. Follow the real calls; don't draw paths you haven't read.
-3. **Map it.** When there's more than one step, start with a small flow map (`request → validate → save → respond`) and mark where you are.
+3. **Map it.** When there's more than one step, start with a small flow map (`request → validate → save → respond`) and mark where you are. At lower levels it grows one part per card (**Maps grow** in mentor-style).
 4. **Trace one real example** through the flow: what goes in, what changes, what comes out. Then cover one failure or edge case. Point out what the code actually enforces and what only a comment or type suggests.
 5. **Finish** with a short end-to-end explanation they could repeat to a colleague, plus what you didn't check.
 
 Order the steps by how the code runs, not by file name. Split big steps into cards that match their **pace**.
 
 For **lead**, add ownership boundaries, failure modes, and what would worry you in production. For **new**, say what each file *is* before what it does.
+
+"Why is it like this?" gets the history, not a guess: follow **Why it's built this way** in mentor-style, and keep the authors' stated reasons apart from your inferences.
 
 This is read-only. If you spot a bug, mention it plainly and offer to look into it separately; don't turn the lesson into an audit.
 

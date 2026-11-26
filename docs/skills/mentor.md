@@ -24,4 +24,5 @@ Say `use mentor`, or ask for help without naming a skill. Reach for it when you 
 - Saving for "All my projects" writes `~/.dev-mentor/profile.md`, and a different repo uses it without asking again. A project `.dev-mentor/profile.md` overrides only the lines it contains.
 - `save` on three different lessons leaves three files in `.dev-mentor/lessons/`; `resume` asks which one, most recent first, with your step; `resume <name>` skips the question.
 - `export lesson` asks where once, writes a learning note (goal, where to start, flow, what you learned, what's open), and a second export updates the same note or Notion page. Without Notion connected, it says so and offers Obsidian or Markdown.
+- `save note` adds one dated entry to a single `Learning log` note in your export destination (or under `## Learning log` in a note you name), reads it back, and returns to your step. Saving the same lesson again updates its progress instead of adding a duplicate.
 - Asking for something that isn't in the project names the project and what it searched, then offers Build it here / Different project / Point me to it.

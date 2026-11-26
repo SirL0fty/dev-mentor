@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Mentor: Look back"
+  short_description: "Find what you keep asking or correcting"
+  default_prompt: "Use $look-back to find what I keep asking or correcting across my past chats."

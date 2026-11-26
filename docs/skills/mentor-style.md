@@ -16,6 +16,8 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - With tone at 5, a real problem is still stated plainly.
 - The same question at level `new` explains terms and commands; at `lead` it skips basics and covers trade-offs and risk.
 - With ADHD mode on, every reply starts with the action, shows `Step N of M` and a time estimate, ticks off finished steps and parks side issues. With it off, you get normal cards. The facts are the same either way.
+- When a card holds something worth keeping (it clicked, a catch, a reusable move, a decision), it ends with one **Worth saving?** line naming the note and where it would go. It never offers while an edit is pending, at most once per step, and never the same note twice in a lesson. `stop asking` or `save prompts off` turns the offers off.
+- With many independent reads (every check on a PR, a month of chats) and a session that has a script tool such as Code Mode, it batches them and shows only the result, but the searches it's teaching you stay visible as normal steps.
 - `why`, `help` and questions answer without moving the lesson on; `next` then goes to the following step, never into another design workflow.
 - During a coach lesson, `architect`, `challenge` and `devils-advocate` only run when you ask or doubt a recommendation, answer that one concern, and return to the same step.
 - Before `architect` or `devils-advocate` designs anything, it asks **Context** (Add docs · Point me to it · Repo is enough) and waits for you to confirm its summary of the system.
@@ -25,6 +27,10 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - Every example (a code change, a command, a test result, an error, a traced request) shows real evidence. At `new` and `vibe` it's trimmed, with the important line pointed out, what it means and one real example traced step by step. At `junior` and up it's the full command and output.
 - A card never says "above the tests" or "near the top". It names the file, the line number and the exact line before or after. At `new` and `vibe` it says how to jump to the line and shows the new lines in place, between the real lines around them, with each new symbol explained.
 - "Passed" or "works" never appears without its command and output.
+- Every passing check is followed by one *Doesn't prove: …* line. At `senior` and `lead` it also says how far the claim got (said so · pointed at the line · walked the failure · ran it · reproduced in the app).
+- At `junior` and below, or with build `me`, it sometimes asks you to predict the next value before showing it. Any answer or `next` reveals it; `just tell me` stops it for the lesson.
+- `plain words` repeats the current card with no jargon and changes no setting. `catch me up` says what's waiting on you, what changed since your last message in under 100 words, and the AI's pick for each decision, then shows your step again.
+- Cards never label a point ("the key insight", "TL;DR") or announce difficulty ("here's the tricky part"); they just say it.
 - The first time something can be run, it asks **I'll run it** or **AI runs it**, at every level including junior and senior, and remembers that for the lesson. With **I'll run it** you get the exact command and where to type it, and it reads the output you paste.
 - `show output`, `show the flow` and `how do I run that?` work at any level.
 - Nothing is pushed, posted, merged or messaged unless you asked.

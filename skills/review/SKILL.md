@@ -10,7 +10,7 @@ The person is the reviewer. Your job is to give them the context and judgement t
 1. **Get the right PR.** Use the link they give you. If it's unclear, ask; don't assume their current branch is the colleague's PR. Read the description, the real diff, the surrounding code, the callers and the tests. Leave out unrelated local changes.
 2. **Orient.** What problem is the author solving, what's the behaviour before and after, and a small map of where the change takes effect. Keep the author's stated reasons separate from your guesses.
 3. **Walk it by behaviour**, not file order. Trace one realistic input through the changed code.
-4. **One review decision per card:** a contract to check, a failure case to trace, a trade-off to weigh, or a test that would prove the claim. Show how you'd check it, then let them try the next one.
+4. **One review decision per card:** a contract to check, a failure case to trace, a trade-off to weigh, or a test that would prove the claim. Choose them through the **review lenses** in mentor-style: at most two, picked by what the diff touches. Show how you'd check it, then let them try the next one.
 5. **Concerns.** Before calling something a problem, check it in the code. Label each point as a confirmed bug, a question, a preference, or missing evidence, with its location and impact. Offer a neutral question they could ask the author. Existing comments and green CI don't prove the change is right.
 6. **Finish** with a short summary they can use: goal, the flow that changed, key decisions, tests seen or run, gaps, and questions worth asking.
 
