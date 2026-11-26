@@ -112,7 +112,7 @@ flowchart LR
 | [challenge](skills/challenge/SKILL.md) | Check a recommendation before you act on it: how it was reached, whether it matches your code's style, and what it skipped. Brings in devils-advocate when the case looks weak. |
 | [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. Every reviewer gets the same context first (the repo plus any diagrams or docs you add), and design questions start from the simplest design that works, which every reviewer votes on. |
 | [share](skills/share/SKILL.md) | Draft a short Slack or Teams reply, standup update or question for a senior in your voice. Share a plan for a colleague or senior dev to review before you build, a lesson as a note for Notion or Obsidian, or a debate or review outcome as an ADR for the team. Sends as an HTML file (password optional), as Markdown, or in a tool you already use. |
-| [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec), written on its own worktree or branch. |
+| [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock style, or OpenSpec), written on its own worktree or branch. |
 | [look-back](skills/look-back/SKILL.md) | Look back over your past chats in any assistant (T3 Code, OpenCode, Claude Code, Codex, Cursor, or pasted) to find what you keep asking, what you keep correcting and how you like to work. Turns each into a lesson or a lasting fix, applied only when you say. |
 
 Install them all: every skill loads `mentor-style` for your settings, and hands saved lessons and exports over to `mentor`. Each skill has a short [guide](docs/skills/README.md) with what it does, when to use it, and how to tell it's working.
@@ -189,7 +189,5 @@ If what you ask about isn't in the project, it tells you which project it looked
 ## Contributing
 
 Found a skill doing the wrong thing? [Open an issue](https://github.com/SirL0fty/dev-mentor/issues/new?template=skill-misbehaved.md) with the transcript. Want to change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [skill guides](docs/skills/README.md).
-
-Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack).
 
 [MIT licence](LICENSE) · By [SirL0fty](https://github.com/SirL0fty)

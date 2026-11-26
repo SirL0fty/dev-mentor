@@ -1,6 +1,6 @@
 ---
 name: spec
-description: Turn an agreed feature plan into a written spec, either portable Markdown with numbered requirements, scenarios, design and checkable steps, a Matt Pocock or pstack inspired format, or an OpenSpec change through the official openspec-propose skill. Writes the spec only; doesn't implement, create issues or notify anyone. Use for "turn this plan into a spec", "write this up as a spec", "make an OpenSpec change", "spec this feature before we build it", or build mode spec. (Dev Mentor)
+description: Turn an agreed feature plan into a written spec, either portable Markdown with numbered requirements, scenarios, design and checkable steps, a Matt Pocock inspired format, or an OpenSpec change through the official openspec-propose skill. Writes the spec only; doesn't implement, create issues or notify anyone. Use for "turn this plan into a spec", "write this up as a spec", "make an OpenSpec change", "spec this feature before we build it", or build mode spec. (Dev Mentor)
 ---
 
 # Spec
@@ -16,7 +16,7 @@ Use what they ask for, then the project's existing spec convention, then portabl
 | Format | How |
 | --- | --- |
 | Portable Markdown (default) | The structure below. Save to `docs/specs/<feature>.md` unless told otherwise. |
-| Matt Pocock or pstack style | Read [formats.md](references/formats.md). This changes the document's structure only; it doesn't run their publishing workflows. |
+| Matt Pocock style | Read [formats.md](references/formats.md). This changes the document's structure only; it doesn't run its publishing workflow. |
 | OpenSpec | Read [openspec.md](references/openspec.md) and hand off to the installed official `openspec-propose` skill. |
 
 ## Portable spec structure
