@@ -30,3 +30,7 @@ Say "help me build this" or give it a ticket. For understanding code without cha
 - With build `ask`, edit cards end with *Who does this one? I'll write it · AI shows, I copy · AI writes it · Make it a spec*. "You write the tests, I'll do the rest" is remembered for the lesson.
 - `show me the answer` puts code in chat without editing files; `you do this one` edits only that step's files and explains each change.
 - With build `spec`, you still get the orientation, then it hands over to `spec` and no source files change.
+- Before the AI edits anything, it lists the files it will touch and why, and asks first if that's more than the step needs. Afterwards it lists what actually changed.
+- When the ticket doesn't say why, the first card ends with its one-line reading of the goal and *"Is that the goal?"*.
+- On a bug fix, it first traces the symptom back to where it starts (e.g. `500 ← total is None ← discount lookup ← fix here`) instead of adding a guard. With a cheap local test, the first edit is a failing test that checks what a caller sees, shown failing before the fix.
+- At the end of a feature you get a short self-review checklist tied to lines in your diff, a reusable recipe, and, if you made the same kind of mistake twice, a suggested lint rule or test to stop it happening again.

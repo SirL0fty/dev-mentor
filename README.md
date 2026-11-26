@@ -34,7 +34,8 @@ You:     done
 
 Mentor:  **Works ✓**
          Your diff passes `remember` through and sets `maxAge` only when it's
-         true. `npm test auth` passes (12 tests). Next: the checkbox in LoginForm.
+         true. `npm test auth` passes (12 tests). Doesn't prove: the cookie
+         survives a real browser restart. Next: the checkbox in LoginForm.
 ```
 
 ## Make it yours
@@ -49,6 +50,8 @@ On first use, `mentor` asks a few quick setup questions (about a minute). If you
 | **Build** | choose each time · I write, AI guides · AI shows, I copy · AI writes, explains | `you do this one`, `you write the tests` |
 | **Output** | write code · Markdown spec · OpenSpec change | `build spec`, `change output` |
 | **ADHD mode** | off · on | `ADHD mode on`, `ADHD mode off` |
+| **Save prompts** | on · off: offers to save a moment worth keeping to your learning log | `save prompts off`, `stop asking` |
+| **Standards** | optional: a folder or link to your team's coding standards (an Obsidian vault works), cited when reviewing a diff | add `standards: <path>` to your profile |
 | **Debate models** | the three models `devils-advocate` uses, plus a reasoning effort | `set up debate models` |
 | **Export** | where lesson notes go: Notion · Obsidian · Markdown folder | `export lesson` asks the first time |
 
@@ -108,8 +111,9 @@ flowchart LR
 | [architect](skills/architect/SKILL.md) | Compare designs and trade-offs. For "how should we store or build X?", it proposes the simplest concrete design (such as a table's keys and indexes), starting from what already exists, and walks each of your queries through it. |
 | [challenge](skills/challenge/SKILL.md) | Check a recommendation before you act on it: how it was reached, whether it matches your code's style, and what it skipped. Brings in devils-advocate when the case looks weak. |
 | [devils-advocate](skills/devils-advocate/SKILL.md) | Poke holes in a proposal with a debate between the models your assistant can really run (three if it can, two if not), or a quick single-model challenge. Every reviewer gets the same context first (the repo plus any diagrams or docs you add), and design questions start from the simplest design that works, which every reviewer votes on. |
-| [share](skills/share/SKILL.md) | Share a plan for a colleague or senior dev to review before you build, a lesson as a note for Notion or Obsidian, or a debate or review outcome as an ADR for the team. Sends as an HTML file (password optional), as Markdown, or in a tool you already use. |
-| [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock or pstack style, or OpenSpec), written on its own worktree or branch. |
+| [share](skills/share/SKILL.md) | Draft a short Slack or Teams reply, standup update or question for a senior in your voice. Share a plan for a colleague or senior dev to review before you build, a lesson as a note for Notion or Obsidian, or a debate or review outcome as an ADR for the team. Sends as an HTML file (password optional), as Markdown, or in a tool you already use. |
+| [spec](skills/spec/SKILL.md) | Turn a plan into a spec (Markdown, Matt Pocock style, or OpenSpec), written on its own worktree or branch. |
+| [look-back](skills/look-back/SKILL.md) | Look back over your past chats in any assistant (T3 Code, OpenCode, Claude Code, Codex, Cursor, or pasted) to find what you keep asking, what you keep correcting and how you like to work. Turns each into a lesson or a lasting fix, applied only when you say. |
 
 Install them all: every skill loads `mentor-style` for your settings, and hands saved lessons and exports over to `mentor`. Each skill has a short [guide](docs/skills/README.md) with what it does, when to use it, and how to tell it's working.
 
@@ -160,6 +164,11 @@ Or give it a ticket: **"Help me build this one step at a time. I'll write the co
 | `next` / `back` | Move between steps. |
 | `why` · `example` · `more detail` · `help` | Ask about this step without moving on. |
 | `you do this one` | The AI makes this edit. |
+| `write me a Slack reply` · `what do I say at standup?` | A short message in your voice, ready to copy (it never sends anything). |
+| `just tell me` | Explain and show changes without editing anything, until you say go ahead. |
+| `plain words` | Say this step again with no jargon (your settings stay the same). |
+| `catch me up` | What's waiting on you and what changed since your last message, then back to your step. |
+| `why was it built like this?` | The commits and PRs behind the code, with the authors' own reasons. |
 | `is this right?` · `challenge this` | Check the last recommendation against your code, and bring in a devil's advocate if it looks weak. |
 
 | Lessons | |
@@ -168,6 +177,7 @@ Or give it a ticket: **"Help me build this one step at a time. I'll write the co
 | `resume` | Pick one back up; asks which if you have several. `resume pagination` goes straight there. |
 | `lessons` | List your saved lessons with where you got to. |
 | `export lesson` | Turn a lesson into a learning note in **Notion**, **Obsidian** or a Markdown folder. `export all lessons` does them all. |
+| `save note` | Add one entry to your learning log (in the same place as exports) when something clicked, a fix taught you what to check, or a decision is worth remembering. Dev Mentor offers this at good stopping points. |
 | `delete lesson <name>` | Remove one (asks first). |
 
 If what you ask about isn't in the project, it tells you which project it looked in and asks whether to build it as a new feature, switch project, or point it to the right file.
@@ -179,7 +189,5 @@ If what you ask about isn't in the project, it tells you which project it looked
 ## Contributing
 
 Found a skill doing the wrong thing? [Open an issue](https://github.com/SirL0fty/dev-mentor/issues/new?template=skill-misbehaved.md) with the transcript. Want to change a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) and the [skill guides](docs/skills/README.md).
-
-Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack).
 
 [MIT licence](LICENSE) · By [SirL0fty](https://github.com/SirL0fty)

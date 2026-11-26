@@ -22,6 +22,7 @@ To see whether it's working in your assistant, try the **It's working if** lists
 | PR watch | A scheduler in your assistant, plus read access to the PR's comments and CI. Without one, mentor watches only while the session is open, or does a single check. |
 | OpenSpec specs | The OpenSpec CLI, a configured project, and the official `openspec-propose` skill. Without them, you get a Markdown spec instead. |
 | Notion / Obsidian export | Notion: a Notion connector or MCP server already set up in your assistant. Obsidian: just a vault folder. Without either, it saves Markdown. |
+| Look back over past chats | Read access to the chat history on your machine (your assistant's permissions decide this), or chats you paste or export. Batching many reads in one script is faster where your assistant has a Code Mode tool, but isn't required. |
 
 Everything else needs only a model and access to your code.
 

@@ -1,6 +1,6 @@
 # Export a lesson
 
-`export lesson` turns a lesson into a **learning note** the person can reread later. It's not the resume file, and it's not a `share` review document.
+`export lesson` turns a lesson into a **learning note** the person can reread later. It's not the resume file, and it's not a `share` review document. `save note` saves one moment instead of a whole lesson: see [Save a note](#save-a-note).
 
 - `export lesson`: the current lesson.
 - `export lesson pagination`: a saved one.
@@ -68,6 +68,30 @@ Then ask for the place (the Notion page, the vault folder, or the folder) and of
 ### Markdown folder
 
 Same as Obsidian, without the `[[links]]`.
+
+## Save a note
+
+`save note` keeps one thing worth having again: something that clicked, a catch, a reusable move or a decision (see **Worth saving** in mentor-style). It adds one entry to a single learning log, not a new note per moment, so the log reads like a field guide over time.
+
+```markdown
+### 2026-11-26 · An error isn't proof of its cause
+- Situation and source: pagination lesson, `tests/items.test.ts:42`, my-shop
+- What I thought → what actually happened: a 404 meant the record was missing → a typo in the route also returns 404
+- Next time I'll check: the same route returns 200 for a record that exists
+- Practise on: the missing-user test in a different service
+- Progress: explained
+```
+
+For a decision, the second line is *What we chose and why*, with the option it beat. Write it at the person's **level**, in their words where they said it well, with at most one short snippet. Mark anything unverified as unverified.
+
+**Progress** moves through `explained → tried with help → repeated solo → used on a different task`. When the same lesson comes up again, update that entry's progress and date instead of adding a duplicate.
+
+**Where:** the `export` destination (ask the **Export** question above if there isn't one), in a note called `Learning log`:
+
+- **Obsidian / Markdown folder:** `<folder>/Learning log.md`; newest entry first, under a `## Learning log` heading. Create the file with that heading if it doesn't exist. If the person names an existing note (their own field guide, say), add entries under its `## Learning log` heading instead, and leave the rest of the note untouched.
+- **Notion:** a child page called `Learning log` under the export page; add the entry at the top.
+
+Read it back, give the link in one line (*"Saved to Learning log.md in Obsidian · Dev Mentor."*), then show the step they were on again. Saving a note never moves the lesson forward.
 
 ## Always
 

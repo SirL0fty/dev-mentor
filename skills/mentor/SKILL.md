@@ -1,6 +1,6 @@
 ---
 name: mentor
-description: Start here. Onboards the person, sets how Dev Mentor talks to them (experience level, tone, pace, build mode such as guided, copy, AI-written, spec or OpenSpec, and ADHD mode), suggests where to start in this codebase, routes to the right workflow, saves and resumes several lessons, exports lessons as notes to Notion, Obsidian or Markdown, and watches a PR's comments and CI. Use for "help", "where do I start?", "settings", "what are my settings?", "revert", "save", "resume", "lessons", "export lesson", or any mentoring request without a chosen workflow. (Dev Mentor)
+description: Start here. Onboards the person, sets how Dev Mentor talks to them (experience level, tone, pace, build mode such as guided, copy, AI-written, spec or OpenSpec, and ADHD mode), suggests where to start in this codebase, routes to the right workflow, saves and resumes several lessons, exports lessons as notes to Notion, Obsidian or Markdown, offers to save moments worth keeping to a learning log, and watches a PR's comments and CI. Use for "help", "where do I start?", "settings", "what are my settings?", "revert", "save", "save note", "resume", "lessons", "export lesson", or any mentoring request without a chosen workflow. (Dev Mentor)
 ---
 
 # Mentor
@@ -117,6 +117,7 @@ Never invent files, tickets, or bugs. If the project is empty or unavailable, sa
 | `devils-advocate` | Stress-test a proposal, with every reviewer given the same confirmed context, starting from the simplest design that works |
 | `share` | Share a plan for review, a lesson as a note, or a debate outcome as an ADR, sent as an HTML file, Markdown or a connected tool |
 | `spec` | Turn an agreed plan into a spec (project preflight first) |
+| `look-back` | Find what they keep asking or correcting across past chats, and turn it into lessons or one-off fixes they approve |
 
 Call the Skill tool with that workflow's name. If it isn't installed, say so and suggest installing the full pack; give limited help meanwhile, and don't claim the workflow ran. A question about the current lesson stays in that lesson.
 
@@ -135,6 +136,8 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
   > | Pace | One step (`pace: step`) | One step · A few steps · Everything | all projects |
   > | Build | AI shows, I copy (`build: copy`) | Choose each time · I write, AI guides · AI shows, I copy · AI writes, explains · Markdown spec · OpenSpec change | all projects |
   > | ADHD mode | On (`adhd: on`) | On · Off | all projects |
+  > | Save prompts | On (`save prompts: on`) | On · Off | not saved |
+  > | Standards | not set | a folder or link to your coding standards | — |
   > | Debate models | claude-opus-5-5 · sol-6.1 · gemini-4-argon | `set up debate models` | all projects |
   > | Debate effort | high | max · xhigh · high · medium | all projects |
   > | Export | not set | Notion · Obsidian · Markdown | — |
@@ -149,7 +152,7 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
 
   Then ask only the setup question(s) for that choice (Everything asks them all), with the same labels and descriptions as onboarding. The picker's "Other" box, or a reply like "nothing", leaves everything as it is. Without a picker, end the card with: *"Say `change tone`, `change build`… or `change everything`."*
 - **Only change what they pick**, and log every change: both rules are in mentor-style (**Changing a setting**).
-- **`change <setting>`** jumps straight to that one setup question: `change experience`, `change tone`, `change pace`, `change build`, `change output`, `change ADHD mode`. `change everything` (or `change settings`) runs the full setup again.
+- **`change <setting>`** jumps straight to that one setup question: `change experience`, `change tone`, `change pace`, `change build`, `change output`, `change ADHD mode`, `change save prompts`. `change everything` (or `change settings`) runs the full setup again.
 - **Quick commands** (`warmer`, `faster`, `ADHD mode on`…) change a setting without any questions.
 - **Pick up where you were:** once the change is saved (or they chose not to save), confirm it in one line, then show the card they were on before `settings` **again, rewritten in the new settings**, and wait for them as before. Don't move to the next step, and don't repeat the settings card. If no lesson was active, return to whatever you were doing before, or to step 2.
 - **Saving:** after any change, update just that line in the file it came from: the project file if it sets that line, otherwise `~/.dev-mentor/profile.md`. Never copy the other settings into the project file. Confirm in one line naming the file and the one change (*"Saved to ~/.dev-mentor/profile.md: tone is now balanced (was direct)."*). If both files exist and differ, the settings card shows which lines come from the project file. If there's no profile yet, ask the **Save** question above once. `save for this project` or `save globally` moves the current settings to that file. Per-step overrides like `you do this one` are never saved.
@@ -172,12 +175,14 @@ Call the Skill tool with that workflow's name. If it isn't installed, say so and
   pace: step
   build: ask
   adhd: off
+  save prompts: on
   debate models: claude-opus-5-5, sol-6.1, <a third model>
   debate effort: high
   export: notion Dev Mentor notes
+  standards: ~/Notes/Coding Standards
   ```
 
-  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. `warmth` is the line for tone. The `debate` lines are optional and only used by `devils-advocate`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
+  It lives in `~/.dev-mentor/profile.md` for every project, or in the project's `.dev-mentor/profile.md` to override lines for that project only. `warmth` is the line for tone. The `debate` lines are optional and only used by `devils-advocate`. `standards` is optional: a folder or link to the person's coding standards, cited by the review lenses in `review` and `coach`. `set up debate models` lists the models this assistant can actually reach and helps pick three from different families.
 
 ### Saved lessons
 
@@ -198,6 +203,7 @@ Each lesson is its own file in the project: `.dev-mentor/lessons/<short-name>.md
 - **`delete lesson <name>`:** confirm first, then remove that one file.
 - **Old saves:** if `.dev-mentor/lesson.md` exists, treat it as one more saved lesson; the first time it's resumed or saved, move it to `.dev-mentor/lessons/<short-name>.md` and say so.
 - **`export lesson`** (also `export lesson <name>`, `export all lessons`): read [export.md](references/export.md). It writes a learning note to Notion, Obsidian or a Markdown folder.
+- **`save note`:** read [export.md](references/export.md) (**Save a note**). It adds one entry to the person's learning log in the same destination.
 
 ## 5. Watch a PR
 

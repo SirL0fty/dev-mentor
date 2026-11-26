@@ -15,5 +15,6 @@ Say "help me review this PR" with the link. For a tour of your own finished work
 - If the PR is unclear, it asks for the link rather than assuming your current branch.
 - It walks the change by behaviour, tracing one realistic input, not file by file.
 - Concerns are labelled as a confirmed bug, a question, a preference or missing evidence, with location and impact.
+- It picks at most two review lenses (such as *retries and rollback* for a new retry loop) and names the changed line that made it pick each. With `standards:` in your profile, it cites the matching rule ID, MUST or SHOULD, and its plain-English line.
 - It finishes with goal, changed flow, key decisions, tests seen or run, gaps and questions for the author.
 - It never posts comments, approves, requests changes, resolves threads or merges.

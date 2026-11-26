@@ -1,6 +1,6 @@
 ---
 name: share
-description: Share a plan before building it (for a colleague or senior dev to review), a lesson as a learning note for Notion or Obsidian, or the outcome of a debate, challenge or review as a decision record (ADR) for a person or the team. Outcome records keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Sends as an HTML file (optionally password-protected), the Markdown file, or in a tool you already use. Use for "share this plan with my senior", "share this lesson", "share this outcome", or "write up this debate as an ADR". (Dev Mentor)
+description: Share a plan before building it (for a colleague or senior dev to review), a short message for the team (a Slack or Teams reply, a standup update, a question for a senior), a lesson as a learning note for Notion or Obsidian, or the outcome of a debate, challenge or review as a decision record (ADR) for a person or the team. Outcome records keep every reviewer's position, disagreement and open question instead of turning them into a new plan. Sends as an HTML file (optionally password-protected), the Markdown file, or in a tool you already use. Use for "share this plan with my senior", "write me a Slack message", "give me a reply", "what do I say at standup", "share this lesson", "share this outcome", or "write up this debate as an ADR". (Dev Mentor)
 ---
 
 # Share
@@ -15,12 +15,28 @@ Ask first, with the picker if there is one, unless their request already says (e
 - A plan · Before building: a version a colleague or senior dev can review.
 - A lesson · A record of what you learned, for Notion, Obsidian or a notes folder.
 - An outcome · A debate, challenge or review result, written up as a decision record (ADR).
+- A message · A short Slack or Teams reply, standup update or question for a senior.
 
 If they pick something that doesn't exist in this conversation or the project, say so and offer the ones that do.
 
 - **A lesson:** this is a learning note for your own history. Call the Skill tool with "mentor" and run `export lesson`; it asks where it goes and writes it. Then stop here.
 - **A plan:** go to step 2, then use **What goes in a plan** below.
 - **An outcome:** go to step 2, then read [outcome-report.md](references/outcome-report.md) and follow it.
+- **A message:** follow **Write a message** below, then stop.
+
+## Write a message
+
+For "give me a Slack message", "draft a reply", "what do I say at standup" or "ask my senior about this". If it's unclear, ask in one line who it's for and whether it's a reply, an update or a question.
+
+- **Lead with the point.** A reply answers what they were asked, first. An update says what changed and what's next. A question says exactly what they need.
+- **Short.** One to three sentences, or up to five bullets for an update. Offer `shorter` and `more detail` rather than writing both.
+- **In their voice.** If they've pasted something they wrote before, or the thread they're replying to, match its tone, layout and punctuation. Keep "I" and "we" as they would.
+- **Plain words.** Spell out or avoid acronyms the reader may not know. No file paths, worktree folders or local links: use the PR, ticket or page URL instead.
+- **Fair to people.** Don't name or blame individuals unless they ask.
+- **A question for a senior** follows this shape: *"I traced ___ to ___ and expected ___. What I saw was ___. I'm stuck on ___. Can you point me to the next thing to read or try?"*
+- **Only what's true.** Claims in the message must be ones the conversation checked; anything unchecked is phrased as a question or left out.
+
+Give the message in a code block so it's easy to copy. When they ask for a change ("make it flow", "remove the colons"), change only that and keep the rest. Never send or post it.
 
 ## 2. Ask who it's for and why
 

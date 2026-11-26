@@ -4,7 +4,7 @@
 
 ## What it does
 
-`spec` turns an agreed plan into a portable Markdown spec, a Matt Pocock or pstack style document, or an OpenSpec change through the official `openspec-propose` skill. It writes the spec only, after the project preflight has put the work on its own worktree or branch.
+`spec` turns an agreed plan into a portable Markdown spec, a Matt Pocock style document, or an OpenSpec change through the official `openspec-propose` skill. It writes the spec only, after the project preflight has put the work on its own worktree or branch.
 
 ## When to reach for it
 
