@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.25.0
+
+### Minor Changes
+
+- [#20](https://github.com/SirL0fty/dev-mentor/pull/20) [`0429f45`](https://github.com/SirL0fty/dev-mentor/commit/0429f455544175d612b88ac823467b525748028e) - Fixes for the mistakes a real look-back found most often. Acronyms and domain terms are spelled out at every level (with an optional project glossary), questions get a one-line answer first, and claims about data or deploys come with how to see it yourself. Lessons show which repo, branch and folder you're in, and admit when they contradict themselves. New files come with a link you can open, and shareable text never has local paths. Pasted errors get a plain-words card with the likeliest cause and one check. `coach` lists the files it will touch before editing, "just tell me" holds until you say go, `explain` teaches the editor moves to follow code yourself, and `share` drafts short Slack replies, standup updates and questions for a senior in your voice.
+
+- [#20](https://github.com/SirL0fty/dev-mentor/pull/20) [`0429f45`](https://github.com/SirL0fty/dev-mentor/commit/0429f455544175d612b88ac823467b525748028e) - New `look-back` skill: it reads your past chats from any assistant (T3 Code, OpenCode, Claude Code, Codex, Cursor, or chats you paste) after you choose the scope, finds what you keep asking and correcting, and turns each pattern into a lesson or a lasting fix that you approve first. Say `look back monthly` to have the agent run it on a schedule where your assistant has one. Between runs, Dev Mentor fixes a correction you give twice and offers the lasting fix there and then, and mentions an unread or month-old look-back report.
+
+- [#20](https://github.com/SirL0fty/dev-mentor/pull/20) [`0429f45`](https://github.com/SirL0fty/dev-mentor/commit/0429f455544175d612b88ac823467b525748028e) - Dev Mentor now offers to save moments worth keeping, such as a concept that clicked, a fix and what to check next time, or a decision and its reasons, as one entry in a learning log in Obsidian, Notion or a Markdown folder. Say `save note` to save it, or `save prompts off` to stop the offers. When your assistant can run a script that calls other tools (such as OpenCode's Code Mode), bulk reads are batched so only the results reach the chat.
+
+- [#20](https://github.com/SirL0fty/dev-mentor/pull/20) [`0429f45`](https://github.com/SirL0fty/dev-mentor/commit/0429f455544175d612b88ac823467b525748028e) - Lessons teach more like a good senior. Flow maps grow one part per card at junior and below, you're sometimes invited to predict the next value before it's shown, and every passing check says what it doesn't prove. "Why was it built like this?" is answered from the commits and PRs behind the code. `coach` traces bugs to where they start and writes the failing test first, ends features with a self-review checklist, and checks the goal with you when the ticket doesn't say why. `review` picks at most two review lenses from what the diff touches and can cite your own coding standards (add `standards: <path>` to your profile). New `plain words` and `catch me up` commands, and plainer cards with no "key insight" labels.
+
+### Patch Changes
+
+- [#20](https://github.com/SirL0fty/dev-mentor/pull/20) [`0429f45`](https://github.com/SirL0fty/dev-mentor/commit/0429f455544175d612b88ac823467b525748028e) - `spec` offers portable Markdown, Matt Pocock style or OpenSpec; the pstack-style option is gone.
+
 ## 0.24.0
 
 ### Minor Changes
