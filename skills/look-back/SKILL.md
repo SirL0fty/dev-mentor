@@ -1,6 +1,6 @@
 ---
 name: look-back
-description: Look back over the person's past AI chats (T3 Code, OpenCode, Claude Code, Codex, Cursor or pasted transcripts) to find what they keep asking, what they keep correcting, and how they like to work and question. Suggests lessons that make the repeated questions stick, and Dev Mentor settings, project checks or instruction lines that stop the repeated corrections, applied only after they approve. Use for "what do I keep asking?", "look back over my chats", "learn from how I work", "what have I asked more than once?", "why do I keep correcting the AI?", or a retro across sessions. (Dev Mentor)
+description: Look back over the person's past AI chats (T3 Code, OpenCode, Claude Code, Codex, Cursor or pasted transcripts) to find what they keep asking, what they keep correcting, and how they like to work and question. Suggests lessons that make the repeated questions stick, and Dev Mentor settings, project checks or instruction lines that stop the repeated corrections, applied only after they approve. Use for "what do I keep asking?", "look back over my chats", "learn from how I work", "what have I asked more than once?", "why do I keep correcting the AI?", "look back monthly", or a retro across sessions. (Dev Mentor)
 ---
 
 # Look back
@@ -80,13 +80,24 @@ Each item names the exact file or setting it would change and a time estimate. T
 - Start a lesson · Begin the top learning item now.
 - Nothing · Leave everything as it is.
 
-Change nothing before they choose. Settings follow mentor-style (**Changing a setting**). Edit instructions files and skills only in the person's own copy, never inside an installed plugin's cache, and say which file you changed. A learning item starts the `learn` or `explain` skill; call the Skill tool with that name.
+Change nothing before they choose. A saved report gets `status: read` in its frontmatter, since they've seen it. Settings follow mentor-style (**Changing a setting**). Edit instructions files and skills only in the person's own copy, never inside an installed plugin's cache, and say which file you changed. A learning item starts the `learn` or `explain` skill; call the Skill tool with that name.
 
 ## 5. Track progress
 
 Saved reports make the next look-back better. Offer to add each learning item to the person's learning log: call the Skill tool with "mentor" and say `save note`, which owns the entry format and destination. Use **Seen in: 5 chats, Oct 3 – Nov 20** as the situation and source.
 
 Next time, compare with the last report: a pattern that stopped appearing is a win; show it as `✓ Stopped asking: running a single test`, and offer to move that entry's progress on (`explained → tried with help → repeated solo → used on a different task`). Progress is measured by reuse, not by memory.
+
+## 6. Let it run on its own
+
+`look back monthly` (or "every two weeks", "do this automatically") hands the job to the agent:
+
+1. Agree the scope first (step 1). The scheduled run reads exactly that scope; it never widens it.
+2. Find the scheduler this host actually has. If there is one, create one recurring run (default monthly) and say it's active only after the tool confirms it, with its ID. If there isn't, say so: the **Look-back due** nudge in mentor-style will remind them instead.
+3. Each scheduled run does steps 1–4 read-only and saves the report to `.dev-mentor/look-back/<date>.md` with `status: unread` in its frontmatter. It applies nothing and messages nobody.
+4. The next time they talk to Dev Mentor, the nudge mentions the unread report. Showing it marks it `status: read`; changes still wait for them to pick.
+
+`stop looking back` cancels the scheduled run.
 
 ## Style and ground rules
 

@@ -22,6 +22,11 @@ pstack splits the job by output: `recall` rebuilds context, `reflect` edits skil
 - **Fix at the highest level that works**: setting or check before a sentence in `AGENTS.md`; a written rule that's still broken needs enforcing, not repeating (`correct`, `retro`).
 - **Never edit an installed plugin's cache**; propose, then wait (`reflect`).
 
+Like pstack, the reading is the agent's job, not yours: subagents or one script mine the chats, and only findings come back. pstack also keeps the habit always on: its **Encode Lessons in Structure** principle fires inside `poteto-mode` the moment the agent repeats an instruction or gets the same correction again, while `/correct` and `/reflect` do the deep sweep on request. Dev Mentor does the same in two layers:
+
+- **In the moment:** mentor-style's **Notice repeats** fixes a correction given twice and offers the lasting fix (setting, then check, then one instructions line) right then.
+- **The sweep:** `look-back`, run when asked, or by the agent on a schedule (`look back monthly`) where the host has a scheduler. Scheduled runs save an unread report and change nothing; **Look-back due** mentions it next time.
+
 It's host-agnostic: it prefers the host's own session tools, then known local stores (T3 Code, OpenCode, Claude Code, Codex, Cursor), and checks each store's real schema first because formats change.
 
 ## Built from the review

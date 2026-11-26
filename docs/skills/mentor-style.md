@@ -31,6 +31,8 @@ You never call it yourself. Every Dev Mentor skill loads it before its first rep
 - At `junior` and below, or with build `me`, it sometimes asks you to predict the next value before showing it. Any answer or `next` reveals it; `just tell me` stops it for the lesson.
 - `plain words` repeats the current card with no jargon and changes no setting. `catch me up` says what's waiting on you, what changed since your last message in under 100 words, and the AI's pick for each decision, then shows your step again.
 - Cards never label a point ("the key insight", "TL;DR") or announce difficulty ("here's the tricky part"); they just say it.
+- Say "simpler" twice in one conversation: the second time it also offers to change your level, once, and changes nothing unless you say yes.
+- With an unread look-back report, or one over 30 days old, the first reply mentions it in one line. A quick one-off question doesn't.
 - The first time something can be run, it asks **I'll run it** or **AI runs it**, at every level including junior and senior, and remembers that for the lesson. With **I'll run it** you get the exact command and where to type it, and it reads the output you paste.
 - `show output`, `show the flow` and `how do I run that?` work at any level.
 - Nothing is pushed, posted, merged or messaged unless you asked.

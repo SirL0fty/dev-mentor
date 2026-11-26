@@ -8,7 +8,9 @@
 
 ## When to reach for it
 
-Ask "what do I keep asking?", "look back over my chats", "learn from how I work" or "why do I keep correcting the AI?". Run it every few weeks: the next run starts where the last report left off and shows what you've stopped asking.
+Ask "what do I keep asking?", "look back over my chats", "learn from how I work" or "why do I keep correcting the AI?". Run it every 2–4 weeks, or say `look back monthly` and the agent runs it on a schedule (where your assistant has a scheduler) and saves the report for you to read next time. The next run starts where the last report left off and shows what you've stopped asking.
+
+You don't have to wait for it: during any lesson, Dev Mentor fixes a correction you give twice and offers the lasting fix there and then.
 
 ## It's working if
 
@@ -19,3 +21,4 @@ Ask "what do I keep asking?", "look back over my chats", "learn from how I work"
 - Repeated questions come first and lead to a lesson; repeated corrections lead to the most lasting fix (a setting or check before a sentence in `AGENTS.md`). A rule that's already written but still broken is proposed as a check, not repeated.
 - Nothing is edited before you choose. Settings changes are logged in `settings-history.md`; instruction and skill edits go to your own copy, never an installed plugin's cache.
 - A second run shows patterns that stopped appearing as wins (`✓ Stopped asking: …`).
+- `look back monthly` creates a scheduled run only if your assistant has a scheduler, and says so with its ID; otherwise it says there isn't one. Scheduled runs use the scope you agreed, save a report marked unread, and change nothing. `stop looking back` cancels it.
