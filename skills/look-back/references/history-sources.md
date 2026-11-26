@@ -25,6 +25,10 @@ The paths below were checked in November 2026 and can change with any update. Be
 
 Worktrees of the same project have different paths: include them when the person picks "This project".
 
+## Duplicates across assistants
+
+One app can drive another: T3 Code runs OpenCode sessions, so the same message appears in both stores. Deduplicate on the normalised text (lowercase, whitespace collapsed, first ~400 characters) before counting, or every pattern looks twice as common.
+
 ## A batch read, not a chat read
 
 When there are dozens of chats, return only the fields you need, for example with one read-only query that pulls the person's messages for the window:
